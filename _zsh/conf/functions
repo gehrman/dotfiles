@@ -1,0 +1,59 @@
+cleanup_hivecruft(){
+    #cd TempStatStore; rm *; cd ..; rmdir TempStatStore
+    rm -rf TempStatsStore
+    rm derby.log
+}
+cleanup_pythoncruft(){
+    rm *.pyc
+}
+cleanup_all(){
+    cleanup_hivecruft
+    cleanup_pythoncruft
+}
+
+# setup for source-code archeology:
+get_git_branch(){
+    branch=$(git symbolic-ref HEAD | cut -d'/' -f3)
+    echo $branch
+}
+setopt prompt_subst
+__setup_archeology(){
+    cd /csnzoo/gehrman/gitworkspace/python
+    if [ '$(get_git_branch)' != 'competitive-pricing_historic' ]; then
+        git checkout competitive-pricing_historic
+    fi
+    cd /csnzoo/gehrman/gitworkspace/python/competitive-pricing
+    repo=$(get_git_branch)
+    export PROMPT='(%j) $repo:u (%~): '
+}
+alias goto_historic_pricing="__setup_archeology"
+
+# I can't believe I wrote this.
+average_line_size(){
+    python -c "print (`ls -l | grep $1 | awk '{print $5}'` + 0.0) / `wc -l $1 | awk {'print $1'}`"
+}
+
+# Mount and unmount the u drive.
+mount_u_drive() {
+  local NON_INTERACTIVE_MODE
+  if [[ -n "${1-}" ]]; then
+    NON_INTERACTIVE_MODE=1
+  fi
+
+  if ! grep --quiet --no-messages "${U_DRIVE_MOUNT_DIR}" '/proc/mounts'; then
+    mkdir -p "${U_DRIVE_MOUNT_DIR}"
+    echo "Mounting ${U_DRIVE_SMB_SHARE} on ${U_DRIVE_MOUNT_DIR}"
+    sudo mount.cifs "${U_DRIVE_SMB_SHARE}" "${U_DRIVE_MOUNT_DIR}" \
+      -o "user=${USER},uid=$(id -u "${USER}"),gid=$(id -g "${USER}"),file_mode=0644,dir_mode=0755"
+  elif [[ "${NON_INTERACTIVE_MODE}" -ne 1 ]]; then
+    echo "${U_DRIVE_MOUNT_DIR} is already an active mount point"
+  fi
+}
+umount_u_drive() {
+  if grep --quiet --no-messages "${U_DRIVE_MOUNT_DIR}" '/proc/mounts'; then
+    echo "Unmounting ${U_DRIVE_SMB_SHARE} from ${U_DRIVE_MOUNT_DIR}"
+    sudo umount "${U_DRIVE_MOUNT_DIR}"
+  else
+    echo "${U_DRIVE_MOUNT_DIR} is not an active mount point"
+  fi
+}

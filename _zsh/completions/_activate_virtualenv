@@ -1,0 +1,3 @@
+#compdef activate_virtualenv.sh
+
+compadd -X "Available envs: " `ls /wayfair/home/gehrman/envs`

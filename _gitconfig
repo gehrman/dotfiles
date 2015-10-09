@@ -1,0 +1,34 @@
+[user]
+    name = Geoff Ehrman
+    email = gehrman@wayfair.com
+[color]
+    ui = true
+[pull]
+    rebase = true
+[push]
+    default = current
+[fetch]
+    prune = true
+[core]
+    autocrlf = false
+    excludesfiles = /csnzoo/gehrman/.gitignore
+    preloadIndex = true
+[alias]
+    co = checkout
+[alias]
+    cwm = commit -m
+[alias]
+    cawm = commit -am
+[alias]
+    amendcommit = commit -a --amend
+[alias]
+    popstash = stash pop
+[alias]
+    liststash = stash list
+[alias]
+    showstash = stash show -p
+    trains = ! git fetch -q && git for-each-ref --count=5 --sort=-committerdate --format='%(committerdate:relative) %09 %(refname:short)' refs/remotes/origin/deploy_*
+[reviewboard]
+    url = https://rb.csnzoo.com
+[merge]
+	conflictstyle = diff3

@@ -1,0 +1,154 @@
+# .zshrc is sourced in interactive shells.
+# It should contain commands to set up aliases,
+# functions, options, key bindings, etc.
+
+## Command Completion Settings
+fpath=(~/.zsh/completions $fpath) # register the completions folder
+
+autoload -U compinit
+compinit
+setopt complete_aliases
+
+# Show the completion menu when >= 2 items.
+zstyle ":completion:*" menu select=2
+
+# Allow tab completion in the middle of a word.
+setopt COMPLETE_IN_WORD
+
+## keep background processes at full speed
+#setopt NOBGNICE
+## restart running processes on exit
+#setopt HUP
+
+## history
+setopt APPEND_HISTORY
+## for sharing history between zsh processes
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+# save 2048 lines of history in the right location
+export HISTSIZE=2048
+export SAVEHIST=$HISTSIZE
+export HISTFILE="~/.zsh_history"
+export EDITOR=vim
+
+## never ever beep ever
+#setopt NO_BEEP
+
+## automatically decide when to page a list of completions
+#LISTMAX=0
+
+## disable mail checking
+#MAILCHECK=0
+
+# autoload -U colors
+#colors
+
+# Java magic?
+#if [ -h /usr/java/default ]; then
+#  export JAVA_HOME=/usr/java/default
+#  export PATH=$JAVA_HOME/bin:$PATH
+#fi
+
+# Use Wayfair supported python.
+if [ -d /wayfair/pkg/python2.7 ]; then
+  export PATH=/wayfair/pkg/python2.7/latest/bin:$PATH
+fi
+# Use a snake prompt. Hiss.
+export PYTHONSTARTUP=/linux_home/gehrman/.pythonrc
+
+grepitall() {
+    if [ "$2" != "" ]; then
+        grep -irn $*;
+    else
+        grep -irn $1 .;
+    fi
+}
+
+grepitsome() {
+    if [ "$2" != "" ]; then
+        grep -rn $*;
+    else
+        grep -rn $1 .;
+    fi
+}
+
+
+# Stop backwards-kill correctly:
+#export WORDCHARS=`echo $WORDCHARS | sed -e 's/\///;s/\.//'`
+export WORDCHARS=`echo $WORDCHARS | sed -e 's/\///'`
+export U_DRIVE_SMB_SHARE="//bonas1a.csnzoo.com/u_drive/${USER}"
+export U_DRIVE_MOUNT_DIR="${HOME}/u_drive"
+
+alias antigrep="grep -v"
+alias l="ls -lh"
+
+# ...yep, I did this.
+alias gogogadget_vsql="/opt/vertica/bin/vsql -C -h boVerticaC1N01"
+
+# Tmuxxing
+alias tms="tmux source"
+alias tmls="tmux list-sessions"
+alias tmat="tmux attach -d -t"
+
+# Virtualenv commands.
+alias createvirtualenv='. /linux_home/gehrman/.bin/create_virtualenv.sh'
+alias recreatevirtualenv='. /linux_home/gehrman/.bin/recreate_virtualenv.sh'
+alias startvirtualenv='. /linux_home/gehrman/.bin/activate_virtualenv.sh'
+alias stopvirtualenv='deactivate' # Included for completeness... it's a silly thing to do.
+alias destroyvirtualenv='. /linux_home/gehrman/.bin/destroy_virtualenv.sh'
+alias listvirtualenvs='. /linux_home/gehrman/.bin/list_virtualenvs.sh'
+alias annotatevirtualenv='. /linux_home/gehrman/.bin/annotate_virtualenv.sh'
+# Tab-completions are nice.
+compdef _activate_virtualenv recreatevirtualenv
+compdef _activate_virtualenv startvirtualenv
+compdef _activate_virtualenv destroyvirtualenv
+compdef _activate_virtualenv annotatevirtualenv
+
+
+# Build script
+alias build_egg='. /linux_home/gehrman/.bin/build_egg.sh'
+
+
+# Current-shell command aliases.
+alias reset_ssh_agent_vars='. ~/.bin/reset_ssh_agent_vars'
+alias rezsh='source ~/.zshrc'
+alias ghn="cd /wayfair/home/gehrman"
+alias gcn="cd /wayfair/mnt/codebase/DEVWEBPHP349"
+alias bline='beeline -u jdbc:hive2://bobigdatahive01.csnzoo.com:10000'
+
+#if [[ "$TERM" == "linux" ]]; then
+#    source .zsh_keybinds
+source /linux_home/gehrman/.zsh/conf/prompt
+source /linux_home/gehrman/.zsh/conf/keybinds
+source /linux_home/gehrman/.zsh/conf/functions
+
+#Use vim bindings.
+bindkey -v
+
+# Vim history bindings.
+bindkey '^P' up-history
+bindkey '^N' down-history
+
+# History search was clobbered when we set vim mode.
+bindkey '^r' history-incremental-search-backward
+
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% cmd]% %{$reset_color%}"
+    RPROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# time in tenths of a second after key-press to toggle mode switch
+# this *does* have other effects!!
+export KEYTIMEOUT=2
+
+#ssh-agent
+#ssh-add ~/.ssh/id_rsa
+stty ixany
+stty ixoff -ixon
+stty stop undef
+stty start undef
+alias listinstalledeggs='. /linux_home/gehrman/.bin/list_installed_eggs.sh'
+compdef _activate_virtualenv listinstalledeggs

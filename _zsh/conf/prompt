@@ -1,0 +1,2 @@
+autoload -U colors && colors
+export PROMPT="(%{$fg[cyan]%}%j%{$reset_color%}) %{$fg_bold[green]%}%n%{$fg_no_bold[yellow]%}@%{$fg_bold[blue]%}%m %{$fg_no_bold[cyan]%}%~%{$reset_color%}: "
