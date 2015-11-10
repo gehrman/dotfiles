@@ -96,6 +96,18 @@
 (global-anzu-mode +1)
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Sublime-style minimap. ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'sublimity)
+(require 'sublimity-scroll)
+(require 'sublimity-map)
+(require 'sublimity-attractive)
+
+; Don't display scrollbars, because the minimap looks ugly with them displayed.
+(sublimity-attractive-hide-bars)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Making Emacs not suck ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
