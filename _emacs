@@ -3,6 +3,9 @@
 (setq mytest (expand-file-name "config" user-emacs-directory))
 ;(require 'includetest)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Package: the package manager. ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Setup package management.
 (require 'package)
 
@@ -40,6 +43,7 @@
 			  'powerline
 			  'powerline-evil
 			  'helm)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Evil Mode. A/K/A Make Emacs Usable. ;
