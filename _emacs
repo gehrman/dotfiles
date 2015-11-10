@@ -36,6 +36,7 @@
 			  'magit
 			  'sublimity
 			  'anzu
+			  'linum-relative
 			  'helm)
 
 
@@ -45,7 +46,8 @@
 ; set evil-mode by default, so emacs is actually usable as a text editor
 (require 'evil)
 
-
+; I still want to figure out how to break up this one massive config into many,
+; but for now, I give up.
 ; (require 'my-evil-config)
 
 (global-evil-leader-mode) ; per the evil-leader readme, this should be enabled first, but might not actually have an effect
@@ -61,6 +63,7 @@
   "b" 'switch-to-buffer
   "k" 'kill-buffer
   "m" 'linum-mode
+  "n" 'linum-relative-mode
   "[" 'keyboard-quit
   "h" 'describe-function
   "H" 'describe-key)
@@ -104,6 +107,10 @@
 
 ; because the system bell is a good idea, said no-one ever.
 (setq ring-bell-function 'ignore)
+
+; Start off in linum-relative and column-number modes.
+(linum-relative-mode t)
+(column-number-mode t)
 
 ; Emacs set these based on stuff.
 (custom-set-variables
