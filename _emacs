@@ -99,13 +99,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Sublime-style minimap. ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'sublimity)
-(require 'sublimity-scroll)
-(require 'sublimity-map)
-(require 'sublimity-attractive)
-
-; Don't display scrollbars, because the minimap looks ugly with them displayed.
-(sublimity-attractive-hide-bars)
+; Try uncommenting all of these, opening a reasonably large file, and maximizing
+; emacs. Yeah, not good, and I don't want to try and fix it right now.
+; (require 'sublimity)
+; (require 'sublimity-scroll)
+; (require 'sublimity-map)
+; (require 'sublimity-attractive)
+;
+; ; Don't display scrollbars, because the minimap looks ugly with them displayed.
+; (sublimity-attractive-hide-bars)
+; (sublimity-mode t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
