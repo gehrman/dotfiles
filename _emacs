@@ -37,8 +37,9 @@
 			  'sublimity
 			  'anzu
 			  'linum-relative
+			  'powerline
+			  'powerline-evil
 			  'helm)
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Evil Mode. A/K/A Make Emacs Usable. ;
@@ -80,6 +81,14 @@
 	    (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
 	    (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
 	    (auto-fill-mode)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Powerline, without the pain of the vim install. ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'powerline)
+(require 'powerline-evil)
+(powerline-default-theme)
 
 
 ;;;;;;;;;;;;;;;
@@ -126,7 +135,6 @@
 
 ; Start off in linum-relative and column-number modes.
 (linum-relative-mode t)
-(column-number-mode t)
 
 ; Don't do that freaking line wrap thing.
 (setq-default truncate-lines t)
