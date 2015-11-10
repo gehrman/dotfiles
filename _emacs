@@ -45,48 +45,6 @@
 			  'helm)
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Evil Mode. A/K/A Make Emacs Usable. ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; set evil-mode by default, so emacs is actually usable as a text editor
-(require 'evil)
-
-; I still want to figure out how to break up this one massive config into many,
-; but for now, I give up.
-; (require 'my-evil-config)
-
-(global-evil-leader-mode) ; per the evil-leader readme, this should be enabled first, but might not actually have an effect
-(evil-mode t)
-
-; setup leader key stuff
-; let's stick with \ for now, but , is another common choice
-;(evil-leader/set-leader ",")
-; It requires remapping next selection, but ; is also nice.
-;(evil-leader/set-leader ";")
-(evil-leader/set-key
-  "x" 'execute-extended-command
-  "b" 'switch-to-buffer
-  "k" 'kill-buffer
-  "m" 'linum-mode
-  "n" 'linum-relative-mode
-  "[" 'keyboard-quit
-  "h" 'describe-function
-  "H" 'describe-key)
-(setq evil-leader/in-all-states 1)
-
-; org-mode stuff
-(evil-leader/set-key-for-mode 'org-mode
-  "t" 'org-set-tags
-  "a" 'org-agenda
-  )
-(add-hook 'org-mode-hook
-	  (lambda ()
-	    (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
-	    (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
-	    (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
-	    (auto-fill-mode)))
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Powerline, without the pain of the vim install. ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -209,3 +167,48 @@
 (set-frame-font "Consolas-14")
 ;(set-frame-font "Inconsolata-16")
 ;(set-frame-font "Droid Sans Mono-16")
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Evil Mode. A/K/A Make Emacs Usable. ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; set evil-mode by default, so emacs is actually usable as a text editor
+(require 'evil)
+
+; supposedly - http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html - evil
+; mode needs to start after everything else for things to work well
+
+; I still want to figure out how to break up this one massive config into many,
+; but for now, I give up.
+; (require 'my-evil-config)
+
+(global-evil-leader-mode) ; per the evil-leader readme, this should be enabled first, but might not actually have an effect
+(evil-mode t)
+
+; setup leader key stuff
+; let's stick with \ for now, but , is another common choice
+;(evil-leader/set-leader ",")
+; It requires remapping next selection, but ; is also nice.
+;(evil-leader/set-leader ";")
+(evil-leader/set-key
+  "x" 'execute-extended-command
+  "b" 'switch-to-buffer
+  "k" 'kill-buffer
+  "m" 'linum-mode
+  "n" 'linum-relative-mode
+  "[" 'keyboard-quit
+  "h" 'describe-function
+  "H" 'describe-key)
+(setq evil-leader/in-all-states 1)
+
+; org-mode stuff
+(evil-leader/set-key-for-mode 'org-mode
+  "t" 'org-set-tags
+  "a" 'org-agenda
+  )
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
+	    (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
+	    (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
+	    (auto-fill-mode)))
