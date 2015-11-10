@@ -106,11 +106,15 @@
 (tool-bar-mode -1)
 
 ; because the system bell is a good idea, said no-one ever.
-(setq ring-bell-function 'ignore)
+(setq visible-bell t)
+(setq ring-bell-function nil)
 
 ; Start off in linum-relative and column-number modes.
 (linum-relative-mode t)
 (column-number-mode t)
+
+; Don't do that freaking line wrap thing.
+(setq-default truncate-lines t)
 
 ; Emacs set these based on stuff.
 (custom-set-variables
