@@ -2,7 +2,7 @@
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 (setq mytest (expand-file-name "config" user-emacs-directory))
 ;(require 'includetest)
- 
+
 ; Setup package management.
 (require 'package)
 
@@ -34,10 +34,17 @@
 (ensure-package-installed 'evil
 			  'evil-leader
 			  'magit
+			  'sublimity
+			  'anzu
 			  'helm)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Evil Mode. A/K/A Make Emacs Usable. ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; set evil-mode by default, so emacs is actually usable as a text editor
 (require 'evil)
+
 
 ; (require 'my-evil-config)
 
@@ -71,17 +78,34 @@
 	    (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
 	    (auto-fill-mode)))
 
+
+;;;;;;;;;;;;;;;
+; Magit Stuff ;
+;;;;;;;;;;;;;;;
 ; Shut magit up.
 (setq magit-last-seen-setup-instructions "1.4.0")
 
-; Anzu is fun - displays current & total matches by highlighting.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Anzu is fun - displays current & total matches by highlighting. ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (anzu-mode +1)
 (global-anzu-mode +1)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+; Making Emacs not suck ;
+;;;;;;;;;;;;;;;;;;;;;;;;;
 ; ain't no reason for that blasted splash screen
 (setq inhibit-splash-screen t)
+
 ; get rid of that awful tool bar... the menu bar can be similarly disabled but isn't nearly so bad
 (tool-bar-mode -1)
+
+; because the system bell is a good idea, said no-one ever.
+(setq ring-bell-function 'ignore)
+
+; Emacs set these based on stuff.
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -99,18 +123,17 @@
  )
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; A bunch of theme stuff, and then other appearance stuff. ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Make emacs look less... well, emacs-y
-; 
+;
 ; Zenburn for emacs: https://github.com/bbatsov/zenburn-emacs
 ; (load-theme 'zenburn t)
 ; (enable-theme 'zenburn)
 
 ; Start in /d/devel. I hope.
 (cd "d:/devel/")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; A bunch of theme stuff, and then other appearance stuff. ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; If you ever want to waste an afternoon, checkout
 ; http://emacsthemes.com/index/1.html
