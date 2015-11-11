@@ -193,6 +193,7 @@
 (evil-leader/set-key
   "x" 'execute-extended-command
   "b" 'switch-to-buffer
+  "s" 'eval-last-sexp
   "k" 'kill-buffer
   "m" 'linum-mode
   "n" 'linum-relative-mode
@@ -200,6 +201,20 @@
   "h" 'describe-function
   "H" 'describe-key)
 (setq evil-leader/in-all-states 1)
+
+; Try to kill custom buffer maps.
+;(setq evil-overriding-maps nil)
+;(setq evil-intercept-maps nil)
+
+; Bad emacs! Escape is not a modifier key.
+; minibuffer-keyboard-quit was a funtion... try just doing abort-recursive-edit directly?
+; (define-key evil-normal-state-map [escape] 'keyboard-quit)
+; (define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'abort-recursive-edit)
+(define-key minibuffer-local-ns-map [escape] 'abort-recursive-edit)
+(define-key minibuffer-local-completion-map [escape] 'abort-recursive-edit)
+(define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
+(define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
 
 ; org-mode stuff
 (evil-leader/set-key-for-mode 'org-mode
