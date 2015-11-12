@@ -43,6 +43,14 @@
 			  'powerline
 			  'powerline-evil
 			  'helm)
+; Themes. In a different call, b/c they went rogue.
+(ensure-package-installed 'ample-theme
+			  'zenburn-theme
+			  'warm-night-theme
+			  'solarized-theme
+			  'monokai-theme
+			  'darcula-theme
+			  )
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
