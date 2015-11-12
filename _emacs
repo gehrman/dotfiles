@@ -197,8 +197,9 @@
   "m" 'linum-mode
   "n" 'linum-relative-mode
   "[" 'keyboard-quit
-  "h" 'describe-function
-  "H" 'describe-key)
+  "H" 'describe-function
+  "K" 'describe-key
+  "V" 'describe-variable)
 (setq evil-leader/in-all-states 1)
 
 ; Try to kill custom buffer maps.
