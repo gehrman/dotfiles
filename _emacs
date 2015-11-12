@@ -261,4 +261,8 @@
    (lambda (mode) (evil-set-initial-state mode start-mode))
    mode-list))
 
-(set-evil-initial-mode 'normal 'ibuffer-mode 'package-menu-mode)
+(set-evil-initial-mode 'normal
+                       'ibuffer-mode
+                       'package-menu-mode
+                       'completion-list-mode
+                       )
