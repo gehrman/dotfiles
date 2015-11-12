@@ -85,6 +85,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Making Emacs not suck ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
+; No emacs, windows encoding is never ok.
+(setq-default default-buffer-file-coding-system 'utf-8-unix)
+(set-default-coding-systems 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
+; Ok, so that's a bit of suspenders-and-belting. But I *really* don't want to
+; deal with a whitespace divergence on files ever ever.
+
 ; ain't no reason for that blasted splash screen
 (setq inhibit-splash-screen t)
 
