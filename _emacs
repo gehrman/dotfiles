@@ -19,10 +19,10 @@
   (mapcar
    (lambda (package)
      (if (package-installed-p package)
-	 nil
+         nil
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
-	 (package-install package)
-	 package)))
+         (package-install package)
+         package)))
    packages))
 
 ; Make sure we have package data.
@@ -35,23 +35,23 @@
 
 ; Packages to use.
 (ensure-package-installed 'evil
-			  'evil-leader
-			  'magit
-			  'sublimity
-			  'anzu
-			  'linum-relative
-			  'powerline
-			  'powerline-evil
-			  'paredit
-			  'helm)
+                          'evil-leader
+                          'magit
+                          'sublimity
+                          'anzu
+                          'linum-relative
+                          'powerline
+                          'powerline-evil
+                          'paredit
+                          'helm)
 ; Themes. In a different call, b/c they went rogue.
 (ensure-package-installed 'ample-theme
-			  'zenburn-theme
-			  'warm-night-theme
-			  'solarized-theme
-			  'monokai-theme
-			  'darcula-theme
-			  )
+                          'zenburn-theme
+                          'warm-night-theme
+                          'solarized-theme
+                          'monokai-theme
+                          'darcula-theme
+                          )
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -145,7 +145,7 @@
 ; (enable-theme 'zenburn)
 
 ; Start in /d/devel. I hope.
-(cd "d:/devel/")
+;(cd "d:/devel/")
 
 ; If you ever want to waste an afternoon, checkout
 ; http://emacsthemes.com/index/1.html
@@ -242,11 +242,11 @@
   "a" 'org-agenda
   )
 (add-hook 'org-mode-hook
-	  (lambda ()
-	    (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
-	    (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
-	    (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
-	    (auto-fill-mode)))
+          (lambda ()
+            (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
+            (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
+            (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
+            (auto-fill-mode)))
 
 ; Initial mode setting.
 ;(evil-set-initial-state 'ibuffer-mode 'normal)
