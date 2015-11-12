@@ -162,11 +162,10 @@
 ; is. To use that one, instead run
 ; (load-theme 'darcula)
 
-;this actually seems to size the font to 16pt, but it's a good size
-;(set-frame-font "Lucida Console-12")
-(set-frame-font "Consolas-14")
-;(set-frame-font "Inconsolata-16")
-;(set-frame-font "Droid Sans Mono-16")
+; The set-frame-font doesn't play nicely with 'make-frame, but defining a
+; default font does.
+; Setting Consolas-14 is more like 16pt, but it's a good size
+(setq default-frame-alist '((font . "Consolas-14")))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
