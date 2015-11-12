@@ -101,6 +101,9 @@
 ; Ok, so that's a bit of suspenders-and-belting. But I *really* don't want to
 ; deal with a whitespace divergence on files ever ever.
 
+; Basic editor functionality. Includes, but not limited to, not inserting tab literals.
+;(setq tab-width )
+
 ; ain't no reason for that blasted splash screen
 (setq inhibit-splash-screen t)
 
