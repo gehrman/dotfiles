@@ -247,3 +247,15 @@
 	    (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
 	    (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
 	    (auto-fill-mode)))
+
+; Initial mode setting.
+;(evil-set-initial-state 'ibuffer-mode 'normal)
+
+(defun set-evil-initial-mode (start-mode &rest mode-list)
+  "Ensure every package listed is installed. If a package is not installed, try to install it.
+   Returns a list of installed packages, or nil if every package is skipped."
+  (mapcar
+   (lambda (mode) (evil-set-initial-state mode start-mode))
+   mode-list))
+
+(set-evil-initial-mode 'normal 'ibuffer-mode 'package-menu-mode)
