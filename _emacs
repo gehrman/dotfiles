@@ -42,6 +42,7 @@
 			  'linum-relative
 			  'powerline
 			  'powerline-evil
+			  'paredit
 			  'helm)
 ; Themes. In a different call, b/c they went rogue.
 (ensure-package-installed 'ample-theme
