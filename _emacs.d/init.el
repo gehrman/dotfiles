@@ -37,7 +37,6 @@
 (ensure-package-installed 'evil
                           'evil-leader
                           'magit
-                          'sublimity
                           'anzu
                           'linum-relative
                           'powerline
@@ -76,19 +75,11 @@
 (global-anzu-mode +1)
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Sublime-style minimap. ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Try uncommenting all of these, opening a reasonably large file, and maximizing
-; emacs. Yeah, not good, and I don't want to try and fix it right now.
-; (require 'sublimity)
-; (require 'sublimity-scroll)
-; (require 'sublimity-map)
-; (require 'sublimity-attractive)
-;
-; ; Don't display scrollbars, because the minimap looks ugly with them displayed.
-; (sublimity-attractive-hide-bars)
-; (sublimity-mode t)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Minimap mode: Because it turns out sublimity sucks. ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(minimap-mode t)
+;(minimap-create)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -114,10 +105,16 @@
 (setq ring-bell-function nil)
 
 ; Start off in linum-relative and column-number modes.
+; TODO: toggle for relative v absolute
 (linum-relative-mode t)
 
 ; Don't do that freaking line wrap thing.
 (setq-default truncate-lines t)
+
+; Scrollbars are ugly son.
+; supposedly this errors out on terminal mode, so guard with a when
+(when (display-graphic-p) (set-scroll-bar-mode nil))
+
 
 ; Emacs set these based on stuff.
 (custom-set-variables
