@@ -215,7 +215,6 @@
   "m" 'linum-mode
   "n" 'linum-relative-mode
   "s" 'eval-last-sexp
-  "x" 'execute-extended-command
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
   "z" 'evil-emacs-state
   "B" 'ibuffer
