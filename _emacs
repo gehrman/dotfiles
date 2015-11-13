@@ -82,9 +82,9 @@
 ; (sublimity-mode t)
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;
-; Making Emacs not suck ;
-;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Making Emacs not suck. A work-in-progress. ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; No emacs, windows encoding is never ok.
 (setq-default default-buffer-file-coding-system 'utf-8-unix)
 (set-default-coding-systems 'utf-8-unix)
@@ -197,16 +197,17 @@
 ; It requires remapping next selection, but ; is also nice.
 ;(evil-leader/set-leader ";")
 (evil-leader/set-key
-  "x" 'execute-extended-command
   "b" 'switch-to-buffer
-  "s" 'eval-last-sexp
   "k" 'kill-buffer
+  "g" 'magit-status
   "m" 'linum-mode
   "n" 'linum-relative-mode
-  "[" 'keyboard-quit
-  "H" 'describe-function
+  "s" 'eval-last-sexp
+  "x" 'execute-extended-command
+  "F" 'describe-function
   "K" 'describe-key
-  "V" 'describe-variable)
+  "V" 'describe-variable
+  "[" 'keyboard-quit)
 (setq evil-leader/in-all-states 1)
 
 ; Try to kill custom buffer maps.
