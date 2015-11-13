@@ -207,6 +207,7 @@
 ;(evil-leader/set-leader ",")
 ; It requires remapping next selection, but ; is also nice.
 ;(evil-leader/set-leader ";")
+; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "b" 'switch-to-buffer
   "g" 'magit-status
@@ -220,6 +221,7 @@
   "B" 'ibuffer
   "F" 'describe-function
   "K" 'describe-key
+  "S" 'eval-buffer
   "V" 'describe-variable
   "[" 'keyboard-quit
   "`" 'toggle-frame-fullscreen)
