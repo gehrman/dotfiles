@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-cp _emacs ~/.emacs
+cp _emacs.d/* ~/.emacs.d
