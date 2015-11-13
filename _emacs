@@ -111,7 +111,6 @@
 (tool-bar-mode -1)
 
 ; because the system bell is a good idea, said no-one ever.
-(setq visible-bell t)
 (setq ring-bell-function nil)
 
 ; Start off in linum-relative and column-number modes.
@@ -210,8 +209,8 @@
 ;(evil-leader/set-leader ";")
 (evil-leader/set-key
   "b" 'switch-to-buffer
-  "k" 'kill-buffer
   "g" 'magit-status
+  "k" 'kill-buffer
   "m" 'linum-mode
   "n" 'linum-relative-mode
   "s" 'eval-last-sexp
@@ -222,7 +221,8 @@
   "F" 'describe-function
   "K" 'describe-key
   "V" 'describe-variable
-  "[" 'keyboard-quit)
+  "[" 'keyboard-quit
+  "`" 'toggle-frame-fullscreen)
 (setq evil-leader/in-all-states 1)
 
 ; Try to kill custom buffer maps.
