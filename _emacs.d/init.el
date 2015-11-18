@@ -1,11 +1,5 @@
 ; Setup path for custom config files, then load those configs.
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Powerline, without the pain of the vim install. ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'powerline)
-(require 'powerline-evil)
-(powerline-default-theme)
 (require 'package-config)
 (require 'powerline-config)
 
