@@ -30,6 +30,8 @@ export HISTSIZE=2048
 export SAVEHIST=$HISTSIZE
 export HISTFILE="~/.zsh_history"
 export EDITOR=vim
+# Necessary for emacs themes to not be terrible.
+export TERM=xterm-256color
 
 ## never ever beep ever
 #setopt NO_BEEP
