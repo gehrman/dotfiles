@@ -53,7 +53,7 @@ export TERM=xterm-256color
 
 # Use Wayfair supported python.
 if [ -d /wayfair/pkg/python2.7 ]; then
-  export PATH=/wayfair/pkg/python2.7/latest/bin:$PATH
+  export PATH=/wayfair/pkg/python2.7/latest/bin:/usr/local/git/bin:$PATH
 fi
 # Use a snake prompt. Hiss.
 export PYTHONSTARTUP=/linux_home/gehrman/.pythonrc
