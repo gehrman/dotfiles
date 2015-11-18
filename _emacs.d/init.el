@@ -57,6 +57,10 @@
 ; supposedly this errors out on terminal mode, so guard with a when
 (when (display-graphic-p) (set-scroll-bar-mode nil))
 
+; OS aware base directory.
+(if (eq system-type 'windows-nt)
+    (cd "d:/devel/")
+  (cd "~/devel/"))
 
 ; Emacs set these based on stuff.
 (custom-set-variables
@@ -84,9 +88,6 @@
 ; Zenburn for emacs: https://github.com/bbatsov/zenburn-emacs
 ; (load-theme 'zenburn t)
 ; (enable-theme 'zenburn)
-
-; Start in /d/devel. I hope.
-;(cd "d:/devel/")
 
 ; If you ever want to waste an afternoon, checkout
 ; http://emacsthemes.com/index/1.html
