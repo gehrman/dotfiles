@@ -150,18 +150,21 @@
 ; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "b" 'switch-to-buffer
+  "df" 'describe-function
+  "dk" 'describe-key
+  "dv" 'describe-variable
   "g" 'magit-status
   "k" 'kill-buffer
   "m" 'linum-mode
   "n" 'linum-relative-mode
-  "s" 'eval-last-sexp
+  "pi" 'package-install
+  "pl" 'package-list-packages
+  "r" 'revert-buffer
+  "sb" 'eval-buffer
+  "ss" 'eval-last-sexp
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
   "z" 'evil-emacs-state
   "B" 'ibuffer
-  "F" 'describe-function
-  "K" 'describe-key
-  "S" 'eval-buffer
-  "V" 'describe-variable
   "[" 'keyboard-quit
   "`" 'toggle-frame-fullscreen)
 (setq evil-leader/in-all-states 1)
