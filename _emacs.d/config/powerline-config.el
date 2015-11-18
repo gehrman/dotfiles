@@ -4,3 +4,4 @@
 (require 'powerline)
 (require 'powerline-evil)
 (powerline-default-theme)
+(provide 'powerline-config)

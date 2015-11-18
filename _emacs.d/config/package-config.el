@@ -47,3 +47,4 @@
                           'monokai-theme
                           'darcula-theme
                           )
+(provide 'package-config)

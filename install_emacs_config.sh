@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-cp _emacs.d/* ~/.emacs.d
+rm -r ~/.emacs.d/config
+cp -r _emacs.d/* ~/.emacs.d
