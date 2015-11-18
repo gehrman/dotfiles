@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-rm -r ~/.emacs.d/config
+[[ -e ~/.emacs.d/config ]] && rm -r ~/.emacs.d/config
 cp -r _emacs.d/* ~/.emacs.d
