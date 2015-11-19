@@ -139,28 +139,32 @@
 (setq default-frame-alist '((font . "Consolas-14")))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Evil Mode. A/K/A Make Emacs Usable. ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; set evil-mode by default, so emacs is actually usable as a text editor
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Evil Mode. A/K/A Make Emacs Usable. ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; set evil-mode by default, so emacs is actually usable as a text editor
 (require 'evil)
 
-; supposedly - http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html - evil
-; mode needs to start after everything else for things to work well
+;; supposedly - http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html - evil
+;; mode needs to start after everything else for things to work well
 
-; I still want to figure out how to break up this one massive config into many,
-; but for now, I give up.
-; (require 'my-evil-config)
+;; More messing around with evil keybinds:
+;; https://www.reddit.com/r/evilmode/comments/323xh1/is_it_possible_to_use_vi_keybindings_everywhere/
+
+
+;; I still want to figure out how to break up this one massive config into many,
+;; but for now, I give up.
+;; (require 'my-evil-config)
 
 (global-evil-leader-mode) ; per the evil-leader readme, this should be enabled first, but might not actually have an effect
 (evil-mode t)
 
-; setup leader key stuff
-; let's stick with \ for now, but , is another common choice
-;(evil-leader/set-leader ",")
-; It requires remapping next selection, but ; is also nice.
-;(evil-leader/set-leader ";")
-; But why not use all three? TODO: Write evil-multileader
+;; setup leader key stuff
+;; let's stick with \ for now, but , is another common choice
+;;(evil-leader/set-leader ",")
+;; It requires remapping next selection, but ; is also nice.
+;;(evil-leader/set-leader ";")
+;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "bb" 'ibuffer
   "bd" 'dired
@@ -184,21 +188,21 @@
 
 (setq evil-leader/in-all-states 1)
 
-; Try to kill custom buffer maps.
-;(setq evil-overriding-maps nil)
-;(setq evil-intercept-maps nil)
+;; Try to kill custom buffer maps.
+;;(setq evil-overriding-maps nil)
+;;(setq evil-intercept-maps nil)
 
-; Bad emacs! Escape is not a modifier key.
-; minibuffer-keyboard-quit was a funtion... try just doing abort-recursive-edit directly?
-; (define-key evil-normal-state-map [escape] 'keyboard-quit)
-; (define-key evil-visual-state-map [escape] 'keyboard-quit)
+;; Bad emacs! Escape is not a modifier key.
+;; minibuffer-keyboard-quit was a funtion... try just doing abort-recursive-edit directly?
+;; (define-key evil-normal-state-map [escape] 'keyboard-quit)
+;; (define-key evil-visual-state-map [escape] 'keyboard-quit)
 (define-key minibuffer-local-map [escape] 'abort-recursive-edit)
 (define-key minibuffer-local-ns-map [escape] 'abort-recursive-edit)
 (define-key minibuffer-local-completion-map [escape] 'abort-recursive-edit)
 (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
 (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
 
-; org-mode stuff
+;; org-mode stuff
 (evil-leader/set-key-for-mode 'org-mode
   "t" 'org-set-tags
   "a" 'org-agenda
@@ -210,8 +214,8 @@
             (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
             (auto-fill-mode)))
 
-; Initial mode setting.
-;(evil-set-initial-state 'ibuffer-mode 'normal)
+;; Initial mode setting.
+;;(evil-set-initial-state 'ibuffer-mode 'normal)
 
 (defun set-evil-initial-mode (start-mode &rest mode-list)
   "Ensure every package listed is installed. If a package is not installed, try to install it.
