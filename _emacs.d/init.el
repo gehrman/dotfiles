@@ -149,7 +149,8 @@
 ;(evil-leader/set-leader ";")
 ; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
-  "b" 'switch-to-buffer
+  "bb" 'ibuffer
+  "bd" 'dired
   "df" 'describe-function
   "dk" 'describe-key
   "dv" 'describe-variable
@@ -166,8 +167,8 @@
   "wf" 'toggle-frame-fullscreen
   "wn" 'make-frame
   "z" 'evil-emacs-state
-  "B" 'ibuffer
   "[" 'keyboard-quit)
+
 (setq evil-leader/in-all-states 1)
 
 ; Try to kill custom buffer maps.
