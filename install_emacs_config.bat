@@ -1,1 +1,1 @@
-xcopy _emacs.d\* %APPDATA%\.emacs.d
+xcopy _emacs.d %APPDATA%\.emacs.d /S
