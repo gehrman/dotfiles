@@ -1,7 +1,20 @@
-; Setup path for custom config files, then load those configs.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Setup path for custom config files, then load those configs. ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 (require 'package-config)
 (require 'powerline-config)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Answer: Tramp, Magit, Org-Mode.               ;;
+;; Question: Why muck through the crap of Emacs. ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; OS aware base directory.
+(if (eq system-type 'windows-nt)
+    (setq tramp-default-method "plink")
+  (setq tramp-default-method "ssh"))
+
 
 ;;;;;;;;;;;;;;;
 ; Magit Stuff ;
@@ -57,7 +70,7 @@
 ; supposedly this errors out on terminal mode, so guard with a when
 (when (display-graphic-p) (set-scroll-bar-mode nil))
 
-; OS aware base directory.
+;; OS aware base directory.
 (if (eq system-type 'windows-nt)
     (cd "d:/devel/")
   (cd "~/devel/"))
