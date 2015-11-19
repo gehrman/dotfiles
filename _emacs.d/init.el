@@ -163,10 +163,11 @@
   "sb" 'eval-buffer
   "ss" 'eval-last-sexp
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
+  "wf" 'toggle-frame-fullscreen
+  "wn" 'make-frame
   "z" 'evil-emacs-state
   "B" 'ibuffer
-  "[" 'keyboard-quit
-  "`" 'toggle-frame-fullscreen)
+  "[" 'keyboard-quit)
 (setq evil-leader/in-all-states 1)
 
 ; Try to kill custom buffer maps.
