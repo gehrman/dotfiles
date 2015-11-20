@@ -10,6 +10,10 @@
 ;; More messing around with evil keybinds:
 ;; https://www.reddit.com/r/evilmode/comments/323xh1/is_it_possible_to_use_vi_keybindings_everywhere/
 
+;; Also, evil-magit has... issues. References:
+;; https://github.com/justbur/evil-magit/issues/1
+;; https://github.com/justbur/evil-magit/issues
+
 ;; I still want to figure out how to break up this one massive config into many,
 ;; but for now, I give up.
 ;; (require 'my-evil-config)
@@ -45,7 +49,24 @@
   "z" 'evil-emacs-state
   "[" 'keyboard-quit)
 
-(setq evil-leader/in-all-states 1)
+;; Org-mode specific keybindings.
+;; http://stackoverflow.com/questions/25463369/mode-specific-or-buffer-local-text-objects-in-evil
+;; Should these get wrapped in an eval-after-load?
+(evil-leader/set-key-for-mode 'org-mode
+  "a" 'org-agenda
+  "h" 'org-metaleft
+  "k" 'org-metaup
+  "j" 'org-metadown
+  "l" 'org-metaright
+  "t" 'org-todo)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
+            (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
+            (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
+            (auto-fill-mode)))
+
+(setq evil-leader/in-all-states t)
 
 ;; Try to kill custom buffer maps.
 ;;(setq evil-overriding-maps nil)
@@ -64,14 +85,6 @@
 ; org-mode stuff
 (evil-leader/set-key-for-mode 'org-mode
   "t" 'org-set-tags
-  "a" 'org-agenda
-  )
-(add-hook 'org-mode-hook
-          (lambda ()
-            (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
-            (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
-            (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
-            (auto-fill-mode)))
 
 ; Initial mode setting.
 ;(evil-set-initial-state 'ibuffer-mode 'normal)
