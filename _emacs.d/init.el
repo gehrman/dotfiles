@@ -2,8 +2,12 @@
 ;; Setup path for custom config files, then load those configs. ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
-(require 'config-evil)
+
+;; We need to exec 'config-package first because it deals with setting up the
+;; paths for all the installed packages, e.g. evil.
 (require 'config-package)
+
+(require 'config-evil)
 (require 'config-powerline)
 
 
