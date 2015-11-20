@@ -20,6 +20,19 @@
     (setq tramp-default-method "plink")
   (setq tramp-default-method "ssh"))
 
+;; Also, true client server?! Just need to make it work in Windows.
+;; http://wikemacs.org/wiki/Emacs_server
+;; http://emacs-fu.blogspot.com/2009/03/windows-and-daemons.html
+
+;; General windows stuff.
+;; http://www.emacswiki.org/emacs/EmacsMsWindowsIntegration
+
+;; Python stuff. Do eet like, yesterday.
+;; http://www.emacswiki.org/emacs/PythonProgrammingInEmacs
+;; https://github.com/jorgenschaefer/elpy
+;; http://www.enigmacurry.com/2008/05/09/emacs-as-a-powerful-python-ide/
+;; https://github.com/python-rope/ropemacs
+;; http://wenshanren.org/?p=351/
 
 ;;;;;;;;;;;;;;;
 ; Magit Stuff ;
