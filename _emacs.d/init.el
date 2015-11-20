@@ -2,8 +2,8 @@
 ;; Setup path for custom config files, then load those configs. ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
-(require 'package-config)
-(require 'powerline-config)
+(require 'config-package)
+(require 'config-powerline)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
