@@ -37,7 +37,8 @@
   "pl" 'package-list-packages
   "r" 'revert-buffer
   "sb" 'eval-buffer
-  "ss" 'eval-last-sexp
+  "sl" 'eval-last-sexp
+  "ss" 'eval-defun ;because eval-defun is *totally* a synonym for 'eval-this-sexp... dammit emacs
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
   "wf" 'toggle-frame-fullscreen
   "wn" 'make-frame
