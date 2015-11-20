@@ -29,12 +29,18 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-; Packages to use.
+; Packages to use, in rough order of descending importance.
+;flycheck python go go go
 (ensure-package-installed 'evil
                           'evil-leader
+			  ;'evil-escape
                           'magit
                           'anzu
                           'linum-relative
+			  'flycheck
+			  'flycheck-clojure
+			  'flycheck-package
+			  'flylisp
                           'powerline
                           'powerline-evil
                           'paredit
