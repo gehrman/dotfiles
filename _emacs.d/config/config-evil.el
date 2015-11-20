@@ -21,13 +21,17 @@
 (global-evil-leader-mode) ; per the evil-leader readme, this should be enabled first, but might not actually have an effect
 (evil-mode t)
 
-;; setup leader key stuff
-;; let's stick with \ for now, but , is another common choice
+;; Setup leader key stuff.
+;; \ is the default, but "," is another common choice
 ;;(evil-leader/set-leader ",")
 ;; It requires remapping next selection, but ; is also nice.
 ;;(evil-leader/set-leader ";")
+;; Let's give SPC a chance.
+(evil-leader/set-leader "SPC")
+ 
 ;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
+  "SPC" 'ibuffer
   "bb" 'ibuffer
   "bd" 'dired
   "df" 'describe-function
