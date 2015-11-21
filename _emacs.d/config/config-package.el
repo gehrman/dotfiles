@@ -33,14 +33,14 @@
 ;flycheck python go go go
 (ensure-package-installed 'evil
                           'evil-leader
-			  ;'evil-escape
+                          ;'evil-escape
                           'magit
                           'anzu
                           'linum-relative
-			  'flycheck
-			  'flycheck-clojure
-			  'flycheck-package
-			  'flylisp
+                          ;'flycheck
+                          ;'flycheck-clojure
+                          ;'flycheck-package
+                          ;'flylisp
                           'powerline
                           'powerline-evil
                           'paredit
