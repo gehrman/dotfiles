@@ -86,10 +86,6 @@
 (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
 (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
 
-; org-mode stuff
-(evil-leader/set-key-for-mode 'org-mode
-  "t" 'org-set-tags
-
 ; Initial mode setting.
 ;(evil-set-initial-state 'ibuffer-mode 'normal)
 
@@ -103,7 +99,6 @@
 (set-evil-initial-mode 'normal
                        'ibuffer-mode
                        'package-menu-mode
-                       'completion-list-mode
-                       )
+                       'completion-list-mode)
 
 (provide 'config-evil)
