@@ -58,34 +58,36 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Making Emacs not suck. A work-in-progress. ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; No emacs, windows encoding is never ok.
+;; No emacs, windows encoding is never ok.
 (setq-default default-buffer-file-coding-system 'utf-8-unix)
 (set-default-coding-systems 'utf-8-unix)
 (prefer-coding-system 'utf-8-unix)
-; Ok, so that's a bit of suspenders-and-belting. But I *really* don't want to
-; deal with a whitespace divergence on files ever ever.
+;; Ok, so that's a bit of suspenders-and-belting. But I *really* don't want to
+;; deal with a whitespace divergence on files ever ever.
 
-; Basic editor functionality. Includes, but not limited to, not inserting tab literals.
-;(setq tab-width )
+;; Basic editor functionality. Includes, but not limited to, not inserting tab literals.
+;;(setq tab-width )
+;; See http://stackoverflow.com/questions/69934/set-4-space-indent-in-emacs-in-text-mode,
+;; but this one might be best handled by the python mode, I'll grudgingly admit.
 
-; ain't no reason for that blasted splash screen
+;; ain't no reason for that blasted splash screen
 (setq inhibit-splash-screen t)
 
-; get rid of that awful tool bar... the menu bar can be similarly disabled but isn't nearly so bad
+;; get rid of that awful tool bar... the menu bar can be similarly disabled but isn't nearly so bad
 (tool-bar-mode -1)
 
-; because the system bell is a good idea, said no-one ever.
+;; because the system bell is a good idea, said no-one ever.
 (setq ring-bell-function nil)
 
-; Start off in linum-relative and column-number modes.
-; TODO: toggle for relative v absolute
+;; Start off in linum-relative and column-number modes.
+;; TODO: toggle for relative v absolute
 (linum-relative-mode t)
 
-; Don't do that freaking line wrap thing.
+;; Don't do that freaking line wrap thing.
 (setq-default truncate-lines t)
 
-; Scrollbars are ugly son.
-; supposedly this errors out on terminal mode, so guard with a when
+;; Scrollbars are ugly son.
+;; supposedly this errors out on terminal mode, so guard with a when
 (when (display-graphic-p) (set-scroll-bar-mode nil))
 
 ;; OS aware base directory.
@@ -93,7 +95,7 @@
     (cd "d:/devel/")
   (cd "~/devel/"))
 
-; Emacs set these based on stuff.
+;; Emacs set these based on stuff.
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
