@@ -42,3 +42,4 @@
 ; default font does.
 ; Setting Consolas-14 is more like 16pt, but it's a good size
 (setq default-frame-alist '((font . "Consolas-14")))
+(provide 'config-ui)

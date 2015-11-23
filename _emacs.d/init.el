@@ -9,6 +9,7 @@
 
 (require 'config-evil)
 (require 'config-powerline)
+(require 'config-ui)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
