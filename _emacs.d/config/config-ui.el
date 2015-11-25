@@ -38,8 +38,22 @@
 ; is. To use that one, instead run
 ; (load-theme 'darcula)
 
+;;;;;;;;;;;;;;;;;
+;; Font stuff. ;;
+;;;;;;;;;;;;;;;;;
 ; The set-frame-font doesn't play nicely with 'make-frame, but defining a
 ; default font does.
 ; Setting Consolas-14 is more like 16pt, but it's a good size
 (setq default-frame-alist '((font . "Consolas-14")))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; General UI Tweaks. ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; ain't no reason for that blasted splash screen
+(setq inhibit-splash-screen t)
+
+;; get rid of that awful tool bar... the menu bar can be similarly disabled but isn't nearly so bad
+(tool-bar-mode -1)
+
 (provide 'config-ui)

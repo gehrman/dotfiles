@@ -72,12 +72,6 @@
 ;; See http://stackoverflow.com/questions/69934/set-4-space-indent-in-emacs-in-text-mode,
 ;; but this one might be best handled by the python mode, I'll grudgingly admit.
 
-;; ain't no reason for that blasted splash screen
-(setq inhibit-splash-screen t)
-
-;; get rid of that awful tool bar... the menu bar can be similarly disabled but isn't nearly so bad
-(tool-bar-mode -1)
-
 ;; because the system bell is a good idea, said no-one ever.
 (setq ring-bell-function nil)
 
