@@ -56,4 +56,15 @@
 ;; get rid of that awful tool bar... the menu bar can be similarly disabled but isn't nearly so bad
 (tool-bar-mode -1)
 
+;; Start off in linum-relative and column-number modes.
+;; TODO: toggle for relative v absolute
+(linum-relative-mode t)
+
+;; Don't do that freaking line wrap thing.
+(setq-default truncate-lines t)
+
+;; Scrollbars are ugly son.
+;; supposedly this errors out on terminal mode, so guard with a when
+(when (display-graphic-p) (set-scroll-bar-mode nil))
+
 (provide 'config-ui)

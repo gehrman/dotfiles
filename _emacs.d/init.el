@@ -75,17 +75,6 @@
 ;; because the system bell is a good idea, said no-one ever.
 (setq ring-bell-function nil)
 
-;; Start off in linum-relative and column-number modes.
-;; TODO: toggle for relative v absolute
-(linum-relative-mode t)
-
-;; Don't do that freaking line wrap thing.
-(setq-default truncate-lines t)
-
-;; Scrollbars are ugly son.
-;; supposedly this errors out on terminal mode, so guard with a when
-(when (display-graphic-p) (set-scroll-bar-mode nil))
-
 ;; OS aware base directory.
 (if (eq system-type 'windows-nt)
     (cd "d:/devel/")
