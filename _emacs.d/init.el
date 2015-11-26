@@ -8,6 +8,7 @@
 (require 'config-package)
 
 (require 'config-evil)
+(require 'config-local)
 (require 'config-powerline)
 (require 'config-ui)
 
@@ -16,11 +17,6 @@
 ;; Answer: Tramp, Magit, Org-Mode.               ;;
 ;; Question: Why muck through the crap of Emacs. ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; OS aware base directory.
-(if (eq system-type 'windows-nt)
-    (setq tramp-default-method "plink")
-  (setq tramp-default-method "ssh"))
-
 ;; Also, true client server?! Just need to make it work in Windows.
 ;; http://wikemacs.org/wiki/Emacs_server
 ;; http://emacs-fu.blogspot.com/2009/03/windows-and-daemons.html
