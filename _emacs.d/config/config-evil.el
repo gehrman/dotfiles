@@ -58,6 +58,8 @@
 ;; Should these get wrapped in an eval-after-load?
 (evil-leader/set-key-for-mode 'org-mode
   "a" 'org-agenda
+  "cc" 'org-ctrl-c-ctrl-c
+  "c'" 'org-edit-special
   "h" 'org-metaleft
   "k" 'org-metaup
   "j" 'org-metadown
