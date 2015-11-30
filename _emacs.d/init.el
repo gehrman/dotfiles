@@ -7,7 +7,12 @@
 ;; paths for all the installed packages, e.g. evil.
 (require 'config-package)
 
+;; Evil makes things usable, so it goes first to defend against errors in other
+;; configs knocking out the keybindings.
 (require 'config-evil)
+
+;; Now we can load the other configs.
+(require 'config-codeblocks)
 (require 'config-local)
 (require 'config-powerline)
 (require 'config-ui)
