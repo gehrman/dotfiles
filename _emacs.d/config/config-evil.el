@@ -39,8 +39,8 @@
   "dv" 'describe-variable
   "g" 'magit-status
   "k" 'kill-buffer
-  "m" 'linum-mode
-  "n" 'linum-relative-mode
+  "nm" 'linum-mode
+  "nn" 'linum-relative-toggle
   "pi" 'package-install
   "pl" 'package-list-packages
   "r" 'revert-buffer
