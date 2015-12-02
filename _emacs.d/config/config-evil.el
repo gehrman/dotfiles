@@ -32,8 +32,14 @@
 ;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "SPC" 'ibuffer
-  "bb" 'ibuffer
   "bd" 'dired
+  ;; b is the prefix key for buffer operations. I'm not completely happy with
+  ;; putting dired in with the buffer ops, but not sure where a better place
+  ;; for it is
+  "bnd" 'narrow-to-defun
+  "bnn" 'narrow-to-region
+  "bnp" 'narrow-to-page
+  "bw" 'widen
   "df" 'describe-function
   "dk" 'describe-key
   "dv" 'describe-variable
