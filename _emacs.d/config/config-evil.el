@@ -65,6 +65,12 @@
   "j" 'org-metadown
   "l" 'org-metaright
   "t" 'org-todo)
+
+;; This only works for major modes. Investigate how to do minor modes.
+;; (evil-leader/set-key-for-mode 'org-src-mode
+;;   "wq" 'org-edit-src-exit
+;;   "q" 'org-edit-src-abort)
+
 (add-hook 'org-mode-hook
           (lambda ()
             (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
