@@ -36,20 +36,20 @@
   ;; b is the prefix key for buffer operations. I'm not completely happy with
   ;; putting dired in with the buffer ops, but not sure where a better place
   ;; for it is
+  "bk" 'kill-buffer
   "bnd" 'narrow-to-defun
   "bnn" 'narrow-to-region
   "bnp" 'narrow-to-page
+  "br" 'revert-buffer
   "bw" 'widen
   "df" 'describe-function
   "dk" 'describe-key
   "dv" 'describe-variable
   "g" 'magit-status
-  "k" 'kill-buffer
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
   "pi" 'package-install
   "pl" 'package-list-packages
-  "r" 'revert-buffer
   "sb" 'eval-buffer
   "sl" 'eval-last-sexp
   "ss" 'eval-defun ;because eval-defun is *totally* a synonym for 'eval-this-sexp... dammit emacs
