@@ -32,7 +32,6 @@
 ;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "SPC" 'ibuffer
-  "bd" 'dired
   ;; b is the prefix key for buffer operations. I'm not completely happy with
   ;; putting dired in with the buffer ops, but not sure where a better place
   ;; for it is
@@ -57,7 +56,8 @@
   "wf" 'toggle-frame-fullscreen
   "wn" 'make-frame
   "z" 'evil-emacs-state
-  "[" 'keyboard-quit)
+  "[" 'keyboard-quit
+  "D" 'dired)
 
 ;; Org-mode specific keybindings.
 ;; http://stackoverflow.com/questions/25463369/mode-specific-or-buffer-local-text-objects-in-evil
