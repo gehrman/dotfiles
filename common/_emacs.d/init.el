@@ -78,7 +78,11 @@
 
 ;; OS aware base directory.
 (if (eq system-type 'windows-nt)
-    (cd "d:/devel/")
+    (progn
+      (cd "d:/dev/native")
+      (setq exec-path
+	    (quote
+	     ("c:/Program Files (x86)/Google/Chrome/Application" "C:/WINDOWS/system32" "C:/WINDOWS" "C:/WINDOWS/System32/Wbem" "C:/Program Files (x86)/Microsoft SQL Server/110/Tools/Binn/ManagementStudio/" "C:/Program Files (x86)/Microsoft SQL Server/110/Tools/Binn/" "C:/Program Files/Microsoft SQL Server/110/Tools/Binn/" "C:/Program Files (x86)/Microsoft SQL Server/110/DTS/Binn/" "C:/Program Files/Microsoft SQL Server/110/DTS/Binn/" "C:/Program Files/TortoiseSVN/bin" "C:/WINDOWS/System32/WindowsPowerShell/v1.0/" "d:/bin/emacs/24.5/libexec/emacs/24.5/i686-pc-mingw32" "C:/Users/gehrman/AppData/Local/Programs/Git/bin" "test"))))
   (cd "~/devel/"))
 
 
