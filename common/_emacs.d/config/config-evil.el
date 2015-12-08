@@ -27,11 +27,12 @@
 ;; It requires remapping next selection, but ; is also nice.
 ;;(evil-leader/set-leader ";")
 ;; Let's give SPC a chance.
-(evil-leader/set-leader "SPC")
+;;(evil-leader/set-leader "SPC")
+(evil-leader/set-leader ",")
  
 ;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
-  "SPC" 'ibuffer
+  "," 'ibuffer
   ;; b is the prefix key for buffer operations. I'm not completely happy with
   ;; putting dired in with the buffer ops, but not sure where a better place
   ;; for it is
