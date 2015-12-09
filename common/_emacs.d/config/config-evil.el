@@ -37,9 +37,9 @@
   ;; putting dired in with the buffer ops, but not sure where a better place
   ;; for it is
   "bk" 'kill-buffer
-  "bnd" 'narrow-to-defun
-  "bnn" 'narrow-to-region
-  "bnp" 'narrow-to-page
+  "bd" 'narrow-to-defun
+  "bn" 'narrow-to-region
+  "bp" 'narrow-to-page
   "br" 'revert-buffer
   "bw" 'widen
   "df" 'describe-function
