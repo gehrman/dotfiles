@@ -36,6 +36,7 @@
   ;; b is the prefix key for buffer operations. I'm not completely happy with
   ;; putting dired in with the buffer ops, but not sure where a better place
   ;; for it is
+  "bc" 'clone-indirect-buffer-other-window
   "bk" 'kill-buffer
   "bd" 'narrow-to-defun
   "bn" 'narrow-to-region
