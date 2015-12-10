@@ -69,7 +69,8 @@
 ;; deal with a whitespace divergence on files ever ever.
 
 ;; Basic editor functionality. Includes, but not limited to, not inserting tab literals.
-;;(setq tab-width )
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
 ;; See http://stackoverflow.com/questions/69934/set-4-space-indent-in-emacs-in-text-mode,
 ;; but this one might be best handled by the python mode, I'll grudgingly admit.
 
