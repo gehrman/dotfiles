@@ -37,7 +37,7 @@
                           'magit
                           'anzu
                           'linum-relative
-                          ;'flycheck
+                          'flycheck
                           ;'flycheck-clojure
                           ;'flycheck-package
                           ;'flylisp
