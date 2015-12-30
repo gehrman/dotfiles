@@ -1,8 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Package: the package manager. ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-; Setup package management.
+;; Setup package management.
 (require 'package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
@@ -21,15 +20,15 @@
          package)))
    packages))
 
-; Make sure we have package data.
+;; Make sure we have package data.
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 
-; Activate installed packages.
+;; Activate installed packages.
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-; Packages to use, in rough order of descending importance.
+;; Packages to use, in rough order of descending importance.
 ;flycheck python go go go
 (ensure-package-installed 'evil
                           'evil-leader
@@ -45,7 +44,9 @@
                           'powerline-evil
                           'paredit
                           'helm)
-; Themes. In a different call, b/c they went rogue.
+;; File modes.
+(ensure-package-installed 'puppet-mode)
+;; Themes. In a different call, b/c they went rogue.
 (ensure-package-installed 'ample-theme
                           'zenburn-theme
                           'warm-night-theme

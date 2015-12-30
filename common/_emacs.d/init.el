@@ -11,11 +11,14 @@
 ;; configs knocking out the keybindings.
 (require 'config-evil)
 
+;; Next up, make it pretty.
+(require 'config-ui)
+
 ;; Now we can load the other configs.
 (require 'config-codeblocks)
+(require 'config-flycheck)
 (require 'config-local)
 (require 'config-powerline)
-(require 'config-ui)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
