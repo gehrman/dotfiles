@@ -1,6 +1,9 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Package: the package manager. ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; config-package --- Manage packages
+
+;;; Commentary:
+;;
+
+;;; Code:
 ;; Setup package management.
 (require 'package)
 
@@ -55,3 +58,4 @@
                           'darcula-theme
                           )
 (provide 'config-package)
+;;; config-package ends here

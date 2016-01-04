@@ -1,6 +1,13 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Setup path for custom config files, then load those configs. ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; init --- Top level configuration.
+
+;;; Commentary:
+;; There's still some package config stuff that should be pushed down into
+;; their own files, but it's mostly clean now. The custom variable stuff
+;; is probably here to stay too.
+
+;;; Code:
+
+;; Setup the path for custom config files.
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 
 ;; We need to exec 'config-package first because it deals with setting up the
@@ -109,3 +116,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(provide 'init)
+;;; init.el ends here

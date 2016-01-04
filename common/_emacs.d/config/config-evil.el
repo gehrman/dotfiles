@@ -1,6 +1,9 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Evil Mode. A/K/A Make Emacs Usable. ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; config-evil --- Setup evil mode.
+
+;;; Commentary:
+;; Evil Mode. A/K/A Make Emacs Usable.
+
+;;; Code:
 ;; set evil-mode by default, so emacs is actually usable as a text editor
 (require 'evil)
 
@@ -29,7 +32,7 @@
 ;; Let's give SPC a chance.
 ;;(evil-leader/set-leader "SPC")
 (evil-leader/set-leader ",")
- 
+
 ;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "," 'ibuffer
@@ -118,3 +121,4 @@
                        'completion-list-mode)
 
 (provide 'config-evil)
+;;; config-evil.el ends here
