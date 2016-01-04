@@ -49,6 +49,10 @@
   "df" 'describe-function
   "dk" 'describe-key
   "dv" 'describe-variable
+  "ff" 'flycheck-buffer ; http://www.flycheck.org/
+  "fl" 'flycheck-list-errors
+  "fn" 'flycheck-next-error
+  "fN" 'flycheck-previous-error
   "g" 'magit-status
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
