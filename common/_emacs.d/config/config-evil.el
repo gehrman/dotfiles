@@ -40,6 +40,7 @@
   ;; putting dired in with the buffer ops, but not sure where a better place
   ;; for it is
   "bc" 'clone-indirect-buffer-other-window
+  "bf" 'diff-buffer-with-file
   "bk" 'kill-buffer
   "bd" 'narrow-to-defun
   "bn" 'narrow-to-region
