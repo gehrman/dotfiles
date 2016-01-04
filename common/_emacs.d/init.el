@@ -84,6 +84,9 @@
 ;; See http://stackoverflow.com/questions/69934/set-4-space-indent-in-emacs-in-text-mode,
 ;; but this one might be best handled by the python mode, I'll grudgingly admit.
 
+;; Let's trim trailing whitespace while we're at it.
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; because the system bell is a good idea, said no-one ever.
 (setq ring-bell-function nil)
 
@@ -93,7 +96,23 @@
       (cd "d:/dev/native")
       (setq exec-path
 	    (quote
-	     ("c:/Program Files (x86)/Google/Chrome/Application" "C:/WINDOWS/system32" "C:/WINDOWS" "C:/WINDOWS/System32/Wbem" "C:/Program Files (x86)/Microsoft SQL Server/110/Tools/Binn/ManagementStudio/" "C:/Program Files (x86)/Microsoft SQL Server/110/Tools/Binn/" "C:/Program Files/Microsoft SQL Server/110/Tools/Binn/" "C:/Program Files (x86)/Microsoft SQL Server/110/DTS/Binn/" "C:/Program Files/Microsoft SQL Server/110/DTS/Binn/" "C:/Program Files/TortoiseSVN/bin" "C:/WINDOWS/System32/WindowsPowerShell/v1.0/" "d:/bin/emacs/24.5/libexec/emacs/24.5/i686-pc-mingw32" "C:/Program Files/Git/bin" "C:/Program Files/Git/usr/bin" "C:/Program Files/Git/mingw64/bin"))))
+	     ("c:/Program Files (x86)/Google/Chrome/Application"
+        "C:/WINDOWS/system32"
+        "C:/WINDOWS"
+        "C:/WINDOWS/System32/Wbem"
+        "C:/Program Files (x86)/Microsoft SQL Server/110/Tools/Binn/ManagementStudio/"
+        "C:/Program Files (x86)/Microsoft SQL Server/110/Tools/Binn/"
+        "C:/Program Files/Microsoft SQL Server/110/Tools/Binn/"
+        "C:/Program Files (x86)/Microsoft SQL Server/110/DTS/Binn/"
+        "C:/Program Files/Microsoft SQL Server/110/DTS/Binn/"
+        "C:/Program Files/TortoiseSVN/bin"
+        "C:/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        "d:/bin/emacs/24.5/libexec/emacs/24.5/i686-pc-mingw32"
+        "C:/Program Files/Git/bin"
+        "C:/Program Files/Git/usr/bin"
+        "C:/Program Files/Git/mingw64/bin"
+        "d:/bin/python/python27/Scripts"
+        "d:/bin"))))
   (cd "~/devel/"))
 
 
