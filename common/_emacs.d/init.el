@@ -25,6 +25,7 @@
 (require 'config-codeblocks)
 (require 'config-flycheck)
 (require 'config-local)
+(require 'config-magit)
 (require 'config-powerline)
 
 
@@ -45,13 +46,6 @@
 ;; http://www.enigmacurry.com/2008/05/09/emacs-as-a-powerful-python-ide/
 ;; https://github.com/python-rope/ropemacs
 ;; http://wenshanren.org/?p=351/
-
-
-;;;;;;;;;;;;;;;
-; Magit Stuff ;
-;;;;;;;;;;;;;;;
-; Shut magit up.
-(setq magit-last-seen-setup-instructions "1.4.0")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
