@@ -12,8 +12,10 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
 (defun ensure-package-installed (&rest packages)
-  "Ensure every package listed is installed. If a packagge is not installed, try to install it.
-   Returns a list of installed packages, or nil if every package is skipped."
+  "Ensure every package in PACKAGES is installed.
+
+  If a package is not installed, try to install it. Returns a list of installed
+  packages, or nil if every package is skipped."
   (mapcar
    (lambda (package)
      (if (package-installed-p package)
@@ -35,7 +37,8 @@
 ;flycheck python go go go
 (ensure-package-installed 'evil
                           'evil-leader
-                          ;'evil-escape
+                          ;;'evil-escape
+                          ;;'evil-visualstar
                           'magit
                           'anzu
                           'linum-relative
@@ -46,7 +49,35 @@
                           'powerline
                           'powerline-evil
                           'paredit
-                          'helm)
+                          ;;'pt ; this one seems to suck/not work on windows
+                          'helm
+                          'helm-ag
+                          ;;'wgrep ; What does this one actually do?
+                          ;;'helm-pt
+                          ;;'projectile
+                          ;;'helm-projectile
+                          ;;'sx ; search stackexchange et al
+                          ;;'zeal-at-point ; zeal, or other documentation searching
+                          ;;'docker
+                          ;;'dockerfile-mode
+                          ;;'docker-tramp
+                          ;;'ibuffer-{tramp,*}
+                          ;;'tramp-hdfs
+                          ;;'tramp-term
+                          ;;'searchq
+                          ;;'zlc
+                          ;;'znc
+                          ;;'sx
+                          ;;'sos
+                          ;;'yagist
+                          ;;'flx-*
+                          ;;'grizzl
+                          ;;'idris-mode
+                          ;;'helm-idris
+                          ;;'org-projectile, 'org-*
+                          'vagrant
+                          ;;'vagrant-tramp
+                          )
 ;; File modes.
 (ensure-package-installed 'puppet-mode)
 ;; Themes. In a different call, b/c they went rogue.
@@ -56,6 +87,13 @@
                           'solarized-theme
                           'monokai-theme
                           'darcula-theme
+                          ;; 'noctilux-theme
+                          ;; 'grandshell-theme
+                          ;; 'alect-themes
+                          ;; 'cyberpunk-theme
+                          ;; 'tango-*
+                          ;; 'material-theme
+                          ;; 'aurora-theme
                           )
 (provide 'config-package)
 ;;; config-package ends here
