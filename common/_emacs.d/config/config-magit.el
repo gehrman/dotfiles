@@ -12,4 +12,5 @@
 ;; I need another binding. C-k is a pneumonic for marK.
 (global-set-key (kbd "C-k") 'set-mark-command)
 
+(provide 'config-magit)
 ;;; config-magit.el ends here
