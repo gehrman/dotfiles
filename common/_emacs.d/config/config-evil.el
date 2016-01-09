@@ -50,7 +50,8 @@
   "df" 'describe-function
   "dk" 'describe-key
   "dv" 'describe-variable
-  "ff" 'flycheck-buffer ; http://www.flycheck.org/
+  "fb" 'flycheck-buffer ; http://www.flycheck.org/
+  "ff" 'flycheck-buffer
   "fl" 'flycheck-list-errors
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
