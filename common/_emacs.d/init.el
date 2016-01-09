@@ -42,6 +42,7 @@
 
 ;; Python stuff. Do eet like, yesterday.
 ;; http://www.emacswiki.org/emacs/PythonProgrammingInEmacs
+;; http://www.emacswiki.org/emacs/ProgrammingWithPythonModeDotEl
 ;; https://github.com/jorgenschaefer/elpy
 ;; http://www.enigmacurry.com/2008/05/09/emacs-as-a-powerful-python-ide/
 ;; https://github.com/python-rope/ropemacs
@@ -87,7 +88,7 @@
 ;; OS aware base directory.
 (if (eq system-type 'windows-nt)
     (progn
-      (cd "d:/dev/native")
+      (cd "d:/dev/code")
       (setq exec-path
 	    (quote
 	     ("c:/Program Files (x86)/Google/Chrome/Application"
