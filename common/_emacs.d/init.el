@@ -22,11 +22,14 @@
 (require 'config-ui)
 
 ;; Now we can load the other configs.
+;; TODO: pull these from the directory and load them programmatically
 (require 'config-codeblocks)
 (require 'config-flycheck)
+(require 'config-latex)
 (require 'config-local)
 (require 'config-magit)
 (require 'config-powerline)
+(require 'config-python)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
