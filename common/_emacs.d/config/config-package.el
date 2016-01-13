@@ -37,10 +37,22 @@
 ;flycheck python go go go
 (ensure-package-installed 'evil
                           'evil-leader
+                          'evil-escape ; Escape from anything.
+                          'evil-lisp-state
+                          ;;'evil-cleverparens ; Another lisp mode.
+                          ;;'evil-commentary ; Another commenter.
+                          ;;'evil-args
                           ;;'evil-escape
+                          ;;'evil-god-state ; What's god-mode?
+                          ;;'evil-iedit ; What's iedit?
+                          ;;'evil-mc ; Multiple cursors?
+                          ;;'evil-nerd-commenter
+                          ;;'evil-org ; This has been problematic.
                           ;;'evil-visualstar
                           'magit
+                          ;;'evil-magit
                           'anzu
+                          ;;'evil-anzu
                           'linum-relative
                           'flycheck
                           ;'flycheck-clojure
@@ -66,6 +78,7 @@
                           ;;'tramp-term
                           ;;'searchq
                           ;;'zlc
+                          ;;'company-*
                           ;;'znc
                           ;;'sx
                           ;;'sos
@@ -77,6 +90,16 @@
                           ;;'org-projectile, 'org-*
                           'vagrant
                           ;;'vagrant-tramp
+                          ;; Latex Packages
+                          'cdlatex
+                          ;;'latex-extra
+                          'latex-math-preview
+                          'latex-pretty-symbols
+                          ;;'latex-preview-pane
+                          ;;'magic-latex-buffer
+                          ;;'math-symbol-lists
+                          ;;'px ; inline latex preview
+                          ;; More stuff.
                           )
 ;; File modes.
 (ensure-package-installed 'puppet-mode)
