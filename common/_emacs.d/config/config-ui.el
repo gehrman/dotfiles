@@ -1,55 +1,56 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; A bunch of theme stuff, and then other appearance stuff. ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Make emacs look less... well, emacs-y
-;
-; Zenburn for emacs: https://github.com/bbatsov/zenburn-emacs
-; (load-theme 'zenburn t)
-; (enable-theme 'zenburn)
+;;; config-ui --- UI settings.
 
-; If you ever want to waste an afternoon, checkout
-; http://emacsthemes.com/index/1.html
+;;; Commentary:
+;; First things first, make emacs look less... well, emacs-y.
+;; So, first we do a bunch of theme stuff, and then other appearance stuff.
+;; Basically, if it's just a UI tweak or setting, it should live here.
+;; Regarding themes, if you ever want to waste an afternoon, checkout
+;;     http://emacsthemes.com/index/1.html
 
-; Ample's pretty darned nice.
+;;; Code:
+
+;;;; Themes:
+;; Ample's pretty darned nice.
 (load-theme 'ample t t)
 (enable-theme 'ample)
-; (load-theme 'ample-flat t t)
-; (load-theme 'ample-light t t)
+;; (load-theme 'ample-flat t t)
+;; (load-theme 'ample-light t t)
 
-; (load-theme 'warm-night)
 
-; Unofficial solarized port: https://github.com/bbatsov/solarized-emacs
-; (load-theme 'solarized-dark)
-; (load-theme 'solarized-light)
+;; Zenburn for emacs: https://github.com/bbatsov/zenburn-emacs
+;; (load-theme 'zenburn t)
+;; (enable-theme 'zenburn)
 
-; There's also an official port at https://github.com/sellout/emacs-color-theme-solarized
-; with ties to the orginal project.
+;; (load-theme 'warm-night)
 
-; Monokai by https://github.com/oneKelvinSmith/monokai-emacs
-; (load-theme 'monokai t)
+;; Unofficial solarized port: https://github.com/bbatsov/solarized-emacs
+;; There's also an official port at https://github.com/sellout/emacs-color-theme-solarized
+;; with ties to the orginal project.
+;; (load-theme 'solarized-dark)
+;; (load-theme 'solarized-light)
 
-; Org-mode theme. Now figure out how to swap themes on mode-switch.
-; Repo is https://github.com/fniessen/emacs-leuven-theme
-; (load-theme 'leuven t)
+;; Monokai by https://github.com/oneKelvinSmith/monokai-emacs
+;; (load-theme 'monokai t)
 
-; One version of darcula is at https://github.com/fommil/darcula-theme-emacs
-; (require 'darcula-theme)
-; It's not clear to me if this is the package available on melpa, but I don't think it
-; is. To use that one, instead run
-; (load-theme 'darcula)
+;; Org-mode theme. Now figure out how to swap themes on mode-switch.
+;; Repo is https://github.com/fniessen/emacs-leuven-theme
+;; (load-theme 'leuven t)
 
-;;;;;;;;;;;;;;;;;
-;; Font stuff. ;;
-;;;;;;;;;;;;;;;;;
-; The set-frame-font doesn't play nicely with 'make-frame, but defining a
-; default font does.
-; Setting Consolas-14 is more like 16pt, but it's a good size
+;; One version of darcula is at https://github.com/fommil/darcula-theme-emacs
+;; (require 'darcula-theme)
+;; It's not clear to me if this is the package available on melpa, but I don't think it
+;; is. To use that one, instead run
+;; (load-theme 'darcula)
+
+;;;; Font stuff:
+;; The set-frame-font doesn't play nicely with 'make-frame, but defining a
+;; default font does.
+;; Setting Consolas-14 is more like 16pt, but it's a good size
+;; TODO: This depends on OS & Environment.
 (setq default-frame-alist '((font . "Consolas-14")))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;
-;; General UI Tweaks. ;;
-;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; General UI Tweaks: ;;
 ;; ain't no reason for that blasted splash screen
 (setq inhibit-splash-screen t)
 
@@ -57,14 +58,17 @@
 (tool-bar-mode -1)
 
 ;; Start off in linum-relative and column-number modes.
-;; TODO: toggle for relative v absolute
 (linum-relative-mode t)
 
 ;; Don't do that freaking line wrap thing.
 (setq-default truncate-lines t)
 
-;; Scrollbars are ugly son.
-;; supposedly this errors out on terminal mode, so guard with a when
+;; Scrollbars are ugly son. Supposedly this errors out on terminal mode, whence
+;; the 'when as a guard.
 (when (display-graphic-p) (set-scroll-bar-mode nil))
 
+;; Global prettification. Because lambda is λ dammit.
+(global-prettify-symbols-mode t)
+
 (provide 'config-ui)
+;;; config-ui.el ends here
