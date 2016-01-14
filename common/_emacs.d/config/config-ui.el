@@ -70,5 +70,14 @@
 ;; Global prettification. Because lambda is λ dammit.
 (global-prettify-symbols-mode t)
 
+;; At some point, I should get code folding to work.
+;; Resources:
+;; http://stackoverflow.com/questions/2399612/why-is-there-no-code-folding-in-emacs
+;; http://stackoverflow.com/questions/15307113/emacs-cedet-semantic-tag-folding
+;; http://stackoverflow.com/questions/1085170/how-to-achieve-code-folding-effects-in-emacs
+;; https://github.com/jorgenschaefer/elpy/issues/240
+;; http://www.emacswiki.org/emacs/HideShow (hs-minor-mode)
+
+
 (provide 'config-ui)
 ;;; config-ui.el ends here
