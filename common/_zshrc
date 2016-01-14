@@ -75,6 +75,13 @@ grepitsome() {
 }
 
 
+add_ssh_identities() {
+    for key in `ls ~/.ssh/id*[^.pub,.ppk]; do
+        ssh-add ~/.ssh/$key
+    done;
+}
+
+
 # Stop backwards-kill correctly:
 #export WORDCHARS=`echo $WORDCHARS | sed -e 's/\///;s/\.//'`
 export WORDCHARS=`echo $WORDCHARS | sed -e 's/\///'`
@@ -112,7 +119,6 @@ alias build_egg='. /linux_home/gehrman/.bin/build_egg.sh'
 
 
 # Current-shell command aliases.
-alias reset_ssh_agent_vars='. ~/.bin/reset_ssh_agent_vars'
 alias rezsh='source ~/.zshrc'
 alias ghn="cd /wayfair/home/gehrman"
 alias gcn="cd /wayfair/mnt/codebase/DEVWEBPHP349"
@@ -146,8 +152,6 @@ zle -N zle-keymap-select
 # this *does* have other effects!!
 export KEYTIMEOUT=2
 
-#ssh-agent
-#ssh-add ~/.ssh/id_rsa
 stty ixany
 stty ixoff -ixon
 stty stop undef
