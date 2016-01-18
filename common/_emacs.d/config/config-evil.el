@@ -111,14 +111,14 @@
 (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
 (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
 
-; Initial mode setting.
-;(evil-set-initial-state 'ibuffer-mode 'normal)
+;; Initial mode setting.
+;;(evil-set-initial-state 'ibuffer-mode 'normal)
 
-(defun set-evil-initial-mode (start-mode &rest mode-list)
-  "Ensure every package listed is installed. If a package is not installed, try to install it.
-   Returns a list of installed packages, or nil if every package is skipped."
+(defun set-evil-initial-mode (start-state &rest mode-list)
+  "START-STATE MODE-LIST."
+  ;;"Make each mode in the MODE-LIST start in the given START-STATE."
   (mapcar
-   (lambda (mode) (evil-set-initial-state mode start-mode))
+   (lambda (mode) (evil-set-initial-state mode start-state))
    mode-list))
 
 (set-evil-initial-mode 'normal
