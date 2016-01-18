@@ -14,13 +14,13 @@
 (defun ensure-package-installed (&rest packages)
   "Ensure every package in PACKAGES is installed.
 
-  If a package is not installed, try to install it. Returns a list of installed
+  If a package is not installed, try to install it.  Returns a list of installed
   packages, or nil if every package is skipped."
   (mapcar
    (lambda (package)
      (if (package-installed-p package)
          nil
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+       (if (y-or-n-p (format "Package %s is missing.  Install it? " package))
          (package-install package)
          package)))
    packages))
@@ -33,12 +33,11 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-;; Packages to use, in rough order of descending importance.
-;flycheck python go go go
+;; Package groups.
+;; Evil first, as it's by far the most important.
 (ensure-package-installed 'evil
                           'evil-leader
-                          'evil-escape ; Escape from anything.
-                          'evil-lisp-state
+                          ;;'evil-lisp-state
                           ;;'evil-cleverparens ; Another lisp mode.
                           ;;'evil-commentary ; Another commenter.
                           ;;'evil-args
@@ -49,7 +48,10 @@
                           ;;'evil-nerd-commenter
                           ;;'evil-org ; This has been problematic.
                           ;;'evil-visualstar
-                          'magit
+                          )
+
+;; Magit next, because, well, its amazing.
+(ensure-package-installed 'magit
                           ;;'evil-magit
                           'anzu
                           ;;'evil-anzu
@@ -64,15 +66,13 @@
                           ;;'pt ; this one seems to suck/not work on windows
                           'helm
                           'helm-ag
-                          ;;'wgrep ; What does this one actually do?
-                          ;;'helm-pt
                           ;;'projectile
+                          ;;'helm-pt
+                          ;;'helm-idris
                           ;;'helm-projectile
+                          ;;'wgrep ; What does this one actually do?
                           ;;'sx ; search stackexchange et al
                           ;;'zeal-at-point ; zeal, or other documentation searching
-                          ;;'docker
-                          ;;'dockerfile-mode
-                          ;;'docker-tramp
                           ;;'ibuffer-{tramp,*}
                           ;;'tramp-hdfs
                           ;;'tramp-term
@@ -86,23 +86,29 @@
                           ;;'flx-*
                           ;;'grizzl
                           ;;'idris-mode
-                          ;;'helm-idris
                           ;;'org-projectile, 'org-*
-                          'vagrant
+                          )
+
+;; Devops/infrastructure packages.
+(ensure-package-installed 'vagrant
                           ;;'vagrant-tramp
-                          ;; Latex Packages
-                          'cdlatex
-                          ;;'latex-extra
+                          ;;'docker
+                          ;;'dockerfile-mode
+                          ;;'docker-tramp
+                          )
+;; Latex Packages
+(ensure-package-installed 'cdlatex
                           'latex-math-preview
                           'latex-pretty-symbols
+                          ;;'latex-extra
                           ;;'latex-preview-pane
                           ;;'magic-latex-buffer
                           ;;'math-symbol-lists
                           ;;'px ; inline latex preview
-                          ;; More stuff.
                           )
 ;; File modes.
 (ensure-package-installed 'puppet-mode)
+
 ;; Themes. In a different call, b/c they went rogue.
 (ensure-package-installed 'ample-theme
                           'zenburn-theme
