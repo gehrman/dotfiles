@@ -87,6 +87,8 @@
                           ;;'grizzl
                           ;;'idris-mode
                           ;;'org-projectile, 'org-*
+                          ;;'svg-clock
+                          ;;'e2wm
                           )
 
 ;; Devops/infrastructure packages.
