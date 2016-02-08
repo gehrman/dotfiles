@@ -91,6 +91,7 @@ export U_DRIVE_MOUNT_DIR="${HOME}/u_drive"
 
 alias antigrep="grep -v"
 alias l="ls -lh"
+alias e="emacsclient -t"
 
 # ...yep, I did this.
 alias gogogadget_vsql="/opt/vertica/bin/vsql -C -h boVerticaC1N01"
