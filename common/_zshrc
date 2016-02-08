@@ -77,9 +77,10 @@ grepitsome() {
 
 add-ssh-identities() {
     for key in `ls ~/.ssh/id*[^.pub,.ppk]`; do
-        ssh-add ~/.ssh/$key
+        ssh-add $key
     done
 }
+alias asi="add-ssh-identities"
 
 
 # Stop backwards-kill correctly:
