@@ -15,7 +15,9 @@
             (push '("lambda" . ?λ) prettify-symbols-alist)
             (push '("def" . ?λ) prettify-symbols-alist)
             (push '("<=" . ?≤) prettify-symbols-alist)
-            (push '(">=" . ?≥) prettify-symbols-alist)))
+            (push '(">=" . ?≥) prettify-symbols-alist)
+            (push '("==" . ?≟) prettify-symbols-alist)
+            ))
 
 (provide 'config-python)
 
