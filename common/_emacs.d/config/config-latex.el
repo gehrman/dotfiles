@@ -2,6 +2,7 @@
 ;;; Commentary:
 
 ;;; Code:
-(require 'latex-pretty-symbols)
+;; https://www.emacswiki.org/emacs/PrettySymbol
+;;(require 'latex-pretty-symbols)
 (provide 'config-latex)
 ;;; config-latex.el ends here
