@@ -47,6 +47,8 @@
   "bp" 'narrow-to-page
   "br" 'revert-buffer
   "bw" 'widen
+  ;; "de" 'debug-on-error
+  ;; "dE" 'debug-on-entry
   "df" 'describe-function
   "dk" 'describe-key
   "dv" 'describe-variable
@@ -68,6 +70,9 @@
   "wn" 'make-frame
   "z" 'evil-emacs-state
   "[" 'keyboard-quit
+  ;; (l)aunch application modes like dired, proced, ansi-term, et al
+  ;; "ld" 'dired
+  ;; "lp" 'proced
   "D" 'dired)
 
 ;; Org-mode specific keybindings.
