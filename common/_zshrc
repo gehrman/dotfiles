@@ -3,7 +3,9 @@
 # functions, options, key bindings, etc.
 
 ## Command Completion Settings
-fpath=(~/.zsh/completions $fpath) # register the completions folder
+
+# register the completions folder
+fpath=(~/.zsh/completions $fpath)
 
 autoload -U compinit
 compinit
@@ -128,9 +130,9 @@ alias bline='beeline -u jdbc:hive2://bobigdatahive01.csnzoo.com:10000'
 
 #if [[ "$TERM" == "linux" ]]; then
 #    source .zsh_keybinds
-source /linux_home/gehrman/.zsh/conf/prompt
-source /linux_home/gehrman/.zsh/conf/keybinds
-source /linux_home/gehrman/.zsh/conf/functions
+source ~/.zsh/conf/prompt
+source ~/.zsh/conf/keybinds
+source ~/.zsh/conf/functions
 
 #Use vim bindings.
 bindkey -v
