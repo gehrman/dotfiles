@@ -59,6 +59,8 @@ if [ -d /wayfair/pkg/python2.7 ]; then
 fi
 # Use a snake prompt. Hiss.
 export PYTHONSTARTUP=/linux_home/gehrman/.pythonrc
+# Use ipython for pyspark.
+alias ipyspark="PYSPARK_PYTHON=ipython pyspark"
 
 grepitall() {
     if [ "$2" != "" ]; then
