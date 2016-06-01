@@ -85,6 +85,7 @@ add-ssh-identities() {
     done
 }
 alias asi="add-ssh-identities"
+alias asl="ssh-add -l"
 
 
 # Stop backwards-kill correctly:
