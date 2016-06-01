@@ -114,11 +114,13 @@ alias stopvirtualenv='deactivate' # Included for completeness... it's a silly th
 alias destroyvirtualenv='. /csnzoo/gehrman/.bin/destroy_virtualenv.sh'
 alias listvirtualenvs='. /csnzoo/gehrman/.bin/list_virtualenvs.sh'
 alias annotatevirtualenv='. /csnzoo/gehrman/.bin/annotate_virtualenv.sh'
+alias listinstalledeggs='. /csnzoo/gehrman/.bin/list_installed_eggs.sh'
 # Tab-completions are nice.
 compdef _activate_virtualenv recreatevirtualenv
 compdef _activate_virtualenv startvirtualenv
 compdef _activate_virtualenv destroyvirtualenv
 compdef _activate_virtualenv annotatevirtualenv
+compdef _activate_virtualenv listinstalledeggs
 
 
 # Build script
@@ -163,5 +165,3 @@ stty ixany
 stty ixoff -ixon
 stty stop undef
 stty start undef
-alias listinstalledeggs='. /csnzoo/gehrman/.bin/list_installed_eggs.sh'
-compdef _activate_virtualenv listinstalledeggs
