@@ -7,6 +7,10 @@
 ;; set evil-mode by default, so emacs is actually usable as a text editor
 (require 'evil)
 
+;; Set up a indention textobject.
+(require 'evil-indent-plus)
+(evil-indent-plus-default-bindings)
+
 ;; supposedly - http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html - evil
 ;; mode needs to start after everything else for things to work well
 

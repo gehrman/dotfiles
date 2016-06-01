@@ -37,6 +37,7 @@
 ;; Evil first, as it's by far the most important.
 (ensure-package-installed 'evil
                           'evil-leader
+                          'evil-indent-plug
                           ;;'evil-lisp-state
                           ;;'evil-cleverparens ; Another lisp mode.
                           ;;'evil-commentary ; Another commenter.
