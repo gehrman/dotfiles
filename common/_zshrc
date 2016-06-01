@@ -58,7 +58,7 @@ if [ -d /wayfair/pkg/python2.7 ]; then
   export PATH=/wayfair/pkg/python2.7/latest/bin:~/.bin:/usr/local/git/bin:$PATH
 fi
 # Use a snake prompt. Hiss.
-export PYTHONSTARTUP=/linux_home/gehrman/.pythonrc
+export PYTHONSTARTUP=/csnzoo/gehrman/.pythonrc
 # Use ipython for pyspark.
 alias ipyspark="PYSPARK_PYTHON=ipython pyspark"
 
@@ -106,13 +106,13 @@ alias tmls="tmux list-sessions"
 alias tmat="tmux attach -d -t"
 
 # Virtualenv commands.
-alias createvirtualenv='. /linux_home/gehrman/.bin/create_virtualenv.sh'
-alias recreatevirtualenv='. /linux_home/gehrman/.bin/recreate_virtualenv.sh'
-alias startvirtualenv='. /linux_home/gehrman/.bin/activate_virtualenv.sh'
+alias createvirtualenv='. /csnzoo/gehrman/.bin/create_virtualenv.sh'
+alias recreatevirtualenv='. /csnzoo/gehrman/.bin/recreate_virtualenv.sh'
+alias startvirtualenv='. /csnzoo/gehrman/.bin/activate_virtualenv.sh'
 alias stopvirtualenv='deactivate' # Included for completeness... it's a silly thing to do.
-alias destroyvirtualenv='. /linux_home/gehrman/.bin/destroy_virtualenv.sh'
-alias listvirtualenvs='. /linux_home/gehrman/.bin/list_virtualenvs.sh'
-alias annotatevirtualenv='. /linux_home/gehrman/.bin/annotate_virtualenv.sh'
+alias destroyvirtualenv='. /csnzoo/gehrman/.bin/destroy_virtualenv.sh'
+alias listvirtualenvs='. /csnzoo/gehrman/.bin/list_virtualenvs.sh'
+alias annotatevirtualenv='. /csnzoo/gehrman/.bin/annotate_virtualenv.sh'
 # Tab-completions are nice.
 compdef _activate_virtualenv recreatevirtualenv
 compdef _activate_virtualenv startvirtualenv
@@ -121,7 +121,7 @@ compdef _activate_virtualenv annotatevirtualenv
 
 
 # Build script
-alias build_egg='. /linux_home/gehrman/.bin/build_egg.sh'
+alias build_egg='. /csnzoo/gehrman/.bin/build_egg.sh'
 
 
 # Current-shell command aliases.
@@ -162,5 +162,5 @@ stty ixany
 stty ixoff -ixon
 stty stop undef
 stty start undef
-alias listinstalledeggs='. /linux_home/gehrman/.bin/list_installed_eggs.sh'
+alias listinstalledeggs='. /csnzoo/gehrman/.bin/list_installed_eggs.sh'
 compdef _activate_virtualenv listinstalledeggs
