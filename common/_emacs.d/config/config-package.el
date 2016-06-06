@@ -110,7 +110,8 @@
                           ;;'px ; inline latex preview
                           )
 ;; File modes.
-(ensure-package-installed 'puppet-mode)
+(ensure-package-installed 'puppet-mode
+                          'scala2)
 
 ;; Themes. In a different call, b/c they went rogue.
 (ensure-package-installed 'ample-theme
