@@ -75,9 +75,9 @@
   "z" 'evil-emacs-state
   "[" 'keyboard-quit
   ;; (l)aunch application modes like dired, proced, ansi-term, et al
-  ;; "ld" 'dired
-  ;; "lp" 'proced
-  "D" 'dired)
+  "ld" 'dired
+  "lp" 'proced)
+  ;; "D" 'dired)
 
 ;; Org-mode specific keybindings.
 ;; http://stackoverflow.com/questions/25463369/mode-specific-or-buffer-local-text-objects-in-evil
