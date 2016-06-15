@@ -28,6 +28,7 @@
 (require 'config-latex)
 (require 'config-local)
 (require 'config-magit)
+(require 'config-misc)
 (require 'config-powerline)
 (require 'config-python)
 

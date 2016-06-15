@@ -66,6 +66,9 @@
   "nn" 'linum-relative-toggle
   "pi" 'package-install
   "pl" 'package-list-packages
+  "po" 'pianobar
+  "pn" 'pianobar-next-song
+  "pp" 'pianobar-play-or-pause
   "sb" 'eval-buffer
   "sl" 'eval-last-sexp
   "ss" 'eval-defun ;because eval-defun is *totally* a synonym for 'eval-this-sexp... dammit emacs

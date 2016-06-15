@@ -111,7 +111,11 @@
                           )
 ;; File modes.
 (ensure-package-installed 'puppet-mode
-                          'scala2)
+                          ;;'scala2)
+                          )
+
+;; Applications
+(ensure-package-installed 'pianobar)
 
 ;; Themes. In a different call, b/c they went rogue.
 (ensure-package-installed 'ample-theme
