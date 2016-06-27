@@ -138,7 +138,7 @@ alias build_egg='. ~/.bin/build_egg.sh'
 alias rezsh='source ~/.zshrc'
 alias ghn="cd /wayfair/home/gehrman"
 alias gcn="cd /wayfair/mnt/codebase/DEVWEBPHP349"
-alias bline='beeline -u jdbc:hive2://bobigdatahive01.csnzoo.com:10000'
+alias bline='beeline -u jdbc:hive2://bobigdatahive01.csnzoo.com:10000 -n gehrman'
 
 if [[ $TERM != "dumb" ]]; then
     source ~/.zsh/conf/prompt
