@@ -11,10 +11,6 @@ autoload -U compinit
 compinit
 setopt complete_aliases
 
-autoload bashcompinit
-bashcompinit
-eval "$(_WAYRUNNER_COMPLETE=source wayrunner)"
-
 # Show the completion menu when >= 2 items.
 zstyle ":completion:*" menu select=2
 
@@ -128,6 +124,10 @@ compdef _activate_virtualenv startvirtualenv
 compdef _activate_virtualenv destroyvirtualenv
 compdef _activate_virtualenv annotatevirtualenv
 compdef _activate_virtualenv listinstalledeggs
+# Wayrunner completions
+autoload bashcompinit
+bashcompinit
+eval "$(_WAYRUNNER_COMPLETE=source wayrunner)"
 
 
 # Build script
