@@ -65,6 +65,7 @@
                           'powerline-evil
                           'paredit
                           ;;'pt ; this one seems to suck/not work on windows
+                          'ag
                           'helm
                           'helm-ag
                           ;;'projectile
@@ -99,6 +100,20 @@
                           ;;'dockerfile-mode
                           ;;'docker-tramp
                           )
+
+;; Web development.
+(ensure-package-installed 'restclient
+                          'restclient-helm
+                          'restclient-test
+                          'ob-http
+                          'ob-restclient
+                          ;;https://github.com/skeeto/skewer-mode
+                          ;; there's also swank-js + slime
+                          ;;'skewer-less
+                          ;;'skewer-mode
+                          ;;'skewer-reload-stylesheets
+                          )
+
 ;; Latex Packages
 (ensure-package-installed 'cdlatex
                           'latex-math-preview
@@ -109,8 +124,10 @@
                           ;;'math-symbol-lists
                           ;;'px ; inline latex preview
                           )
+
 ;; File modes.
 (ensure-package-installed 'puppet-mode
+                          ;;'slime
                           ;;'scala2)
                           )
 
@@ -124,6 +141,8 @@
                           'solarized-theme
                           'monokai-theme
                           'darcula-theme
+                          ;; 'afterglow - https://github.com/sjahl/emacs-theme-afterglow
+                          ;; 'afternoon-theme
                           ;; 'noctilux-theme
                           ;; 'grandshell-theme
                           ;; 'alect-themes
