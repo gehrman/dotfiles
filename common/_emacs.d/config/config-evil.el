@@ -8,6 +8,18 @@
 (require 'evil)
 
 ;; Set up a indention textobject.
+;;
+;; The default keybinds are:
+;;   * ii: A block of text with the same or higher indentation.
+;;   * ai: The same as ii, plus whitespace.
+;;   * iI: A block of text with the same or higher indentation, including the
+;;         first line above with less indentation.
+;;   * aI: The same as iI, plus whitespace.
+;;   * iJ: A block of text with the same or higher indentation, including the
+;;         first line above and below with less indentation.
+;;   * aJ: The same as iJ, plus whitespace.
+;;
+;; See https://github.com/TheBB/evil-indent-plus for full details
 (require 'evil-indent-plus)
 (evil-indent-plus-default-bindings)
 
