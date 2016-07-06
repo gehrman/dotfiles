@@ -66,6 +66,7 @@
   ;; "de" 'debug-on-error
   ;; "dE" 'debug-on-entry
   "df" 'describe-function
+  "dh" 'help
   "dk" 'describe-key
   "dv" 'describe-variable
   "fb" 'flycheck-buffer ; http://www.flycheck.org/
