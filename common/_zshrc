@@ -95,8 +95,6 @@ alias asl="ssh-add -l"
 # Stop backwards-kill correctly:
 #export WORDCHARS=`echo $WORDCHARS | sed -e 's/\///;s/\.//'`
 export WORDCHARS=`echo $WORDCHARS | sed -e 's/\///'`
-export U_DRIVE_SMB_SHARE="//bonas1a.csnzoo.com/u_drive/${USER}"
-export U_DRIVE_MOUNT_DIR="${HOME}/u_drive"
 
 alias antigrep="grep -v"
 alias l="ls -lh"
