@@ -21,5 +21,17 @@
   (demaximize-frame))
 (advice-add 'evil-quit :before #'before-evil-quit)
 
+(setq exec-path
+      (quote
+       ("/Users/gehrman/.bin"
+        "/usr/local/bin"
+        "/usr/bin"
+        "/bin"
+        "/usr/sbin"
+        "/sbin"
+        "/usr/local/Cellar/emacs/24.5/libexec/emacs/24.5/x86_64-apple-darwin15.5.0")))
+
+
+
 (provide 'config-osx)
 ;;; config-osx.el ends here
