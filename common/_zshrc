@@ -111,14 +111,14 @@ alias tmls="tmux list-sessions"
 alias tmat="tmux attach -d -t"
 
 # Virtualenv commands.
-alias createvirtualenv='. /csnzoo/gehrman/.bin/create_virtualenv.sh'
-alias recreatevirtualenv='. /csnzoo/gehrman/.bin/recreate_virtualenv.sh'
-alias startvirtualenv='. /csnzoo/gehrman/.bin/activate_virtualenv.sh'
+alias createvirtualenv='. ~/.bin/create_virtualenv.sh'
+alias recreatevirtualenv='. ~/.bin/recreate_virtualenv.sh'
+alias startvirtualenv='. ~/.bin/start_virtualenv.sh'
 alias stopvirtualenv='deactivate' # Included for completeness... it's a silly thing to do.
-alias destroyvirtualenv='. /csnzoo/gehrman/.bin/destroy_virtualenv.sh'
-alias listvirtualenvs='. /csnzoo/gehrman/.bin/list_virtualenvs.sh'
-alias annotatevirtualenv='. /csnzoo/gehrman/.bin/annotate_virtualenv.sh'
-alias listinstalledeggs='. /csnzoo/gehrman/.bin/list_installed_eggs.sh'
+alias destroyvirtualenv='. ~/.bin/destroy_virtualenv.sh'
+alias listvirtualenvs='. ~/.bin/list_virtualenvs.sh'
+alias annotatevirtualenv='. ~/.bin/annotate_virtualenv.sh'
+alias listinstalledeggs='. ~/.bin/list_installed_eggs.sh'
 # Tab-completions are nice.
 compdef _activate_virtualenv recreatevirtualenv
 compdef _activate_virtualenv startvirtualenv
@@ -128,7 +128,7 @@ compdef _activate_virtualenv listinstalledeggs
 
 
 # Build script
-alias build_egg='. /csnzoo/gehrman/.bin/build_egg.sh'
+alias build_egg='. ~/.bin/build_egg.sh'
 
 
 # Current-shell command aliases.
