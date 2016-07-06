@@ -141,6 +141,9 @@ alias bline='beeline -u jdbc:hive2://bobigdatahive01.csnzoo.com:10000'
 source ~/.zsh/conf/prompt
 source ~/.zsh/conf/keybinds
 source ~/.zsh/conf/functions
+if [[ uname == "Darwin" ]]; then
+   source ~/.zsh/conf/osx
+done
 
 #Use vim bindings.
 bindkey -v
