@@ -3,6 +3,11 @@ autoload bashcompinit
 bashcompinit
 eval "$(_WAYRUNNER_COMPLETE=source wayrunner)"
 
+# Use Wayfair supported python.
+if [ -d /wayfair/pkg/python2.7 ]; then
+  export PATH=/wayfair/pkg/python2.7/latest/bin:~/.bin:/usr/local/git/bin:$PATH
+fi
+
 # Linux-specific aliases
 alias l="ls -lh"
 

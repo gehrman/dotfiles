@@ -57,11 +57,8 @@ fi
 #  export PATH=$JAVA_HOME/bin:$PATH
 #fi
 
-# Use Wayfair supported python.
-if [ -d /wayfair/pkg/python2.7 ]; then
-  export PATH=/wayfair/pkg/python2.7/latest/bin:~/.bin:/usr/local/git/bin:$PATH
-fi
 export PATH=~/.bin:$PATH
+
 # Use a snake prompt. Hiss.
 export PYTHONSTARTUP=~/.pythonrc
 # Use ipython for pyspark.
