@@ -118,21 +118,16 @@ alias destroyvirtualenv='. ~/.bin/destroy_virtualenv.sh'
 alias listvirtualenvs='. ~/.bin/list_virtualenvs.sh'
 alias annotatevirtualenv='. ~/.bin/annotate_virtualenv.sh'
 alias listinstalledeggs='. ~/.bin/list_installed_eggs.sh'
+
 # Tab-completions are nice.
 compdef _activate_virtualenv recreatevirtualenv
 compdef _activate_virtualenv startvirtualenv
 compdef _activate_virtualenv destroyvirtualenv
 compdef _activate_virtualenv annotatevirtualenv
 compdef _activate_virtualenv listinstalledeggs
-# Wayrunner completions
-autoload bashcompinit
-bashcompinit
-eval "$(_WAYRUNNER_COMPLETE=source wayrunner)"
-
 
 # Build script
 alias build_egg='. ~/.bin/build_egg.sh'
-
 
 # Current-shell command aliases.
 alias rezsh='source ~/.zshrc'
@@ -145,9 +140,10 @@ if [[ $TERM != "dumb" ]]; then
     source ~/.zsh/conf/keybinds
     source ~/.zsh/conf/functions
 fi
-
 if [[ `uname` == "Darwin" ]]; then
-   source ~/.zsh/conf/osx
+    source ~/.zsh/conf/osx
+elif [[ `uname` == "Linux" ]]; then
+    source ~/.zsh/conf/linux
 fi
 
 #Use vim bindings.

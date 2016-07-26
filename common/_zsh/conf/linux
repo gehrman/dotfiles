@@ -1,0 +1,4 @@
+# Wayrunner completions
+autoload bashcompinit
+bashcompinit
+eval "$(_WAYRUNNER_COMPLETE=source wayrunner)"
