@@ -2,3 +2,9 @@
 autoload bashcompinit
 bashcompinit
 eval "$(_WAYRUNNER_COMPLETE=source wayrunner)"
+
+# Linux-specific aliases
+alias l="ls -lh"
+
+# ...yep, I did this.
+alias gogogadget_vsql="/opt/vertica/bin/vsql -C -h boVerticaC1N01"

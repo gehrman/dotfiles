@@ -98,15 +98,12 @@ alias asl="ssh-add -l"
 export WORDCHARS=`echo $WORDCHARS | sed -e 's/\///'`
 
 alias antigrep="grep -v"
-alias l="ls -lh"
 alias e="emacsclient -t"
-
-# ...yep, I did this.
-alias gogogadget_vsql="/opt/vertica/bin/vsql -C -h boVerticaC1N01"
 
 # Tmuxxing
 alias tms="tmux source"
 alias tmls="tmux list-sessions"
+alias tma="tmux attach -d"
 alias tmat="tmux attach -d -t"
 
 # Virtualenv commands.
