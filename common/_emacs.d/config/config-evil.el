@@ -62,6 +62,7 @@
   "bn" 'narrow-to-region
   "bp" 'narrow-to-page
   "br" 'revert-buffer
+  "bs" 'switch-to-buffer
   "bw" 'widen
   ;; "de" 'debug-on-error
   ;; "dE" 'debug-on-entry
@@ -119,6 +120,11 @@
             (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
             (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
             (auto-fill-mode)))
+
+(add-hook 'magit-mode-hook
+          (lambda ()
+            (evil-define-key 'emacs magit-mode-map (kbd ", ,") 'ibuffer)
+            (evil-define-key 'emacs magit-mode-map (kbd ", .") 'delete-other-windows)))
 
 (setq evil-leader/in-all-states t)
 

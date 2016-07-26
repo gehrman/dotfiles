@@ -54,7 +54,15 @@
 ;; Magit next, because, well, its amazing.
 (ensure-package-installed 'magit
                           ;;'evil-magit
-                          'anzu
+                          )
+
+;; Productivity packages: autocomplete, snippets, and such
+(ensure-package-installed 'company
+                          'hound
+                          )
+
+;; General packages.
+(ensure-package-installed 'anzu
                           ;;'evil-anzu
                           'linum-relative
                           'flycheck
@@ -107,6 +115,8 @@
                           'restclient-test
                           'ob-http
                           'ob-restclient
+                          'know-your-http-well
+                          'company-restclient
                           ;;https://github.com/skeeto/skewer-mode
                           ;; there's also swank-js + slime
                           ;;'skewer-less
@@ -115,15 +125,15 @@
                           )
 
 ;; Latex Packages
-(ensure-package-installed 'cdlatex
-                          'latex-math-preview
-                          'latex-pretty-symbols
+; (ensure-package-installed 'cdlatex
+                          ;;'latex-math-preview
+                          ;;'latex-pretty-symbols
                           ;;'latex-extra
                           ;;'latex-preview-pane
                           ;;'magic-latex-buffer
                           ;;'math-symbol-lists
                           ;;'px ; inline latex preview
-                          )
+                          ;;)
 
 ;; File modes.
 (ensure-package-installed 'puppet-mode
