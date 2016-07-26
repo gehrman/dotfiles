@@ -1,5 +1,16 @@
+# Directory to store virtualenvs in.
 VENV_DIR=/wayfair/home/gehrman/envs
+
+# Name of the file to store a virtualenv's annotation in.
 VENV_ANNOTATE_FILE=.annotation
+
+# Set to true to activate a virtualenv when it's created.
 VENV_START_ON_CREATE=TRUE
+
+# Set to false to turn off destroyvirtualenv confirmations.
 VENV_CONFIRM_DESTROY=TRUE
-VENV_DEFAULT_ENV=sci
+
+# Set a default virtualenv allows you to used a simple
+#   $ startvirtualenv
+# command to start a default env.
+#VENV_DEFAULT_ENV=default
