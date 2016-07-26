@@ -142,6 +142,7 @@ if [[ `uname` == "Darwin" ]]; then
 elif [[ `uname` == "Linux" ]]; then
     source ~/.zsh/conf/linux
 fi
+source ~/.zsh/conf/settings.private
 
 #Use vim bindings.
 bindkey -v
