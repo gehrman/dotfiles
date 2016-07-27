@@ -1,0 +1,11 @@
+[user]
+    name = Geoff Ehrman
+    email = gehrman@wayfair.com
+[pull]
+    rebase = true
+[push]
+    default = current
+[alias]
+    trains = ! git fetch -q && git for-each-ref --count=5 --sort=-committerdate --format='%(committerdate:relative) %09 %(refname:short)' refs/remotes/origin/deploy_*
+[reviewboard]
+    url = https://rb.csnzoo.com

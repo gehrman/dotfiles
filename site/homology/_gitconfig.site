@@ -1,0 +1,5 @@
+[user]
+    name = Geoff Ehrman
+    email = gehrman@gmail.com
+[pull]
+    rebase = true
