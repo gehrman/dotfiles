@@ -57,7 +57,8 @@
                           )
 
 ;; Productivity packages: autocomplete, snippets, and such
-(ensure-package-installed 'company
+(ensure-package-installed 'ag
+                          'company
                           'hound
                           )
 
@@ -73,7 +74,6 @@
                           'powerline-evil
                           'paredit
                           ;;'pt ; this one seems to suck/not work on windows
-                          'ag
                           'helm
                           'helm-ag
                           ;;'projectile
