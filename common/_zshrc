@@ -61,8 +61,6 @@ export PATH=~/.bin:$PATH
 
 # Use a snake prompt. Hiss.
 export PYTHONSTARTUP=~/.pythonrc
-# Use ipython for pyspark.
-alias ipyspark="PYSPARK_PYTHON=ipython pyspark"
 
 grepitall() {
     if [ "$2" != "" ]; then

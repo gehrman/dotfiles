@@ -13,3 +13,6 @@ alias l="ls -lh"
 
 # ...yep, I did this.
 alias gogogadget_vsql="/opt/vertica/bin/vsql -C -h boVerticaC1N01"
+
+# Use ipython for pyspark.
+alias ipyspark="PYSPARK_PYTHON=ipython pyspark"
