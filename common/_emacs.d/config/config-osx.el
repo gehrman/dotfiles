@@ -25,6 +25,20 @@
 ;; It's not clear if this is necessary, but it's quite possible the answer to
 ;; at least some of the weirdness around paths I've seen in OS X.
 ;(ensure-package-installed 'exec-path-from-shell)
+;; An alternative suggested in the ag.el documentation is
+; (defun set-exec-path-from-shell-PATH ()
+;   "Set up Emacs' `exec-path' and PATH environment variable to match that used by the user's shell.
+; This is particularly useful under Mac OSX, where GUI apps are not started from a shell."
+;   (interactive)
+;   (let ((path-from-shell (replace-regexp-in-string "[ \t\n]*$" "" (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
+;     (setenv "PATH" path-from-shell)
+;     (setq exec-path (split-string path-from-shell path-separator))))
+; (set-exec-path-from-shell-PATH)
+;; Not that since we're already setting 'exec-path below, it's likely the issue is in
+;; (setenv/getenv)'s PATH variable instead. This may, or may not, be related to the insanity
+;; with TRAMP-git. Oy vey.
+;; For now, we just manually set the 'ag-executable:
+(setq ag-executable "/usr/local/bin/ag")
 
 (setq exec-path
       (quote

@@ -91,6 +91,16 @@
 (setq ring-bell-function nil)
 
 
+;;;;;;;;;;;;;;
+;; Ag Stuff ;;
+;;;;;;;;;;;;;;
+;; Open selection in results window. Let's see how this feels.
+(setq ag-reuse-window 't)
+;; Reuse the same *ag* buffer for all searchs. Again, let's see how it feels.
+(setq ag-reuse-buffers 't)
+;; Focus the search buffer.
+(add-hook 'ag-search-finished-hook (lambda () (other-window 1)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Customized Variables. ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;

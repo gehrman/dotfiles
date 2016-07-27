@@ -66,9 +66,22 @@
   "bw" 'widen
   ;; "de" 'debug-on-error
   ;; "dE" 'debug-on-entry
+
+  ;; ag.el exports:
+  ;;       ag           ag-project
+  ;;       ag-files     ag-project-files
+  ;;       ag-regexp    ag-project-regexp
+  ;; We also put 'hound in this space. See https://github.com/ryoung786/hound.el
+  ;; for configuration of hound.
+  "da" 'ag
   "df" 'describe-function
+  "dg" 'ag-files
   "dh" 'help
   "dk" 'describe-key
+  "dn" 'hound
+  "dp" 'ag-project
+  "dr" 'ag-regexp
+
   "dv" 'describe-variable
   "fb" 'flycheck-buffer ; http://www.flycheck.org/
   "ff" 'flycheck-buffer
