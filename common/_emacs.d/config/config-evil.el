@@ -117,6 +117,11 @@
 ;; (evil-leader/set-key-for-mode 'org-src-mode
 ;;   "wq" 'org-edit-src-exit
 ;;   "q" 'org-edit-src-abort)
+;; I think the way to do this will be to add post-load advice around
+;; the 'org-edit-special function to manipulate that mode's keybinds.
+;; The exact way to grab the keybind map and add temporary org-src-mode
+;; key binds isn't clear yet. For more details, and a partially relevant
+;; example, see http://emacs.stackexchange.com/a/20397.
 
 (add-hook 'org-mode-hook
           (lambda ()
