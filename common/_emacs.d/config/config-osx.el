@@ -21,6 +21,11 @@
   (demaximize-frame))
 (advice-add 'evil-quit :before #'before-evil-quit)
 
+;; See https://github.com/purcell/exec-path-from-shell for package description.
+;; It's not clear if this is necessary, but it's quite possible the answer to
+;; at least some of the weirdness around paths I've seen in OS X.
+;(ensure-package-installed 'exec-path-from-shell)
+
 (setq exec-path
       (quote
        ("/Users/gehrman/.bin"
