@@ -5,6 +5,8 @@
 # then using patch to apply the diff. This should allow for uninstallation of
 # problematic revisions. (I think.) Investigate.
 
+mkdir -p ~/.zsh/{conf,completions}
+
 pushd `dirname $0` > /dev/null
 cd common
 BASE_DIR=`pwd`
