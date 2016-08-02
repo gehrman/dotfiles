@@ -7,8 +7,8 @@
 # files.
 
 mkdir -p ~/.emacs.d/config
-ln -s common/_emacs.d/init.el ~/.emacs.d/
+ln -s `pwd`/common/_emacs.d/init.el ~/.emacs.d/
 
 for f in `ls common/_emacs.d/config/config-*.el`; do
-    ln -s $f ~/.emacs.d/config/
+    ln -s `pwd`/$f ~/.emacs.d/config/
 done
