@@ -42,11 +42,6 @@
 
 ;; Setup leader key stuff.
 ;; \ is the default, but "," is another common choice
-;;(evil-leader/set-leader ",")
-;; It requires remapping next selection, but ; is also nice.
-;;(evil-leader/set-leader ";")
-;; Let's give SPC a chance.
-;;(evil-leader/set-leader "SPC")
 (evil-leader/set-leader ",")
 
 ;; But why not use all three? TODO: Write evil-multileader
@@ -81,14 +76,14 @@
   "dn" 'hound
   "dp" 'ag-project
   "dr" 'ag-regexp
-
   "dv" 'describe-variable
+  ;;"dw" 'apropos ; Doesn't autofill object at point sadly
   "fb" 'flycheck-buffer ; http://www.flycheck.org/
   "ff" 'flycheck-buffer
   "fl" 'flycheck-list-errors
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
-  "g" 'magit-status
+  "gg" 'magit-status
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
   "pi" 'package-install
@@ -97,7 +92,9 @@
   "pn" 'pianobar-next-song
   "pp" 'pianobar-play-or-pause
   "sb" 'eval-buffer
+  "sf" 'browse-url-of-file
   "sl" 'eval-last-sexp
+  "so" 'browse-url
   "ss" 'eval-defun ;because eval-defun is *totally* a synonym for 'eval-this-sexp... dammit emacs
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
   "wf" 'toggle-frame-fullscreen
@@ -146,7 +143,10 @@
 (add-hook 'magit-mode-hook
           (lambda ()
             (evil-define-key 'emacs magit-mode-map (kbd ", ,") 'ibuffer)
-            (evil-define-key 'emacs magit-mode-map (kbd ", .") 'delete-other-windows)))
+            (evil-define-key 'emacs magit-mode-map (kbd ", .") 'delete-other-windows)
+            (evil-define-key 'emacs magit-mode-map (kbd ", w j") 'evil-window-left)
+            (evil-define-key 'emacs magit-mode-map (kbd ", w l") 'evil-window-right)
+          ))
 
 (setq evil-leader/in-all-states t)
 
