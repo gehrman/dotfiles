@@ -60,28 +60,26 @@
 (ensure-package-installed 'ag
                           'company
                           'hound
+                          ;;'sx ; search stackexchange et al
+                          ;;'wgrep ; What does this one actually do?
                           )
 
 ;; General packages.
 (ensure-package-installed 'anzu
-                          ;;'evil-anzu
-                          'linum-relative
                           'flycheck
-                          ;'flycheck-clojure
-                          ;'flycheck-package
-                          ;'flylisp
+                          'helm ;Configure me!
+                          'helm-ag ;Configure me! (See https://github.com/syohex/emacs-helm-ag)
+                          'linum-relative
+                          'paredit
                           'powerline
                           'powerline-evil
-                          'paredit
-                          ;;'pt ; this one seems to suck/not work on windows
-                          'helm
-                          'helm-ag
+                          ;;'evil-anzu
+                          ;;'flycheck-clojure
+                          ;;'flycheck-package
+                          ;;'flylisp
                           ;;'projectile
-                          ;;'helm-pt
                           ;;'helm-idris
                           ;;'helm-projectile
-                          ;;'wgrep ; What does this one actually do?
-                          ;;'sx ; search stackexchange et al
                           ;;'zeal-at-point ; zeal, or other documentation searching
                           ;;'ibuffer-{tramp,*}
                           ;;'tramp-hdfs
@@ -95,10 +93,10 @@
                           ;;'yagist
                           ;;'flx-*
                           ;;'grizzl
-                          ;;'idris-mode
                           ;;'org-projectile, 'org-*
                           ;;'svg-clock
                           ;;'e2wm
+			  ;;'which-key-mode https://github.com/justbur/emacs-which-key
                           )
 
 ;; Devops/infrastructure packages.
@@ -123,6 +121,10 @@
                           ;;'skewer-mode
                           ;;'skewer-reload-stylesheets
                           )
+;; Elm
+(ensure-package-installed 'elm-mode
+			  ;;'elm-yasnippets
+			  )
 
 ;; Latex Packages
 ; (ensure-package-installed 'cdlatex
@@ -137,12 +139,21 @@
 
 ;; File modes.
 (ensure-package-installed 'puppet-mode
+                          ;;'idris-mode
                           ;;'slime
                           ;;'scala2)
                           )
 
 ;; Applications
 (ensure-package-installed 'pianobar)
+
+;; Elisp Development
+;; See https://github.com/Malabarba/names for namespace package stuff.
+;; Magnar Sveen's dash and s are worthwhile here too. See
+;; https://github.com/magnars/{dash.el,s.el}
+;;(ensure-package-installed 'names
+;;                          'dash
+;;                          's)
 
 ;; Themes. In a different call, b/c they went rogue.
 (ensure-package-installed 'ample-theme
