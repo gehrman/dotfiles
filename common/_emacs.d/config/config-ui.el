@@ -1,7 +1,7 @@
 ;;; config-ui --- UI settings.
 
 ;;; Commentary:
-;; First things first, make emacs look less... well, emacs-y.
+;; First things first, make Emacs look less... well, emacs-y.
 ;; So, first we do a bunch of theme stuff, and then other appearance stuff.
 ;; Basically, if it's just a UI tweak or setting, it should live here.
 ;; Regarding themes, if you ever want to waste an afternoon, checkout
