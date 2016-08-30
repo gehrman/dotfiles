@@ -178,6 +178,8 @@
                        'ibuffer-mode
                        'package-menu-mode
                        'completion-list-mode)
+(set-evil-initial-mode 'emacs
+                       'ansi-term)
 
 (provide 'config-evil)
 ;;; config-evil.el ends here
