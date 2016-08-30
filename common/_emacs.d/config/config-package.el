@@ -152,7 +152,10 @@
                           )
 
 ;; Applications
-(ensure-package-installed 'pianobar)
+(ensure-package-installed 'pianobar
+                          'pomodoro ;https://github.com/baudtack/pomodoro.el
+                          ;;'tomatinho ;https://github.com/konr/tomatinho
+                          )
 
 ;; Elisp Development
 ;; See https://github.com/Malabarba/names for namespace package stuff.
