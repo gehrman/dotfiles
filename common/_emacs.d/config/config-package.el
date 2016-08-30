@@ -136,6 +136,13 @@
                           ;;'math-symbol-lists
                           ;;'px ; inline latex preview
                           ;;)
+;; Markdown
+(ensure-package-installed 'markdown-mode
+                          ;;'markdown-preview-mode
+                          ;;'flymd
+                          ;;'el2markdown
+                          ;;'ham-mode ; Edit HTML with Markdown seamlessly
+                          )
 
 ;; File modes.
 (ensure-package-installed 'puppet-mode
@@ -154,6 +161,11 @@
 ;;(ensure-package-installed 'names
 ;;                          'dash
 ;;                          's)
+
+;; UI Packages
+(ensure-package-installed 'transpose-frame
+                          'visible-mark
+                          )
 
 ;; Themes. In a different call, b/c they went rogue.
 (ensure-package-installed 'ample-theme
