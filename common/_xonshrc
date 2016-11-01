@@ -1,0 +1,60 @@
+# -*- python -*-
+from os.path import join
+
+# prompt isn't repainting correctly
+#import xontrib.prompt_vi_mode
+
+# Basic Usability
+aliases['l'] = 'ls -l'
+aliases['la'] = 'ls -la'
+aliases['e'] = 'emacsclient -t'
+aliases['v'] = 'vim'
+
+# Navigation
+aliases['ghn'] = 'cd /wayfair/home/gehrman'
+
+# Tmux
+aliases['tms'] = 'tmux source'
+aliases['tmls'] = 'tmux list-sessions'
+aliases['tma'] = 'tmux attach -d'
+aliases['tmat'] = 'tmux attach -d -t'
+aliases['->'] = 'echo "->"'
+aliases['-->'] = 'echo "+>"'
+aliases['@->'] = 'echo "@->"'
+
+
+# Virtualenv aliases
+alias createvirtualenv='. ~/.bin/create_virtualenv.sh'
+alias recreatevirtualenv='. ~/.bin/recreate_virtualenv.sh'
+alias startvirtualenv='. ~/.bin/start_virtualenv.sh'
+alias stopvirtualenv='deactivate' # Included for completeness... it's a silly thing to do.
+alias destroyvirtualenv='. ~/.bin/destroy_virtualenv.sh'
+alias listvirtualenvs='. ~/.bin/list_virtualenvs.sh'
+alias annotatevirtualenv='. ~/.bin/annotate_virtualenv.sh'
+alias listinstalledeggs='. ~/.bin/list_installed_eggs.sh'
+
+
+# Xonsh specific functionality
+aliases['xonpip'] = '/usr'
+
+# Old Lisp idiom for prepending when you can only append.
+# TODO: make this idempotent
+$PATH.reverse()
+$PATH.extend(['/usr/local/bin', join($HOME, '.bin')])
+$PATH.reverse()
+
+# TODO: Refactor this.
+$PROMPT = '{env_name:{} }{BOLD_GREEN}{user}{YELLOW}@{BOLD_BLUE}{hostname} {CYAN}{cwd}{NO_COLOR}\n({CYAN}0{NO_COLOR}) {RED}__{NO_COLOR}_/{YELLOW}\\_{NO_COLOR}_/{RED}\\_{PURPLE}p{YELLOW}~{NO_COLOR} : '
+$RIGHT_PROMPT = '{curr_branch: {}}{branch_color}'
+$PYTHONSTARTUP = join($HOME, '.pythonrc')
+
+# Vi-Mode is de-rigeour
+$VI_MODE = True
+
+# Taken from xon.sh/xonshrc.html
+$MULTILINE_PROMPT = '`·.,¸,.·*¯`·.,¸,.·*¯'
+$XONSH_SHOW_TRACEBACK = True
+$XONSH_STORE_STDOUT = True
+
+# Vox Config
+$VIRTUALENV_HOME = join($HOME, 'Dev/envs')
