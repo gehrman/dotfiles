@@ -17,6 +17,14 @@
             (push '("<=" . ?≤) prettify-symbols-alist)
             (push '(">=" . ?≥) prettify-symbols-alist)
             (push '("==" . ?≟) prettify-symbols-alist)
+            (push '("sum" . ?Σ) prettify-symbols-alist)
+            ; Greek Lowercase
+            (push '("alpha" . ?α) prettify-symbols-alist)
+            (push '("beta" . ?β) prettify-symbols-alist)
+            (push '("gamma" . ?γ) prettify-symbols-alist)
+            (push '("sigma" . ?σ) prettify-symbols-alist)
+            ; Greek Uppercase
+            (push '("Sigma" . ?Σ) prettify-symbols-alist)
             ))
 
 (provide 'config-python)
