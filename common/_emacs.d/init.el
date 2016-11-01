@@ -98,6 +98,19 @@
 (setq ring-bell-function nil)
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; GPG Stuff, not yet enough settings to move to a config ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Note that on OS X, in addition to all the packages pulled in by
+;; `brew install gpg2`, we also need to `brew install pinentry-mac` to get
+;; EPA/GPG support working (at least when using a unified GUI-terminal emacs
+;; session. It may be possible to get things working terminal-only w/o
+;; `pinentry-mac`. It may also be that this is another problem related to
+;; (setenv/getenv PATH) stuff. See config-osx.
+(setq epg-gpg-program "gpg2")
+;(setq epa-file-select-keys nil)
+
+
 ;;;;;;;;;;;;;;
 ;; Ag Stuff ;;
 ;;;;;;;;;;;;;;
