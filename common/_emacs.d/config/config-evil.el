@@ -88,6 +88,7 @@
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
   "gg" 'magit-status
+  "ii" 'insert-char
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
   "pi" 'package-install
