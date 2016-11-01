@@ -126,6 +126,15 @@
 			  ;;'elm-yasnippets
 			  )
 
+;; Rust
+(ensure-package-installed 'cargo
+                          ;'flycheck-rust
+                          ;'flymake-rust
+                          ;'racer
+                          'rust-mode
+                          'rustfmt
+                          )
+
 ;; Latex Packages
 ; (ensure-package-installed 'cdlatex
                           ;;'latex-math-preview
@@ -148,7 +157,8 @@
 (ensure-package-installed 'puppet-mode
                           ;;'idris-mode
                           ;;'slime
-                          ;;'scala2)
+                          'scala-mode
+                          'ensime ;scala mode requisite
                           )
 
 ;; Applications
