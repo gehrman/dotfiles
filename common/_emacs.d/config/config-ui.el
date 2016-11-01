@@ -90,6 +90,13 @@
 ;; Global prettification. Because lambda is λ dammit.
 (global-prettify-symbols-mode t)
 
+;; Window manipulations
+(require 'transpose-frame)
+
+;; Again, usability content. Need to make this global.
+(require 'visible-mark)
+;(visible-mark-mode)
+
 ;; At some point, I should get code folding to work.
 ;; Resources:
 ;; http://stackoverflow.com/questions/2399612/why-is-there-no-code-folding-in-emacs
