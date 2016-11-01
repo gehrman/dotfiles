@@ -1,0 +1,13 @@
+# -*- python -*-
+
+# Wayfair Linux specific aliases
+alias gogogadget_vsql="/opt/vertica/bin/vsql -C -h boVerticaC1N01"
+alias gogogadget_hive='beeline -u jdbc:hive2://bigdatahive01.host.bo1.csnzoo.com:10000 -n gehrman'
+
+# Use ipython for pyspark.
+alias ipyspark="PYSPARK_PYTHON=ipython pyspark"
+
+# I should really find a better way to do this.
+$PATH.reverse()
+$PATH.extend(['/wayfair/pkg/python2.7/latest/bin'])
+$PATH.reverse()
