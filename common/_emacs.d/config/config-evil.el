@@ -4,6 +4,10 @@
 ;; Evil Mode. A/K/A Make Emacs Usable.
 
 ;;; Code:
+;; Before we load emacs, we want to set the toggle key to ensure everything
+;; is initialized correctly.
+(setq evil-toggle-key "C-d") ; Note that we're shadowing evil-scroll-down here.
+
 ;; set evil-mode by default, so emacs is actually usable as a text editor
 (require 'evil)
 
