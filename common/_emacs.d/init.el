@@ -97,6 +97,8 @@
 ;; because the system bell is a good idea, said no-one ever.
 (setq ring-bell-function nil)
 
+;; Desktop mode saves buffers and some other user state on exit. It's nice.
+(desktop-save-mode 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; GPG Stuff, not yet enough settings to move to a config ;;
