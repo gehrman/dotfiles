@@ -121,6 +121,15 @@
                           ;;'skewer-mode
                           ;;'skewer-reload-stylesheets
                           )
+;; PHP
+(ensure-package-installed 'php-mode
+                          'php-refactor-mode
+                          'php-scratch
+                          'phpcbf
+                          'phpunit
+                          )
+
+
 ;; Elm
 (ensure-package-installed 'elm-mode
 			  ;;'elm-yasnippets
@@ -157,8 +166,8 @@
 (ensure-package-installed 'puppet-mode
                           ;;'idris-mode
                           ;;'slime
-                          'scala-mode
-                          'ensime ;scala mode requisite
+                          ;'scala-mode
+                          ;'ensime ;scala mode requisite
                           )
 
 ;; Applications
