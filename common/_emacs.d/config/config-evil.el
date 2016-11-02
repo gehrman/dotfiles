@@ -87,6 +87,7 @@
   "fl" 'flycheck-list-errors
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
+  "gf" 'find-file-at-point
   "gg" 'magit-status
   "ii" 'insert-char
   "nm" 'linum-mode
