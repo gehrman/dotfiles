@@ -11,16 +11,6 @@
 ;; option.
 
 ;;; Code:
-(defun demaximize-frame ()
-  "Unmaximize the current frame if maximized, otherwise do nothing."
-  (if (equal (assoc 'fullscreen (frame-parameters))
-             (cons 'fullscreen 'fullboth))
-      (toggle-frame-fullscreen)))
-(defun before-evil-quit (orig-fun &rest args)
-  "Wrap ORIG-FUN and ARGS to work around OS X / Emacs 24 fullscreen quit crash."
-  (demaximize-frame))
-(advice-add 'evil-quit :before #'before-evil-quit)
-
 ;; See https://github.com/purcell/exec-path-from-shell for package description.
 ;; It's not clear if this is necessary, but it's quite possible the answer to
 ;; at least some of the weirdness around paths I've seen in OS X.
