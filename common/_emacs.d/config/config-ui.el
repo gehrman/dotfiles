@@ -16,6 +16,10 @@
 ;; (load-theme 'ample-flat t t)
 ;; (load-theme 'ample-light t t)
 
+;; Reykjavik sounds fun and looks nice.
+(load-theme 'reykjavik t t)
+(enable-theme 'reykjavik)
+
 
 ;; Zenburn for emacs: https://github.com/bbatsov/zenburn-emacs
 ;; (load-theme 'zenburn t)
@@ -51,7 +55,7 @@
 ;; (set-face-attribute 'default nil :family "Monaco" :height 150)
 ;; Monaco is a nice default fallback, since Consolas seems to have disappeared, but Inconsolata
 ;; is just gorgeous. Note that the InconsolataGo version uses a straight ".
-(set-face-attribute 'default nil :family "InconsolataGo" :height 200)
+(set-face-attribute 'default nil :family "InconsolataGo" :height 240)
 ;; Some other options
 ;(set-face-attribute 'default nil :family "Fira Mono" :height 200) ; Vaguely "type-writery"
 ;(set-face-attribute 'default nil :family "Envy Code R" :height 200 :weight 'normal) ; Kinda sci-fi modernist
@@ -59,8 +63,8 @@
 ;(set-face-attribute 'default nil :family "Fantasque Sans Mono" :height 200 :weight 'normal) ; Kinda sci-fi modernist
 
 ;; ilIega1o = 0O == -> --> ############ # && && || || <> << >> >>= <<= /= =/= !=
-(set-face-attribute 'default nil :family "Fira Code" :height 240) ; Vaguely "type-writery"
-;(set-face-attribute 'default nil :family "Monoid" :height 200) ;
+;(set-face-attribute 'default nil :family "Fira Code" :height 240) ; Vaguely "type-writery"
+;(set-face-attribute 'default nil :family "Monoid" :height 180) ;
 ;(set-face-attribute 'default nil :family "Hasklig" :height 200) ;
 ;(set-face-attribute 'default nil :family "Iosevka" :height 200) ;
 ;(set-face-attribute 'default nil :family "Iosevka Term" :height 200) ;
@@ -105,6 +109,10 @@
 ;; https://github.com/jorgenschaefer/elpy/issues/240
 ;; http://www.emacswiki.org/emacs/HideShow (hs-minor-mode)
 
+;; Global, non-evil keybinds. (When does it come time to spin this all off into
+;; its own file?)
+(global-set-key (kbd "C-c C-z") 'suspend-frame)
+(global-set-key (kbd "s-q") 'delete-frame)
 
 (provide 'config-ui)
 ;;; config-ui.el ends here

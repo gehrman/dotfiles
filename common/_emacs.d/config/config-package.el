@@ -62,6 +62,10 @@
                           'hound
                           ;;'sx ; search stackexchange et al
                           ;;'wgrep ; What does this one actually do?
+                          'ibuffer-tramp
+                          ;;'tramp-hdfs
+                          ;;'tramp-term
+                          ;;'tramp-theme
                           )
 
 ;; General packages.
@@ -101,7 +105,7 @@
 
 ;; Devops/infrastructure packages.
 (ensure-package-installed 'vagrant
-                          ;;'vagrant-tramp
+                          'vagrant-tramp
                           ;;'docker
                           ;;'dockerfile-mode
                           ;;'docker-tramp
@@ -129,6 +133,9 @@
                           'phpunit
                           )
 
+;; R and Statistics
+(ensure-package-installed 'ess
+                          )
 
 ;; Elm
 (ensure-package-installed 'elm-mode
@@ -155,12 +162,12 @@
                           ;;'px ; inline latex preview
                           ;;)
 ;; Markdown
-(ensure-package-installed 'markdown-mode
-                          ;;'markdown-preview-mode
+;(ensure-package-installed 'markdown-mode
+                          ;;'markdown-preview-mode ; Markdown Preview in Browser (https://github.com/ancane/markdown-preview-mode)
                           ;;'flymd
                           ;;'el2markdown
                           ;;'ham-mode ; Edit HTML with Markdown seamlessly
-                          )
+;                          )
 
 ;; File modes.
 (ensure-package-installed 'puppet-mode
@@ -196,6 +203,7 @@
                           'solarized-theme
                           'monokai-theme
                           'darcula-theme
+                          'reykjavik-theme
                           ;; 'afterglow - https://github.com/sjahl/emacs-theme-afterglow
                           ;; 'afternoon-theme
                           ;; 'noctilux-theme
