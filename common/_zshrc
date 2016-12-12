@@ -57,7 +57,7 @@ fi
 #  export PATH=$JAVA_HOME/bin:$PATH
 #fi
 
-export PATH=~/.bin:$PATH
+export PATH=/usr/local/bin:~/.bin:$PATH
 
 # Use a snake prompt. Hiss.
 export PYTHONSTARTUP=~/.pythonrc

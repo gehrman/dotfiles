@@ -11,23 +11,6 @@ cleanup_all(){
     cleanup_pythoncruft
 }
 
-# setup for source-code archeology:
-get_git_branch(){
-    branch=$(git symbolic-ref HEAD | cut -d'/' -f3)
-    echo $branch
-}
-setopt prompt_subst
-__setup_archeology(){
-    cd /csnzoo/gehrman/gitworkspace/python
-    if [ '$(get_git_branch)' != 'competitive-pricing_historic' ]; then
-        git checkout competitive-pricing_historic
-    fi
-    cd /csnzoo/gehrman/gitworkspace/python/competitive-pricing
-    repo=$(get_git_branch)
-    export PROMPT='(%j) $repo:u (%~): '
-}
-alias goto_historic_pricing="__setup_archeology"
-
 # I can't believe I wrote this.
 average_line_size(){
     python -c "print (`ls -l | grep $1 | awk '{print $5}'` + 0.0) / `wc -l $1 | awk {'print $1'}`"

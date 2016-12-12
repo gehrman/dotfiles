@@ -1,5 +1,5 @@
-# Linux-specific aliases
+# OSX-specific aliases (though a lot of these are probably kosher on *BSD's too)
 alias l="ls -lhG"
-if [ -d /usr/local/Cellar/emacs/24.5/bin ]; then
-    export PATH=/usr/local/Cellar/emacs/24.5/bin:$PATH
-fi
+
+# Local Dev
+export VAGRANT_HOST_SOURCE_PATH=/Users/gehrman/Dev/sf
