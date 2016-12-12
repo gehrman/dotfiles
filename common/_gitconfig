@@ -1,5 +1,6 @@
 [color]
     ui = true
+    whitespace = red
 [push]
     default = current
 [fetch]
