@@ -1,3 +1,8 @@
+[core]
+    autocrlf = false
+    excludesfile = /csnzoo/gehrman/.gitignore_global
+    preloadIndex = true
+    fscache = true
 [color]
     ui = true
     whitespace = red
@@ -5,15 +10,9 @@
     default = current
 [fetch]
     prune = true
-[core]
-    autocrlf = false
-    excludesfiles = ~/.gitignore
-    preloadIndex = true
-    fscache = true
 [alias]
     co = checkout
     cwm = commit -m
-    cawm = commit -am
     amend = commit --amend
     popstash = stash pop
     liststash = stash list

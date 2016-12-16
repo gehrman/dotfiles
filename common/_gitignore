@@ -1,2 +1,4 @@
 \#.*#
 *~
+.reviewboardrc
+.tramp_history

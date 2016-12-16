@@ -12,7 +12,8 @@ fi
 alias l="ls -lh"
 
 # ...yep, I did this.
-alias gogogadget_vsql="/opt/vertica/bin/vsql -C -h boVerticaC1N01"
+alias gogogadget_vsql="/opt/vertica/bin/vsql -C -h vertica.csnzoo.com"
+alias gogogadget_hive='beeline -u jdbc:hive2://bigdatahive01.host.bo1.csnzoo.com:10000 -n gehrman'
 
 # Use ipython for pyspark.
 alias ipyspark="PYSPARK_PYTHON=ipython pyspark"

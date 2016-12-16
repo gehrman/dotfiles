@@ -2,7 +2,16 @@
 # It should contain commands to set up aliases,
 # functions, options, key bindings, etc.
 
+#clear
+#unsetopt zle
+#PS1='$ '
+#return
+
 ## Command Completion Settings
+if [[ $TERM == "dumb" ]]; then
+    PS1="zsh$ "
+    return
+fi
 
 # register the completions folder
 fpath=(~/.zsh/completions $fpath)
@@ -124,7 +133,7 @@ alias build_egg='. ~/.bin/build_egg.sh'
 # Current-shell command aliases.
 alias rezsh='source ~/.zshrc'
 alias ghn="cd /wayfair/home/gehrman"
-alias gcn="cd /wayfair/mnt/codebase/DEVWEBPHP349"
+alias gcn="cd /wayfair/home/gehrman/dev"
 alias bline='beeline -u jdbc:hive2://bobigdatahive01.csnzoo.com:10000 -n gehrman'
 
 if [[ $TERM != "dumb" ]]; then
