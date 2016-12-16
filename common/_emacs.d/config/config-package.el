@@ -180,6 +180,7 @@
 ;; Applications
 (ensure-package-installed 'pianobar
                           'pomodoro ;https://github.com/baudtack/pomodoro.el
+                          'rbt
                           ;;'tomatinho ;https://github.com/konr/tomatinho
                           )
 
@@ -194,6 +195,7 @@
 ;; UI Packages
 (ensure-package-installed 'transpose-frame
                           'visible-mark
+                          'fill-column-indicator
                           )
 
 ;; Themes. In a different call, b/c they went rogue.

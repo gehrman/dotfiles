@@ -6,7 +6,6 @@
 ;; is probably here to stay too.
 
 ;;; Code:
-
 ;; Setup the path for custom config files.
 
 ;; Added by Package.el.  This must come before configurations of
@@ -16,6 +15,7 @@
 (package-initialize)
 
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
+(setq tramp-remote-path '("/usr/local/bin" "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/sbin" "/csnzoo/gehrman/.bin"))
 
 ;; We need to exec 'config-package first because it deals with setting up the
 ;; paths for all the installed packages, e.g. evil.

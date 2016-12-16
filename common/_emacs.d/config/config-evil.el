@@ -56,6 +56,7 @@
   ;; for it is
   "bc" 'clone-indirect-buffer-other-window
   "bf" 'diff-buffer-with-file
+  "bh" 'fci-mode ;(from buffer-highlight)
   "bk" 'kill-buffer
   "bd" 'narrow-to-defun
   "bn" 'narrow-to-region

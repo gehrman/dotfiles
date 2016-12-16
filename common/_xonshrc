@@ -1,5 +1,8 @@
 # -*- python -*-
+from functools import partial
 from os.path import join
+
+import requests
 
 # prompt isn't repainting correctly
 #import xontrib.prompt_vi_mode
@@ -35,12 +38,12 @@ alias listinstalledeggs='. ~/.bin/list_installed_eggs.sh'
 
 
 # Xonsh specific functionality
-aliases['xonpip'] = '/usr'
+aliases['xonpip'] = '/usr/local/Cellar/xonsh/0.4.7_1/libexec/bin/pip'
 
 # Old Lisp idiom for prepending when you can only append.
 # TODO: make this idempotent
 $PATH.reverse()
-$PATH.extend(['/usr/local/bin', join($HOME, '.bin')])
+$PATH.extend(['/Library/TeX/texbin', '/usr/local/bin', join($HOME, '.bin')])
 $PATH.reverse()
 
 # TODO: Refactor this.
@@ -58,3 +61,29 @@ $XONSH_STORE_STDOUT = True
 
 # Vox Config
 $VIRTUALENV_HOME = join($HOME, 'Dev/envs')
+
+# Test aliasing a function
+def http_request(method, protocol, url, *args):
+    """Do an HTTP requst of some type.
+
+    Args:
+        url: actually a list
+    """
+    clean_url = protocol + url[0] if not url[0].startswith(protocol) else url[0]
+    print(method(clean_url))
+
+
+def my_get(input, *args):
+    url = input[0]
+    print(requests.get(url))
+def my_head(input, *args):
+    url = input[0]
+    print(requests.head(url))
+
+aliases['get->'] = lambda url, *args: http_request(requests.get, 'http', url, *args)
+aliases['get~>'] = partial(http_request, method=requests.get, protocol='https')
+
+aliases['head->'] = my_head
+aliases['p->'] = 'echo "test"'
+aliases['g>'] = 'echo "test"'
+aliases['p>'] = 'echo "test"'

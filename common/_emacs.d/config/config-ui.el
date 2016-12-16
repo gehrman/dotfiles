@@ -101,6 +101,14 @@
 (require 'visible-mark)
 ;(visible-mark-mode)
 
+;; Line length stuff.
+(require 'fill-column-indicator)
+(setq fci-rule-column 80)
+
+;; RBT Interactions
+(require 'rbt)
+
+
 ;; At some point, I should get code folding to work.
 ;; Resources:
 ;; http://stackoverflow.com/questions/2399612/why-is-there-no-code-folding-in-emacs
