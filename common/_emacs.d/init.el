@@ -98,6 +98,9 @@
 ;; because the system bell is a good idea, said no-one ever.
 (setq ring-bell-function nil)
 
+;; No need for ~ files when editing... or maybe it's the .# files
+(setq create-lockfiles nil)
+
 ;; Desktop mode saves buffers and some other user state on exit. It's nice.
 (desktop-save-mode 1)
 
