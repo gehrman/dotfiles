@@ -14,6 +14,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; Setup the path for custom config files.
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 (setq tramp-remote-path '("/usr/local/bin" "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/sbin" "/csnzoo/gehrman/.bin"))
 
