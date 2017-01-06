@@ -4,7 +4,14 @@
 ;; Not much here for now, beyond sourcing the various http stuff.
 
 ;;; Code:
+
+
+;; HTTP Interaction:
 (require 'restclient)
+
+;; HTTP completions
+(require 'know-your-http-well)
+
 
 ;; Missing function in the restclient definitions.
 ;;;###autoload
@@ -39,8 +46,6 @@
   "tk" 'restclient-test-previous-error
   )
 
-;; HTTP completions
-(require 'know-your-http-well)
 
 (provide 'config-webdev)
 ;;; config-webdev.el ends here
