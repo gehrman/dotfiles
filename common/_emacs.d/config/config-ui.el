@@ -122,5 +122,13 @@
 (global-set-key (kbd "C-c C-z") 'suspend-frame)
 (global-set-key (kbd "s-q") 'delete-frame)
 
+;; Mode-specific non-evil binds.
+(eval-after-load 'ibuffer
+  '(progn
+     (define-key ibuffer-mode-map (kbd "N") 'ibuffer-forward-filter-group)
+     (define-key ibuffer-mode-map (kbd "P") 'ibuffer-backward-filter-group)
+     (define-key ibuffer-mode-map (kbd "TAB") 'ibuffer-backward-filter-group)))
+
+
 (provide 'config-ui)
 ;;; config-ui.el ends here

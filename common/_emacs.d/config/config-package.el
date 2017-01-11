@@ -67,6 +67,7 @@
  ;;'sx ; search stackexchange et al
  ;;'wgrep ; What does this one actually do?
  'ibuffer-tramp
+ 'ibuffer-vc
  ;;'tramp-hdfs
  ;;'tramp-term
  ;;'tramp-theme
