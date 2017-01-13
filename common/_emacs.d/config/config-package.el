@@ -34,12 +34,19 @@
 (package-initialize)
 
 ;; Package groups.
-;; Evil first, as it's by far the most important.
+;; Evil group first, as it's by far the most important.
 (ensure-package-installed
+ ;; A/K/A make emacs usable.
  'evil
+
+ ;; Use the leader key.
  'evil-leader
+
+ ;; Indentation text objects.
  'evil-indent-plus
+
  ;;'evil-anzu
+ ;;'evil-magit ;some time I should try getting this to work again
  ;;'evil-lisp-state
  ;;'evil-cleverparens ; Another lisp mode.
  ;;'evil-commentary ; Another commenter.
@@ -56,7 +63,6 @@
 ;; Magit next, because, well, its amazing.
 (ensure-package-installed
  'magit
- ;;'evil-magit
  )
 
 ;; Productivity packages: autocomplete, snippets, and such
