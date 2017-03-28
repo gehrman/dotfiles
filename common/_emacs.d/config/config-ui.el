@@ -55,12 +55,13 @@
 ;; (set-face-attribute 'default nil :family "Monaco" :height 150)
 ;; Monaco is a nice default fallback, since Consolas seems to have disappeared, but Inconsolata
 ;; is just gorgeous. Note that the InconsolataGo version uses a straight ".
-(set-face-attribute 'default nil :family "InconsolataGo" :height 240)
+;(set-face-attribute 'default nil :family "InconsolataGo" :height 180)
+;(set-face-attribute 'default nil :family "InconsolataGo" :height 220)
 ;; Some other options
-;(set-face-attribute 'default nil :family "Fira Mono" :height 200) ; Vaguely "type-writery"
-;(set-face-attribute 'default nil :family "Envy Code R" :height 200 :weight 'normal) ; Kinda sci-fi modernist
-;(set-face-attribute 'default nil :family "Hermit" :height 200 :weight 'normal) ; Kinda sci-fi modernist
-;(set-face-attribute 'default nil :family "Fantasque Sans Mono" :height 200 :weight 'normal) ; Kinda sci-fi modernist
+(set-face-attribute 'default nil :family "Fira Mono" :height 200) ; Vaguely "type-writery"
+;(set-face-attribute 'default nil :family "Envy Code R" :height 200 :weight 'normal)
+;(set-face-attribute 'default nil :family "Hermit" :height 160 :weight 'normal) ; Kinda sci-fi modernist
+;(set-face-attribute 'default nil :family "Fantasque Sans Mono" :height 200 :weight 'normal) ; Comic-booky
 
 ;; ilIega1o = 0O == -> --> ############ # && && || || <> << >> >>= <<= /= =/= !=
 ;(set-face-attribute 'default nil :family "Fira Code" :height 240) ; Vaguely "type-writery"
