@@ -90,6 +90,9 @@
   "fN" 'flycheck-previous-error
   "gf" 'find-file-at-point
   "gg" 'magit-status
+  ;; TODO - do something real in the keybind map
+  "gm" 'smerge-keep-mine
+  "go" 'smerge-keep-other
   "ii" 'insert-char
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
