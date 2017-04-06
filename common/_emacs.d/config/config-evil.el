@@ -92,7 +92,9 @@
   "gg" 'magit-status
   ;; TODO - do something real in the keybind map
   "gm" 'smerge-keep-mine
-  "go" 'smerge-keep-other
+  "gn" 'smerge-next
+  "gp" 'smerge-prev
+  "gt" 'smerge-keep-other ; "keep theirs"
   "ii" 'insert-char
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
