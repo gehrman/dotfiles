@@ -1,6 +1,6 @@
 [core]
     autocrlf = false
-    excludesfile = /csnzoo/gehrman/.gitignore_global
+    excludesfile = ~/.gitignore
     preloadIndex = true
     fscache = true
 [color]
