@@ -113,7 +113,7 @@
 ;; session. It may be possible to get things working terminal-only w/o
 ;; `pinentry-mac`. It may also be that this is another problem related to
 ;; (setenv/getenv PATH) stuff. See config-osx.
-(setq epg-gpg-program "/usr/local/bin/gpg2")
+(setq epg-gpg-program "gpg2")
 ;(setq epa-file-select-keys nil)
 
 
