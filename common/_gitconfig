@@ -17,6 +17,10 @@
     popstash = stash pop
     liststash = stash list
     showstash = stash show -p
+    skip = rebase --skip
+    cont = rebase --continue
+    yep = "!git checkout --ours -- $1 && git add $1"
+    nope = "!git checkout --theirs -- $1 && git add $1"
 [merge]
     conflictstyle = diff3
 [include]
