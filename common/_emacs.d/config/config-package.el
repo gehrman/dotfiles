@@ -229,7 +229,7 @@
  'fill-column-indicator
  )
 
-;; Themes. In a different call, b/c they went rogue.
+;; Themes.
 (ensure-package-installed
  'ample-theme
  'zenburn-theme
