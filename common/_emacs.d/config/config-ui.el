@@ -109,6 +109,11 @@
 ;; RBT Interactions
 (require 'rbt)
 
+;;; Ido-mode:
+;; So ido-mode presents choices while doing things like switch buffers
+;; by putting them in the the mini-buffer. As you type, options narrow
+;; down to match the text you've typed.
+(ido-mode t)
 
 ;; At some point, I should get code folding to work.
 ;; Resources:
