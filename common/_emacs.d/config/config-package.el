@@ -175,26 +175,17 @@
  'rustfmt
  )
 
-;; Latex Packages
-;;(ensure-package-installed
- ;;'cdlatex
- ;;'latex-math-preview
- ;;'latex-pretty-symbols
- ;;'latex-extra
- ;;'latex-preview-pane
- ;;'magic-latex-buffer
- ;;'math-symbol-lists
- ;;'px ; inline latex preview
- ;;)
-
-;; Markdown
-;;(ensure-package-installed
- ;;'markdown-mode
- ;;'markdown-preview-mode ; Markdown Preview in Browser (https://github.com/ancane/markdown-preview-mode)
- ;;'flymd
- ;;'el2markdown
- ;;'ham-mode ; Edit HTML with Markdown seamlessly
- ;;)
+;; Latex
+;; (ensure-package-installed
+;;  'cdlatex
+;;  'latex-math-preview
+;;  'latex-pretty-symbols
+;;  'latex-extra
+;;  'latex-preview-pane
+;;  'magic-latex-buffer
+;;  'math-symbol-lists
+;;  'px ; inline latex preview
+;;  )
 
 ;; File modes.
 (ensure-package-installed
