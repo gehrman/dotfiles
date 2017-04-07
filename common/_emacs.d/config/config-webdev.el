@@ -46,6 +46,21 @@
   "tk" 'restclient-test-previous-error
   )
 
+;;; HTML, CSS, and Javascript
+;; So, right Clojure for the Brave and True calls for js-mode while the
+;; default is js3-mode. Not sure what the difference is, but we'll go
+;; with the Brave and True setting for now.
+(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+
+;; Indentation settings!
+(setq js-indent-level 2)
+
+;; Brave and True sets subword mode for Javascript and HTML, however evil
+;; does not respect subwords. Leaving this commented out since I generally
+;; use FT (or other vim motions) to deal with this rather than emacs
+;; native commands that respect the CamelCase -> Camel Case split.
+(add-hook 'js-mode-hook 'subword-mode)
+(add-hook 'html-mode-hook 'subword-mode)
 
 (provide 'config-webdev)
 ;;; config-webdev.el ends here
