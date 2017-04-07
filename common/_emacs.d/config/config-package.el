@@ -190,10 +190,10 @@
 ;; File modes.
 (ensure-package-installed
  'puppet-mode
- ;;'idris-mode
- ;;'slime
- ;;'scala-mode
- ;;'ensime ;scala mode requisite
+ 'idris-mode
+ 'lua-mode
+ 'slime
+ 'scala-mode
  )
 
 ;; Applications
