@@ -10,6 +10,10 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+;; Extra package repos that Clojure for the Brave and True configs default to
+;; using.
+;(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
+;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 (defun ensure-package-installed (&rest packages)
   "Ensure every package in PACKAGES is installed.
