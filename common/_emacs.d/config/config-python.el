@@ -7,6 +7,7 @@
 
 
 ;;; Code:
+(require 'ein)
 
 ;; Make function definition is done with λ dammit. This makes me inordinately
 ;; happy.

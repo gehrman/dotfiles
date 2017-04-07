@@ -118,7 +118,7 @@
  ;;'docker-tramp
  )
 
-;; Web development.
+;; Web development
 (ensure-package-installed
  'restclient
  'restclient-helm
@@ -133,6 +133,12 @@
  ;;'skewer-mode
  ;;'skewer-reload-stylesheets
  )
+
+;; Python
+(ensure-package-installed
+ 'ein
+ )
+
 ;; PHP
 (ensure-package-installed
  'php-mode
