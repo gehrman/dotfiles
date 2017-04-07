@@ -218,9 +218,10 @@
 ;; Magnar Sveen's dash and s are worthwhile here too. See
 ;; https://github.com/magnars/{dash.el,s.el}
 ;;(ensure-package-installed
- ;;'names
- ;;'dash
- ;;'s)
+;; 'names
+;; 'dash
+;; 's
+;; )
 
 ;; UI Packages
 (ensure-package-installed
