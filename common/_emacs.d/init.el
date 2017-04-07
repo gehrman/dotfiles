@@ -147,15 +147,46 @@
  '(custom-safe-themes
    (quote
     ("0ec59d997a305e938d9ec8f63263a8fc12e17990aafc36ff3aff9bc5c5a202f0" "196cc00960232cfc7e74f4e95a94a5977cb16fd28ba7282195338f68c84058ec" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "4f5bb895d88b6fe6a983e63429f154b8d939b4a8c581956493783b2515e22d6d" "118717ce0a2645a0cf240b044999f964577ee10137b1f992b09a317d5073c02d" "f5eb916f6bd4e743206913e6f28051249de8ccfd070eae47b5bde31ee813d55f" default)))
- '(minimap-window-location (quote right)))
-(custom-set-faces
+ '(ibuffer-saved-filter-groups nil)
+ '(ibuffer-saved-filters
+   (quote
+    (("non-magit_operational"
+      (not name . "magit-"))
+     ("gnus"
+      ((or
+        (mode . message-mode)
+        (mode . mail-mode)
+        (mode . gnus-group-mode)
+        (mode . gnus-summary-mode)
+        (mode . gnus-article-mode))))
+     ("programming"
+      ((or
+        (mode . emacs-lisp-mode)
+        (mode . cperl-mode)
+        (mode . c-mode)
+        (mode . java-mode)
+        (mode . idl-mode)
+        (mode . lisp-mode)))))))
+ '(minimap-window-location (quote right))
+ '(package-selected-packages
+   (quote
+    (ein ibuffer-vc visual-fill-column rbt fill-column-indicator vagrant-tramp ibuffer-tramp ess reykjavik-theme rustfmt cargo ensime scala-mode visible-mark transpose-frame zenburn-theme warm-night-theme vertica vagrant tomatinho solarized-theme restclient-test restclient-helm puppet-mode powerline-evil pomodoro pianobar paredit ob-restclient ob-http monokai-theme magit linum-relative latex-pretty-symbols hound helm-ag flycheck evil-leader evil-indent-plus elm-mode darcula-theme company-restclient cdlatex anzu ample-theme ag)))
+ '(sentence-end-double-space nil)
+ '(visual-line-fringe-indicators (quote (nil |))))
+; (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#111111" :foreground "#bdbdb3" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal)))))
+; '(default ((t (:inherit nil :stipple nil :background "#111111" :foreground "#bdbdb3" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal)))))
 
 (put 'narrow-to-region 'disabled nil)
 
 (provide 'init)
 ;;; init.el ends here
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
