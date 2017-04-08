@@ -198,6 +198,7 @@
  'lua-mode
  'slime
  'scala-mode
+ 'ensime
  )
 
 ;; Applications
