@@ -9,6 +9,21 @@
 ;;; Code:
 (require 'ein)
 
+;; Use Jedi for Company auto-completions... need to pip install the following for
+;; this to work:
+;; jedi, epc, sexpdata
+(require 'company-jedi)
+(add-to-list 'company-backends 'company-jedi)
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:environment-root "jedi")
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
+;; From Patrick's config... python3 something
+;; (setq jedi:environment-virtualenv
+;;       (append python-environment-virtualenv
+;;               '("--python" "/usr/bin/python3")))
+
 ;; Make function definition is done with λ dammit. This makes me inordinately
 ;; happy.
 (add-hook 'python-mode-hook
@@ -27,6 +42,10 @@
             ; Greek Uppercase
             (push '("Sigma" . ?Σ) prettify-symbols-alist)
             ))
+;; Grabbed from Patrick's config... should try this some time.
+; (eval-after-load "python"
+;   '(define-key python-mode-map (kbd "<RET>") 'newline-and-indent))
+
 
 (provide 'config-python)
 

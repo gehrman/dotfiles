@@ -118,6 +118,16 @@
 ;; down to match the text you've typed.
 (ido-mode t)
 
+;;; Company Mode setup:
+;;
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-idle-delay .1)
+
+;; Automatch delimites
+;(show-paren-mode 't)
+;(setq show-paren-style "expression")
+
 ;; At some point, I should get code folding to work.
 ;; Resources:
 ;; http://stackoverflow.com/questions/2399612/why-is-there-no-code-folding-in-emacs

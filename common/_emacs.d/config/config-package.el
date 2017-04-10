@@ -147,6 +147,7 @@
 ;; Python
 (ensure-package-installed
  'ein
+ 'company-jedi
  )
 
 ;; PHP
