@@ -140,10 +140,7 @@
 ;; its own file?)
 (global-set-key (kbd "C-c C-z") 'suspend-frame)
 (global-set-key (kbd "s-q") 'delete-frame)
-
-(with-eval-after-load 'evil-maps
-  (define-key evil-window-map (kbd "s-<return>") 'toggle-frame-fullscreen))
-; Why not (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)? I don't remember...
+(global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
 
 ;; Mode-specific non-evil binds.
 (eval-after-load 'ibuffer
