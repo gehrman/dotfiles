@@ -10,9 +10,9 @@
 (require 'powerline-evil)
 ;(powerline-default-theme)
 ;(powerline-vim-theme)
-;(powerline-vim-theme)
 ;(powerline-evil-vim-theme)
-(powerline-evil-vim-color-theme)
+;(powerline-evil-vim-color-theme)
+(powerline-evil-center-color-theme)
 (display-time)
 
 (provide 'config-powerline)
