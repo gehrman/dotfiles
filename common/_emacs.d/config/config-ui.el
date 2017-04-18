@@ -118,12 +118,6 @@
 ;; down to match the text you've typed.
 (ido-mode t)
 
-;;; Company Mode setup:
-;;
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-(setq company-idle-delay .1)
-
 ;; Automatch delimites
 ;(show-paren-mode 't)
 ;(setq show-paren-style "expression")

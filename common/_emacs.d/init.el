@@ -31,6 +31,7 @@
 
 ;; Now we can load the other configs.
 ;; TODO: pull these from the directory and load them programmatically
+(require 'config-company)
 (require 'config-codeblocks)
 (require 'config-flycheck)
 (require 'config-latex)
