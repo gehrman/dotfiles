@@ -174,7 +174,6 @@
 (ensure-package-installed
  'cargo
  ;;'flycheck-rust
- ;;'flymake-rust
  ;;'racer
  'rust-mode
  'rustfmt
