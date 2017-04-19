@@ -115,7 +115,8 @@
   "[" 'keyboard-quit
   ;; (l)aunch application modes like dired, proced, ansi-term, et al
   "ld" 'dired
-  "lp" 'proced)
+  "lp" 'proced
+  )
   ;; "D" 'dired)
 
 ;; Org-mode specific keybindings.
@@ -133,7 +134,8 @@
   "sj" 'org-babel-next-src-block
   "sk" 'org-babel-previous-src-block
   "ss" 'org-babel-execute-src-block
-  "t" 'org-todo)
+  "t" 'org-todo
+  )
 
 ;; This only works for major modes. Investigate how to do minor modes.
 ;; (evil-leader/set-key-for-mode 'org-src-mode
