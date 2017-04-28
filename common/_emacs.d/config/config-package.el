@@ -212,7 +212,6 @@
 ;; Applications
 (ensure-package-installed
  'pianobar
- 'pomodoro ;https://github.com/baudtack/pomodoro.el
  'rbt
  ;;'tomatinho ;https://github.com/konr/tomatinho
  )
