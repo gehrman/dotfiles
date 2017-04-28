@@ -28,24 +28,34 @@
 ;; happy.
 (add-hook 'python-mode-hook
           (lambda ()
-            (push '("lambda" . ?λ) prettify-symbols-alist)
             (push '("def" . ?λ) prettify-symbols-alist)
-            (push '("<=" . ?≤) prettify-symbols-alist)
-            (push '(">=" . ?≥) prettify-symbols-alist)
-            (push '("==" . ?≟) prettify-symbols-alist)
             (push '("sum" . ?Σ) prettify-symbols-alist)
             ; Greek Lowercase
             (push '("alpha" . ?α) prettify-symbols-alist)
             (push '("beta" . ?β) prettify-symbols-alist)
             (push '("gamma" . ?γ) prettify-symbols-alist)
+            (push '("delta" . ?δ) prettify-symbols-alist)
+            (push '("epsilon" . ?ε) prettify-symbols-alist)
+            (push '("zeta" . ?ζ) prettify-symbols-alist)
+            (push '("eta" . ?η) prettify-symbols-alist)
+            (push '("theta" . ?θ) prettify-symbols-alist)
+            (push '("iota" . ?ι) prettify-symbols-alist)
+            (push '("kappa" . ?κ) prettify-symbols-alist)
+            (push '("lambda" . ?λ) prettify-symbols-alist)
+            (push '("mu" . ?μ) prettify-symbols-alist)
+            (push '("pi" . ?π) prettify-symbols-alist)
+            (push '("rho" . ?ρ) prettify-symbols-alist)
             (push '("sigma" . ?σ) prettify-symbols-alist)
+            (push '("tau" . ?τ) prettify-symbols-alist)
+            (push '("phi" . ?φ) prettify-symbols-alist)
+            (push '("chi" . ?χ) prettify-symbols-alist)
+            (push '("omega" . ?ω) prettify-symbols-alist)
             ; Greek Uppercase
             (push '("Sigma" . ?Σ) prettify-symbols-alist)
             ))
 ;; Grabbed from Patrick's config... should try this some time.
 ; (eval-after-load "python"
 ;   '(define-key python-mode-map (kbd "<RET>") 'newline-and-indent))
-
 
 (provide 'config-python)
 
