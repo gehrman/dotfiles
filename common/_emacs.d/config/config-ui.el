@@ -111,9 +111,6 @@
 (require 'fill-column-indicator)
 (setq fci-rule-column 80)
 
-;; RBT Interactions
-(require 'rbt)
-
 ;;; Ido-mode:
 ;; So ido-mode presents choices while doing things like switch buffers
 ;; by putting them in the the mini-buffer. As you type, options narrow
