@@ -58,7 +58,6 @@
 ;(set-face-attribute 'default nil :family "InconsolataGo" :height 180)
 ;(set-face-attribute 'default nil :family "InconsolataGo" :height 220)
 ;(set-face-attribute 'default nil :family "InconsolataGo" :height 240)
-;until I install my font packs
 ;(set-face-attribute 'default nil :family "Menlo" :height 180)
 ;; Some other options
 ;(set-face-attribute 'default nil :family "Fira Mono" :height 200) ; Vaguely "type-writery"
