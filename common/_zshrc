@@ -60,12 +60,6 @@ fi
 # autoload -U colors
 #colors
 
-# Java magic?
-#if [ -h /usr/java/default ]; then
-#  export JAVA_HOME=/usr/java/default
-#  export PATH=$JAVA_HOME/bin:$PATH
-#fi
-
 export PATH=/usr/local/bin:~/.bin:$PATH
 
 # Use a snake prompt. Hiss.
