@@ -19,7 +19,7 @@ With ARG, move by that many elements."
     (call-interactively 'company-complete-common)
     (let ((company-selection-wrap-around t)
           (current-prefix-arg arg))
-      (call-interactively 'company-select-next))))))
+      (call-interactively 'company-select-next))))
 
 
 ;; Based on https://github.com/company-mode/company-mode/issues/75, we're
