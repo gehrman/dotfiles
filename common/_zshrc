@@ -60,7 +60,7 @@ fi
 # autoload -U colors
 #colors
 
-export PATH=/usr/local/bin:~/.bin:$PATH
+export PATH=/usr/local/bin:~/.bin:~/.local/bin:$PATH
 
 # Use a snake prompt. Hiss.
 export PYTHONSTARTUP=~/.pythonrc
