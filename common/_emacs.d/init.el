@@ -102,9 +102,6 @@
 ;; No need for ~ files when editing... or maybe it's the .# files
 (setq create-lockfiles nil)
 
-;; Desktop mode saves buffers and some other user state on exit. It's nice.
-(desktop-save-mode 1)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; GPG Stuff, not yet enough settings to move to a config ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
