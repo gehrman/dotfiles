@@ -6,6 +6,7 @@ bashcompinit
 if [ -d /wayfair/pkg/python2.7 ]; then
   export PATH=/wayfair/pkg/python2.7/latest/bin:~/.bin:/usr/local/git/bin:$PATH
 fi
+export AIRFLOW_HOME=/wayfair/app/airflow
 
 # Linux-specific aliases
 alias l="ls -lh"
