@@ -198,11 +198,12 @@
 ;;  'px ; inline latex preview
 ;;  )
 
-;; File modes.
+;; Misc file modes.
 (ensure-package-installed
  'puppet-mode
  'idris-mode
  'lua-mode
+ 'yaml-mode
  'slime
  'scala-mode
  'ensime
