@@ -11,8 +11,8 @@
 
 ;;;; Themes:
 ;; Ample's pretty darned nice.
-(load-theme 'ample t t)
-(enable-theme 'ample)
+;;(load-theme 'ample t t)
+;;(enable-theme 'ample)
 ;; (load-theme 'ample-flat t t)
 ;; (load-theme 'ample-light t t)
 
@@ -66,9 +66,10 @@
 ;(set-face-attribute 'default nil :family "Hermit" :height 160 :weight 'normal) ; Kinda sci-fi modernist
 ;(set-face-attribute 'default nil :family "Fantasque Sans Mono" :height 200 :weight 'normal) ; Comic-booky
 
-;; ilIega1o = 0O == -> --> ############ # && && || || <> << >> >>= <<= /= =/= !=
+;; ilIega1o = 0O == -> --> ############ # && && || || <> << >> >>= <<= /= =/= != ~=!=
+(set-face-attribute 'default nil :family "Fira Code" :height 200) ; Vaguely "type-writery"
 ;(set-face-attribute 'default nil :family "Fira Code" :height 240) ; Vaguely "type-writery"
-(set-face-attribute 'default nil :family "Monoid" :height 180) ;
+;(set-face-attribute 'default nil :family "Monoid" :height 180) ;
 ;(set-face-attribute 'default nil :family "Monoid HalfTight" :height 180) ;
 ;(set-face-attribute 'default nil :family "Hasklig" :height 200) ;
 ;(set-face-attribute 'default nil :family "Iosevka" :height 200) ;
