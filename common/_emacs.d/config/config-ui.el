@@ -64,6 +64,7 @@
 ;(set-face-attribute 'default nil :family "Envy Code R" :height 200 :weight 'normal)
 ;(set-face-attribute 'default nil :family "Hermit" :height 160 :weight 'normal) ; Kinda sci-fi modernist
 ;(set-face-attribute 'default nil :family "Fantasque Sans Mono" :height 200 :weight 'normal) ; Comic-booky
+;(set-face-attribute 'default nil :family "NovaMono" :height 180) ; An interesting one
 
 ;; ilIega1o = 0O == -> --> ############ # && && || || <> << >> >>= <<= /= =/= != ~=!=
 (set-face-attribute 'default nil :family "Fira Code" :height 200) ; Vaguely "type-writery"
