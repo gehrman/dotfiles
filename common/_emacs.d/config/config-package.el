@@ -184,7 +184,6 @@
  ;;'flycheck-rust
  ;;'racer
  'rust-mode
- 'rustfmt
  )
 
 ;; Latex
