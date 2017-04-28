@@ -164,6 +164,14 @@
  'ess
  )
 
+;; Clojure & Lisp Development
+(ensure-package-installed
+ 'clojure-mode
+ 'clojure-mode-extra-font-locking
+ 'cider
+ 'rainbow-delimiters
+ )
+
 ;; Elm
 (ensure-package-installed
  'elm-mode
