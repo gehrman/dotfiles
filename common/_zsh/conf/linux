@@ -1,7 +1,6 @@
 # Wayrunner completions
 autoload bashcompinit
 bashcompinit
-eval "$(_WAYRUNNER_COMPLETE=source wayrunner)"
 
 # Use Wayfair supported python.
 if [ -d /wayfair/pkg/python2.7 ]; then
