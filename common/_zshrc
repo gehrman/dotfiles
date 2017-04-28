@@ -107,12 +107,15 @@ alias tmat="tmux attach -d -t"
 # Virtualenv commands.
 alias createvirtualenv='. ~/.bin/create_virtualenv.sh'
 alias recreatevirtualenv='. ~/.bin/recreate_virtualenv.sh'
+alias refreshvirtualenv='. ~/.bin/refresh_virtualenv.sh'
 alias startvirtualenv='. ~/.bin/start_virtualenv.sh'
 alias stopvirtualenv='deactivate' # Included for completeness... it's a silly thing to do.
 alias destroyvirtualenv='. ~/.bin/destroy_virtualenv.sh'
 alias listvirtualenvs='. ~/.bin/list_virtualenvs.sh'
 alias annotatevirtualenv='. ~/.bin/annotate_virtualenv.sh'
 alias listinstalledeggs='. ~/.bin/list_installed_eggs.sh'
+
+compdef _activate_virtualenv refreshvirtualenv
 
 # Tab-completions are nice.
 compdef _activate_virtualenv recreatevirtualenv
