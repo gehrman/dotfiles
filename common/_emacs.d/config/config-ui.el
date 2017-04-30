@@ -68,7 +68,7 @@
 
 ;; ilIega1o = 0O == -> --> ############ # && && || || <> << >> >>= <<= /= =/= != ~=!=
 (set-face-attribute 'default nil :family "Fira Code" :height 200) ; Vaguely "type-writery"
-;(set-face-attribute 'default nil :family "Fira Code" :height 240) ; Vaguely "type-writery"
+;(set-face-attribute 'default nil :family "Fira Code" :height 240)
 ;(set-face-attribute 'default nil :family "Monoid" :height 180) ;
 ;(set-face-attribute 'default nil :family "Monoid HalfTight" :height 180) ;
 ;(set-face-attribute 'default nil :family "Hasklig" :height 200) ;
@@ -104,8 +104,9 @@
 (require 'transpose-frame)
 
 ;; Again, usability content. Need to make this global.
+;; Also... what _does_ this one do?
 (require 'visible-mark)
-;(visible-mark-mode)
+(visible-mark-mode)
 
 ;; Line length stuff.
 (require 'fill-column-indicator)
