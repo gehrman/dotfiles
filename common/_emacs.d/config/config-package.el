@@ -77,10 +77,10 @@
  'projectile
  ;;'sx ; search stackexchange et al
  ;;'wgrep ; What does this one actually do?
- ;;ido-ubiquitous
+ 'ido-ubiquitous
  'ibuffer-tramp
  'ibuffer-vc
- ;;'smex
+ 'smex
  ;;'tramp-hdfs
  ;;'tramp-term
  ;;'tramp-theme
@@ -96,6 +96,7 @@
  'powerline
  'powerline-evil
  'visual-fill-column
+ 'browse-kill-ring
  ;;'flycheck-package
  ;;'flx-*
  ;;'flylisp
