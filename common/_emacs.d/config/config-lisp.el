@@ -62,5 +62,41 @@
 ;; I guess lein uses ruby?
 (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
 
+;;;
+;; Cider Setup
+;;;
+
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(setq cider-repl-pop-to-buffer-on-connect t)
+(setq cider-show-error-buffer t)
+(setq cider-auto-select-error-buffer t)
+
+;; History Settings
+(setq cider-repl-history-file "~/.emacs.d/cider-history")
+(setq cider-repl-wrap-history t)
+
+;; Use Paredit in the REPL
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
+
+;; Helper functions for working with Cider.
+(defun cider-start-http-server ()
+  "Start the Cider HTTP server."
+  (interactive)
+  (cider-load-current-buffer)
+  (let ((ns (cider-current-ns)))
+    (cider-repl-set-ns ns)
+    (cider-interactive-eval (format "(println '(def server (%s/start))) (println 'server)" ns))
+    (cider-interactive-eval (format "(def server (%s/start)) (println server)" ns))))
+
+(defun cider-refresh ()
+  "Reset Cider."
+  (interactive)
+  (cider-interactive-eval (format "(user/reset)")))
+
+(defun cider-user-ns ()
+  "Set the repl namespace."
+  (interactive)
+  (cider-repl-set-ns "user"))
+
 (provide 'config-lisp)
 ;;; config-lisp.el ends here
