@@ -91,11 +91,13 @@
   "fl" 'flycheck-list-errors
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
+  "gb" 'magit-blame ; This should probably cycle the blame to keep gk free.
   "gf" 'find-file-at-point
   "gg" 'magit-status
+  "gk" 'magit-blame-quit
   ;; TODO - do something real in the keybind map
   "gm" 'smerge-keep-mine
-  "gn" 'smerge-next
+  "gn" 'smerge-next ; This should probably variously do smerge-next, magit-blame-next, etc
   "gp" 'smerge-prev
   "gt" 'smerge-keep-other ; "keep theirs"
   "ii" 'insert-char
