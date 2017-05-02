@@ -85,6 +85,9 @@
 ;; ain't no reason for that blasted splash screen
 (setq inhibit-splash-screen t)
 
+;; Set the buffer & path name as the window title, because we can.
+(setq-default frame-title-format "%b (%f)")
+
 ;; get rid of that awful tool bar... the menu bar can be similarly disabled but isn't nearly so bad
 (tool-bar-mode -1)
 
@@ -117,11 +120,14 @@
 ;; So ido-mode presents choices while doing things like switch buffers
 ;; by putting them in the the mini-buffer. As you type, options narrow
 ;; down to match the text you've typed.
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
 (ido-mode t)
 
-;; Automatch delimites
-;(show-paren-mode 't)
-;(setq show-paren-style "expression")
+;; Highlight matching parenthesis
+(show-paren-mode 't)
+;(setq show-paren-style 'expression)
+;(setq show-paren-style 'mixed)
 
 ;; At some point, I should get code folding to work.
 ;; Resources:
