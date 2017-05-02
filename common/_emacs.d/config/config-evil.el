@@ -194,12 +194,17 @@
    (lambda (mode) (evil-set-initial-state mode start-state))
    mode-list))
 
-(set-evil-initial-mode 'normal
-                       'ibuffer-mode
-                       'package-menu-mode
-                       'completion-list-mode)
-(set-evil-initial-mode 'emacs
-                       'ansi-term)
+(set-evil-initial-mode
+ 'normal ; Start the following modes in 'normal state.
+ 'ibuffer-mode
+ 'completion-list-mode
+ )
+
+(set-evil-initial-mode
+ 'emacs ; Start the following modes in 'emacs state.
+ 'ansi-term
+ 'package-menu-mode
+ )
 
 (provide 'config-evil)
 ;;; config-evil.el ends here
