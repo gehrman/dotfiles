@@ -67,7 +67,8 @@
 ;(set-face-attribute 'default nil :family "NovaMono" :height 180) ; An interesting one
 
 ;; ilIega1o = 0O == -> --> ############ # && && || || <> << >> >>= <<= /= =/= != ~=!=
-(set-face-attribute 'default nil :family "Fira Code" :height 200) ; Vaguely "type-writery"
+;(set-face-attribute 'default nil :family "Fira Code" :height 200) ; Vaguely "type-writery"
+(set-face-attribute 'default nil :family "FuraCode Nerd Font" :height 200) ; Vaguely "type-writery"
 ;(set-face-attribute 'default nil :family "Fira Code" :height 240)
 ;(set-face-attribute 'default nil :family "Monoid" :height 180) ;
 ;(set-face-attribute 'default nil :family "Monoid HalfTight" :height 180) ;
