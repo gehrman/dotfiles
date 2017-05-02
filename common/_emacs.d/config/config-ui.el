@@ -158,24 +158,21 @@
 ;(setq show-paren-style 'expression)
 ;(setq show-paren-style 'mixed)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(rainbow-delimiters-depth-1-face ((t (:foreground "grey"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "forest green"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "royal blue"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "dark orange"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "dark orchid"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "salmon4" ))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "goldenrod"))))
- '(rainbow-delimiters-depth-8-face ((t (:foreground "slate gray"))))
- '(rainbow-delimiters-depth-9-face ((t (:foreground "spring green"))))
- '(rainbow-delimiters-mismatched-face ((t (:foreground "spring green"))))
- '(rainbow-delimiters-unmatched-face ((t (:foreground "firebrick2"))))
- )
 
+(mapc
+ (lambda (face-color-pair) (set-face-foreground (car face-color-pair) (cdr face-color-pair)))
+ '((rainbow-delimiters-depth-1-face . "grey")
+   (rainbow-delimiters-depth-2-face . "forest green")
+   (rainbow-delimiters-depth-3-face . "royal blue")
+   (rainbow-delimiters-depth-4-face . "dark orange")
+   (rainbow-delimiters-depth-5-face . "dark orchid")
+   (rainbow-delimiters-depth-6-face . "salmon4" )
+   (rainbow-delimiters-depth-7-face . "goldenrod")
+   (rainbow-delimiters-depth-8-face . "slate gray")
+   (rainbow-delimiters-depth-9-face . "spring green")
+   (rainbow-delimiters-mismatched-face . "firebrick2")
+   (rainbow-delimiters-unmatched-face . "firebrick2")
+   ))
 
 ;; At some point, I should get code folding to work.
 ;; Resources:
