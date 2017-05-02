@@ -181,10 +181,24 @@
  ;;'flycheck-clojure
  )
 
-;; Elm
+;; ML Language family
 (ensure-package-installed
+ ;; Elm
  'elm-mode
  ;;'elm-yasnippets
+ ;;'flycheck-elm
+ ;; Haskell
+ 'haskell-mode
+ ;;'flycheck-haskell
+ ;;'dante (fork of intero)
+ ;;'ghc
+ ;;'haskell-emacs -- emacs extensions in haskell?!
+ ;;'haskell-snippets
+ ;;'hasky-extensions
+ ;;'hi2/hident/hyai
+ ;;'shm
+ ;; Other ML languages
+ 'idris-mode
  )
 
 ;; Rust
@@ -210,7 +224,6 @@
 ;; Misc file modes.
 (ensure-package-installed
  'puppet-mode
- 'idris-mode
  'lua-mode
  'yaml-mode
  'slime
