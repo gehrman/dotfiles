@@ -148,6 +148,8 @@
 ;;(define-key evil-motion-state-map ":" 'smex)
 ;;(define-key evil-motion-state-map ";" 'evil-ex)
 
+;; Leaving this commented since I've kinda gotten used to it.
+;;(setq electric-indent-mode nil)
 
 ;; Highlight matching parenthesis
 ;; This needs to be themed so that point is the highlight color, rather than the
@@ -164,6 +166,9 @@
 ;; http://stackoverflow.com/questions/1085170/how-to-achieve-code-folding-effects-in-emacs
 ;; https://github.com/jorgenschaefer/elpy/issues/240
 ;; http://www.emacswiki.org/emacs/HideShow (hs-minor-mode)
+
+;; Someday I'll learn what projectile does
+(projectile-global-mode)
 
 ;; Global, non-evil keybinds. (When does it come time to spin this all off into
 ;; its own file?)
