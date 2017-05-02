@@ -116,6 +116,8 @@
 (require 'visible-mark)
 (visible-mark-mode)
 
+(global-hl-line-mode t)
+
 ;; Line length stuff.
 (require 'fill-column-indicator)
 (setq fci-rule-column 80)
