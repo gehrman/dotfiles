@@ -71,7 +71,7 @@
  (defun coffee-mode-newline-and-indent ()
    (define-key coffee-mode-map "\C-j" 'coffee-newline-and-indent)
    (setq coffee-cleanup-whitespace nil)))
-(custom-set-variables '(coffee-tab-width 2))
+(setq coffee-tab-width 2)
 
 ;; HTML
 (eval-after-load "sgml-mode"

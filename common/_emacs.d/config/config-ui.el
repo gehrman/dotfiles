@@ -149,12 +149,52 @@
 (global-set-key (kbd "s-q") 'delete-frame)
 (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
 
+;; B&T Keybinds for searching
+;; Interactive search key bindings. By default, C-s runs
+;; isearch-forward, so this swaps the bindings.
+;(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+;(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+;(global-set-key (kbd "C-M-s") 'isearch-forward)
+;(global-set-key (kbd "C-M-r") 'isearch-backward)
+
 ;; Mode-specific non-evil binds.
 (eval-after-load 'ibuffer
   '(progn
      (define-key ibuffer-mode-map (kbd "N") 'ibuffer-forward-filter-group)
      (define-key ibuffer-mode-map (kbd "P") 'ibuffer-backward-filter-group)
      (define-key ibuffer-mode-map (kbd "TAB") 'ibuffer-backward-filter-group)))
+
+;; Settings from B&T for OS integration
+(setq
+ ;; makes killing/yanking interact with the clipboard
+ x-select-enable-clipboard t
+
+ ;; not clear what this does but it's recommended?
+ x-select-enable-primary t
+
+ ;; Save clipboard strings into kill ring before replacing them.
+ ;; When one selects something in another program to paste it into Emacs,
+ ;; but kills something in Emacs before actually pasting it,
+ ;; this selection is gone unless this variable is non-nil
+ save-interprogram-paste-before-kill t
+
+ ;; Shows all options when running apropos. For more info,
+ ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Apropos.html
+ apropos-do-all t
+
+ ;; Mouse yank commands yank at point instead of at click.
+ mouse-yank-at-point t
+ )
+
+;; Maybe some day I'll find out what hippie-expand's all about.
+;; This is a Lisp-friendly hippie expand from B&T
+;; (global-set-key (kbd "M-/") 'hippie-expand)
+;; (setq hippie-expand-try-functions-list
+;;       '(try-expand-dabbrev
+;;         try-expand-dabbrev-all-buffers
+;;         try-expand-dabbrev-from-kill
+;;         try-complete-lisp-symbol-partially
+;;         try-complete-lisp-symbol))
 
 
 (provide 'config-ui)
