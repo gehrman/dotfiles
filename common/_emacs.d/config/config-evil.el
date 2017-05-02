@@ -99,6 +99,9 @@
   "gp" 'smerge-prev
   "gt" 'smerge-keep-other ; "keep theirs"
   "ii" 'insert-char
+  ;; (l)aunch application modes like dired, proced, ansi-term, et al
+  "ld" 'dired
+  "lp" 'proced
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
   "pi" 'package-install
@@ -119,9 +122,6 @@
   "wn" 'make-frame
   "z" 'evil-emacs-state
   "[" 'keyboard-quit
-  ;; (l)aunch application modes like dired, proced, ansi-term, et al
-  "ld" 'dired
-  "lp" 'proced
   )
   ;; "D" 'dired)
 
