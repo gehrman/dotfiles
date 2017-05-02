@@ -7,6 +7,11 @@
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (setq company-idle-delay 0.1)
+;; Doubt that we actually need to do the eval-after-load, but w/e.
+(with-eval-after-load
+    'company
+  (company-flx-mode t)
+  )
 
 
 ;; Add a missing completion function.

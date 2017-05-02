@@ -81,6 +81,7 @@
 (ensure-package-installed
  'ag
  'company
+ 'company-flx
  'hound
  'projectile
  ;;'sx ; search stackexchange et al
