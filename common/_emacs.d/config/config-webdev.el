@@ -80,5 +80,8 @@
      (tagedit-add-paredit-like-keybindings)
      (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
 
+;; JSON
+(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+
 (provide 'config-webdev)
 ;;; config-webdev.el ends here
