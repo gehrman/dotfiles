@@ -3,6 +3,11 @@
 ;;; Commentary:
 
 ;;; Code:
+
+;; Initial setup
+;;(load-library "org")
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
 ;; Set languages available for execution in code blocks.
 (require 'cl) ; We need the common lisp package for 'remove-duplicates.
 (org-babel-do-load-languages
