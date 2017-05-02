@@ -49,9 +49,17 @@
             (push '("tau" . ?τ) prettify-symbols-alist)
             (push '("phi" . ?φ) prettify-symbols-alist)
             (push '("chi" . ?χ) prettify-symbols-alist)
+            (push '("psi" . ?ψ) prettify-symbols-alist)
             (push '("omega" . ?ω) prettify-symbols-alist)
             ; Greek Uppercase
+            (push '("Gamma" . ?Γ) prettify-symbols-alist)
+            (push '("Delta" . ?Δ) prettify-symbols-alist)
+            (push '("Lambda" . ?Λ) prettify-symbols-alist)
+            (push '("Pi" . ?Π) prettify-symbols-alist)
             (push '("Sigma" . ?Σ) prettify-symbols-alist)
+            (push '("Phi" . ?Φ) prettify-symbols-alist)
+            (push '("Psi" . ?Ψ) prettify-symbols-alist)
+            (push '("Omega" . ?Ω) prettify-symbols-alist)
             ))
 ;; Grabbed from Patrick's config... should try this some time.
 ; (eval-after-load "python"
