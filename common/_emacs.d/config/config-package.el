@@ -90,11 +90,9 @@
  'helm ;Configure me!
  'helm-ag ;Configure me! (See https://github.com/syohex/emacs-helm-ag)
  'linum-relative
- 'paredit
  'powerline
  'powerline-evil
  'visual-fill-column
- ;;'flycheck-clojure
  ;;'flycheck-package
  ;;'flylisp
  ;;'projectile
@@ -166,10 +164,12 @@
 
 ;; Clojure & Lisp Development
 (ensure-package-installed
+ 'paredit
  'clojure-mode
  'clojure-mode-extra-font-locking
  'cider
  'rainbow-delimiters
+ ;;'flycheck-clojure
  )
 
 ;; Elm
