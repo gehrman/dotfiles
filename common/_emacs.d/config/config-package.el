@@ -77,8 +77,10 @@
  'projectile
  ;;'sx ; search stackexchange et al
  ;;'wgrep ; What does this one actually do?
+ ;;ido-ubiquitous
  'ibuffer-tramp
  'ibuffer-vc
+ ;;'smex
  ;;'tramp-hdfs
  ;;'tramp-term
  ;;'tramp-theme
@@ -131,6 +133,7 @@
  'ob-restclient
  'know-your-http-well
  'company-restclient
+ ;;'tagedit ;Edit HTML tags like the sexps they are.
  ;;https://github.com/skeeto/skewer-mode
  ;; there's also swank-js + slime
  ;;'skewer-less
