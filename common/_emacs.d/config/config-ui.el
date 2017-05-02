@@ -126,9 +126,28 @@
 ;; So ido-mode presents choices while doing things like switch buffers
 ;; by putting them in the the mini-buffer. As you type, options narrow
 ;; down to match the text you've typed.
+(ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
-(ido-mode t)
+(ido-ubiquitous-mode t)
+
+;; Apparantly this one annoys a bunch of people, setting to nil disables.
+;;(setq ido-use-filename-at-point nil)
+;;(setq ido-use-filename-at-point 'guess)
+
+;; Includes buffer names of recently open files, even if they're not
+;; open now
+(setq ido-use-virtual-buffers t)
+
+;; smex - fuzzy/filterable M-x
+(setq smex-save-file (concat user-emacs-directory ".smex-items"))
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+;; See http://stackoverflow.com/questions/25824493/smex-in-evil-mode
+;; ...basically it's not clear smex+evil play nice.
+;;(define-key evil-motion-state-map ":" 'smex)
+;;(define-key evil-motion-state-map ";" 'evil-ex)
+
 
 ;; Highlight matching parenthesis
 (show-paren-mode 't)
