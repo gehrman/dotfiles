@@ -36,11 +36,13 @@
  '(config-addons
    config-company
    config-flycheck
+   config-fonthandling
    config-latex
    config-lisp
    config-local
    config-magit
    config-misc
+   config-ml
    config-orgmode
    config-powerline
    config-python
