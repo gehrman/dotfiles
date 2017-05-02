@@ -107,13 +107,13 @@
   "pn" 'pianobar-next-song
   "pp" 'pianobar-play-or-pause
   "sb" 'eval-buffer
+  "rc" 'comment-region
+  "rt" 'indent-region
+  "ru" 'uncomment-region
   "sf" 'browse-url-of-file
   "sl" 'eval-last-sexp
   "so" 'browse-url
   "ss" 'eval-defun ;because eval-defun is *totally* a synonym for 'eval-this-sexp... dammit emacs
-  "rc" 'comment-region
-  "rt" 'indent-region
-  "ru" 'uncomment-region
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
   "wf" 'toggle-frame-fullscreen
   "wn" 'make-frame
