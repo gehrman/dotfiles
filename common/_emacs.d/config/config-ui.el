@@ -91,6 +91,10 @@
 ;; get rid of that awful tool bar... the menu bar can be similarly disabled but isn't nearly so bad
 (tool-bar-mode -1)
 
+;; Uniquification
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward)
+
 ;; Start off in linum-relative and column-number modes.
 (linum-relative-mode t)
 
