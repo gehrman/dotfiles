@@ -47,39 +47,11 @@
 ;; (load-theme 'darcula)
 
 ;;;; Font stuff:
-;; The set-frame-font doesn't play nicely with 'make-frame, but defining a
-;; default font does.
-;; TODO: This depends on OS & Environment.
-;; So rather than defining the default by pushing on the frame alist, the new standard approach
-;; seems to be using 'set-face-attribute. Definitely more readable, at least.
-;; (set-face-attribute 'default nil :family "Monaco" :height 150)
-;; Monaco is a nice default fallback, since Consolas seems to have disappeared, but Inconsolata
-;; is just gorgeous. Note that the InconsolataGo version uses a straight ".
-;(set-face-attribute 'default nil :family "InconsolataGo" :height 180)
-;(set-face-attribute 'default nil :family "InconsolataGo" :height 220)
-;(set-face-attribute 'default nil :family "InconsolataGo" :height 240)
-;(set-face-attribute 'default nil :family "Menlo" :height 180)
-;; Some other options
-;(set-face-attribute 'default nil :family "Fira Mono" :height 200) ; Vaguely "type-writery"
-;(set-face-attribute 'default nil :family "Envy Code R" :height 200 :weight 'normal)
-;(set-face-attribute 'default nil :family "Hermit" :height 160 :weight 'normal) ; Kinda sci-fi modernist
-;(set-face-attribute 'default nil :family "Fantasque Sans Mono" :height 200 :weight 'normal) ; Comic-booky
-;(set-face-attribute 'default nil :family "NovaMono" :height 180) ; An interesting one
-
+;; Test banner:
 ;; ilIega1o = 0O == -> --> ############ # && && || || <> << >> >>= <<= /= =/= != ~=!=
-;(set-face-attribute 'default nil :family "Fira Code" :height 200) ; Vaguely "type-writery"
-(set-face-attribute 'default nil :family "FuraCode Nerd Font" :height 200) ; Vaguely "type-writery"
-;(set-face-attribute 'default nil :family "Fira Code" :height 240)
-;(set-face-attribute 'default nil :family "Monoid" :height 180) ;
-;(set-face-attribute 'default nil :family "Monoid HalfTight" :height 180) ;
-;(set-face-attribute 'default nil :family "Hasklig" :height 200) ;
-;(set-face-attribute 'default nil :family "Iosevka" :height 200) ;
-;(set-face-attribute 'default nil :family "Iosevka Term" :height 200) ;
-;(set-face-attribute 'default nil :family "Iosevka Slab" :height 200) ;
-;(set-face-attribute 'default nil :family "IosevkaCC" :height 200) ;
-;; Proportional:
-;(set-face-attribute 'default nil :family "Tsukushi B Round Gothic" :height 200) ; very sleek I guess
-
+(set-face-attribute 'default nil :family "FuraCode Nerd Font" :height 200)
+;(set-face-attribute 'default nil :family "InconsolataGo" :height 180)
+;(set-face-attribute 'default nil :family "Fira Code" :height 200)
 
 ;;;; General UI Tweaks: ;;
 ;; ain't no reason for that blasted splash screen
