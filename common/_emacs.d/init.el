@@ -35,13 +35,13 @@
  #'require
  '(config-addons
    config-company
-   config-codeblocks
    config-flycheck
    config-latex
    config-lisp
    config-local
    config-magit
    config-misc
+   config-orgmode
    config-powerline
    config-python
    config-webdev

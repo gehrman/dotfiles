@@ -1,4 +1,4 @@
-;;; config-codeblocks --- Setup org-mode code blocks.
+;;; config-orgmode -- Setup org-mode.
 
 ;;; Commentary:
 
@@ -11,5 +11,5 @@
                              '((emacs-lisp . t)(sh . t)(python . t)))
                      :test 'equal))
 
-(provide 'config-codeblocks)
-;;; config-codeblocks.el ends here
+(provide 'config-orgmode)
+;;; config-orgmode.el ends here
