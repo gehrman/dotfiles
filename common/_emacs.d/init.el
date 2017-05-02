@@ -175,7 +175,7 @@
  '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
-    (browse-kill-ring smbc ido-ubiquitous smex company-jedi ein ibuffer-vc visual-fill-column rbt fill-column-indicator vagrant-tramp ibuffer-tramp ess reykjavik-theme rustfmt cargo ensime scala-mode visible-mark transpose-frame zenburn-theme warm-night-theme vertica vagrant tomatinho solarized-theme restclient-test restclient-helm puppet-mode powerline-evil pomodoro pianobar paredit ob-restclient ob-http monokai-theme magit linum-relative latex-pretty-symbols hound helm-ag flycheck evil-leader evil-indent-plus elm-mode darcula-theme company-restclient cdlatex anzu ample-theme ag)))
+    (company-flx browse-kill-ring smbc ido-ubiquitous smex company-jedi ein ibuffer-vc visual-fill-column rbt fill-column-indicator vagrant-tramp ibuffer-tramp ess reykjavik-theme rustfmt cargo ensime scala-mode visible-mark transpose-frame zenburn-theme warm-night-theme vertica vagrant tomatinho solarized-theme restclient-test restclient-helm puppet-mode powerline-evil pomodoro pianobar paredit ob-restclient ob-http monokai-theme magit linum-relative latex-pretty-symbols hound helm-ag flycheck evil-leader evil-indent-plus elm-mode darcula-theme company-restclient cdlatex anzu ample-theme ag)))
  '(sentence-end-double-space nil)
  '(visual-line-fringe-indicators (quote (nil |))))
 ; (custom-set-faces
@@ -189,9 +189,3 @@
 
 (provide 'init)
 ;;; init.el ends here
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
