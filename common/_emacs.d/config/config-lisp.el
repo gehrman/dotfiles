@@ -30,6 +30,31 @@
 
 ;; Clojure setup.
 
+;; A little more syntax highlighting
+(require 'clojure-mode-extra-font-locking)
+
+;; syntax hilighting for midje
+(add-hook
+ 'clojure-mode-hook
+ (lambda ()
+   (setq inferior-lisp-program "lein repl")
+   (font-lock-add-keywords
+    nil
+    '(("(\\(facts?\\)"
+       (1 font-lock-keyword-face))
+      ("(\\(background?\\)"
+       (1 font-lock-keyword-face))))
+   (define-clojure-indent (fact 1))
+   (define-clojure-indent (facts 1))))
+
+;; Use clojure mode for other extensions
+(mapc
+ (lambda (mode-setting) (add-to-list 'auto-mode-alist mode-setting))
+ '(("\\.edn$" . clojure-mode)
+   ("\\.boot$" . clojure-mode)
+   ("\\.cljs.*$" . clojure-mode)))
+;; I guess lein uses ruby?
+(add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
 
 (provide 'config-lisp)
 ;;; config-lisp.el ends here
