@@ -82,6 +82,7 @@
   "dk" 'describe-key
   "dn" 'hound
   "dp" 'ag-project
+  "dP" 'describe-package-at-point ; Finish getthing this perfect
   "dr" 'ag-regexp
   "dv" 'describe-variable
   ;;"dw" 'apropos ; Doesn't autofill object at point sadly

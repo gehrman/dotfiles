@@ -15,6 +15,14 @@
 ;(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
 ;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
+;; Unlike most of the other describes, describe-package doesn't prefill the minibuffer with the
+;; symbol at point, if the symbol is a package. This goes too far - it just describes the symbol
+;; there regardless, but it's a starting point.
+(defun describe-package-at-point ()
+  "Describe the package at point."
+  (interactive)
+  (describe-package (intern (thing-at-point 'symbol))))
+
 (defun ensure-package-installed (&rest packages)
   "Ensure every package in PACKAGES is installed.
 
