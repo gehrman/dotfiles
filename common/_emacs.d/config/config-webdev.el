@@ -46,7 +46,7 @@
   "tk" 'restclient-test-previous-error
   )
 
-;;; HTML, CSS, and Javascript
+;;; Javascript
 ;; So, right Clojure for the Brave and True calls for js-mode while the
 ;; default is js3-mode. Not sure what the difference is, but we'll go
 ;; with the Brave and True setting for now.
@@ -59,8 +59,26 @@
 ;; does not respect subwords. Leaving this commented out since I generally
 ;; use FT (or other vim motions) to deal with this rather than emacs
 ;; native commands that respect the CamelCase -> Camel Case split.
-(add-hook 'js-mode-hook 'subword-mode)
-(add-hook 'html-mode-hook 'subword-mode)
+;(add-hook 'js-mode-hook 'subword-mode)
+;(add-hook 'html-mode-hook 'subword-mode)
+;(add-hook 'coffee-mode-hook 'subword-mode)
+
+;; Coffeescript
+(add-to-list 'auto-mode-alist '("\\.coffee.erb$" . coffee-mode))
+(add-hook 'coffee-mode-hook 'highlight-indentation-current-column-mode)
+(add-hook
+ 'coffee-mode-hook
+ (defun coffee-mode-newline-and-indent ()
+   (define-key coffee-mode-map "\C-j" 'coffee-newline-and-indent)
+   (setq coffee-cleanup-whitespace nil)))
+(custom-set-variables '(coffee-tab-width 2))
+
+;; HTML
+(eval-after-load "sgml-mode"
+  '(progn
+     (require 'tagedit)
+     (tagedit-add-paredit-like-keybindings)
+     (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
 
 (provide 'config-webdev)
 ;;; config-webdev.el ends here
