@@ -150,9 +150,12 @@
 
 
 ;; Highlight matching parenthesis
+;; This needs to be themed so that point is the highlight color, rather than the
+;; matching paren.
 (show-paren-mode 't)
 ;(setq show-paren-style 'expression)
 ;(setq show-paren-style 'mixed)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; At some point, I should get code folding to work.
 ;; Resources:
