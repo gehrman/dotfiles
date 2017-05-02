@@ -215,6 +215,15 @@
 ;;         try-complete-lisp-symbol-partially
 ;;         try-complete-lisp-symbol))
 
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file (concat user-emacs-directory "places"))
+
+(setq backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                               "backups"))))
+(setq auto-save-default nil)
+
+
 
 (provide 'config-ui)
 ;;; config-ui.el ends here
