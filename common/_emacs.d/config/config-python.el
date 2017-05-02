@@ -19,6 +19,13 @@
 (setq jedi:environment-root "jedi")
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
+(setq jedi:get-in-function-call-delay 10000) ; 10s delay before showing function call sigs
+
+(defun insert-dunder-main ()
+  "Insert a python main block."
+  (interactive)
+  (insert "import argparse\nif __name__ == '__main__':\n    "))
+
 ;; From Patrick's config... python3 something
 ;; (setq jedi:environment-virtualenv
 ;;       (append python-environment-virtualenv
