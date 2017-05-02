@@ -31,16 +31,21 @@
 
 ;; Now we can load the other configs.
 ;; TODO: pull these from the directory and load them programmatically
-(require 'config-company)
-(require 'config-codeblocks)
-(require 'config-flycheck)
-(require 'config-latex)
-(require 'config-local)
-(require 'config-magit)
-(require 'config-misc)
-(require 'config-powerline)
-(require 'config-python)
-(require 'config-webdev)
+(mapc
+ #'require
+ '(config-addons
+   config-company
+   config-codeblocks
+   config-flycheck
+   config-latex
+   config-lisp
+   config-local
+   config-magit
+   config-misc
+   config-powerline
+   config-python
+   config-webdev
+   ))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
