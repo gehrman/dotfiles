@@ -26,6 +26,15 @@
   (interactive)
   (insert "import argparse\nif __name__ == '__main__':\n    "))
 
+(global-set-key
+ (kbd "s-d")
+ (defun insert-breakpoint ()
+   "Insert a pdb break."
+   (interactive)
+   (save-excursion
+     (insert "import pdb; pdb.set_trace()")
+     )))
+
 ;; From Patrick's config... python3 something
 ;; (setq jedi:environment-virtualenv
 ;;       (append python-environment-virtualenv
