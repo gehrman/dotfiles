@@ -28,10 +28,16 @@
    ielm-mode-hook
  ))
 
+;;;
 ;; Clojure setup.
+;;;
 
 ;; A little more syntax highlighting
 (require 'clojure-mode-extra-font-locking)
+
+;; This is useful for working with camel-case tokens, like names of
+;; Java classes (e.g. JavaClassName)
+;;(add-hook 'clojure-mode-hook 'subword-mode)
 
 ;; syntax hilighting for midje
 (add-hook
