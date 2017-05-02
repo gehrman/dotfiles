@@ -76,6 +76,7 @@
   ;; We also put 'hound in this space. See https://github.com/ryoung786/hound.el
   ;; for configuration of hound.
   "da" 'ag
+  "dc" 'describe-char ; Mostly a novelty, but good to know. Again, from @brandon-rhodes.
   "df" 'describe-function
   "dg" 'ag-files
   "dh" 'help
