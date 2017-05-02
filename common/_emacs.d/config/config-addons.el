@@ -20,5 +20,24 @@
   (untabify (region-beginning) (region-end))
   (keyboard-quit))
 
+(defun insert-date ()
+  "Insert a date string."
+  (interactive)
+  (insert
+   (concat
+    "========= " (format-time-string "%Y-%m-%d (%A)") " =========\n\n")))
+
+;; More stealing from @brandon-rhodes
+;; (defun search-forward-symbol-at-point ()
+;;   (interactive)
+;;   (end-of-thing 'symbol)
+;;   (let ((case-fold-search nil))
+;;     (re-search-forward (concat "\\_<" (thing-at-point 'symbol) "\\_>"))))
+
+;; (defun search-backward-symbol-at-point ()
+;;   (interactive)
+;;   (beginning-of-thing 'symbol)
+;;   (let ((case-fold-search nil))
+;;     (re-search-backward (concat "\\_<" (thing-at-point 'symbol) "\\_>"))))
 (provide 'config-addons)
 ;;; config-addons ends here
