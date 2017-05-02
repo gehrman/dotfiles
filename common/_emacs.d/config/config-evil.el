@@ -58,7 +58,7 @@
   "bc" 'clone-indirect-buffer-other-window
   "bf" 'diff-buffer-with-file
   "bh" 'fci-mode ;(from buffer-highlight)
-  "bk" 'kill-buffer
+  "bk" 'kill-this-buffer ; It's _always_ the current buffer I want to kill. Thanks @brandon-rhodes for this one.
   "bd" 'narrow-to-defun
   "bn" 'narrow-to-region
   "bp" 'narrow-to-page
