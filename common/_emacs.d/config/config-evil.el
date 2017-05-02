@@ -54,6 +54,7 @@
   ;; b is the prefix key for buffer operations. I'm not completely happy with
   ;; putting dired in with the buffer ops, but not sure where a better place
   ;; for it is
+  "ba" 'find-file ;I type ,bs for :e enough I want an escape hatch
   "bc" 'clone-indirect-buffer-other-window
   "bf" 'diff-buffer-with-file
   "bh" 'fci-mode ;(from buffer-highlight)
@@ -62,6 +63,7 @@
   "bn" 'narrow-to-region
   "bp" 'narrow-to-page
   "br" 'revert-buffer
+  "bs" 'switch-to-buffer
   "bs" 'switch-to-buffer
   "bw" 'widen
   ;; "de" 'debug-on-error
@@ -108,6 +110,9 @@
   "sl" 'eval-last-sexp
   "so" 'browse-url
   "ss" 'eval-defun ;because eval-defun is *totally* a synonym for 'eval-this-sexp... dammit emacs
+  "rc" 'comment-region
+  "rt" 'indent-region
+  "ru" 'uncomment-region
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
   "wf" 'toggle-frame-fullscreen
   "wn" 'make-frame
