@@ -166,7 +166,7 @@
    (rainbow-delimiters-depth-8-face . "slate gray")
    (rainbow-delimiters-depth-9-face . "spring green")
    (rainbow-delimiters-mismatched-face . "firebrick2")
-   (rainbow-delimiters-unmatched-face . "firebrick2")
+   (rainbow-delimiters-unmatched-face . "chartreuse")
    ))
 
 ;; At some point, I should get code folding to work.
