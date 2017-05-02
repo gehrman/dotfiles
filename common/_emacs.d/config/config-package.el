@@ -90,6 +90,7 @@
  'ibuffer-tramp
  'ibuffer-vc
  'smex
+ ;;thingatpt/thingatpt+
  ;;'tramp-hdfs
  ;;'tramp-term
  ;;'tramp-theme
@@ -156,6 +157,9 @@
 (ensure-package-installed
  'ein
  'company-jedi
+ ;;'pytest --- This doesn't seem to play well with tramp, so need to look at alternatives
+ ;; something for virtualenv creation
+ ;; syntax checking - flycheck(make?)
  )
 
 ;; PHP

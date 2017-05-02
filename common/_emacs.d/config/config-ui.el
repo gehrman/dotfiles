@@ -269,7 +269,7 @@
                                                "backups"))))
 (setq auto-save-default nil)
 
-
+;;(require 'thing-at-point)
 
 (provide 'config-ui)
 ;;; config-ui.el ends here
