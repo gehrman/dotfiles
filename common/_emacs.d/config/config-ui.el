@@ -122,10 +122,33 @@
 (require 'fill-column-indicator)
 (setq fci-rule-column 80)
 
+;; Dired usability tweaks
+(require 'dired-x) ; Enable dired e(x)tras
+(setq
+ dired-omit-files
+ (rx (or
+      (seq bol (? ".") "#") ;; Don't show emacs autosaves
+      (seq "~" eol) ;; Don't show emacs backup files
+      (seq ".pyc" eol)
+      (seq ".pyo" eol)
+      )))
+(setq
+ dired-omit-files
+ (append
+  dired-latex-unclean-extensions
+  dired-bibtex-unclean-extensions
+  dired-texinfo-unclean-extensions
+  ))
+(add-hook 'dired-mode-hook (lambda () (dired-omit-mode t)))
+(put 'dired-find-alternate-file 'disabled nil)
+
+
 ;;; Ido-mode:
 ;; So ido-mode presents choices while doing things like switch buffers
 ;; by putting them in the the mini-buffer. As you type, options narrow
 ;; down to match the text you've typed.
+;; See, e.g., https://www.masteringemacs.org/article/introduction-to-ido-mode
+;; for customization options.
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
