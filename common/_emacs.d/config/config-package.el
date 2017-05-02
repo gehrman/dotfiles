@@ -74,6 +74,7 @@
  'ag
  'company
  'hound
+ 'projectile
  ;;'sx ; search stackexchange et al
  ;;'wgrep ; What does this one actually do?
  'ibuffer-tramp
@@ -94,22 +95,17 @@
  'powerline-evil
  'visual-fill-column
  ;;'flycheck-package
+ ;;'flx-*
  ;;'flylisp
- ;;'projectile
  ;;'helm-idris
  ;;'helm-projectile
  ;;'zeal-at-point ; zeal, or other documentation searching
- ;;'ibuffer-{tramp,*}
- ;;'tramp-hdfs
- ;;'tramp-term
  ;;'searchq
  ;;'zlc
- ;;'company-*
  ;;'znc
  ;;'sx
  ;;'sos
  ;;'yagist
- ;;'flx-*
  ;;'grizzl
  ;;'org-projectile, 'org-*
  ;;'svg-clock
