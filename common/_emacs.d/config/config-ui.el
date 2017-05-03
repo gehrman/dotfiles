@@ -152,22 +152,29 @@
 (show-paren-mode 't)
 ;(setq show-paren-style 'expression)
 ;(setq show-paren-style 'mixed)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(require 'rainbow-delimiters)
 
-(mapc
- (lambda (face-color-pair) (set-face-foreground (car face-color-pair) (cdr face-color-pair)))
- '((rainbow-delimiters-depth-1-face . "grey")
-   (rainbow-delimiters-depth-2-face . "forest green")
-   (rainbow-delimiters-depth-3-face . "royal blue")
-   (rainbow-delimiters-depth-4-face . "dark orange")
-   (rainbow-delimiters-depth-5-face . "dark orchid")
-   (rainbow-delimiters-depth-6-face . "salmon4" )
-   (rainbow-delimiters-depth-7-face . "goldenrod")
-   (rainbow-delimiters-depth-8-face . "slate gray")
-   (rainbow-delimiters-depth-9-face . "spring green")
-   (rainbow-delimiters-mismatched-face . "firebrick2")
-   (rainbow-delimiters-unmatched-face . "chartreuse")
-   ))
+(add-hook
+ 'prog-mode-hook
+ 'rainbow-delimiters-mode)
+
+(add-hook
+ 'prog-mode-hook
+ (lambda ()
+   (mapc
+    (lambda (face-color-pair) (set-face-foreground (car face-color-pair) (cdr face-color-pair)))
+    '((rainbow-delimiters-depth-1-face . "grey")
+      (rainbow-delimiters-depth-2-face . "forest green")
+      (rainbow-delimiters-depth-3-face . "royal blue")
+      (rainbow-delimiters-depth-4-face . "dark orange")
+      (rainbow-delimiters-depth-5-face . "dark orchid")
+      (rainbow-delimiters-depth-6-face . "salmon4" )
+      (rainbow-delimiters-depth-7-face . "goldenrod")
+      (rainbow-delimiters-depth-8-face . "slate gray")
+      (rainbow-delimiters-depth-9-face . "spring green")
+      (rainbow-delimiters-mismatched-face . "firebrick2")
+      (rainbow-delimiters-unmatched-face . "chartreuse")
+      ))))
 
 ;; At some point, I should get code folding to work.
 ;; Resources:
