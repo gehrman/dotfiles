@@ -2,51 +2,19 @@
 
 ;;; Commentary:
 ;; First things first, make Emacs look less... well, emacs-y.
-;; So, first we do a bunch of theme stuff, and then other appearance stuff.
-;; Basically, if it's just a UI tweak or setting, it should live here.
-;; Regarding themes, if you ever want to waste an afternoon, checkout
-;;     http://emacsthemes.com/index/1.html
+;; If you ever want to waste an afternoon, checkout http://emacsthemes.com/index/1.html
 
 ;;; Code:
 
-;;;; Themes:
-;; Ample's pretty darned nice.
-;;(load-theme 'ample t t)
-;;(enable-theme 'ample)
+;;;; Themes
+;; (load-theme 'ample t t)
+;; (enable-theme 'ample)
 ;; (load-theme 'ample-flat t t)
-;; (load-theme 'ample-light t t)
-
-;; Reykjavik sounds fun and looks nice.
+;; (enable-theme 'ample-flat)
 (load-theme 'reykjavik t t)
 (enable-theme 'reykjavik)
 
-
-;; Zenburn for emacs: https://github.com/bbatsov/zenburn-emacs
-;; (load-theme 'zenburn t)
-;; (enable-theme 'zenburn)
-
-;; (load-theme 'warm-night)
-
-;; Unofficial solarized port: https://github.com/bbatsov/solarized-emacs
-;; There's also an official port at https://github.com/sellout/emacs-color-theme-solarized
-;; with ties to the orginal project.
-;; (load-theme 'solarized-dark)
-;; (load-theme 'solarized-light)
-
-;; Monokai by https://github.com/oneKelvinSmith/monokai-emacs
-;; (load-theme 'monokai t)
-
-;; Org-mode theme. Now figure out how to swap themes on mode-switch.
-;; Repo is https://github.com/fniessen/emacs-leuven-theme
-;; (load-theme 'leuven t)
-
-;; One version of darcula is at https://github.com/fommil/darcula-theme-emacs
-;; (require 'darcula-theme)
-;; It's not clear to me if this is the package available on melpa, but I don't think it
-;; is. To use that one, instead run
-;; (load-theme 'darcula)
-
-;;;; Font stuff:
+;;;; Font stuff
 ;; Test banner:
 ;; ilIega1o = 0O == -> --> ############ # && && || || <> << >> >>= <<= /= =/= != ~=!=
 (set-face-attribute 'default nil :family "FuraCode Nerd Font" :height 200)
