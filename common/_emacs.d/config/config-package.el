@@ -48,15 +48,9 @@
 ;; Package groups.
 ;; Evil group first, as it's by far the most important.
 (ensure-package-installed
- ;; A/K/A make emacs usable.
- 'evil
-
- ;; Use the leader key.
+ 'evil ; A/K/A make emacs usable.
  'evil-leader
-
- ;; Indentation text objects.
- 'evil-indent-plus
-
+ 'evil-indent-plus ; Indentation text objects.
  ;;'evil-anzu
  ;;'evil-magit ;some time I should try getting this to work again
  ;;'evil-lisp-state
@@ -117,7 +111,6 @@
  ;;'searchq
  ;;'zlc
  ;;'znc
- ;;'sx
  ;;'sos
  ;;'yagist
  ;;'grizzl
@@ -233,6 +226,7 @@
  'puppet-mode
  'lua-mode
  'yaml-mode
+ 'markdown-mode
  'slime
  'scala-mode
  'ensime
