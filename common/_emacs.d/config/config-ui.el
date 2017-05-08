@@ -176,11 +176,9 @@
 
 ;; Settings from B&T for OS integration
 (setq
- ;; makes killing/yanking interact with the clipboard
- x-select-enable-clipboard t
-
- ;; not clear what this does but it's recommended?
- x-select-enable-primary t
+ x-select-enable-clipboard t ; makes killing/yanking interact with the clipboard
+ x-select-enable-primary t ; not clear what this does but it's recommended?
+ mouse-yank-at-point t ; Mouse yank commands yank at point instead of at click.
 
  ;; Save clipboard strings into kill ring before replacing them.
  ;; When one selects something in another program to paste it into Emacs,
@@ -191,9 +189,6 @@
  ;; Shows all options when running apropos. For more info,
  ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Apropos.html
  apropos-do-all t
-
- ;; Mouse yank commands yank at point instead of at click.
- mouse-yank-at-point t
  )
 
 ;; Maybe some day I'll find out what hippie-expand's all about.
