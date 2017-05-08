@@ -58,10 +58,6 @@
 
 (global-hl-line-mode t)
 
-;; Line length stuff.
-(require 'fill-column-indicator)
-(setq fci-rule-column 80)
-
 ;; Dired usability tweaks
 (require 'dired-x) ; Enable dired e(x)tras
 (setq
@@ -116,8 +112,10 @@
 
 ;; Highlight matching parenthesis and color pairs
 ;; This needs to be themed so that point is the highlight color, rather than the
-;; matching paren.
-(show-paren-mode 't)
+;; matching paren. The highlighting is wrong though, and makes it look like point
+;; is on the other paren. So just use rainbow-delimiters. Womp.
+;;(show-paren-mode 't)
+;;(set-face-background 'show-paren-match "grey")
 ;(setq show-paren-style 'expression)
 ;(setq show-paren-style 'mixed)
 (require 'rainbow-delimiters)
