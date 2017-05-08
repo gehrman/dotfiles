@@ -28,11 +28,20 @@
 
 (global-set-key
  (kbd "s-d")
- (defun insert-breakpoint ()
+ (defun insert-pdb-breakpoint ()
    "Insert a pdb break."
    (interactive)
    (save-excursion
      (insert "import pdb; pdb.set_trace()")
+     )))
+
+(global-set-key
+ (kbd "s-i")
+ (defun insert-ipdb-breakpoint ()
+   "Insert a pdb break."
+   (interactive)
+   (save-excursion
+     (insert "import ipdb; ipdb.set_trace()")
      )))
 
 ;; From Patrick's config... python3 something
