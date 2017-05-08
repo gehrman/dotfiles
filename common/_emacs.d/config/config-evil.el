@@ -59,8 +59,8 @@
   "bf" 'diff-buffer-with-file
   "bh" 'fci-mode ;(from buffer-highlight)
   "bk" 'kill-this-buffer ; It's _always_ the current buffer I want to kill. Thanks @brandon-rhodes for this one.
-  "bd" 'narrow-to-defun
-  "bn" 'narrow-to-region
+  "bn" 'narrow-to-defun ; It's (almost) always the definition I want to narrow to.
+  "bN" 'narrow-to-region
   "bp" 'narrow-to-page
   "br" 'revert-buffer
   "bs" 'switch-to-buffer
@@ -85,6 +85,7 @@
   "dp" 'ag-project
   "dP" 'describe-package-at-point ; Finish getthing this perfect
   "dr" 'ag-regexp
+  "du" 'describe-face
   "dv" 'describe-variable
   ;;"dw" 'apropos ; Doesn't autofill object at point sadly
   "fb" 'flycheck-buffer ; http://www.flycheck.org/
