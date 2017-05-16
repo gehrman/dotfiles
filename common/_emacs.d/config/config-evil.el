@@ -148,31 +148,6 @@
   "t" 'org-todo
   )
 
-;; This only works for major modes. Investigate how to do minor modes.
-;; (evil-leader/set-key-for-mode 'org-src-mode
-;;   "wq" 'org-edit-src-exit
-;;   "q" 'org-edit-src-abort)
-;; I think the way to do this will be to add post-load advice around
-;; the 'org-edit-special function to manipulate that mode's keybinds.
-;; The exact way to grab the keybind map and add temporary org-src-mode
-;; key binds isn't clear yet. For more details, and a partially relevant
-;; example, see http://emacs.stackexchange.com/a/20397.
-
-(add-hook 'org-mode-hook
-          (lambda ()
-            (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
-            (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
-            (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
-            (auto-fill-mode)))
-
-(add-hook 'magit-mode-hook
-          (lambda ()
-            (evil-define-key 'emacs magit-mode-map (kbd ", ,") 'ibuffer)
-            (evil-define-key 'emacs magit-mode-map (kbd ", .") 'delete-other-windows)
-            (evil-define-key 'emacs magit-mode-map (kbd ", w j") 'evil-window-left)
-            (evil-define-key 'emacs magit-mode-map (kbd ", w l") 'evil-window-right)
-          ))
-
 (setq evil-leader/in-all-states t)
 
 ;; Try to kill custom buffer maps.

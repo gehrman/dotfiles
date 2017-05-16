@@ -18,5 +18,14 @@
 ;; I need another binding. C-k is a pneumonic for marK.
 (global-set-key (kbd "C-k") 'set-mark-command)
 
+(add-hook
+ 'magit-mode-hook
+ (lambda ()
+   (evil-define-key 'emacs magit-mode-map (kbd ", ,") 'ibuffer)
+   (evil-define-key 'emacs magit-mode-map (kbd ", .") 'delete-other-windows)
+   (evil-define-key 'emacs magit-mode-map (kbd ", w j") 'evil-window-left)
+   (evil-define-key 'emacs magit-mode-map (kbd ", w l") 'evil-window-right)
+   ))
+
 (provide 'config-magit)
 ;;; config-magit.el ends here
