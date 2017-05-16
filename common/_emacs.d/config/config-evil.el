@@ -88,6 +88,7 @@
   "du" 'describe-face
   "dv" 'describe-variable
   ;;"dw" 'apropos ; Doesn't autofill object at point sadly
+  "ee" 'find-file-at-point
   "fb" 'flycheck-buffer ; http://www.flycheck.org/
   "ff" 'flycheck-buffer
   "fl" 'flycheck-list-errors
