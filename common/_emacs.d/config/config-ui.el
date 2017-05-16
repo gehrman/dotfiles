@@ -69,7 +69,7 @@
       (seq ".pyo" eol)
       )))
 (setq
- dired-omit-files
+ dired-omit-extensions
  (append
   dired-latex-unclean-extensions
   dired-bibtex-unclean-extensions
