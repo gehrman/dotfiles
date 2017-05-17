@@ -102,6 +102,7 @@
  'powerline-evil
  'visual-fill-column
  'browse-kill-ring
+ 'exec-path-from-shell
  ;;'flycheck-package
  ;;'flx-*
  ;;'flylisp
