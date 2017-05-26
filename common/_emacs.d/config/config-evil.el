@@ -116,6 +116,7 @@
   "rc" 'comment-region
   "rt" 'indent-region
   "ru" 'uncomment-region
+  "sd" 'transpose-sexps
   "sf" 'browse-url-of-file
   "sl" 'eval-last-sexp
   "so" 'browse-url
