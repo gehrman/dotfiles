@@ -10,8 +10,22 @@
   t
   )
 
+(defun set-paredit-key-map-for-mode
+    (mode)
+  "Set up paredit keybinds for MODE."
+  (evil-leader/set-key-for-mode mode
+    "h" 'paredit-backward-barf-sexp
+    "l" 'paredit-forward-barf-sexp
+    "j" 'paredit-backward-slurp-sexp
+    "k" 'paredit-forward-slurp-sexp
+    ))
+(set-paredit-key-map-for-mode 'emacs-lisp-mode)
+
+;; Todo - Name this list, and then map paredit keybinds over that list
 (mapc
- (lambda (mode) (add-hook mode #'enable-paredit-mode))
+ (lambda (mode)
+   (add-hook mode #'enable-paredit-mode)
+   (set-paredit-key-map-for-mode mode))
  '(emacs-lisp-mode-hook
    eval-expression-minibuffer-setup-hook
    ielm-mode-hook
