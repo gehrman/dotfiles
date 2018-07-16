@@ -13,7 +13,7 @@
 (org-babel-do-load-languages
   'org-babel-load-languages
   (remove-duplicates (append org-babel-load-languages
-                             '((emacs-lisp . t)(sh . t)(python . t)))
+                             '((emacs-lisp . t)(python . t)))
                      :test 'equal))
 
 ;; Org-mode config from Patrick... I really do need to learn org-mode at some point.
