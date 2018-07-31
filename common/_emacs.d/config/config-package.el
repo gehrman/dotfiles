@@ -152,10 +152,14 @@
 
 ;; Python
 (ensure-package-installed
+ 'cython-mode
  'ein
  'company-jedi
- ;;'pytest --- This doesn't seem to play well with tramp, so need to look at alternatives
- ;; something for virtualenv creation
+ 'virtualenvwrapper
+ 'python-switch-quotes
+ ;;'python-docstring
+ 'pytest ;;--- This doesn't seem to play well with tramp, so need to look at alternatives
+ ;;'elpy
  ;; syntax checking - flycheck(make?)
  )
 
