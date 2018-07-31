@@ -72,6 +72,14 @@
 ;;          "* %?\nEntered on %U\n  %i\n  %a")
 ;;         ("r" "Research" entry (file+headline "~/org/research.org" "Research"))
 ;;         ("c" "Courses" entry (file+headline "~/org/courses.org" "Courses"))))
+;; (setq org-capture-templates
+;; '(("T" "A (T)est template." entry
+;;   (file+headline "notes.org" "Testing")
+;;   "* %:description\n%u\n\n%c\n\n%i"
+;;   :empty-lines 1)))
+
+;; Let's try to set up some capturing.
+(require 'org-protocol)
 
 (provide 'config-orgmode)
 ;;; config-orgmode.el ends here
