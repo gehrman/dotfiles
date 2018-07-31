@@ -8,6 +8,7 @@
  'clojure-mode-extra-font-locking
  'cider
  'rainbow-delimiters
+ 'slime
  ;;'flycheck-clojure
  )
 

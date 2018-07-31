@@ -155,7 +155,6 @@
  'lua-mode
  'yaml-mode
  'markdown-mode
- 'slime
  'scala-mode
  'ensime
  )
