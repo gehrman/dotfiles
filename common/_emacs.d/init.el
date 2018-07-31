@@ -127,10 +127,10 @@
 ;;;;;;;;;;;;;;
 ;; Ag Stuff ;;
 ;;;;;;;;;;;;;;
-;; Open selection in results window. Let's see how this feels.
-;; (setq ag-reuse-window 't)
-;; For refactoring, blowing away the search isn't nice.
-(setq ag-reuse-window nil)
+;; Open selection in results window. Let's see how this feels. For refactoring,
+;; blowing away the search isn't nice, but otherwise it's the right UX.
+(setq ag-reuse-window 't)
+;; (setq ag-reuse-window nil)
 ;; Reuse the same *ag* buffer for all searchs. Again, let's see how it feels.
 (setq ag-reuse-buffers 't)
 ;; Focus the search buffer. (So nice.)
