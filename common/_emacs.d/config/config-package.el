@@ -125,9 +125,10 @@
 (ensure-package-installed
  'vagrant
  'vagrant-tramp
- ;;'docker
- ;;'dockerfile-mode
- ;;'docker-tramp
+ 'docker
+ 'dockerfile-mode
+ 'docker-compose-mode
+ 'docker-tramp
  )
 
 ;; Web development
@@ -237,6 +238,7 @@
 (ensure-package-installed
  'pianobar
  'rbt
+ 'daemons
  ;;'tomatinho ;https://github.com/konr/tomatinho
  )
 
@@ -255,6 +257,7 @@
  'transpose-frame
  'visible-mark
  'fill-column-indicator
+ 'paradox
  )
 
 ;; Themes.
