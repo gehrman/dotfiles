@@ -4,7 +4,23 @@
 ;; Not much here for now, beyond sourcing the various http stuff.
 
 ;;; Code:
-
+(ensure-package-installed
+ 'restclient
+ 'restclient-helm
+ 'restclient-test
+ 'ob-http
+ 'ob-restclient
+ 'know-your-http-well
+ 'company-restclient
+ 'json-mode
+ 'json-reformat
+ 'tagedit ;Edit HTML tags like the sexps they are.
+ ;;https://github.com/skeeto/skewer-mode
+ ;; there's also swank-js + slime
+ ;;'skewer-less
+ ;;'skewer-mode
+ ;;'skewer-reload-stylesheets
+ )
 
 ;; HTTP Interaction:
 (require 'restclient)

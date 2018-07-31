@@ -96,25 +96,6 @@
  ;;'which-key-mode https://github.com/justbur/emacs-which-key
  )
 
-;; Web development
-(ensure-package-installed
- 'restclient
- 'restclient-helm
- 'restclient-test
- 'ob-http
- 'ob-restclient
- 'know-your-http-well
- 'company-restclient
- 'json-mode
- 'json-reformat
- 'tagedit ;Edit HTML tags like the sexps they are.
- ;;https://github.com/skeeto/skewer-mode
- ;; there's also swank-js + slime
- ;;'skewer-less
- ;;'skewer-mode
- ;;'skewer-reload-stylesheets
- )
-
 ;; PHP
 (ensure-package-installed
  'php-mode
