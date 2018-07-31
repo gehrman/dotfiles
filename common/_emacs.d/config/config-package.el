@@ -50,8 +50,6 @@
 ;; Productivity packages: autocomplete, snippets, and such
 (ensure-package-installed
  'ag
- 'company
- 'company-flx
  'hound
  'projectile
  ;;'sx ; search stackexchange et al

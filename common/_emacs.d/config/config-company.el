@@ -4,6 +4,11 @@
 ;; ...you know, or not.
 
 ;;; Code:
+(ensure-package-installed
+ 'company
+ 'company-flx
+ )
+
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (setq company-idle-delay 0.1)
