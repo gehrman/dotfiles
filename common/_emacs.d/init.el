@@ -153,7 +153,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("6de7c03d614033c0403657409313d5f01202361e35490a3404e33e46663c2596" "fad38808e844f1423c68a1888db75adf6586390f5295a03823fa1f4959046f81" "ab0950f92dc5e6b667276888cb0cdbc35fd1c16f667170a62c15bd3ed5ae5c5a" "0ec59d997a305e938d9ec8f63263a8fc12e17990aafc36ff3aff9bc5c5a202f0" "196cc00960232cfc7e74f4e95a94a5977cb16fd28ba7282195338f68c84058ec" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "4f5bb895d88b6fe6a983e63429f154b8d939b4a8c581956493783b2515e22d6d" "118717ce0a2645a0cf240b044999f964577ee10137b1f992b09a317d5073c02d" "f5eb916f6bd4e743206913e6f28051249de8ccfd070eae47b5bde31ee813d55f" default)))
+    ("a0dc0c1805398db495ecda1994c744ad1a91a9455f2a17b59b716f72d3585dde" "6de7c03d614033c0403657409313d5f01202361e35490a3404e33e46663c2596" "fad38808e844f1423c68a1888db75adf6586390f5295a03823fa1f4959046f81" "ab0950f92dc5e6b667276888cb0cdbc35fd1c16f667170a62c15bd3ed5ae5c5a" "0ec59d997a305e938d9ec8f63263a8fc12e17990aafc36ff3aff9bc5c5a202f0" "196cc00960232cfc7e74f4e95a94a5977cb16fd28ba7282195338f68c84058ec" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "4f5bb895d88b6fe6a983e63429f154b8d939b4a8c581956493783b2515e22d6d" "118717ce0a2645a0cf240b044999f964577ee10137b1f992b09a317d5073c02d" "f5eb916f6bd4e743206913e6f28051249de8ccfd070eae47b5bde31ee813d55f" default)))
  '(ibuffer-saved-filter-groups nil)
  '(ibuffer-saved-filters
    (quote
@@ -177,7 +177,8 @@
  '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
-    (exec-path-from-shell calfw virtualenvwrapper markdown-mode tagedit json-mode company-flx browse-kill-ring smbc ido-ubiquitous smex company-jedi ein ibuffer-vc visual-fill-column rbt fill-column-indicator vagrant-tramp ibuffer-tramp ess reykjavik-theme rustfmt cargo ensime scala-mode visible-mark transpose-frame zenburn-theme warm-night-theme vertica vagrant tomatinho solarized-theme restclient-test restclient-helm puppet-mode powerline-evil pomodoro pianobar paredit ob-restclient ob-http monokai-theme magit linum-relative latex-pretty-symbols hound helm-ag flycheck evil-leader evil-indent-plus elm-mode darcula-theme company-restclient cdlatex anzu ample-theme ag)))
+    (emacs-xkcd use-package intero docean docker-compose-mode dockerfile-mode docker daemons exec-path-from-shell calfw virtualenvwrapper markdown-mode tagedit json-mode company-flx browse-kill-ring smbc ido-ubiquitous smex company-jedi ein ibuffer-vc visual-fill-column rbt fill-column-indicator vagrant-tramp ibuffer-tramp ess reykjavik-theme rustfmt cargo ensime scala-mode visible-mark transpose-frame zenburn-theme warm-night-theme vertica vagrant tomatinho solarized-theme restclient-test restclient-helm puppet-mode powerline-evil pomodoro pianobar paredit ob-restclient ob-http monokai-theme magit linum-relative latex-pretty-symbols hound helm-ag flycheck evil-leader evil-indent-plus elm-mode darcula-theme company-restclient cdlatex anzu ample-theme ag)))
+ '(paradox-github-token t)
  '(sentence-end-double-space nil)
  '(visual-line-fringe-indicators (quote (nil |))))
 
