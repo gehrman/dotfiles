@@ -94,14 +94,6 @@
  ;;'which-key-mode https://github.com/justbur/emacs-which-key
  )
 
-;; Rust
-(ensure-package-installed
- 'cargo
- ;;'flycheck-rust
- ;;'racer
- 'rust-mode
- )
-
 ;; Misc file modes.
 (ensure-package-installed
  'puppet-mode
