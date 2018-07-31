@@ -137,18 +137,6 @@
  'rust-mode
  )
 
-;; Latex
-;; (ensure-package-installed
-;;  'cdlatex
-;;  'latex-math-preview
-;;  'latex-pretty-symbols
-;;  'latex-extra
-;;  'latex-preview-pane
-;;  'magic-latex-buffer
-;;  'math-symbol-lists
-;;  'px ; inline latex preview
-;;  )
-
 ;; Misc file modes.
 (ensure-package-installed
  'puppet-mode
