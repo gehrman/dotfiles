@@ -97,16 +97,6 @@
  ;;'which-key-mode https://github.com/justbur/emacs-which-key
  )
 
-;; Devops/infrastructure packages.
-(ensure-package-installed
- 'vagrant
- 'vagrant-tramp
- 'docker
- 'dockerfile-mode
- 'docker-compose-mode
- 'docker-tramp
- )
-
 ;; Web development
 (ensure-package-installed
  'restclient

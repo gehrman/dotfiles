@@ -4,6 +4,12 @@
 ;; Configure docker tools
 
 ;;; Code:
+(ensure-package-installed
+ 'docker
+ 'dockerfile-mode
+ 'docker-compose-mode
+ 'docker-tramp
+ )
 (require 'docker)
 (require 'dockerfile-mode)
 (require 'docker-compose-mode)
