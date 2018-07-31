@@ -143,8 +143,6 @@
  'lua-mode
  'yaml-mode
  'markdown-mode
- 'scala-mode
- 'ensime
  )
 
 ;; Applications
