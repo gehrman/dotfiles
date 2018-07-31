@@ -126,19 +126,6 @@
  ;;'skewer-reload-stylesheets
  )
 
-;; Python
-(ensure-package-installed
- 'cython-mode
- 'ein
- 'company-jedi
- 'virtualenvwrapper
- 'python-switch-quotes
- ;;'python-docstring
- 'pytest ;;--- This doesn't seem to play well with tramp, so need to look at alternatives
- ;;'elpy
- ;; syntax checking - flycheck(make?)
- )
-
 ;; PHP
 (ensure-package-installed
  'php-mode

@@ -7,6 +7,18 @@
 
 
 ;;; Code:
+(ensure-package-installed
+ 'cython-mode
+ 'ein
+ 'company-jedi
+ 'virtualenvwrapper
+ 'python-switch-quotes
+ ;;'python-docstring
+ 'pytest ;;--- This doesn't seem to play well with tramp, so need to look at alternatives
+ ;;'elpy
+ ;; syntax checking - flycheck(make?)
+ )
+
 (require 'ein)
 
 ;; Use Jedi for Company auto-completions... need to pip install the following for
