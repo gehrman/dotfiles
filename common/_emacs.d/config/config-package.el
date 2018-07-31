@@ -96,15 +96,6 @@
  ;;'which-key-mode https://github.com/justbur/emacs-which-key
  )
 
-;; PHP
-(ensure-package-installed
- 'php-mode
- 'php-refactor-mode
- 'php-scratch
- 'phpcbf
- 'phpunit
- )
-
 ;; R and Statistics
 (ensure-package-installed
  'ess
