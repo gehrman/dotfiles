@@ -45,6 +45,14 @@
   "tj" 'restclient-test-next-error
   "tk" 'restclient-test-previous-error
   )
+;; <leader>ss is common enough that binding it to C-return might be worthwhile.
+(evil-define-key 'normal restclient-mode-map (kbd "<return>") 'restclient-http-send-current-stay-in-window)
+(evil-define-key 'normal restclient-mode-map (kbd "C-<return>") 'restclient-http-send-current-stay-in-window)
+(evil-define-key 'insert restclient-mode-map (kbd "C-<return>") 'restclient-http-send-current-stay-in-window)
+(evil-define-key 'normal restclient-mode-map (kbd "<kp-enter>") 'restclient-http-send-current-stay-in-window)
+(evil-define-key 'normal restclient-mode-map (kbd "C-<enter>") 'restclient-http-send-current-stay-in-window)
+(evil-define-key 'insert restclient-mode-map (kbd "C-<enter>") 'restclient-http-send-current-stay-in-window)
+(evil-define-key 'insert restclient-mode-map (kbd "c") 'self-insert-command)
 
 ;;; Javascript
 ;; So, right Clojure for the Brave and True calls for js-mode while the
