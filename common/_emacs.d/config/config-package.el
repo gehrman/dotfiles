@@ -82,7 +82,6 @@
  ;;'zlc
  ;;'znc
  ;;'sos
- ;;'grizzl
  ;;'org-projectile, 'org-*
  ;;'svg-clock
  ;;'e2wm
