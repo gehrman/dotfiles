@@ -96,11 +96,6 @@
  ;;'which-key-mode https://github.com/justbur/emacs-which-key
  )
 
-;; R and Statistics
-(ensure-package-installed
- 'ess
- )
-
 ;; Rust
 (ensure-package-installed
  'cargo
