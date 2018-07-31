@@ -7,16 +7,23 @@
 ;;; Code:
 
 ;;;; Themes
-;; (load-theme 'ample t t)
-;; (enable-theme 'ample)
+(load-theme 'ample t t)
+(enable-theme 'ample)
+
 ;; (load-theme 'ample-flat t t)
 ;; (enable-theme 'ample-flat)
-(load-theme 'reykjavik t t)
-(enable-theme 'reykjavik)
+
+;; (load-theme 'reykjavik t t)
+;; (enable-theme 'reykjavik)
+
+;; (load-theme 'zenburn)
+;; (enable-theme 'zenburn)
+
+;; (load-theme 'solarized)
 
 ;;;; Font stuff
 ;; Test banner:
-;; ilIega1o = 0O == -> --> ############ # && && || || <> << >> >>= <<= /= =/= != ~=!=
+;; ilIega10oO == -> --> ############ # && && || || <> << >> =<< >>= <<= /= =/= != ~=!=
 (set-face-attribute 'default nil :family "FuraCode Nerd Font" :height 200)
 ;(set-face-attribute 'default nil :family "InconsolataGo" :height 180)
 ;(set-face-attribute 'default nil :family "Fira Code" :height 200)
@@ -46,6 +53,13 @@
 (when (display-graphic-p) (set-scroll-bar-mode nil))
 
 ;; Global prettification. Because lambda is λ dammit.
+(push '("forall" . ?∀) prettify-symbols-alist)
+(push '("exists" . ?∃) prettify-symbols-alist)
+(push '("not" . ?¬) prettify-symbols-alist)
+(push '("implies" . ?⇒) prettify-symbols-alist)
+(push '("iff" . ?⇔) prettify-symbols-alist)
+(push '("lambda" . ?λ) prettify-symbols-alist)
+(push '("def" . ?λ) prettify-symbols-alist)
 (global-prettify-symbols-mode t)
 
 ;; Window manipulations
@@ -88,6 +102,7 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
+(setq ido-default-buffer-method "selected-window")
 (ido-ubiquitous-mode t)
 
 ;; Apparantly this one annoys a bunch of people, setting to nil disables.
@@ -132,11 +147,10 @@
     (rainbow-delimiters-depth-7-face . "goldenrod")
     (rainbow-delimiters-depth-8-face . "slate gray")
     (rainbow-delimiters-depth-9-face . "spring green")
-    (rainbow-delimiters-mismatched-face . "firebrick2")
-    (rainbow-delimiters-unmatched-face . "chartreuse")
+    (rainbow-delimiters-mismatched-face . "chartreuse")
+    (rainbow-delimiters-unmatched-face . "firebrick2")
     )))
 (add-hook 'rainbow-delimiters-mode-hook 'define-rainbow-delimiter-face-colors)
-
 ;; At some point, I should get code folding to work.
 ;; Resources:
 ;; http://stackoverflow.com/questions/2399612/why-is-there-no-code-folding-in-emacs
@@ -153,6 +167,15 @@
 (global-set-key (kbd "C-c C-z") 'suspend-frame)
 (global-set-key (kbd "s-q") 'delete-frame)
 (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-<kp-subtract>") 'hs-hide-block)
+(global-set-key (kbd "C-s-<kp-subtract>") 'hs-hide-all)
+(global-set-key (kbd "C-<kp-add>") 'hs-show-block)
+(global-set-key (kbd "C-s-<kp-add>") 'hs-show-all)
+(global-set-key (kbd "s-h") 'evil-window-left)
+(global-set-key (kbd "s-j") 'evil-window-down)
+(global-set-key (kbd "s-k") 'evil-window-up)
+(global-set-key (kbd "s-l") 'evil-window-right)
+(global-set-key (kbd "s-l") 'evil-window-right)
 
 ;; B&T Keybinds for searching
 ;; Interactive search key bindings. By default, C-s runs
@@ -161,6 +184,7 @@
 ;(global-set-key (kbd "C-r") 'isearch-backward-regexp)
 ;(global-set-key (kbd "C-M-s") 'isearch-forward)
 ;(global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "C-f") 'isearch-forward-symbol-at-point)
 
 ;; Mode-specific non-evil binds.
 (eval-after-load 'ibuffer
@@ -205,6 +229,10 @@
 (setq auto-save-default nil)
 
 ;;(require 'thing-at-point)
+;;(require 'artist-mode)  ;;Give it a try.
+
+;; Make _ count as a word element, not symbol
+(modify-syntax-entry ?_ "w")
 
 (provide 'config-ui)
 ;;; config-ui.el ends here
