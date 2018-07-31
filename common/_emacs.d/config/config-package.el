@@ -47,27 +47,6 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-;; Package groups.
-;; Evil group first, as it's by far the most important.
-(ensure-package-installed
- 'evil ; A/K/A make emacs usable.
- 'evil-leader
- 'evil-indent-plus ; Indentation text objects.
- ;;'evil-anzu
- ;;'evil-magit ;some time I should try getting this to work again
- ;;'evil-lisp-state
- ;;'evil-cleverparens ; Another lisp mode.
- ;;'evil-commentary ; Another commenter.
- ;;'evil-args
- ;;'evil-escape
- ;;'evil-god-state ; What's god-mode?
- ;;'evil-iedit ; What's iedit?
- ;;'evil-mc ; Multiple cursors?
- ;;'evil-nerd-commenter
- ;;'evil-org ; This has been problematic.
- ;;'evil-visualstar
- )
-
 ;; Magit next, because, well, its amazing.
 (ensure-package-installed
  'magit

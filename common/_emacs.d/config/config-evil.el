@@ -4,8 +4,29 @@
 ;; Evil Mode. A/K/A Make Emacs Usable.
 
 ;;; Code:
-;; Before we load emacs, we want to set the toggle key to ensure everything
-;; is initialized correctly.
+
+;; Ensure evil and related packages are present.
+(ensure-package-installed
+ 'evil ; A/K/A make emacs usable.
+ 'evil-leader
+ 'evil-indent-plus ; Indentation text objects.
+ ;;'evil-anzu
+ ;;'evil-magit ;some time I should try getting this to work again
+ ;;'evil-lisp-state
+ ;;'evil-cleverparens ; Another lisp mode.
+ ;;'evil-commentary ; Another commenter.
+ ;;'evil-args
+ ;;'evil-escape
+ ;;'evil-god-state ; What's god-mode?
+ ;;'evil-iedit ; What's iedit?
+ ;;'evil-mc ; Multiple cursors?
+ ;;'evil-nerd-commenter
+ ;;'evil-org ; This has been problematic.
+ ;;'evil-visualstar
+ )
+
+;; Before we load continue loading evil/emacs, we want to set the toggle key to
+;; ensure everything is initialized correctly.
 (setq evil-toggle-key "C-d") ; Note that we're shadowing evil-scroll-down here.
 
 ;; set evil-mode by default, so emacs is actually usable as a text editor
