@@ -51,6 +51,11 @@
 ;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "," 'ibuffer
+  "+" 'hs-show-block
+  "-" 'hs-hide-block
+  "<+" 'hs-show-all
+  "<-" 'hs-hide-all
+  "/" 'comment-dwim
   ;; b is the prefix key for buffer operations. I'm not completely happy with
   ;; putting dired in with the buffer ops, but not sure where a better place
   ;; for it is
