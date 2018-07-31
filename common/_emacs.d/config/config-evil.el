@@ -131,6 +131,8 @@
   "so" 'browse-url
   "ss" 'eval-defun ;because eval-defun is *totally* a synonym for 'eval-this-sexp... dammit emacs
   "tf" 'transpose-frame
+  "tt" 'my-run-pytest-from-buffer-name
+  "ta" 'pytest-all
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
   "wf" 'toggle-frame-fullscreen
   "wn" 'make-frame
