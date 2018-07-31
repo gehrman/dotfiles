@@ -70,10 +70,8 @@
  ;; Currently using IDO & company for completions, not helm
  ;;'helm ;Configure me!
  ;;'helm-ag ;Configure me! (See https://github.com/syohex/emacs-helm-ag)
- 'linum-relative
  'powerline
  'powerline-evil
- 'visual-fill-column
  'browse-kill-ring
  'exec-path-from-shell
  ;;'flycheck-package
@@ -93,6 +91,7 @@
  ;;'e2wm
  ;;'which-key-mode https://github.com/justbur/emacs-which-key
  'puppet-mode
+ 'paradox
  )
 
 ;; Applications
@@ -112,34 +111,6 @@
 ;; 'dash
 ;; 's
 ;; )
-
-;; UI Packages
-(ensure-package-installed
- 'transpose-frame
- 'visible-mark
- 'fill-column-indicator
- 'paradox
- )
-
-;; Themes.
-(ensure-package-installed
- 'ample-theme
- 'zenburn-theme
- 'warm-night-theme
- 'solarized-theme
- 'monokai-theme
- 'darcula-theme
- 'reykjavik-theme
- ;; 'afterglow - https://github.com/sjahl/emacs-theme-afterglow
- ;; 'afternoon-theme
- ;; 'noctilux-theme
- ;; 'grandshell-theme
- ;; 'alect-themes
- ;; 'cyberpunk-theme
- ;; 'tango-*
- ;; 'material-theme
- ;; 'aurora-theme
- )
 
 (provide 'config-package)
 ;;; config-package ends here

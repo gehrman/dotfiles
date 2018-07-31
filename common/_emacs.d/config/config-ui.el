@@ -5,6 +5,34 @@
 ;; If you ever want to waste an afternoon, checkout http://emacsthemes.com/index/1.html
 
 ;;; Code:
+;; Themes
+(ensure-package-installed
+ 'ample-theme
+ 'zenburn-theme
+ 'warm-night-theme
+ 'solarized-theme
+ 'monokai-theme
+ 'darcula-theme
+ 'reykjavik-theme
+ ;; 'afterglow - https://github.com/sjahl/emacs-theme-afterglow
+ ;; 'afternoon-theme
+ ;; 'noctilux-theme
+ ;; 'grandshell-theme
+ ;; 'alect-themes
+ ;; 'cyberpunk-theme
+ ;; 'tango-*
+ ;; 'material-theme
+ ;; 'aurora-theme
+ )
+
+;; Non-theme UI
+(ensure-package-installed
+ 'fill-column-indicator
+ 'linum-relative
+ 'transpose-frame
+ 'visible-mark
+ 'visual-fill-column
+ )
 
 ;;;; Themes
 (load-theme 'ample t t)
