@@ -6,6 +6,11 @@
 ;; http://emacs.stackexchange.com/questions/281/how-do-i-get-a-fancier-mode-line-that-uses-solid-colors-and-triangles
 
 ;;; Code:
+(ensure-package-installed
+ 'powerline
+ 'powerline-evil
+ )
+
 (require 'powerline)
 (require 'powerline-evil)
 ;(powerline-default-theme)
