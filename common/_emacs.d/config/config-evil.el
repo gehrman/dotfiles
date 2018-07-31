@@ -245,6 +245,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
  'ibuffer-mode
  'completion-list-mode
  )
+(add-hook 'git-commit-mode-hook 'evil-insert-state)
 
 ;; (set-evil-initial-mode
 ;;  'emacs                   ; Start the following modes in 'emacs state.
