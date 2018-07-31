@@ -5,6 +5,23 @@
 
 ;;; Code:
 
+;; ML Language family
+(ensure-package-installed
+ 'elm-mode
+ 'haskell-mode
+ 'idris-mode
+ ;;'elm-yasnippets
+ ;;'flycheck-elm
+ ;;'flycheck-haskell
+ ;;'dante (fork of intero)
+ ;;'ghc
+ ;;'haskell-emacs -- emacs extensions in haskell?!
+ ;;'haskell-snippets
+ ;;'hasky-extensions
+ ;;'hi2/hident/hyai
+ ;;'shm
+ )
+
 ;; Elm Config
 
 ;;(require 'elm-mode)
