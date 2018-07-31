@@ -43,6 +43,7 @@
    config-lisp
    config-local
    config-magit
+   config-markup
    config-misc
    config-ml
    config-orgmode

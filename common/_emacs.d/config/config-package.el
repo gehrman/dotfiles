@@ -92,14 +92,7 @@
  ;;'svg-clock
  ;;'e2wm
  ;;'which-key-mode https://github.com/justbur/emacs-which-key
- )
-
-;; Misc file modes.
-(ensure-package-installed
  'puppet-mode
- 'lua-mode
- 'yaml-mode
- 'markdown-mode
  )
 
 ;; Applications
