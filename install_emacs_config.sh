@@ -6,12 +6,19 @@
 # don't yet exist (just .emacs.d and config) and link init.el and the config
 # files.
 
-mkdir -p ~/.emacs.d/config
+mkdir -p ~/.emacs.d/{config,lisp}
 ln -s `pwd`/common/_emacs.d/init.el ~/.emacs.d/
 
 for f in `ls common/_emacs.d/config/config-*.el`; do
     ln -s `pwd`/$f ~/.emacs.d/config/
     if [[ $? == 0 ]]; then
-        echo Linked $f.
+        echo Linked $f .emacs.d/config.
+    fi
+done
+
+for f in `ls common/_emacs.d/lisp/*.el`; do
+    ln -s `pwd`/$f ~/.emacs.d/lisp/
+    if [[ $? == 0 ]]; then
+        echo Linked $f in .emacs.d/lisp.
     fi
 done

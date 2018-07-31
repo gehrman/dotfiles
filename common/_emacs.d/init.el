@@ -16,6 +16,7 @@
 
 ;; Setup the path for custom config files.
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (setq tramp-remote-path '("/usr/local/bin" "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/sbin" "/csnzoo/gehrman/.bin"))
 
 ;; We need to exec 'config-package first because it deals with setting up the
