@@ -2,6 +2,15 @@
 ;;; Commentary:
 
 ;;; Code:
+(ensure-package-installed
+ 'paredit
+ 'clojure-mode
+ 'clojure-mode-extra-font-locking
+ 'cider
+ 'rainbow-delimiters
+ ;;'flycheck-clojure
+ )
+
 ;; General setup for all lisp-y languages.
 (autoload
   'enable-paredit-mode

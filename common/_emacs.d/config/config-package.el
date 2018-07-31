@@ -140,16 +140,6 @@
  'ess
  )
 
-;; Clojure & Lisp Development
-(ensure-package-installed
- 'paredit
- 'clojure-mode
- 'clojure-mode-extra-font-locking
- 'cider
- 'rainbow-delimiters
- ;;'flycheck-clojure
- )
-
 ;; ML Language family
 (ensure-package-installed
  ;; Elm
