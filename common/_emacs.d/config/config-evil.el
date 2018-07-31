@@ -258,6 +258,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
 
 ;; Mode registration should be a mode config thing, not an evil config thing.
 (add-to-list 'evil-emacs-state-modes 'magit-blame-mode)
+(add-to-list 'evil-emacs-state-modes 'messages-buffer-mode)
 ;;(add-to-list 'evil-emacs-state-modes 'docker-image-mode) ; moved to docker config
 ;;(set-evil-initial-mode 'ansi-term 'emacs)
 
