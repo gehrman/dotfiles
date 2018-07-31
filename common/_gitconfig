@@ -25,3 +25,6 @@
     conflictstyle = diff3
 [include]
     path = .gitconfig.site
+[user]
+	name = Geoff Ehrman
+	email = gehrman@wayfair.com
