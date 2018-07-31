@@ -5,6 +5,7 @@
 
 ;;; Code:
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(setq flycheck-emacs-lisp-load-path 'inherit)
 
 (provide 'config-flycheck)
 ;;; config-flycheck.el ends here
