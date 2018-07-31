@@ -48,6 +48,35 @@
 ;; \ is the default, but "," is another common choice
 (evil-leader/set-leader ",")
 
+;; (defun comment-line-or-region ()
+;;   "No."
+;;   (interactive)
+;;   (message "nil")
+;;   nil)
+;; (defun comment-line-or-region (arg1 arg2)
+;;   "Stuff. ARG1 and ARG2 ignored."
+;;   (interactive)
+;;   (comment-line))
+;; (commandp 'comment-line-or-region)
+;; (comment-line-or-region)
+;; (debug-on-entry 'comment-line-or-region)
+;; (cancel-debug-on-entry 'comment-line-or-region)
+
+(defun toggle-magit-blame ()
+  "There isn't a single function to turn magit-blame on and off, so make one.
+This doesn't actually work yet because of how blame-mode is implemented."
+  (interactive)
+  (if (member 'magit-blame-mode minor-mode-list)
+      (message "t")
+    (message "nil")))
+
+(defun beautify-json-buffer ()
+  "Reformat json buffer."
+  (interactive)
+  (shell-command)
+  (shell-command-on-region)
+  )
+
 ;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "," 'ibuffer
