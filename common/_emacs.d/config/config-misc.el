@@ -20,5 +20,21 @@
 (recentf-mode 1)
 ;(global-set-key "" 'recentf-open-files) ;Bind key to open file list.
 
+;; Projectile/Tags stuff
+(defun regenerate-tags ()
+  "Function to regenerate ctags."
+  (interactive)
+  (let ((tags-directory (directory-file-name (projectile-project-root))))
+    (shell-command
+     (format "ctags -f %s -e -R %s" tags-file-name tags-directory))))
+
+;; (use-package ctags-update
+;;   :ensure t
+;;   :config
+;;   (progn
+;;     (add-hook 'python-mode-hook 'turn-on-ctags-auto-update-mode)))
+
+
+
 (provide 'config-misc)
 ;;; config-misc.el ends here
