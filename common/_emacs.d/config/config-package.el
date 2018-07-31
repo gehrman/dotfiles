@@ -69,7 +69,6 @@
 ;; General packages.
 (ensure-package-installed
  'anzu
- 'flycheck
  ;; Currently using IDO & company for completions, not helm
  ;;'helm ;Configure me!
  ;;'helm-ag ;Configure me! (See https://github.com/syohex/emacs-helm-ag)
