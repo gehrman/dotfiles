@@ -4,6 +4,10 @@
 ;; None at this time.
 
 ;;; Code:
+(ensure-package-installed
+ 'magit
+ )
+
 ;; Shut magit up.
 (setq magit-last-seen-setup-instructions "1.4.0")
 

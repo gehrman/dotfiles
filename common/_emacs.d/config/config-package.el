@@ -47,11 +47,6 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-;; Magit next, because, well, its amazing.
-(ensure-package-installed
- 'magit
- )
-
 ;; Productivity packages: autocomplete, snippets, and such
 (ensure-package-installed
  'ag
