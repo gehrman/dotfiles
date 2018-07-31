@@ -56,11 +56,14 @@
   ;; for it is
   "ba" 'find-file ;I type ,bs for :e enough I want an escape hatch
   "bc" 'clone-indirect-buffer-other-window
-  "bf" 'diff-buffer-with-file
+  "bd" 'diff-buffer-with-file
+  ;"bfj" 'diff-buffer-with-file
+  "bg" 'magit-blame-mode
   "bh" 'fci-mode ;(from buffer-highlight)
   "bk" 'kill-this-buffer ; It's _always_ the current buffer I want to kill. Thanks @brandon-rhodes for this one.
   "bn" 'narrow-to-defun ; It's (almost) always the definition I want to narrow to.
   "bN" 'narrow-to-region
+  "bo" 'delete-other-windows
   "bp" 'narrow-to-page
   "br" 'revert-buffer
   "bs" 'switch-to-buffer
@@ -94,9 +97,11 @@
   "fl" 'flycheck-list-errors
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
+  "ga" 'smerge-keep-all
   "gb" 'magit-blame ; This should probably cycle the blame to keep gk free.
   "gf" 'find-file-at-point
   "gg" 'magit-status
+  "gi" 'magit-init
   "gk" 'magit-blame-quit
   ;; TODO - do something real in the keybind map
   "gm" 'smerge-keep-mine
@@ -104,13 +109,15 @@
   "gp" 'smerge-prev
   "gt" 'smerge-keep-other ; "keep theirs"
   "ii" 'insert-char
+  "kw" 'delete-window
   ;; (l)aunch application modes like dired, proced, ansi-term, et al
   "ld" 'dired
   "lp" 'proced
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
   "pi" 'package-install
-  "pl" 'package-list-packages
+  "pl" 'paradox-list-packages
+  ;; "pl" 'package-list-packages
   "po" 'pianobar
   "pn" 'pianobar-next-song
   "pp" 'pianobar-play-or-pause
@@ -123,6 +130,7 @@
   "sl" 'eval-last-sexp
   "so" 'browse-url
   "ss" 'eval-defun ;because eval-defun is *totally* a synonym for 'eval-this-sexp... dammit emacs
+  "tf" 'transpose-frame
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
   "wf" 'toggle-frame-fullscreen
   "wn" 'make-frame
