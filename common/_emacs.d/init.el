@@ -34,7 +34,9 @@
 (mapc
  #'require
  '(config-addons
+   config-ansi-term
    config-company
+   config-docker
    config-flycheck
    config-fonthandling
    config-latex
