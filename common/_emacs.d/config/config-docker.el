@@ -8,8 +8,7 @@
  'docker
  'dockerfile-mode
  'docker-compose-mode
- 'docker-tramp
- )
+ 'docker-tramp)
 (require 'docker)
 (require 'dockerfile-mode)
 (require 'docker-compose-mode)
@@ -22,9 +21,11 @@
 ;; tabulated-list-mode, we're registerig it here.
 (defun tablist-modes-keybinds ()
   "Set keybinds for docker modes."
-  (local-set-key (kbd ",") 'ibuffer)
-  )
+  (local-set-key (kbd ",") 'ibuffer))
 (add-hook 'tabulated-list-mode-hook 'tablist-modes-keybinds)
+
+(evil-leader/set-key
+  "DD" 'docker-compose)
 
 (provide 'config-docker)
 ;;; config-docker.el ends here
