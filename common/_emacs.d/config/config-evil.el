@@ -164,7 +164,6 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "gp" 'smerge-prev
   "gt" 'smerge-keep-other ; "keep theirs"
   "ii" 'insert-char
-  "kw" 'delete-window
   ;; (l)aunch application modes like dired, proced, ansi-term, et al
   "ld" 'dired
   "lp" 'proced
@@ -190,6 +189,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "ta" 'pytest-all
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
   "wf" 'toggle-frame-fullscreen
+  "wk" 'delete-window
   "wn" 'make-frame
   "z" 'evil-emacs-state
   "[" 'keyboard-quit
