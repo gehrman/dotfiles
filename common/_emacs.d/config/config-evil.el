@@ -152,17 +152,20 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "fl" 'flycheck-list-errors
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
-  "ga" 'smerge-keep-all
   "gb" 'magit-blame ; This should probably cycle the blame to keep gk free.
   "gf" 'find-file-at-point
   "gg" 'magit-status
   "gi" 'magit-init
   "gk" 'magit-blame-quit
   ;; TODO - do something real in the keybind map
+  "ga" 'smerge-keep-all
+  "gc" 'smerge-keep-current
+  "gu" 'smerge-keep-upper
+  "gd" 'smerge-keep-lower
   "gm" 'smerge-keep-mine
+  "gt" 'smerge-keep-other ; "keep the one where my cursor isn't"
   "gn" 'smerge-next ; This should probably variously do smerge-next, magit-blame-next, etc
   "gp" 'smerge-prev
-  "gt" 'smerge-keep-other ; "keep theirs"
   "ii" 'insert-char
   ;; (l)aunch application modes like dired, proced, ansi-term, et al
   "ld" 'dired
