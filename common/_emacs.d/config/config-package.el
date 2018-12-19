@@ -52,7 +52,7 @@
  'ag
  'hound
  'projectile
- ;;'sx ; search stackexchange et al
+ ;;'sos/'sx ; search stackexchange et al
  ;;'wgrep ; What does this one actually do?
  'ido-ubiquitous
  'ibuffer-tramp
@@ -78,16 +78,14 @@
  ;;'helm-idris
  ;;'helm-projectile
  ;;'zeal-at-point ; zeal, or other documentation searching
- ;;'searchq
  ;;'zlc
- ;;'znc
- ;;'sos
  ;;'org-projectile, 'org-*
  ;;'svg-clock
  ;;'e2wm
  ;;'which-key-mode https://github.com/justbur/emacs-which-key
- 'puppet-mode
  'paradox
+ 'protobuf-mode
+ 'puppet-mode
  )
 
 ;; Applications
