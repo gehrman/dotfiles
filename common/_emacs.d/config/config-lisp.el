@@ -7,18 +7,17 @@
  'clojure-mode
  'clojure-mode-extra-font-locking
  'cider
+ 'hy-mode
  'rainbow-delimiters
- 'slime
  ;;'flycheck-clojure
- )
+ 'slime)
 
 ;; General setup for all lisp-y languages.
 (autoload
   'enable-paredit-mode
   "paredit"
   "Turn on pseudo-structural editing of Lisp code."
-  t
-  )
+  t)
 
 (defun set-paredit-keys-for-mode ()
   "Setup keybinds for paredit."
@@ -26,8 +25,7 @@
   (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
   (evil-define-minor-mode-key 'normal paredit-mode (kbd "C-h") 'paredit-backward-barf-sexp)
   (evil-define-minor-mode-key 'normal paredit-mode (kbd "C-k") 'paredit-forward-slurp-sexp)
-  (evil-define-minor-mode-key 'normal paredit-mode (kbd "C-l") 'paredit-forward-barf-sexp)
-  )
+  (evil-define-minor-mode-key 'normal paredit-mode (kbd "C-l") 'paredit-forward-barf-sexp))
 (add-hook 'paredit-mode-hook 'set-paredit-keys-for-mode)
 
 (mapc
@@ -40,15 +38,13 @@
    clojure-mode-hook
    lisp-mode-hook
    lisp-interaction-mode-hook
-   scheme-mode-hook
-   ))
+   scheme-mode-hook))
 
 (mapc
  (lambda (mode) (add-hook mode 'turn-on-eldoc-mode))
  '(emacs-lisp-mode-hook
    lisp-interaction-mode-hook
-   ielm-mode-hook
- ))
+   ielm-mode-hook))
 
 ;;;
 ;; Clojure setup.
