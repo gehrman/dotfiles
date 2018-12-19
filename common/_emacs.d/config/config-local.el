@@ -9,9 +9,7 @@
 
 ;;; Code:
 ;; OS aware base directory.
-(if (eq system-type 'windows-nt)
-    (setq tramp-default-method "plink")
-  (setq tramp-default-method "ssh"))
+;; (if (eq system-type 'windows-nt) (setq tramp-default-method "plink") (setq tramp-default-method "ssh"))
 
 (if (eq system-type 'darwin)
     (require 'config-osx))
