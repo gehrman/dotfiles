@@ -78,6 +78,24 @@
 ;;   "* %:description\n%u\n\n%c\n\n%i"
 ;;   :empty-lines 1)))
 
+;; Org-mode specific keybindings.
+;; http://stackoverflow.com/questions/25463369/mode-specific-or-buffer-local-text-objects-in-evil
+;; Should these get wrapped in an eval-after-load?
+(evil-leader/set-key-for-mode 'org-mode
+  "\\" 'org-insert-heading
+  "a" 'org-agenda
+  "cc" 'org-ctrl-c-ctrl-c
+  "c'" 'org-edit-special
+  "h" 'org-metaleft
+  "k" 'org-metaup
+  "j" 'org-metadown
+  "l" 'org-metaright
+  "sj" 'org-babel-next-src-block
+  "sk" 'org-babel-previous-src-block
+  "ss" 'org-babel-execute-src-block
+  "t" 'org-todo
+  )
+
 ;; Let's try to set up some capturing.
 (require 'org-protocol)
 

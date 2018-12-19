@@ -199,24 +199,6 @@ This doesn't actually work yet because of how blame-mode is implemented."
   )
   ;; "D" 'dired)
 
-;; Org-mode specific keybindings.
-;; http://stackoverflow.com/questions/25463369/mode-specific-or-buffer-local-text-objects-in-evil
-;; Should these get wrapped in an eval-after-load?
-(evil-leader/set-key-for-mode 'org-mode
-  "\\" 'org-insert-heading
-  "a" 'org-agenda
-  "cc" 'org-ctrl-c-ctrl-c
-  "c'" 'org-edit-special
-  "h" 'org-metaleft
-  "k" 'org-metaup
-  "j" 'org-metadown
-  "l" 'org-metaright
-  "sj" 'org-babel-next-src-block
-  "sk" 'org-babel-previous-src-block
-  "ss" 'org-babel-execute-src-block
-  "t" 'org-todo
-  )
-
 (setq evil-leader/in-all-states t)
 
 ;; Try to kill custom buffer maps.
