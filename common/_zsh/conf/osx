@@ -3,3 +3,6 @@ alias l="ls -lhG"
 
 # Local Dev
 export VAGRANT_HOST_SOURCE_PATH=/Users/gehrman/Dev/sf
+
+export WORKON_HOME=~/Devel/envs
+source /usr/local/bin/virtualenvwrapper.sh

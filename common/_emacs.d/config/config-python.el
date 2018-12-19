@@ -61,6 +61,7 @@
   (interactive)
   (insert "import argparse\nif __name__ == '__main__':\n    "))
 
+;; TODO: Make this non-global
 (global-set-key
  (kbd "s-i")
  (defun insert-pdb-breakpoint ()

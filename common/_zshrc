@@ -175,3 +175,7 @@ stty ixany
 stty ixoff -ixon
 stty stop undef
 stty start undef
+
+alias hy-spy="hy --spy"
+alias hom="hy --repl-output-fn hy.contrib.hy-repr.hy-repr"
+alias hom-spy="hy --repl-output-fn hy.contrib.hy-repr.hy-repr --spy"
