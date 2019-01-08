@@ -8,6 +8,7 @@
  'cider
  'clojure-mode
  'clojure-mode-extra-font-locking
+ 'elein
  'hy-mode
  'paredit
  'persistent-scratch
