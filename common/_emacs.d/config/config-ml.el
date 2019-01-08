@@ -14,8 +14,8 @@
  'erlang
  'haskell-mode
  'idris-mode
+ 'flycheck-elm
  ;;'elm-yasnippets
- ;;'flycheck-elm
  ;;'flycheck-haskell
  ;;'dante (fork of intero)
  ;;'ghc
@@ -28,7 +28,15 @@
 
 ;; Elm Config
 
-;;(require 'elm-mode)
+(require 'elm-mode)
+
+;; This requires `elm-format` on $PATH, which may be installed
+;; with `npm -g elm-format`. Note that it's also on homebrew
+;; but brew installs versioned commands, not a generic one.
+(setq elm-format-on-save t)
+
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-elm-setup))
 
 ;; Haskell Config
 ;; All of this is lifted directly from Patrick for now.
