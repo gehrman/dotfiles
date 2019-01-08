@@ -194,7 +194,9 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "ta" 'pytest-all
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
   "wf" 'toggle-frame-fullscreen
+  "wh" 'other-frame
   "wk" 'delete-window
+  "wl" 'reverse-other-frame
   "wn" 'make-frame
   "z" 'evil-emacs-state
   "[" 'keyboard-quit
