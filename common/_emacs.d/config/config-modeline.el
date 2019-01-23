@@ -1,9 +1,7 @@
-;;; config-powerline --- powerline configuration
-;; without the pain of the vim install. ;;
+;;; config-modeline --- modeline configuration
 
 ;;; Commentary:
 ;; https://github.com/powerline/fonts
-;; http://emacs.stackexchange.com/questions/281/how-do-i-get-a-fancier-mode-line-that-uses-solid-colors-and-triangles
 
 ;;; Code:
 (ensure-package-installed
@@ -18,6 +16,7 @@
   "Return a buffer-name string, prefixed with ! if modified."
   (telephone-line-raw
    (if (buffer-modified-p) (concat "!" (buffer-name)) (buffer-name))))
+(telephone-line-defsegment* my/blank-segment () (telephone-line-raw ""))
 
 (setq telephone-line-lhs
       '((evil my/position-segment)
@@ -25,7 +24,9 @@
         (nil telephone-line-projectile-segment)))
 
 (setq telephone-line-center-lhs
-      '((evil my/buffer-name-segment)))
+      '((nil my/blank-segment)(evil my/blank-segment)))
+(setq telephone-line-center-rhs
+      '((evil my/buffer-name-segment)(nil my/blank-segment)))
 
 (setq telephone-line-rhs
       '((nil telephone-line-vc-segment)
@@ -34,5 +35,5 @@
 
 (telephone-line-mode 1)
 
-(provide 'config-powerline)
-;;; config-powerline ends here
+(provide 'config-modeline)
+;;; config-modeline ends here
