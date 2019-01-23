@@ -8,6 +8,8 @@
     whitespace = red
 [push]
     default = current
+[pull]
+    rebase = true
 [fetch]
     prune = true
 [alias]
