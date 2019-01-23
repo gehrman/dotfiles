@@ -8,6 +8,11 @@
  'telephone-line
  )
 
+(setq telephone-line-primary-left-separator 'telephone-line-nil
+      telephone-line-primary-right-separator 'telephone-line-nil
+      telephone-line-secondary-left-separator 'telephone-line-nil
+      telephone-line-secondary-right-separator 'telephone-line-nil)
+
 (setq telephone-line-evil-use-short-tag t)
 (telephone-line-defsegment* my/position-segment ()
   "Return string giving cursor position."
