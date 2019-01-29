@@ -4,7 +4,10 @@
 ;; Tweak how Emacs handles fonts. Mostly useful for mono-space ligature fonts.
 
 ;;; Code:
-;; If CIDER starts erroring, line 46 probably needs to be commented.
+;; If CIDER starts erroring, line 46 probably needs to be commented. Note that
+;; that line 45 may have problems on OSX Mojave, and obviously line 47 broke loading
+;; Java, C, and other files for some really weird reason.
+;; See also http://www.modernemacs.com/post/prettify-mode/ for a different approach.
 (let ((alist
        '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
          (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
