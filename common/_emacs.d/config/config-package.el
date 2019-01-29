@@ -6,8 +6,6 @@
 ;;; Code:
 ;; Setup package management.
 (require 'package)
-(package-install 'use-package)
-(require 'use-package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))

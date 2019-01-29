@@ -14,6 +14,7 @@
  'monokai-theme
  'darcula-theme
  'reykjavik-theme
+ 'rainbow-delimiters
  ;; 'afterglow - https://github.com/sjahl/emacs-theme-afterglow
  ;; 'afternoon-theme
  ;; 'noctilux-theme
