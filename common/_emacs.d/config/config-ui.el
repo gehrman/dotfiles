@@ -9,46 +9,25 @@
 (ensure-package-installed
  'ample-theme
  'zenburn-theme
- 'warm-night-theme
- 'solarized-theme
  'monokai-theme
  'darcula-theme
  'reykjavik-theme
- 'rainbow-delimiters
- ;; 'afterglow - https://github.com/sjahl/emacs-theme-afterglow
- ;; 'afternoon-theme
- ;; 'noctilux-theme
- ;; 'grandshell-theme
- ;; 'alect-themes
- ;; 'cyberpunk-theme
- ;; 'tango-*
- ;; 'material-theme
- ;; 'aurora-theme
  )
 
 ;; Non-theme UI
 (ensure-package-installed
  'fill-column-indicator
  'linum-relative
+ 'rainbow-delimiters
+ 'rainbow-identifiers
  'transpose-frame
  'visible-mark
  'visual-fill-column
  )
 
 ;;;; Themes
-(load-theme 'ample t t)
-(enable-theme 'ample)
-
-;; (load-theme 'ample-flat t t)
-;; (enable-theme 'ample-flat)
-
-;; (load-theme 'reykjavik t t)
-;; (enable-theme 'reykjavik)
-
-;; (load-theme 'zenburn)
-;; (enable-theme 'zenburn)
-
-;; (load-theme 'solarized)
+(load-theme 'ample t)
+;; (load-theme 'ample-flat t)
 
 ;;;; Font stuff
 ;; Test banner:
