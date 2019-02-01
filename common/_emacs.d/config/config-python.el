@@ -9,17 +9,21 @@
 ;;; Code:
 (ensure-package-installed
  'cython-mode
+ 'blacken
  'ein
+ ;;'elpy
  'company-jedi
  'virtualenvwrapper
- 'python-switch-quotes
  ;;'python-docstring
+ 'python-switch-quotes
  'pytest ;;--- This doesn't seem to play well with tramp, so need to look at alternatives
- ;;'elpy
  ;; syntax checking - flycheck(make?)
  )
 
 (require 'ein)
+
+;; Black-on-save
+(add-to-list 'python-mode-hook 'blacken-mode)
 
 ;; Use Jedi for Company auto-completions... need to pip install the following for
 ;; this to work:
