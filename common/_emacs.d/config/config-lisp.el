@@ -3,11 +3,12 @@
 
 ;;; Code:
 (ensure-package-installed
- 'paredit
+ 'cider
  'clojure-mode
  'clojure-mode-extra-font-locking
- 'cider
  'hy-mode
+ 'paredit
+ 'persistent-scratch
  'rainbow-delimiters
  ;;'flycheck-clojure
  'slime)
@@ -19,13 +20,29 @@
   "Turn on pseudo-structural editing of Lisp code."
   t)
 
+;; Let's try saving scratch. Turned off because it's making *scratch* not load
+;; telephone's mode line for some reason.
+;;(persistent-scratch-autosave-mode)
+
 (defun set-paredit-keys-for-mode ()
   "Setup keybinds for paredit."
   ;;(evil-define-minor-mode-key)
   (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
-  (evil-define-minor-mode-key 'normal paredit-mode (kbd "C-h") 'paredit-backward-barf-sexp)
-  (evil-define-minor-mode-key 'normal paredit-mode (kbd "C-k") 'paredit-forward-slurp-sexp)
-  (evil-define-minor-mode-key 'normal paredit-mode (kbd "C-l") 'paredit-forward-barf-sexp))
+  ;; slurping
+  (evil-define-minor-mode-key 'normal paredit-mode (kbd "C-h") 'paredit-backward-slurp-sexp)
+  (evil-define-minor-mode-key 'normal paredit-mode (kbd "C-l") 'paredit-forward-slurp-sexp)
+  (evil-define-minor-mode-key 'insert paredit-mode (kbd "C-h") 'paredit-backward-slurp-sexp)
+  (evil-define-minor-mode-key 'insert paredit-mode (kbd "C-l") 'paredit-forward-slurp-sexp)
+  (evil-define-minor-mode-key 'emacs paredit-mode (kbd "C-h") 'paredit-backward-slurp-sexp)
+  (evil-define-minor-mode-key 'emacs paredit-mode (kbd "C-l") 'paredit-forward-slurp-sexp)
+  ;; Barfing
+  (evil-define-minor-mode-key 'normal paredit-mode (kbd "M-h") 'paredit-backward-barf-sexp)
+  (evil-define-minor-mode-key 'normal paredit-mode (kbd "M-l") 'paredit-forward-barf-sexp)
+  (evil-define-minor-mode-key 'insert paredit-mode (kbd "M-h") 'paredit-backward-barf-sexp)
+  (evil-define-minor-mode-key 'insert paredit-mode (kbd "M-l") 'paredit-forward-barf-sexp)
+  (evil-define-minor-mode-key 'emacs paredit-mode (kbd "M-h") 'paredit-backward-barf-sexp)
+  (evil-define-minor-mode-key 'emacs paredit-mode (kbd "M-l") 'paredit-forward-barf-sexp)
+  )
 (add-hook 'paredit-mode-hook 'set-paredit-keys-for-mode)
 
 (mapc
