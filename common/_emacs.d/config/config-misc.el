@@ -34,6 +34,10 @@
 ;;   (progn
 ;;     (add-hook 'python-mode-hook 'turn-on-ctags-auto-update-mode)))
 
+;; load avro IDL files in IDL mode, and proto/schema files in json mode
+(add-to-list 'auto-mode-alist '("\\.avdl$" . idl-mode))
+(add-to-list 'auto-mode-alist '("\\.avpr$" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.avsc$" . json-mode))
 
 
 (provide 'config-misc)
