@@ -6,6 +6,12 @@
 ;; clearly there's still some overlap between the two.
 
 ;;; Code:
+(require 'package-tools)
+
+(ensure-package-installed
+ 'pianobar
+ )
+
 (require 'pianobar)
 (setq pianobar-username "gehrman@gmail.com")
 

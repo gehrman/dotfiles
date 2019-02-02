@@ -2,6 +2,8 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'package-tools)
+
 (ensure-package-installed
  'php-mode
  'php-refactor-mode

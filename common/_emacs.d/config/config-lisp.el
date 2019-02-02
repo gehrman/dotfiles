@@ -2,6 +2,8 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'package-tools)
+
 (ensure-package-installed
  'cider
  'clojure-mode
@@ -12,6 +14,19 @@
  'rainbow-delimiters
  ;;'flycheck-clojure
  'slime)
+
+(require 'evil)
+(require 'cider)
+
+;; Elisp Development
+;; See https://github.com/Malabarba/names for namespace package stuff.
+;; Magnar Sveen's dash and s are worthwhile here too. See
+;; https://github.com/magnars/{dash.el,s.el}
+;;(ensure-package-installed
+;; 'names
+;; 'dash
+;; 's
+;; )
 
 ;; General setup for all lisp-y languages.
 (autoload

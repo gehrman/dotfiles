@@ -4,6 +4,8 @@
 ;; Not much here for now, beyond sourcing the various http stuff.
 
 ;;; Code:
+(require 'package-tools)
+
 (ensure-package-installed
  'restclient
  'restclient-helm
@@ -22,6 +24,10 @@
  ;;'skewer-reload-stylesheets
  )
 
+(require 'evil)
+(require 'evil-leader)
+(require 'tagedit)
+
 ;; HTTP Interaction:
 (require 'restclient)
 
@@ -30,7 +36,6 @@
 
 
 ;; Missing function in the restclient definitions.
-;;;###autoload
 (defun restclient-http-send-current-raw-and-stay-in-window ()
   "Send current request and keep focus in request window."
   (interactive)

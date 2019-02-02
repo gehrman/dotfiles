@@ -5,6 +5,8 @@
 ;; If you ever want to waste an afternoon, checkout http://emacsthemes.com/index/1.html
 
 ;;; Code:
+(require 'package-tools)
+
 ;; Themes
 (ensure-package-installed
  'ample-theme
@@ -17,13 +19,22 @@
 ;; Non-theme UI
 (ensure-package-installed
  'fill-column-indicator
+ 'helm ;Configure me!
+ 'helm-ag ;Configure me! (See https://github.com/syohex/emacs-helm-ag)
  'linum-relative
+ 'projectile
  'rainbow-delimiters
  'rainbow-identifiers
+ 'smex
  'transpose-frame
  'visible-mark
  'visual-fill-column
  )
+
+(require 'linum-relative)
+(require 'helm)
+(require 'smex)
+(require 'projectile)
 
 ;;;; Themes
 (load-theme 'ample t)
@@ -111,7 +122,6 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (setq ido-default-buffer-method "selected-window")
-(ido-ubiquitous-mode t)
 
 ;; Apparantly this one annoys a bunch of people, setting to nil disables.
 ;;(setq ido-use-filename-at-point nil)
@@ -144,6 +154,7 @@
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (defun define-rainbow-delimiter-face-colors ()
+  "Set rainbow-delimiter colors."
  (mapc
   (lambda (face-color-pair) (set-face-foreground (car face-color-pair) (cdr face-color-pair)))
   '((rainbow-delimiters-depth-1-face . "grey")
@@ -203,8 +214,8 @@
 
 ;; Settings from B&T for OS integration
 (setq
- x-select-enable-clipboard t ; makes killing/yanking interact with the clipboard
- x-select-enable-primary t ; not clear what this does but it's recommended?
+ select-enable-clipboard t ; makes killing/yanking interact with the clipboard
+ select-enable-primary t ; not clear what this does but it's recommended?
  mouse-yank-at-point t ; Mouse yank commands yank at point instead of at click.
 
  ;; Save clipboard strings into kill ring before replacing them.

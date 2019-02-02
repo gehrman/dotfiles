@@ -9,10 +9,13 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
 ;; Set languages available for execution in code blocks.
-(require 'cl) ; We need the common lisp package for 'remove-duplicates.
+(require 'cl-lib)
+(require 'evil)
+(require 'evil-leader)
+
 (org-babel-do-load-languages
   'org-babel-load-languages
-  (remove-duplicates (append org-babel-load-languages
+  (cl-remove-duplicates (append org-babel-load-languages
                              '((emacs-lisp . t)(python . t)))
                      :test 'equal))
 

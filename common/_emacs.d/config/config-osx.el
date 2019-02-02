@@ -7,6 +7,13 @@
 ;; requires a fully specified path - no exporting PATH=/new:$PATH.
 
 ;;; Code:
+(require 'package-tools)
+
+(ensure-package-installed
+ 'exec-path-from-shell)
+
+(require 'exec-path-from-shell)
+
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 

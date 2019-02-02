@@ -4,15 +4,20 @@
 ;; Configure docker tools
 
 ;;; Code:
+(require 'package-tools)
+
 (ensure-package-installed
  'docker
  'dockerfile-mode
  'docker-compose-mode
  'docker-tramp)
+
 (require 'docker)
 (require 'dockerfile-mode)
 (require 'docker-compose-mode)
 (require 'docker-tramp)
+(require 'evil)
+(require 'evil-leader)
 
 ;; Start in emacs mode
 (add-to-list 'evil-emacs-state-modes 'docker-image-mode)

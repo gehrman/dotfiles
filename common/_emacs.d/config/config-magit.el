@@ -4,9 +4,13 @@
 ;; None at this time.
 
 ;;; Code:
+(require 'package-tools)
+
 (ensure-package-installed
  'magit
  )
+
+(require 'evil)
 
 ;; Shut magit up.
 (setq magit-last-seen-setup-instructions "1.4.0")

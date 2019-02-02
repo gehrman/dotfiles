@@ -26,6 +26,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (setq tramp-remote-path '("/usr/local/bin" "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/sbin" "/csnzoo/gehrman/.bin"))
 
+(require 'package-tools)
 ;; We need to exec 'config-package first because it deals with setting up the
 ;; paths for all the installed packages, e.g. evil.
 (require 'config-package)
@@ -166,7 +167,7 @@
  '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
-    (blacken tao-theme tangotango-theme tango-plus-theme material-theme cyberpunk-theme alect-themes grandshell-theme noctilux-theme afternoon-theme flatland-theme afterglow color-theme-solarized solarized rainbow-identifiers persistent-scratch emacs-xkcd intero docean docker-compose-mode dockerfile-mode docker daemons exec-path-from-shell calfw virtualenvwrapper markdown-mode tagedit json-mode company-flx browse-kill-ring smbc ido-ubiquitous smex company-jedi ein ibuffer-vc visual-fill-column rbt fill-column-indicator vagrant-tramp ibuffer-tramp ess reykjavik-theme rustfmt cargo ensime scala-mode visible-mark transpose-frame zenburn-theme warm-night-theme vertica vagrant tomatinho solarized-theme restclient-test restclient-helm puppet-mode pomodoro pianobar paredit ob-restclient ob-http monokai-theme magit linum-relative latex-pretty-symbols hound helm-ag flycheck evil-leader evil-indent-plus elm-mode darcula-theme company-restclient cdlatex anzu ample-theme ag)))
+    (blacken tao-theme tangotango-theme tango-plus-theme material-theme cyberpunk-theme alect-themes grandshell-theme noctilux-theme afternoon-theme flatland-theme afterglow color-theme-solarized solarized rainbow-identifiers persistent-scratch emacs-xkcd intero docean docker-compose-mode dockerfile-mode docker daemons exec-path-from-shell calfw virtualenvwrapper markdown-mode tagedit json-mode company-flx browse-kill-ring smbc smex company-jedi ein ibuffer-vc visual-fill-column rbt fill-column-indicator vagrant-tramp ibuffer-tramp ess reykjavik-theme rustfmt cargo ensime scala-mode visible-mark transpose-frame zenburn-theme warm-night-theme vertica vagrant tomatinho solarized-theme restclient-test restclient-helm puppet-mode pomodoro pianobar paredit ob-restclient ob-http monokai-theme magit linum-relative latex-pretty-symbols hound helm-ag flycheck evil-leader evil-indent-plus elm-mode darcula-theme company-restclient cdlatex anzu ample-theme ag)))
  '(paradox-github-token t)
  '(sentence-end-double-space nil)
  '(visual-line-fringe-indicators (quote (nil |))))

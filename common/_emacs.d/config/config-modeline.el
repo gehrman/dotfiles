@@ -4,9 +4,13 @@
 ;; https://github.com/powerline/fonts
 
 ;;; Code:
+(require 'package-tools)
+
 (ensure-package-installed
  'telephone-line
  )
+
+(require 'telephone-line)
 
 (setq telephone-line-primary-left-separator 'telephone-line-nil
       telephone-line-primary-right-separator 'telephone-line-nil

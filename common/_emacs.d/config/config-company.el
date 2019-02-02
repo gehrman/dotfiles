@@ -4,6 +4,7 @@
 ;; ...you know, or not.
 
 ;;; Code:
+(require 'package-tools)
 (ensure-package-installed
  'company
  'company-flx

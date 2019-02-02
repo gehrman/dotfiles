@@ -6,6 +6,8 @@
 ;;; Code:
 
 ;; ML Language family
+(require 'package-tools)
+
 (ensure-package-installed
  'elm-mode
  'haskell-mode

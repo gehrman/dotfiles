@@ -7,6 +7,8 @@
 
 
 ;;; Code:
+(require 'package-tools)
+
 (ensure-package-installed
  'cython-mode
  'blacken
@@ -21,6 +23,7 @@
  )
 
 (require 'ein)
+(require 'pytest)
 
 ;; Black-on-save
 (add-hook 'python-mode-hook 'blacken-mode)

@@ -6,6 +6,7 @@
 ;;; Code:
 
 ;; Ensure evil and related packages are present.
+(require 'package-tools)
 (ensure-package-installed
  'evil ; A/K/A make emacs usable.
  'evil-leader
@@ -31,6 +32,7 @@
 
 ;; set evil-mode by default, so emacs is actually usable as a text editor
 (require 'evil)
+(require 'evil-leader)
 
 ;; Set up a indention textobject.
 ;;
