@@ -23,7 +23,7 @@
 (require 'ein)
 
 ;; Black-on-save
-(add-to-list 'python-mode-hook 'blacken-mode)
+(add-hook 'python-mode-hook 'blacken-mode)
 
 ;; Use Jedi for Company auto-completions... need to pip install the following for
 ;; this to work:
