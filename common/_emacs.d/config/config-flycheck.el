@@ -14,6 +14,8 @@
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (setq flycheck-emacs-lisp-load-path 'inherit)
+;; (setq flycheck-python-pycompile-executable "python3")
+
 
 (provide 'config-flycheck)
 ;;; config-flycheck.el ends here

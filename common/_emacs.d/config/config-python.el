@@ -37,6 +37,10 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 ;;(jedi:install-server)
 (setq jedi:environment-root "jedi")
+;; (setq jedi:environment-virtualenv
+;;       (append python-environment-virtualenv
+;;               '("--python" "/usr/local/bin/python3")))
+;; (setq py-python-command "/usr/local/bin/python3")
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
 (setq jedi:get-in-function-call-delay 10000) ; 10s delay before showing function call sigs

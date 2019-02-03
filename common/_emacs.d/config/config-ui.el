@@ -21,6 +21,7 @@
  'fill-column-indicator
  'helm ;Configure me!
  'helm-ag ;Configure me! (See https://github.com/syohex/emacs-helm-ag)
+ ;;'ido-ubiquitous
  'linum-relative
  'projectile
  'rainbow-delimiters
@@ -98,6 +99,7 @@
  (rx (or
       (seq bol (? ".") "#") ;; Don't show emacs autosaves
       (seq "~" eol) ;; Don't show emacs backup files
+      ;;(seq "." (not (any "." eol))) ;; Just omit hidden files that aren't . or ..
       (seq ".pyc" eol)
       (seq ".pyo" eol)
       )))
@@ -108,9 +110,23 @@
   dired-bibtex-unclean-extensions
   dired-texinfo-unclean-extensions
   ))
+;; (setq
+;;  dired-omit-files
+;;  "^\\.?#\\|^\\.[^\\.$]+$"
+;;  )
+;; (setq
+;;  dired-omit-files
+;;  (append
+;;   dired-latex-unclean-extensions
+;;   dired-bibtex-unclean-extensions
+;;   dired-texinfo-unclean-extensions
+;;   ))
 (add-hook 'dired-mode-hook (lambda () (dired-omit-mode t)))
 (put 'dired-find-alternate-file 'disabled nil)
 
+;; (setq dired-mode-hook nil)
+;; (add-hook 'dired-mode-hook 'dired-extra-startup)
+;; (add-hook 'dired-mode-hook (lambda () (dired-omit-mode)))
 
 ;;; Ido-mode:
 ;; So ido-mode presents choices while doing things like switch buffers
@@ -122,6 +138,8 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (setq ido-default-buffer-method "selected-window")
+;; (with-no-warnings
+;;   (require 'ido-ubiquitous))
 
 ;; Apparantly this one annoys a bunch of people, setting to nil disables.
 ;;(setq ido-use-filename-at-point nil)
