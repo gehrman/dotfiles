@@ -67,8 +67,9 @@
  '(emacs-lisp-mode-hook
    set-paredit-keys-for-mode
    eval-expression-minibuffer-setup-hook
-   ielm-mode-hook
    clojure-mode-hook
+   hy-mode-hook
+   ielm-mode-hook
    lisp-mode-hook
    lisp-interaction-mode-hook
    scheme-mode-hook))
@@ -76,8 +77,9 @@
 (mapc
  (lambda (mode) (add-hook mode 'turn-on-eldoc-mode))
  '(emacs-lisp-mode-hook
-   lisp-interaction-mode-hook
-   ielm-mode-hook))
+   ielm-mode-hook
+   hy-mode-hook
+   lisp-interaction-mode-hook))
 
 ;;;
 ;; Clojure setup.
