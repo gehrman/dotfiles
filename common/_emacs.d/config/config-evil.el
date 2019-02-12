@@ -26,13 +26,10 @@
  ;;'evil-visualstar
  )
 
-;; Before we load continue loading evil/emacs, we want to set the toggle key to
-;; ensure everything is initialized correctly.
-(setq evil-toggle-key "C-d") ; Note that we're shadowing evil-scroll-down here.
-
 ;; set evil-mode by default, so emacs is actually usable as a text editor
 (require 'evil)
 (require 'evil-leader)
+(evil-set-toggle-key "C-d")  ;; Note that we're shadowing evil-scroll-down here.
 
 ;; Set up a indention textobject.
 ;;
