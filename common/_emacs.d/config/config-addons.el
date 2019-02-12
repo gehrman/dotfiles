@@ -1,7 +1,9 @@
 ;;; Package -- Summary
+
 ;;; Commentary:
 ;;; Dumping ground for interactive functions, and things like that.
 ;;; Maybe extensions is a better name? Must ponder.
+
 ;;; Code:
 
 ;; This should really be region specific.
@@ -9,7 +11,7 @@
   "Comment or uncomment current line."
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
-;(global-set-key (kbd "C-;") 'toggle-comment-on-line)
+;;(global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
 ;; use 2 spaces for tabs
 (defun die-tabs ()
@@ -39,5 +41,6 @@
 ;;   (beginning-of-thing 'symbol)
 ;;   (let ((case-fold-search nil))
 ;;     (re-search-backward (concat "\\_<" (thing-at-point 'symbol) "\\_>"))))
+
 (provide 'config-addons)
 ;;; config-addons ends here
