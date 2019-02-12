@@ -9,7 +9,9 @@
 (require 'package-tools)
 
 (ensure-package-installed
+ ;;'edts
  'elm-mode
+ 'erlang
  'haskell-mode
  'idris-mode
  ;;'elm-yasnippets
