@@ -208,11 +208,10 @@
 (global-set-key (kbd "C-s-<kp-subtract>") 'hs-hide-all)
 (global-set-key (kbd "C-<kp-add>") 'hs-show-block)
 (global-set-key (kbd "C-s-<kp-add>") 'hs-show-all)
-(global-set-key (kbd "s-h") 'evil-window-left)
-(global-set-key (kbd "s-j") 'evil-window-down)
-(global-set-key (kbd "s-k") 'evil-window-up)
-(global-set-key (kbd "s-l") 'evil-window-right)
-(global-set-key (kbd "s-l") 'evil-window-right)
+(global-set-key (kbd "C-w h") 'evil-window-left)
+(global-set-key (kbd "C-w j") 'evil-window-down)
+(global-set-key (kbd "C-w k") 'evil-window-up)
+(global-set-key (kbd "C-w l") 'evil-window-right)
 
 ;; B&T Keybinds for searching
 ;; Interactive search key bindings. By default, C-s runs
