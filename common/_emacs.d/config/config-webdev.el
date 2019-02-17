@@ -112,5 +112,16 @@
 ;; JSON
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
+(defun beautify-json-buffer ()
+  "Reformat json buffer."
+  (interactive)
+  (save-excursion
+    (shell-command-on-region
+     (point-min)
+     (point-max)
+     "jq --indent 2 \".\""
+     (buffer-name)
+     t)))
+
 (provide 'config-webdev)
 ;;; config-webdev.el ends here

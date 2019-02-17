@@ -90,13 +90,6 @@ This doesn't actually work yet because of how blame-mode is implemented."
       (message "t")
     (message "nil")))
 
-(defun beautify-json-buffer ()
-  "Reformat json buffer."
-  (interactive)
-  (shell-command)
-  (shell-command-on-region)
-  )
-
 ;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "," 'ibuffer
