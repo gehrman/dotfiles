@@ -18,11 +18,13 @@
 
 ;; Non-theme UI
 (ensure-package-installed
+ 'alert
  'fill-column-indicator
  'helm ;Configure me!
  'helm-ag ;Configure me! (See https://github.com/syohex/emacs-helm-ag)
  ;;'ido-ubiquitous
  'linum-relative
+ 'multi-term
  'projectile
  'rainbow-delimiters
  'rainbow-identifiers
@@ -208,6 +210,7 @@
 (global-set-key (kbd "C-s-<kp-subtract>") 'hs-hide-all)
 (global-set-key (kbd "C-<kp-add>") 'hs-show-block)
 (global-set-key (kbd "C-s-<kp-add>") 'hs-show-all)
+(global-set-key (kbd "C-w o") 'delete-other-windows)
 (global-set-key (kbd "C-w h") 'evil-window-left)
 (global-set-key (kbd "C-w j") 'evil-window-down)
 (global-set-key (kbd "C-w k") 'evil-window-up)
