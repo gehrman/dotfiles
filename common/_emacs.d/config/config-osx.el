@@ -12,7 +12,9 @@
 (ensure-package-installed
  'exec-path-from-shell)
 
+;; The setq is there to stop the interactivity nagging.
 (require 'exec-path-from-shell)
+(setq exec-path-from-shell-check-startup-files nil)
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
