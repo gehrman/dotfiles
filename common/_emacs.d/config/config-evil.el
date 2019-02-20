@@ -147,11 +147,10 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "fl" 'flycheck-list-errors
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
-  "gb" 'magit-blame ; This should probably cycle the blame to keep gk free.
+  "gb" 'magit-blame-start-or-quit
   "gf" 'find-file-at-point
   "gg" 'magit-status
   "gi" 'magit-init
-  "gk" 'magit-blame-quit
   ;; TODO - do something real in the keybind map
   "ga" 'smerge-keep-all
   "gc" 'smerge-keep-current

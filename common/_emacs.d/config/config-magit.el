@@ -11,6 +11,7 @@
  )
 
 (require 'evil)
+(require 'magit)
 
 ;; Shut magit up.
 (setq magit-last-seen-setup-instructions "1.4.0")
@@ -34,6 +35,14 @@
    (evil-define-key 'emacs magit-mode-map (kbd ", w j") 'evil-window-left)
    (evil-define-key 'emacs magit-mode-map (kbd ", w l") 'evil-window-right)
    ))
+
+(defun magit-blame-start-or-quit ()
+  "Start magit-blame if it's not running, quit if it is."
+  (interactive)
+  (let ((magit-blame-active (or magit-blame-mode magit-blame-read-only-mode)))
+    (if magit-blame-active
+        (magit-blame-quit)
+      (magit-blame))))
 
 (provide 'config-magit)
 ;;; config-magit.el ends here
