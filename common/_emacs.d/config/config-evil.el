@@ -6,7 +6,8 @@
 ;;; Code:
 
 ;; We're going to bind C-w for window management later, but to do so we need to
-;; unbind it here first.
+;; unbind it here first. Before unsetting, it's bound to 'kill-region, but we're
+;; about have vim bindings for that.
 (global-unset-key (kbd "C-w"))
 
 ;; Ensure evil and related packages are present.
