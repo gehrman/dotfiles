@@ -25,8 +25,35 @@
 (require 'ein)
 (require 'pytest)
 
-;; Black-on-save
-(add-hook 'python-mode-hook 'blacken-mode)
+;; Black-on-save, with style. And some insanity.
+(defun maybe-blacken-buffer ()
+  "Run blacken-buffer on save if the buffer is not narrowed.
+
+   This is useful because running black on a narrowed buffer will break
+   the narrowing. The checking major mode thing is a hack, and really
+   this all needs to be upstreamed to blacken."
+  (interactive)
+  (if (buffer-narrowed-p)
+      (send-notification-from-emacs "Buffer is narrowed, we are NOT running black.")
+      (when (equal major-mode 'python-mode)
+        (blacken-buffer))))
+
+;; We're about to do something _really_ gross to get around the problem of
+;; 'save-buffer widening before it runs 'before-save-hook. Specifically, we're
+;; going to capture the content of the 'save-buffer function into another
+;; function name. Then we're going to re-write save-buffer to first run our
+;; custom hook, then run the content of the builtin save-buffer function. All
+;; this to avoid the save-buffer function running the 'before-save-hook _after_
+;; the buffer has been widened for saving. Yes, this is _insane_.
+(defvar really-before-save-hook nil
+  "A hook to be run _before_ any 'save-buffer code runs, not in the middle of the saving code.")
+(add-hook 'really-before-save-hook 'maybe-blacken-buffer)
+(fset 'builtin-save-buffer
+      (symbol-function 'save-buffer))
+(defun save-buffer (&optional arg)
+  "My 'save-buffer function. ARG doesn't do anything anymore."
+  (run-hooks 'really-before-save-hook)
+  (builtin-save-buffer))
 
 ;; Use Jedi for Company auto-completions... need to pip install the following for
 ;; this to work:
