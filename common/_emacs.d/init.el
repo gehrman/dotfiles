@@ -46,6 +46,7 @@
    config-ansi-term
    config-company
    config-docker
+   config-eshell
    config-flycheck
    config-fonthandling
    config-latex
