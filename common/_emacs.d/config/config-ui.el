@@ -207,6 +207,14 @@
       (kill-this-buffer)
     (eshell)))
 
+(defun kill-help-buffer ()
+  "Does just that.
+
+  Basically, this is here so that when help grabs an already existing pane
+  we won't have to navigate to that pane to close help."
+  (interactive)
+  (kill-buffer "*Help*"))
+
 ;; Global, non-evil keybinds. (When does it come time to spin this all off into
 ;; its own file?)
 (global-set-key (kbd "C-c C-z") 'suspend-frame)
@@ -217,11 +225,12 @@
 (global-set-key (kbd "C-s-<kp-subtract>") 'hs-hide-all)
 (global-set-key (kbd "C-<kp-add>") 'hs-show-block)
 (global-set-key (kbd "C-s-<kp-add>") 'hs-show-all)
-(global-set-key (kbd "C-w o") 'delete-other-windows)
+(global-set-key (kbd "C-w e") 'kill-help-buffer)
 (global-set-key (kbd "C-w h") 'evil-window-left)
 (global-set-key (kbd "C-w j") 'evil-window-down)
 (global-set-key (kbd "C-w k") 'evil-window-up)
 (global-set-key (kbd "C-w l") 'evil-window-right)
+(global-set-key (kbd "C-w o") 'delete-other-windows)
 
 ;; B&T Keybinds for searching
 ;; Interactive search key bindings. By default, C-s runs
