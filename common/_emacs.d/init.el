@@ -58,6 +58,7 @@
    config-orgmode
    config-modeline
    config-python
+   config-outlook
    config-webdev
  ))
 
