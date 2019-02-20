@@ -221,6 +221,7 @@
 (global-set-key (kbd "s-q") 'delete-frame)
 (global-set-key (kbd "C-<return>") 'start-or-kill-eshell) ;; In restclient-mode this is shadowed into sending the request. I hope.
 (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
+(global-set-key (kbd "s-<kp-enter>") 'toggle-frame-fullscreen)
 (global-set-key (kbd "C-<kp-subtract>") 'hs-hide-block)
 (global-set-key (kbd "C-s-<kp-subtract>") 'hs-hide-all)
 (global-set-key (kbd "C-<kp-add>") 'hs-show-block)
