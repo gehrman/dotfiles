@@ -118,7 +118,6 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "bp" 'narrow-to-page
   "br" 'revert-buffer
   "bs" 'switch-to-buffer
-  "bs" 'switch-to-buffer
   "bw" 'widen
   ;; "de" 'debug-on-error
   ;; "dE" 'debug-on-entry
