@@ -18,7 +18,6 @@
 
 ;; Non-theme UI
 (ensure-package-installed
- 'alert
  'fill-column-indicator
  'helm ;Configure me!
  'helm-ag ;Configure me! (See https://github.com/syohex/emacs-helm-ag)
