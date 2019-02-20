@@ -192,7 +192,6 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "wk" 'delete-window
   "wl" 'reverse-other-frame
   "wn" 'make-frame
-  "z" 'evil-emacs-state
   "[" 'keyboard-quit
   )
   ;; "D" 'dired)
