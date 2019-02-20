@@ -200,10 +200,18 @@
 ;; Someday I'll learn what projectile does
 (projectile-global-mode)
 
+(defun start-or-kill-eshell ()
+  "Fire up eshell, unless we're already in eshell, in which case kill it."
+  (interactive)
+  (if (equal major-mode 'eshell-mode)
+      (kill-this-buffer)
+    (eshell)))
+
 ;; Global, non-evil keybinds. (When does it come time to spin this all off into
 ;; its own file?)
 (global-set-key (kbd "C-c C-z") 'suspend-frame)
 (global-set-key (kbd "s-q") 'delete-frame)
+(global-set-key (kbd "C-<return>") 'start-or-kill-eshell) ;; In restclient-mode this is shadowed into sending the request. I hope.
 (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
 (global-set-key (kbd "C-<kp-subtract>") 'hs-hide-block)
 (global-set-key (kbd "C-s-<kp-subtract>") 'hs-hide-all)
