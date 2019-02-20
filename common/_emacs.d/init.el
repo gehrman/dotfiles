@@ -186,5 +186,7 @@
 
 (put 'narrow-to-region 'disabled nil)
 
+(send-notification-from-emacs "Done starting up.")
+
 (provide 'init)
 ;;; init.el ends here
