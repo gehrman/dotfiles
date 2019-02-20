@@ -122,6 +122,9 @@
 ;; No need for ~ files when editing... or maybe it's the .# files
 (setq create-lockfiles nil)
 
+;; Always follow vc symlinks
+(setq vc-follow-symlinks t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; GPG Stuff, not yet enough settings to move to a config ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
