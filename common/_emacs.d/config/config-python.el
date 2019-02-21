@@ -20,6 +20,8 @@
  'python-switch-quotes
  'pytest ;;--- This doesn't seem to play well with tramp, so need to look at alternatives
  ;; syntax checking - flycheck(make?)
+ 'pyenv-mode
+ 'pyenv-mode-auto
  )
 
 (require 'ein)
@@ -55,6 +57,10 @@
   (run-hooks 'really-before-save-hook)
   (builtin-save-buffer))
 
+;; Use auto-pyenv
+(require 'pyenv-mode)
+(require 'pyenv-mode-auto)
+(add-hook 'python-mode-hook 'pyenv-mode)
 ;; Use Jedi for Company auto-completions... need to pip install the following for
 ;; this to work:
 ;; jedi, epc, sexpdata
@@ -106,7 +112,7 @@
    "Insert a pdb break."
    (interactive)
    (save-excursion
-     (insert "import pdb; pdb.set_trace()")
+     (insert "breakpoint()")
      )))
 
 (global-set-key
@@ -115,7 +121,7 @@
    "Insert a pdb break."
    (interactive)
    (save-excursion
-     (insert "import ipdb; ipdb.set_trace()")
+     (insert "import pdb; pdb.set_trace()")
      )))
 
 ;; From Patrick's config... python3 something
