@@ -56,10 +56,11 @@
    config-markup
    config-misc
    config-ml
-   config-orgmode
    config-modeline
-   config-python
    config-outlook
+   config-orgmode
+   config-python
+   config-remote
    config-webdev
  ))
 
