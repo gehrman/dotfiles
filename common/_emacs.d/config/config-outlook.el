@@ -25,7 +25,6 @@
     (start-process "gbe-notify" nil
                    "terminal-notifier"
                    "-title" "Emacs"
-                   "-sender" "emacs"
                    "-appIcon" "/Applications/Emacs.app/Contents/Resources/Emacs.icns"
                    "-message" msg))
 
