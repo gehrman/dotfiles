@@ -211,13 +211,6 @@ This doesn't actually work yet because of how blame-mode is implemented."
 (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
 (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
 
-;; This, with some tweaks, should get C-w hjkl working in Emacs mode
-;; (define-prefix-command 'evil-window-map)
-;; (define-key evil-window-map "b" 'evil-window-bottom-right)
-;; (define-key evil-window-map "c" 'evil-window-delete)
-;; ...
-;; (define-key evil-motion-state-map "\C-w" 'evil-window-map)
-
 ;; Initial mode setting.
 ;;(evil-set-initial-state 'ibuffer-mode 'normal)
 
