@@ -226,20 +226,28 @@ This doesn't actually work yet because of how blame-mode is implemented."
  'ibuffer-mode
  'completion-list-mode
  )
+
 (add-hook 'git-commit-mode-hook 'evil-insert-state)
 
 ;; (set-evil-initial-mode
-;;  'emacs                   ; Start the following modes in 'emacs state.
+;;  'emacs ; Start the following modes in 'emacs state.
 ;;  '(ansi-term
-;;    package-menu-mode
+;;    docker-container-mode
+;;    docker-image-mode
+;;    docker-machine-mode
+;;    docker-network-mode
+;;    docker-volume-mode
 ;;    messages-buffer-mode
-;;    eshell
-;;    )
-;;  )
+;;    multi-term
+;;    package-menu-mode
+;;    eshell))
 
-;; Mode registration should be a mode config thing, not an evil config thing.
+
+;; Mode registration should be a mode config thing, not an evil config
+;; thing. Of course first, it needs to be a _working_ thing.
 (add-to-list 'evil-emacs-state-modes 'magit-blame-mode)
 (add-to-list 'evil-emacs-state-modes 'messages-buffer-mode)
+(add-to-list 'evil-emacs-state-modes 'eshell)
 ;;(add-to-list 'evil-emacs-state-modes 'docker-image-mode) ; moved to docker config
 ;;(set-evil-initial-mode 'ansi-term 'emacs)
 
