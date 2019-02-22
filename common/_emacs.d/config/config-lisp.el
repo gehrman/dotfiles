@@ -9,11 +9,11 @@
  'clojure-mode
  'clojure-mode-extra-font-locking
  'elein
+ ;;'flycheck-clojure
  'hy-mode
  'paredit
  'persistent-scratch
  'rainbow-delimiters
- ;;'flycheck-clojure
  'slime)
 
 (require 'evil)
