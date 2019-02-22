@@ -72,6 +72,8 @@
 ;; Setup leader key stuff.
 ;; \ is the default, but "," is another common choice
 (evil-leader/set-leader ",")
+;; But why not use all three? (At one point I also useds "SPC")
+;; TODO: Write evil-multileader
 
 ;; (defun comment-line-or-region ()
 ;;   "No."
@@ -95,7 +97,32 @@ This doesn't actually work yet because of how blame-mode is implemented."
       (message "t")
     (message "nil")))
 
-;; But why not use all three? TODO: Write evil-multileader
+;; Frame-cycling commands
+(defun reverse-other-frame () "Fuck you Emacs linter." (interactive (other-frame -1)))
+;; These are both broken right now. Specifically, they were an attempt to
+;; implement OS X window jumping. They work fine when multiple Emacs frames are
+;; tabs in a single OS X window, but do not correctly jump between OS X windows,
+;; unsurprisingly. (At least I think that's what I wanted them for. I kinda
+;; forget what I wanted them for.
+(defun jump-far-right-frame () "Jump right."
+       (interactive)
+       (let ((c-frame (selected-frame))
+             (n-frame (next-frame)))
+         (while (not (equal c-frame n-frame))
+           (setq c-frame n-frame)
+           (setq n-frame (next-frame))
+           )
+         (select-frame-set-input-focus c-frame)))
+(defun jump-far-left-frame () "Jump left."
+       (interactive)
+       (let ((c-frame (selected-frame))
+             (p-frame (previous-frame)))
+         (while (not (equal c-frame p-frame))
+           (setq c-frame p-frame)
+           (setq p-frame (previous-frame))
+           )
+         (select-frame-set-input-focus c-frame)))
+
 (evil-leader/set-key
   "," 'ibuffer
   "+" 'hs-show-block
