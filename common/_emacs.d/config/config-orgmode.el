@@ -29,8 +29,6 @@
 ;; (load "tex.el")
 ;; ;;(require 'org-latex)
 
-;; (setq org-src-fontify-natively t)
-
 ;; (evil-leader/set-key-for-mode 'org-src-mode
 ;;   "wq" 'org-edit-src-exit
 ;;   "q" 'org-edit-src-abort)
