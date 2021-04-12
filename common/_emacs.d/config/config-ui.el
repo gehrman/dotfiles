@@ -218,7 +218,7 @@
 ;; Global, non-evil keybinds. (When does it come time to spin this all off into
 ;; its own file?)
 (global-set-key (kbd "C-c C-z") 'suspend-frame)
-(global-set-key (kbd "s-q") 'delete-frame)
+(global-set-key (kbd "s-q") 'delete-frame)  ;; Why isn't this 'kill-emacs / unbound?
 (global-set-key (kbd "C-<return>") 'start-or-kill-eshell) ;; In restclient-mode this is shadowed into sending the request. I hope.
 (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
 (global-set-key (kbd "s-<kp-enter>") 'toggle-frame-fullscreen)
