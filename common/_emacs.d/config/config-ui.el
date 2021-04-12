@@ -45,9 +45,7 @@
 ;;;; Font stuff
 ;; Test banner:
 ;; ilIega10oO == -> --> ############ # && && || || <> << >> =<< >>= <<= /= =/= != ~=!=
-(set-face-attribute 'default nil :family "FuraCode Nerd Font" :height 200)
-;(set-face-attribute 'default nil :family "InconsolataGo" :height 180)
-;(set-face-attribute 'default nil :family "Fira Code" :height 200)
+(set-face-attribute 'default nil :family "Comic Code Ligatures" :height 200)
 
 ;;;; General UI Tweaks: ;;
 ;; ain't no reason for that blasted splash screen
