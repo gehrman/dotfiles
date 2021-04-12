@@ -107,9 +107,6 @@ alias tmat="tmux attach -d -t"
 
 # Current-shell command aliases.
 alias rezsh='source ~/.zshrc'
-alias ghn="cd /wayfair/home/gehrman"
-alias gcn="cd /wayfair/home/gehrman/dev"
-alias bline='beeline -u jdbc:hive2://bobigdatahive01.csnzoo.com:10000 -n gehrman'
 
 if [[ $TERM != "dumb" ]]; then
     source ~/.zsh/conf/prompt
