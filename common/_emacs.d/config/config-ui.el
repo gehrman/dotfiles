@@ -213,6 +213,12 @@
   (interactive)
   (kill-buffer "*Help*"))
 
+(defun maximize-this-window ()
+  "Short-cut to run Cw | and Cw _ - basically making one pane the maximum size."
+  (interactive)
+  (evil-window-set-width (frame-width))
+  (evil-window-set-height (frame-height)))
+
 ;; Global, non-evil keybinds. (When does it come time to spin this all off into
 ;; its own file?)
 (global-set-key (kbd "C-c C-z") 'suspend-frame)
@@ -229,6 +235,7 @@
 (global-set-key (kbd "C-w j") 'evil-window-down)
 (global-set-key (kbd "C-w k") 'evil-window-up)
 (global-set-key (kbd "C-w l") 'evil-window-right)
+(global-set-key (kbd "C-w m") 'maximize-this-window)
 (global-set-key (kbd "C-w o") 'delete-other-windows)
 
 ;; B&T Keybinds for searching
