@@ -99,6 +99,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
 (evil-leader/set-key
   "," 'ibuffer
   "+" 'hs-show-block
+  "=" 'hs-show-block
   "-" 'hs-hide-block
   "<+" 'hs-show-all
   "<-" 'hs-hide-all
