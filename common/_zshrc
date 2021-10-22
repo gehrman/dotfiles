@@ -1,3 +1,5 @@
+# -*- shell-script -*-
+
 # .zshrc is sourced in interactive shells.
 # It should contain commands to set up aliases,
 # functions, options, key bindings, etc.
@@ -109,9 +111,10 @@ alias tmat="tmux attach -d -t"
 alias rezsh='source ~/.zshrc'
 
 if [[ $TERM != "dumb" ]]; then
-    source ~/.zsh/conf/prompt
-    source ~/.zsh/conf/keybinds
     source ~/.zsh/conf/functions
+    source ~/.zsh/conf/hooks
+    source ~/.zsh/conf/keybinds
+    source ~/.zsh/conf/prompt
 fi
 if [[ `uname` == "Darwin" ]]; then
     source ~/.zsh/conf/osx
