@@ -105,6 +105,21 @@
   (interactive)
   (insert "import argparse\nif __name__ == '__main__':\n    "))
 
+(defun insert-env-stuff ()
+  "Create an env file."
+  (interactive)
+  (insert "CMT_HOME=" default-directory))
+(defun new-env-file ()
+  "Create a real env file."
+  (interactive)
+  (find-file ".env")
+  (insert "CMT_HOME=" default-directory)
+  (write-file ".env")
+  (kill-buffer)
+  (revert-buffer))
+(add-hook 'dired-mode-hook (lambda ())
+          (evil-leader/set-key "e" 'new-env-file))
+
 ;; TODO: Make this non-global
 (global-set-key
  (kbd "s-i")
