@@ -149,6 +149,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "fl" 'flycheck-list-errors
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
+  "ft" 'transpose-frame
   "gb" 'magit-blame-start-or-quit
   "gf" 'find-file-at-point
   "gg" 'magit-status
@@ -183,7 +184,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "sl" 'eval-last-sexp
   "so" 'browse-url
   "ss" 'eval-defun ;because eval-defun is *totally* a synonym for 'eval-this-sexp... dammit emacs
-  "tf" 'transpose-frame
+  "tf" 'transpose-frame  ; Deprecated, moving frame manipulations to 'f<char>
   "tt" 'my-run-pytest-from-buffer-name
   "ta" 'pytest-all
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
@@ -191,6 +192,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "wh" 'other-frame
   "wk" 'delete-window
   "wl" 'reverse-other-frame
+  "wm" 'maximize-this-window
   "wn" 'make-frame
   "[" 'keyboard-quit
   )
