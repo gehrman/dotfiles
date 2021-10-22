@@ -45,6 +45,5 @@
 (add-to-list 'auto-mode-alist '("\\.avpr$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.avsc$" . json-mode))
 
-
 (provide 'config-misc)
 ;;; config-misc.el ends here
