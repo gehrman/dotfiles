@@ -4,3 +4,4 @@
 .tramp_history
 .DS_Store
 .idea
+.env
