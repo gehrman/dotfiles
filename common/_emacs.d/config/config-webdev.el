@@ -108,6 +108,7 @@
      (require 'tagedit)
      (tagedit-add-paredit-like-keybindings)
      (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
+(add-to-list 'auto-mode-alist '("\\.http$" . restclient-mode))
 
 ;; JSON
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
