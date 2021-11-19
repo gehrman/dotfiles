@@ -107,6 +107,7 @@ alias tmat="tmux attach -d -t"
 
 # Current-shell command aliases.
 alias rezsh='source ~/.zshrc'
+alias ls=exa
 
 if [[ $TERM != "dumb" ]]; then
     source ~/.zsh/conf/prompt
