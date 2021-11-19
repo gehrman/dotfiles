@@ -61,6 +61,7 @@
    config-orgmode
    config-python
    config-remote
+   config-rust
    config-webdev
  ))
 
