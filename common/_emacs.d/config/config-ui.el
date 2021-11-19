@@ -237,6 +237,8 @@
 (global-set-key (kbd "C-w l") 'evil-window-right)
 (global-set-key (kbd "C-w m") 'maximize-this-window)
 (global-set-key (kbd "C-w o") 'delete-other-windows)
+(global-set-key (kbd "C-w |") 'evil-window-set-width)
+(global-set-key (kbd "C-w =") 'balance-windows)
 
 ;; B&T Keybinds for searching
 ;; Interactive search key bindings. By default, C-s runs
