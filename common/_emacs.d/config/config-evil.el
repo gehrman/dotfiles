@@ -187,8 +187,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
 
   ;; Packages and pianobar (not that I've been using pianobar much)
   "pi" 'package-install
-  "pl" 'paradox-list-packages
-  ;; "pl" 'package-list-packages
+  "pl" 'paradox-list-packages  ;; paradox shadows 'package-list-packages
   "po" 'pianobar
   "pn" 'pianobar-next-song
   "pp" 'pianobar-play-or-pause
