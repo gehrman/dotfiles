@@ -169,3 +169,7 @@ alias tga="terragrunt apply"
 alias ls=exa
 alias l="exa -lh"
 
+# Rather than doing a complicated introspection thing, just make a .zshrc.site
+# file that is machine-specific, always gets sourced here, and contains config
+# that isn't appropriate to put in Git.
+source ~/.zshrc.site
