@@ -108,36 +108,51 @@
 (defun insert-env-stuff ()
   "Create an env file."
   (interactive)
-  (insert "CMT_HOME=" default-directory))
+  (insert "CMT_HOME=" default-directory "\n"))
+(defun insert-pdbpp-install-stuff ()
+  "Create a pdb++ install script."
+  (interactive)
+  (insert "#! /bin/sh\ncd appserver && pipenv run pip install pdbpp && cd ..\n"))
+
 (defun new-env-file ()
   "Create a real env file."
   (interactive)
+  ;; Set up .env
   (find-file ".env")
-  (insert "CMT_HOME=" default-directory)
+  (insert "CMT_HOME=" default-directory "\n")
   (write-file ".env")
   (kill-buffer)
+
+  ;; Set up pdbpp installer
+  ;(cd (concat default-directory "vtrack"))
+  (cd "vtrack")
+  (find-file "install-pdbpp")
+  (insert "#! /bin/sh\ncd appserver && pipenv run pip install pdbpp && cd ..\n")
+  (write-file "install-pdbpp")
+  (kill-buffer)
+  (cd "..")
   (revert-buffer))
+
 (add-hook 'dired-mode-hook (lambda ())
           (evil-leader/set-key "e" 'new-env-file))
 
 ;; TODO: Make this non-global
-(global-set-key
- (kbd "s-i")
- (defun insert-pdb-breakpoint ()
+(defun insert-pdb-breakpoint ()
    "Insert a pdb break."
    (interactive)
    (save-excursion
-     (insert "breakpoint()")
-     )))
+     (insert "breakpoint()")))
 
-(global-set-key
- (kbd "s-I")
- (defun insert-ipdb-breakpoint ()
-   "Insert a pdb break."
+(defun insert-ipdb-breakpoint ()
+   "Insert a pdb set_trace. Only necessary for pre-Python 3.7 code."
    (interactive)
    (save-excursion
-     (insert "import pdb; pdb.set_trace()")
-     )))
+     (insert "import pdb; pdb.set_trace()")))
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (local-set-key (kbd "M-i") 'insert-pdb-breakpoint)
+            (local-set-key (kbd "M-i") 'insert-pdb-breakpoint)))
 
 ;; From Patrick's config... python3 something
 ;; (setq jedi:environment-virtualenv
