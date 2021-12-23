@@ -121,7 +121,18 @@
 ;;   dired-bibtex-unclean-extensions
 ;;   dired-texinfo-unclean-extensions
 ;;   ))
-(add-hook 'dired-mode-hook (lambda () (dired-omit-mode t)))
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (dired-omit-mode t)))
+
+(defun my-evil-goto-top ()
+  "Go to top."
+  (interactive)
+  (evil-goto-line 1))
+(evil-leader/set-key-for-mode 'dired-mode
+  "G" 'evil-goto-line
+  "T" 'my-evil-goto-top
+  )
 (put 'dired-find-alternate-file 'disabled nil)
 
 ;; (setq dired-mode-hook nil)
