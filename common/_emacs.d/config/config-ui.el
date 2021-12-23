@@ -196,7 +196,7 @@
 ;; http://www.emacswiki.org/emacs/HideShow (hs-minor-mode)
 
 ;; Someday I'll learn what projectile does
-(projectile-global-mode)
+(projectile-mode)
 
 (defun start-or-kill-eshell ()
   "Fire up eshell, unless we're already in eshell, in which case kill it."
