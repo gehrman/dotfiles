@@ -1,6 +1,3 @@
 # Wayrunner completions
 autoload bashcompinit
 bashcompinit
-
-# Linux-specific aliases
-alias l="ls -lh"

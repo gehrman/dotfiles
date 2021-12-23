@@ -1,6 +1,4 @@
 # OSX-specific aliases (though a lot of these are probably kosher on *BSD's too)
-alias l="ls -lhG"
-
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
