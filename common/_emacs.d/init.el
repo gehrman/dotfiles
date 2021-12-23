@@ -11,6 +11,8 @@
 ;; Let's try some performance tuning. This is blatantly stolen from Fanael's
 ;; init.el, where he claims that Emacs GC defaults are too conservative for
 ;; modern machines.
+;; Note: look into whether this threshold needs to be adjusted when running on
+;; the rpi.
 (setq gc-cons-threshold (* 4 1024 1024))
 (setq gc-cons-percentage 0.3)
 

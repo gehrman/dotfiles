@@ -101,6 +101,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
 ;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "," 'ibuffer
+
   "+" 'hs-show-block
   "=" 'hs-show-block
   "-" 'hs-hide-block
@@ -109,9 +110,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "<<+" 'hs-show-all
   "<<-" 'hs-hide-all
   "/" 'comment-dwim
-  ;; b is the prefix key for buffer operations. I'm not completely happy with
-  ;; putting dired in with the buffer ops, but not sure where a better place
-  ;; for it is
+
+  ;; b is the prefix key for buffer operations
   "ba" 'find-file ;I type ,bs for :e enough I want an escape hatch
   "bc" 'clone-indirect-buffer-other-window
   "bd" 'diff-buffer-with-file
@@ -126,9 +126,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "br" 'revert-buffer
   "bs" 'switch-to-buffer
   "bw" 'widen
-  ;; "de" 'debug-on-error
-  ;; "dE" 'debug-on-entry
 
+  ;; Searching (via ag/hound mostly) and describing
   ;; ag.el exports:
   ;;       ag           ag-project
   ;;       ag-files     ag-project-files
@@ -137,6 +136,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   ;; for configuration of hound.
   "da" 'ag
   "dc" 'describe-char ; Mostly a novelty, but good to know. Again, from @brandon-rhodes.
+  ;; "de" 'debug-on-error
+  ;; "dE" 'debug-on-entry
   "df" 'describe-function
   "dg" 'ag-files
   "dh" 'help
@@ -148,13 +149,18 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "du" 'describe-face
   "dv" 'describe-variable
   ;;"dw" 'apropos ; Doesn't autofill object at point sadly
-  "ee" 'find-file-at-point
+
+  ;; "ee" 'find-file-at-point
+
+  ;; Flycheck and frame
   "fb" 'flycheck-buffer ; http://www.flycheck.org/
   "ff" 'flycheck-buffer
   "fl" 'flycheck-list-errors
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
   "ft" 'transpose-frame
+
+  ;; Git and conflict resolution
   "gb" 'magit-blame-start-or-quit
   "gf" 'find-file-at-point
   "gg" 'magit-status
@@ -178,16 +184,22 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "lp" 'proced
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
+
+  ;; Packages and pianobar (not that I've been using pianobar much)
   "pi" 'package-install
   "pl" 'paradox-list-packages
   ;; "pl" 'package-list-packages
   "po" 'pianobar
   "pn" 'pianobar-next-song
   "pp" 'pianobar-play-or-pause
-  "sb" 'eval-buffer
+
+  ;; Region-like bindings
   "rc" 'comment-region
   "rt" 'indent-region
   "ru" 'uncomment-region
+
+  ;; Evaluation-like bindings
+  "sb" 'eval-buffer
   "sd" 'transpose-sexps
   "sf" 'browse-url-of-file
   "sl" 'eval-last-sexp
@@ -197,6 +209,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "tt" 'my-run-pytest-from-buffer-name
   "ta" 'pytest-all
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
+
+  ;; Window operations
   "wf" 'toggle-frame-fullscreen
   "wh" 'other-frame
   "wk" 'delete-window
