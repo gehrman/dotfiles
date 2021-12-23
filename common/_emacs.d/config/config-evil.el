@@ -31,6 +31,9 @@
  ;;'evil-visualstar
  )
 
+;; Set up the undo system. Do we need to upgrade evil to use this?
+;; (setq evil-undo-system 'undo-redo)
+
 ;; set evil-mode by default, so emacs is actually usable as a text editor
 (require 'evil)
 (require 'evil-leader)
