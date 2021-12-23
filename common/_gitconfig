@@ -29,4 +29,9 @@
     path = .gitconfig.site
 [user]
 	name = Geoff Ehrman
-	email = gehrman@wayfair.com
+	email = gehrman@gmail.com
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
