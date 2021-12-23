@@ -49,7 +49,7 @@
 ;; the buffer has been widened for saving. Yes, this is _insane_.
 (defvar really-before-save-hook nil
   "A hook to be run _before_ any 'save-buffer code runs, not in the middle of the saving code.")
-(add-hook 'really-before-save-hook 'maybe-blacken-buffer)
+;; (add-hook 'really-before-save-hook 'maybe-blacken-buffer)
 (fset 'builtin-save-buffer
       (symbol-function 'save-buffer))
 (defun save-buffer (&optional arg)
@@ -64,19 +64,19 @@
 ;; Use Jedi for Company auto-completions... need to pip install the following for
 ;; this to work:
 ;; jedi, epc, sexpdata
-(require 'company-jedi)
-(add-to-list 'company-backends 'company-jedi)
-
-(add-hook 'python-mode-hook 'jedi:setup)
+;; (require 'company-jedi)
+;; (add-to-list 'company-backends 'company-jedi)
+;;
+;; (add-hook 'python-mode-hook 'jedi:setup)
 ;;(jedi:install-server)
-(setq jedi:environment-root "jedi")
+;;(setq jedi:environment-root "jedi")
 ;; (setq jedi:environment-virtualenv
 ;;       (append python-environment-virtualenv
 ;;               '("--python" "/usr/local/bin/python3")))
 ;; (setq py-python-command "/usr/local/bin/python3")
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
-(setq jedi:get-in-function-call-delay 10000) ; 10s delay before showing function call sigs
+;;(setq jedi:setup-keys t)
+;;(setq jedi:complete-on-dot t)
+;;(setq jedi:get-in-function-call-delay 10000) ; 10s delay before showing function call sigs
 
 ;; Virtualenv tools
 (require 'virtualenvwrapper)
