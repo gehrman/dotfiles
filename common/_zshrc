@@ -156,3 +156,16 @@ stty start undef
 alias hy-spy="hy --spy"
 alias hom="hy --repl-output-fn hy.contrib.hy-repr.hy-repr"
 alias hom-spy="hy --repl-output-fn hy.contrib.hy-repr.hy-repr --spy"
+
+alias tg="terragrunt"
+alias tgi="terragrunt init"
+alias tgp="terragrunt plan"
+alias tga="terragrunt apply"
+
+# Setup autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# exa is better ls
+alias ls=exa
+alias l="exa -lh"
+
