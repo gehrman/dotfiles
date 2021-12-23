@@ -7,13 +7,29 @@
 
 ;;; Code:
 (require 'package-tools)
+(require 'config-company)
 
 (ensure-package-installed
+ 'emms
+ ;;'emms-mark-ext
+ ;;'emms-player-simple-mpv
+ ;;'emms-soundcloud
+ ;;'emms-state
  'pianobar
+ 'pollen-mode
+ 'company-pollen
  )
 
 (require 'pianobar)
 (setq pianobar-username "gehrman@gmail.com")
+
+(require 'emms-setup)
+;; (emms-minimalistic)  ;; Only invis playlists and basic playback
+(emms-all) ;; setup all features
+(emms-default-players)
+(setq emms-player-vlc-command-name
+      "/Applications/VLC.app/Contents/MacOS/VLC")
+
 
 ;; Eventually we might need a config-system, but for now shell script stuff goes here.
 (setq-default sh-basic-offset 2)
@@ -44,6 +60,9 @@
 (add-to-list 'auto-mode-alist '("\\.avdl$" . idl-mode))
 (add-to-list 'auto-mode-alist '("\\.avpr$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.avsc$" . json-mode))
+
+;; Configure Pollen
+(add-to-list 'auto-mode-alist '("\\.pp$" . pollen-mode))
 
 (provide 'config-misc)
 ;;; config-misc.el ends here

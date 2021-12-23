@@ -9,11 +9,11 @@
  'clojure-mode
  'clojure-mode-extra-font-locking
  'elein
+ ;;'flycheck-clojure
  'hy-mode
  'paredit
  'persistent-scratch
  'rainbow-delimiters
- ;;'flycheck-clojure
  'slime)
 
 (require 'evil)
@@ -58,6 +58,8 @@
   (evil-define-minor-mode-key 'insert paredit-mode (kbd "M-l") 'paredit-forward-barf-sexp)
   (evil-define-minor-mode-key 'emacs paredit-mode (kbd "M-h") 'paredit-backward-barf-sexp)
   (evil-define-minor-mode-key 'emacs paredit-mode (kbd "M-l") 'paredit-forward-barf-sexp)
+  ;; Splicing feels like barfing, so it's under a meta bind
+  (evil-define-minor-mode-key 'normal paredit-mode (kbd "M-e") 'paredit-splice-sexp)
   )
 (add-hook 'paredit-mode-hook 'set-paredit-keys-for-mode)
 

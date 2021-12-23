@@ -75,6 +75,8 @@
 ;; Setup leader key stuff.
 ;; \ is the default, but "," is another common choice
 (evil-leader/set-leader ",")
+;; But why not use all three? (At one point I also useds "SPC")
+;; TODO: Write evil-multileader
 
 ;; (defun comment-line-or-region ()
 ;;   "No."
@@ -98,7 +100,32 @@ This doesn't actually work yet because of how blame-mode is implemented."
       (message "t")
     (message "nil")))
 
-;; But why not use all three? TODO: Write evil-multileader
+;; Frame-cycling commands
+(defun reverse-other-frame () "Fuck you Emacs linter." (interactive (other-frame -1)))
+;; These are both broken right now. Specifically, they were an attempt to
+;; implement OS X window jumping. They work fine when multiple Emacs frames are
+;; tabs in a single OS X window, but do not correctly jump between OS X windows,
+;; unsurprisingly. (At least I think that's what I wanted them for. I kinda
+;; forget what I wanted them for.
+(defun jump-far-right-frame () "Jump right."
+       (interactive)
+       (let ((c-frame (selected-frame))
+             (n-frame (next-frame)))
+         (while (not (equal c-frame n-frame))
+           (setq c-frame n-frame)
+           (setq n-frame (next-frame))
+           )
+         (select-frame-set-input-focus c-frame)))
+(defun jump-far-left-frame () "Jump left."
+       (interactive)
+       (let ((c-frame (selected-frame))
+             (p-frame (previous-frame)))
+         (while (not (equal c-frame p-frame))
+           (setq c-frame p-frame)
+           (setq p-frame (previous-frame))
+           )
+         (select-frame-set-input-focus c-frame)))
+
 (evil-leader/set-key
   "," 'ibuffer
 
@@ -236,13 +263,6 @@ This doesn't actually work yet because of how blame-mode is implemented."
 (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
 (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
 
-;; This, with some tweaks, should get C-w hjkl working in Emacs mode
-;; (define-prefix-command 'evil-window-map)
-;; (define-key evil-window-map "b" 'evil-window-bottom-right)
-;; (define-key evil-window-map "c" 'evil-window-delete)
-;; ...
-;; (define-key evil-motion-state-map "\C-w" 'evil-window-map)
-
 ;; Initial mode setting.
 ;;(evil-set-initial-state 'ibuffer-mode 'normal)
 
@@ -258,20 +278,28 @@ This doesn't actually work yet because of how blame-mode is implemented."
  'ibuffer-mode
  'completion-list-mode
  )
+
 (add-hook 'git-commit-mode-hook 'evil-insert-state)
 
 ;; (set-evil-initial-mode
-;;  'emacs                   ; Start the following modes in 'emacs state.
+;;  'emacs ; Start the following modes in 'emacs state.
 ;;  '(ansi-term
-;;    package-menu-mode
+;;    docker-container-mode
+;;    docker-image-mode
+;;    docker-machine-mode
+;;    docker-network-mode
+;;    docker-volume-mode
 ;;    messages-buffer-mode
-;;    eshell
-;;    )
-;;  )
+;;    multi-term
+;;    package-menu-mode
+;;    eshell))
 
-;; Mode registration should be a mode config thing, not an evil config thing.
+
+;; Mode registration should be a mode config thing, not an evil config
+;; thing. Of course first, it needs to be a _working_ thing.
 (add-to-list 'evil-emacs-state-modes 'magit-blame-mode)
 (add-to-list 'evil-emacs-state-modes 'messages-buffer-mode)
+(add-to-list 'evil-emacs-state-modes 'eshell)
 ;;(add-to-list 'evil-emacs-state-modes 'docker-image-mode) ; moved to docker config
 ;;(set-evil-initial-mode 'ansi-term 'emacs)
 

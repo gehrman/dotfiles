@@ -3,7 +3,6 @@
 # .zshrc is sourced in interactive shells.
 # It should contain commands to set up aliases,
 # functions, options, key bindings, etc.
-export PATH=/usr/local/bin:~/.bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin
 
 #clear
 #unsetopt zle
@@ -14,6 +13,13 @@ export PATH=/usr/local/bin:~/.bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr
 if [[ $TERM == "dumb" ]]; then
     PS1="zsh$ "
     return
+fi
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
 fi
 
 # register the completions folder
@@ -63,7 +69,7 @@ fi
 # autoload -U colors
 #colors
 
-export PATH=/usr/local/bin:~/.bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin
+export PATH=/usr/local/bin:~/.bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:~/.cargo/bin
 
 # Use a snake prompt. Hiss.
 export PYTHONSTARTUP=~/.pythonrc
@@ -109,6 +115,7 @@ alias tmat="tmux attach -d -t"
 
 # Current-shell command aliases.
 alias rezsh='source ~/.zshrc'
+alias ls=exa
 
 if [[ $TERM != "dumb" ]]; then
     source ~/.zsh/conf/functions
@@ -143,6 +150,10 @@ function zle-line-init zle-keymap-select {
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+# Clojure performance tuning
+# See https://github.com/deg/clojure-then-you-think/wiki/Memory-Size
+export _JAVA_OPTIONS="-Xmx2g"
 
 # time in tenths of a second after key-press to toggle mode switch
 # this *does* have other effects!!
