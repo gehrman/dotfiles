@@ -31,6 +31,7 @@
  'transpose-frame
  'visible-mark
  'visual-fill-column
+ 'which-key
  )
 
 (require 'linum-relative)
@@ -294,6 +295,18 @@
 
 ;; Make _ count as a word element, not symbol
 (modify-syntax-entry ?_ "w")
+
+;; Occur Mode looks like a compile buffer, so I want n and p to be navigation.
+;; TODO: defer this, use evil-hjkl / start occur in motion
+(add-hook 'occur-mode-hook
+          (lambda ()
+            (local-set-key "j" 'evil-next-line)
+            (local-set-key "n" 'evil-next-line)
+            (local-set-key "k" 'evil-previous-line)
+            (local-set-key "p" 'evil-previous-line)))
+
+;; Which-key mode lists all key-binds, I think?
+(which-key-setup-side-window-right)
 
 (provide 'config-ui)
 ;;; config-ui.el ends here
