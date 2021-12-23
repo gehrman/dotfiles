@@ -104,8 +104,10 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "+" 'hs-show-block
   "=" 'hs-show-block
   "-" 'hs-hide-block
-  "<+" 'hs-show-all
-  "<-" 'hs-hide-all
+  "<+" 'hs-show-level
+  "<-" 'hs-hide-level
+  "<<+" 'hs-show-all
+  "<<-" 'hs-hide-all
   "/" 'comment-dwim
   ;; b is the prefix key for buffer operations. I'm not completely happy with
   ;; putting dired in with the buffer ops, but not sure where a better place
@@ -166,7 +168,11 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "gt" 'smerge-keep-other ; "keep the one where my cursor isn't"
   "gn" 'smerge-next ; This should probably variously do smerge-next, magit-blame-next, etc
   "gp" 'smerge-prev
+
+  "hl" 'hs-hide-level
+  ;; "hL" 'hs-hide-level-recursive  ; Recursive version doesn't work like I think
   "ii" 'insert-char
+
   ;; (l)aunch application modes like dired, proced, ansi-term, et al
   "ld" 'dired
   "lp" 'proced
