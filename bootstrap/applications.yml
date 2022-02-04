@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  tasks:
+
+    # - name: Install iTerm
+    #   homebrew: name=iterm2
+
+    # - name: Install Emacs cask
+    #   homebrew: name=homebrew/cask/emacs
