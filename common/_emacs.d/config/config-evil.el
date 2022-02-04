@@ -142,6 +142,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "du" 'describe-face
   "dv" 'describe-variable
   ;;"dw" 'apropos ; Doesn't autofill object at point sadly
+  ;;"dW" 'apropos-command
+  ;;"dz" 'info-apropos
   "ee" 'find-file-at-point
   "fb" 'flycheck-buffer ; http://www.flycheck.org/
   "ff" 'flycheck-buffer
