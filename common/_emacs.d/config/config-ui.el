@@ -45,9 +45,7 @@
 ;;;; Font stuff
 ;; Test banner:
 ;; ilIega10oO == -> --> ############ # && && || || <> << >> =<< >>= <<= /= =/= != ~=!=
-(set-face-attribute 'default nil :family "FuraCode Nerd Font" :height 200)
-;(set-face-attribute 'default nil :family "InconsolataGo" :height 180)
-;(set-face-attribute 'default nil :family "Fira Code" :height 200)
+(set-face-attribute 'default nil :family "Comic Code Ligatures" :height 240)
 
 ;;;; General UI Tweaks: ;;
 ;; ain't no reason for that blasted splash screen
@@ -153,7 +151,9 @@
 ;; smex - fuzzy/filterable M-x
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
+;; Do we make : 'smex too?
 (global-set-key (kbd "M-x") 'smex)
+
 ;; See http://stackoverflow.com/questions/25824493/smex-in-evil-mode
 ;; ...basically it's not clear smex+evil play nice.
 ;;(define-key evil-motion-state-map ":" 'smex)
