@@ -8,6 +8,7 @@
  'lua-mode
  'yaml-mode
  'markdown-mode
+ 'easy-jekyll
  )
 
 ;; TODO: systematize insertion & navigation keybinds

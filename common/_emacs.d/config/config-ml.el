@@ -42,9 +42,6 @@
 ;; All of this is lifted directly from Patrick for now.
 
 (require 'haskell-mode)
-;;(ensure-package-installed 'intero)
-
-(add-hook 'haskell-mode-hook 'intero-mode)
 ;; (mapc #'(lambda (hook)
 ;;          (add-hook 'haskell-mode-hook hook))
 ;;       '(interactive-haskell-mode

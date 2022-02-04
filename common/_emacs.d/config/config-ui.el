@@ -210,13 +210,6 @@
 ;; Someday I'll learn what projectile does
 (projectile-mode)
 
-(defun start-or-kill-eshell ()
-  "Fire up eshell, unless we're already in eshell, in which case kill it."
-  (interactive)
-  (if (equal major-mode 'eshell-mode)
-      (kill-this-buffer)
-    (eshell)))
-
 (defun kill-help-buffer ()
   "Does just that.
 
@@ -242,15 +235,19 @@
 (global-set-key (kbd "C-s-<kp-subtract>") 'hs-hide-all)
 (global-set-key (kbd "C-<kp-add>") 'hs-show-block)
 (global-set-key (kbd "C-s-<kp-add>") 'hs-show-all)
-(global-set-key (kbd "C-w e") 'kill-help-buffer)
-(global-set-key (kbd "C-w h") 'evil-window-left)
-(global-set-key (kbd "C-w j") 'evil-window-down)
-(global-set-key (kbd "C-w k") 'evil-window-up)
-(global-set-key (kbd "C-w l") 'evil-window-right)
-(global-set-key (kbd "C-w m") 'maximize-this-window)
-(global-set-key (kbd "C-w o") 'delete-other-windows)
-(global-set-key (kbd "C-w |") 'evil-window-set-width)
-(global-set-key (kbd "C-w =") 'balance-windows)
+
+;; Window management
+(define-prefix-command 'gbe/window-management-map)
+(global-set-key (kbd "C-w") 'gbe/window-management-map)
+(define-key gbe/window-management-map "e" 'kill-help-buffer)
+(define-key gbe/window-management-map "h" 'evil-window-left)
+(define-key gbe/window-management-map "j" 'evil-window-down)
+(define-key gbe/window-management-map "k" 'evil-window-up)
+(define-key gbe/window-management-map "l" 'evil-window-right)
+(define-key gbe/window-management-map "m" 'maximize-this-window)
+(define-key gbe/window-management-map "o" 'delete-other-windows)
+(define-key gbe/window-management-map "|" 'evil-window-set-width)
+(define-key gbe/window-management-map "=" 'balance-windows)
 
 ;; B&T Keybinds for searching
 ;; Interactive search key bindings. By default, C-s runs

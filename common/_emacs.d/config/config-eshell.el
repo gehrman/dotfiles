@@ -21,5 +21,13 @@
  'eshell-mode-hook
  (lambda () (define-key eshell-mode-map (kbd "C-u") 'delete-backwards-to-readonly)))
 
+(defun start-or-kill-eshell ()
+  "Fire up eshell, unless we're already in eshell, in which case kill it."
+  (interactive)
+  (if (equal major-mode 'eshell-mode)
+      (kill-this-buffer)
+    (eshell)))
+(global-set-key (kbd "C-<return>") 'start-or-kill-eshell) ;; In restclient-mode this is shadowed into sending the request. I hope.
+
 (provide 'config-eshell)
 ;;; config-eshell ends here
