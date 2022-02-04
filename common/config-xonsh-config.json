@@ -1,9 +1,0 @@
-{
-    "env": {
-        "CASE_SENSITIVE_COMPLETIONS": true,
-        "COMPLETIONS_CONFIRM": true,
-        "SHELL_TYPE": "prompt_toolkit",
-        "XONSH_SHOW_TRACEBACK": true
-    },
-    "xontribs": ["vox"]
-}
