@@ -157,7 +157,12 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "du" 'describe-face
   "dv" 'describe-variable
   ;;"dw" 'apropos ; Doesn't autofill object at point sadly
-  "ee" 'find-file-at-point
+  ;;"dW" 'apropos-command
+  ;;"dz" 'info-apropos
+
+  ;; "ee" 'find-file-at-point
+
+  ;; Flycheck and frame
   "fb" 'flycheck-buffer ; http://www.flycheck.org/
   "ff" 'flycheck-buffer
   "fl" 'flycheck-list-errors

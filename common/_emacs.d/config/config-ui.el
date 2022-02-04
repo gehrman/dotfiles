@@ -163,7 +163,9 @@
 ;; smex - fuzzy/filterable M-x
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
+;; Do we make : 'smex too?
 (global-set-key (kbd "M-x") 'smex)
+
 ;; See http://stackoverflow.com/questions/25824493/smex-in-evil-mode
 ;; ...basically it's not clear smex+evil play nice.
 ;;(define-key evil-motion-state-map ":" 'smex)

@@ -1,1 +1,3 @@
-ssh-agent -k
+echo term is $TERM
+echo prompt is $PROMPT
+#ssh-agent -k

@@ -10,6 +10,7 @@
 (require 'config-company)
 
 (ensure-package-installed
+ 'elfeed
  'emms
  ;;'emms-mark-ext
  ;;'emms-player-simple-mpv
