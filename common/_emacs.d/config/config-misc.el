@@ -9,6 +9,7 @@
 (require 'package-tools)
 
 (ensure-package-installed
+ 'elfeed
  'pianobar
  )
 
