@@ -31,14 +31,13 @@
 ;; (lambda ()
 ;;  (local-set-key (kbd "C-k") 'set-mark-command)))
 
-(add-hook
- 'magit-mode-hook
- (lambda ()
-   (evil-define-key 'emacs magit-mode-map (kbd ", ,") 'ibuffer)
-   (evil-define-key 'emacs magit-mode-map (kbd ", .") 'delete-other-windows)
-   (evil-define-key 'emacs magit-mode-map (kbd ", w j") 'evil-window-left)
-   (evil-define-key 'emacs magit-mode-map (kbd ", w l") 'evil-window-right)
-   ))
+;; (add-hook
+;;  'magit-mode-hook
+;;  (lambda ()
+;;    (evil-define-key 'emacs magit-mode-map (kbd ", ,") 'ibuffer)
+;;    (evil-define-key 'emacs magit-mode-map (kbd ", .") 'delete-other-windows)
+;;    (evil-define-key 'emacs magit-mode-map (kbd ", w j") 'evil-window-left)
+;;    (evil-define-key 'emacs magit-mode-map (kbd ", w l") 'evil-window-right)))
 
 (defun magit-blame-start-or-quit ()
   "Start magit-blame if it's not running, quit if it is."

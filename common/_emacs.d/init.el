@@ -51,7 +51,6 @@
    config-eshell
    config-flycheck
    config-fonthandling
-   config-infra
    config-latex
    config-lisp
    config-local
