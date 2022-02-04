@@ -31,6 +31,7 @@
  'transpose-frame
  'visible-mark
  'visual-fill-column
+ 'which-key
  )
 
 (require 'linum-relative)
@@ -45,7 +46,7 @@
 ;;;; Font stuff
 ;; Test banner:
 ;; ilIega10oO == -> --> ############ # && && || || <> << >> =<< >>= <<= /= =/= != ~=!=
-(set-face-attribute 'default nil :family "Comic Code Ligatures" :height 240)
+(set-face-attribute 'default nil :family "Comic Code Ligatures" :height 200)
 
 ;;;; General UI Tweaks: ;;
 ;; ain't no reason for that blasted splash screen
@@ -120,7 +121,18 @@
 ;;   dired-bibtex-unclean-extensions
 ;;   dired-texinfo-unclean-extensions
 ;;   ))
-(add-hook 'dired-mode-hook (lambda () (dired-omit-mode t)))
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (dired-omit-mode t)))
+
+(defun my-evil-goto-top ()
+  "Go to top."
+  (interactive)
+  (evil-goto-line 1))
+(evil-leader/set-key-for-mode 'dired-mode
+  "G" 'evil-goto-line
+  "T" 'my-evil-goto-top
+  )
 (put 'dired-find-alternate-file 'disabled nil)
 
 ;; (setq dired-mode-hook nil)
@@ -198,7 +210,7 @@
 ;; http://www.emacswiki.org/emacs/HideShow (hs-minor-mode)
 
 ;; Someday I'll learn what projectile does
-(projectile-global-mode)
+(projectile-mode)
 
 (defun start-or-kill-eshell ()
   "Fire up eshell, unless we're already in eshell, in which case kill it."
@@ -214,6 +226,12 @@
   we won't have to navigate to that pane to close help."
   (interactive)
   (kill-buffer "*Help*"))
+
+(defun maximize-this-window ()
+  "Short-cut to run Cw | and Cw _ - basically making one pane the maximum size."
+  (interactive)
+  (evil-window-set-width (frame-width))
+  (evil-window-set-height (frame-height)))
 
 ;; Global, non-evil keybinds. (When does it come time to spin this all off into
 ;; its own file?)
@@ -231,7 +249,10 @@
 (global-set-key (kbd "C-w j") 'evil-window-down)
 (global-set-key (kbd "C-w k") 'evil-window-up)
 (global-set-key (kbd "C-w l") 'evil-window-right)
+(global-set-key (kbd "C-w m") 'maximize-this-window)
 (global-set-key (kbd "C-w o") 'delete-other-windows)
+(global-set-key (kbd "C-w |") 'evil-window-set-width)
+(global-set-key (kbd "C-w =") 'balance-windows)
 
 ;; B&T Keybinds for searching
 ;; Interactive search key bindings. By default, C-s runs
@@ -289,6 +310,18 @@
 
 ;; Make _ count as a word element, not symbol
 (modify-syntax-entry ?_ "w")
+
+;; Occur Mode looks like a compile buffer, so I want n and p to be navigation.
+;; TODO: defer this, use evil-hjkl / start occur in motion
+(add-hook 'occur-mode-hook
+          (lambda ()
+            (local-set-key "j" 'evil-next-line)
+            (local-set-key "n" 'evil-next-line)
+            (local-set-key "k" 'evil-previous-line)
+            (local-set-key "p" 'evil-previous-line)))
+
+;; Which-key mode lists all key-binds, I think?
+(which-key-setup-side-window-right)
 
 (provide 'config-ui)
 ;;; config-ui.el ends here

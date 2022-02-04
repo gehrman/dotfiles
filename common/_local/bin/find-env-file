@@ -1,0 +1,14 @@
+#! /usr/bin/env python3
+
+
+import itertools as it
+import os, pathlib, sys
+
+dir_ = pathlib.Path(os.getcwd())
+paths = it.chain([dir_], dir_.parents)
+
+for path in paths:
+    if '.env' in os.listdir(path):
+        print(path)
+        sys.exit(0)
+sys.exit(1)

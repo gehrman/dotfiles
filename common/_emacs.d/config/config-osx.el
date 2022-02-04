@@ -10,7 +10,14 @@
 (require 'package-tools)
 
 (ensure-package-installed
- 'exec-path-from-shell)
+ 'exec-path-from-shell
+ 'mac-pseudo-daemon
+ )
+
+;; Prevents emacs from quitting if the last window is closed by creating a
+;; hidden window to keep the app running. To kill emacs, emacs must be
+;; explicitly killed via something like :qa or running 'kill-emacs.
+(mac-pseudo-daemon-mode)
 
 ;; The setq is there to stop the interactivity nagging.
 (require 'exec-path-from-shell)

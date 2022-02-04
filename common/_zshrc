@@ -1,7 +1,8 @@
+# -*- shell-script -*-
+
 # .zshrc is sourced in interactive shells.
 # It should contain commands to set up aliases,
 # functions, options, key bindings, etc.
-export PATH=/usr/local/bin:~/.bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin
 
 #clear
 #unsetopt zle
@@ -12,6 +13,13 @@ export PATH=/usr/local/bin:~/.bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr
 if [[ $TERM == "dumb" ]]; then
     PS1="zsh$ "
     return
+fi
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
 fi
 
 # register the completions folder
@@ -61,7 +69,7 @@ fi
 # autoload -U colors
 #colors
 
-export PATH=/usr/local/bin:~/.bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin
+export PATH=/usr/local/bin:~/.bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:~/.cargo/bin
 
 # Use a snake prompt. Hiss.
 export PYTHONSTARTUP=~/.pythonrc
@@ -107,14 +115,13 @@ alias tmat="tmux attach -d -t"
 
 # Current-shell command aliases.
 alias rezsh='source ~/.zshrc'
-alias ghn="cd /wayfair/home/gehrman"
-alias gcn="cd /wayfair/home/gehrman/dev"
-alias bline='beeline -u jdbc:hive2://bobigdatahive01.csnzoo.com:10000 -n gehrman'
+alias ls=exa
 
 if [[ $TERM != "dumb" ]]; then
-    source ~/.zsh/conf/prompt
-    source ~/.zsh/conf/keybinds
     source ~/.zsh/conf/functions
+    source ~/.zsh/conf/hooks
+    source ~/.zsh/conf/keybinds
+    source ~/.zsh/conf/prompt
 fi
 if [[ `uname` == "Darwin" ]]; then
     source ~/.zsh/conf/osx
@@ -144,6 +151,10 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+# Clojure performance tuning
+# See https://github.com/deg/clojure-then-you-think/wiki/Memory-Size
+export _JAVA_OPTIONS="-Xmx2g"
+
 # time in tenths of a second after key-press to toggle mode switch
 # this *does* have other effects!!
 export KEYTIMEOUT=2
@@ -156,3 +167,20 @@ stty start undef
 alias hy-spy="hy --spy"
 alias hom="hy --repl-output-fn hy.contrib.hy-repr.hy-repr"
 alias hom-spy="hy --repl-output-fn hy.contrib.hy-repr.hy-repr --spy"
+
+alias tg="terragrunt"
+alias tgi="terragrunt init"
+alias tgp="terragrunt plan"
+alias tga="terragrunt apply"
+
+# Setup autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# exa is better ls
+alias ls=exa
+alias l="exa -lh"
+
+# Rather than doing a complicated introspection thing, just make a .zshrc.site
+# file that is machine-specific, always gets sourced here, and contains config
+# that isn't appropriate to put in Git.
+source ~/.zshrc.site

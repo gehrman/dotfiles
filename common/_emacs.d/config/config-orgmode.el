@@ -29,8 +29,6 @@
 ;; (load "tex.el")
 ;; ;;(require 'org-latex)
 
-;; (setq org-src-fontify-natively t)
-
 ;; (evil-leader/set-key-for-mode 'org-src-mode
 ;;   "wq" 'org-edit-src-exit
 ;;   "q" 'org-edit-src-abort)
@@ -58,29 +56,6 @@
 ;; ;; Add timestamps to completed TODOs
 ;; (setq org-log-done 'time)
 
-;; (setq org-agenda-files (list "~/org/agenda.org"
-;;                              "~/org/todo.org"
-;;                              "~/org/journal.org"
-;;                              "~/org/research.org"
-;;                              "~/org/courses.org"))
-
-
-;; (setq org-refile-targets (quote ((nil :maxlevel . 9)
-;;                                  (org-agenda-files :maxlevel . 9))))
-
-;; (setq org-capture-templates
-;;       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
-;;          "* TODO %?\n\nCreated at %U")
-;;         ("j" "Journal" entry (file+datetree "~/org/journal.org")
-;;          "* %?\nEntered on %U\n  %i\n  %a")
-;;         ("r" "Research" entry (file+headline "~/org/research.org" "Research"))
-;;         ("c" "Courses" entry (file+headline "~/org/courses.org" "Courses"))))
-;; (setq org-capture-templates
-;; '(("T" "A (T)est template." entry
-;;   (file+headline "notes.org" "Testing")
-;;   "* %:description\n%u\n\n%c\n\n%i"
-;;   :empty-lines 1)))
-
 ;; Org-mode specific keybindings.
 ;; http://stackoverflow.com/questions/25463369/mode-specific-or-buffer-local-text-objects-in-evil
 ;; Should these get wrapped in an eval-after-load?
@@ -101,6 +76,44 @@
 
 ;; Let's try to set up some capturing.
 (require 'org-protocol)
+
+;; Agenda Config
+
+(setq org-directory "~/Documents/Org")
+(setq org-agenda-files (list (expand-file-name "inbox.org" org-directory)
+                             (expand-file-name "project.org" org-directory)
+                             (expand-file-name "task.org" org-directory)))
+
+;; Use org-agenda-refile to refile. Note that this _doesn't_ commit the changes. Use the
+;; S key in agenda mode to save all agenda buffers, which runs the command
+;; (org-save-all-org-buffers).
+(setq org-refile-targets `((,(expand-file-name "project.org" org-directory) :maxlevel . 1)
+                           (,(expand-file-name "task.org" org-directory) :maxlevel . 1)))
+
+;; Patrick's refiling:
+;; (setq org-refile-targets (quote ((nil :maxlevel . 9)
+;;                                  (org-agenda-files :maxlevel . 9))))
+
+
+;; Patrick's capture templates
+;; (setq org-capture-templates
+;;       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
+;;          "* TODO %?\n\nCreated at %U")
+;;         ("j" "Journal" entry (file+datetree "~/org/journal.org")
+;;          "* %?\nEntered on %U\n  %i\n  %a")
+;;         ("r" "Research" entry (file+headline "~/org/research.org" "Research"))
+;;         ("c" "Courses" entry (file+headline "~/org/courses.org" "Courses"))))
+;; (setq org-capture-templates
+;; '(("T" "A (T)est template." entry
+;;   (file+headline "notes.org" "Testing")
+;;   "* %:description\n%u\n\n%c\n\n%i"
+;;   :empty-lines 1)))
+
+;; Peter's capture templates
+(setq org-capture-templates
+      '(("i" "inbox" entry (file+headline "~/Documents/Org/inbox.org" "inbox") "* TODO %?")
+        ("j" "inbox (jump to captured)" entry
+         (file+headline "~/Dropbox/org-todo/inbox.org" "inbox" :jump-to-captured) "* TODO %?")))
 
 (provide 'config-orgmode)
 ;;; config-orgmode.el ends here

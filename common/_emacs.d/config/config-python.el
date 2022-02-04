@@ -49,7 +49,7 @@
 ;; the buffer has been widened for saving. Yes, this is _insane_.
 (defvar really-before-save-hook nil
   "A hook to be run _before_ any 'save-buffer code runs, not in the middle of the saving code.")
-(add-hook 'really-before-save-hook 'maybe-blacken-buffer)
+;; (add-hook 'really-before-save-hook 'maybe-blacken-buffer)
 (fset 'builtin-save-buffer
       (symbol-function 'save-buffer))
 (defun save-buffer (&optional arg)
@@ -64,19 +64,19 @@
 ;; Use Jedi for Company auto-completions... need to pip install the following for
 ;; this to work:
 ;; jedi, epc, sexpdata
-(require 'company-jedi)
-(add-to-list 'company-backends 'company-jedi)
-
-(add-hook 'python-mode-hook 'jedi:setup)
+;; (require 'company-jedi)
+;; (add-to-list 'company-backends 'company-jedi)
+;;
+;; (add-hook 'python-mode-hook 'jedi:setup)
 ;;(jedi:install-server)
-(setq jedi:environment-root "jedi")
+;;(setq jedi:environment-root "jedi")
 ;; (setq jedi:environment-virtualenv
 ;;       (append python-environment-virtualenv
 ;;               '("--python" "/usr/local/bin/python3")))
 ;; (setq py-python-command "/usr/local/bin/python3")
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
-(setq jedi:get-in-function-call-delay 10000) ; 10s delay before showing function call sigs
+;;(setq jedi:setup-keys t)
+;;(setq jedi:complete-on-dot t)
+;;(setq jedi:get-in-function-call-delay 10000) ; 10s delay before showing function call sigs
 
 ;; Virtualenv tools
 (require 'virtualenvwrapper)
@@ -105,24 +105,54 @@
   (interactive)
   (insert "import argparse\nif __name__ == '__main__':\n    "))
 
-;; TODO: Make this non-global
-(global-set-key
- (kbd "s-i")
- (defun insert-pdb-breakpoint ()
-   "Insert a pdb break."
-   (interactive)
-   (save-excursion
-     (insert "breakpoint()")
-     )))
+(defun insert-env-stuff ()
+  "Create an env file."
+  (interactive)
+  (insert "CMT_HOME=" default-directory "\n"))
+(defun insert-pdbpp-install-stuff ()
+  "Create a pdb++ install script."
+  (interactive)
+  (insert "#! /bin/sh\ncd appserver && pipenv run pip install pdbpp && cd ..\n"))
 
-(global-set-key
- (kbd "s-I")
- (defun insert-ipdb-breakpoint ()
+(defun new-env-file ()
+  "Create a real env file."
+  (interactive)
+  ;; Set up .env
+  (find-file ".env")
+  (insert "CMT_HOME=" default-directory "\n")
+  (write-file ".env")
+  (kill-buffer)
+
+  ;; Set up pdbpp installer
+  ;(cd (concat default-directory "vtrack"))
+  (cd "vtrack")
+  (find-file "install-pdbpp")
+  (insert "#! /bin/sh\ncd appserver && pipenv run pip install pdbpp && cd ..\n")
+  (write-file "install-pdbpp")
+  (kill-buffer)
+  (cd "..")
+  (revert-buffer))
+
+(add-hook 'dired-mode-hook (lambda ())
+          (evil-leader/set-key "e" 'new-env-file))
+
+;; TODO: Make this non-global
+(defun insert-pdb-breakpoint ()
    "Insert a pdb break."
    (interactive)
    (save-excursion
-     (insert "import pdb; pdb.set_trace()")
-     )))
+     (insert "breakpoint()")))
+
+(defun insert-ipdb-breakpoint ()
+   "Insert a pdb set_trace. Only necessary for pre-Python 3.7 code."
+   (interactive)
+   (save-excursion
+     (insert "import pdb; pdb.set_trace()")))
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (local-set-key (kbd "M-i") 'insert-pdb-breakpoint)
+            (local-set-key (kbd "M-i") 'insert-pdb-breakpoint)))
 
 ;; From Patrick's config... python3 something
 ;; (setq jedi:environment-virtualenv

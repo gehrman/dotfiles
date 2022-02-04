@@ -31,6 +31,9 @@
  ;;'evil-visualstar
  )
 
+;; Set up the undo system. Do we need to upgrade evil to use this?
+;; (setq evil-undo-system 'undo-redo)
+
 ;; set evil-mode by default, so emacs is actually usable as a text editor
 (require 'evil)
 (require 'evil-leader)
@@ -72,6 +75,8 @@
 ;; Setup leader key stuff.
 ;; \ is the default, but "," is another common choice
 (evil-leader/set-leader ",")
+;; But why not use all three? (At one point I also useds "SPC")
+;; TODO: Write evil-multileader
 
 ;; (defun comment-line-or-region ()
 ;;   "No."
@@ -95,17 +100,45 @@ This doesn't actually work yet because of how blame-mode is implemented."
       (message "t")
     (message "nil")))
 
-;; But why not use all three? TODO: Write evil-multileader
+;; Frame-cycling commands
+(defun reverse-other-frame () "Fuck you Emacs linter." (interactive (other-frame -1)))
+;; These are both broken right now. Specifically, they were an attempt to
+;; implement OS X window jumping. They work fine when multiple Emacs frames are
+;; tabs in a single OS X window, but do not correctly jump between OS X windows,
+;; unsurprisingly. (At least I think that's what I wanted them for. I kinda
+;; forget what I wanted them for.
+(defun jump-far-right-frame () "Jump right."
+       (interactive)
+       (let ((c-frame (selected-frame))
+             (n-frame (next-frame)))
+         (while (not (equal c-frame n-frame))
+           (setq c-frame n-frame)
+           (setq n-frame (next-frame))
+           )
+         (select-frame-set-input-focus c-frame)))
+(defun jump-far-left-frame () "Jump left."
+       (interactive)
+       (let ((c-frame (selected-frame))
+             (p-frame (previous-frame)))
+         (while (not (equal c-frame p-frame))
+           (setq c-frame p-frame)
+           (setq p-frame (previous-frame))
+           )
+         (select-frame-set-input-focus c-frame)))
+
 (evil-leader/set-key
   "," 'ibuffer
+
   "+" 'hs-show-block
+  "=" 'hs-show-block
   "-" 'hs-hide-block
-  "<+" 'hs-show-all
-  "<-" 'hs-hide-all
+  "<+" 'hs-show-level
+  "<-" 'hs-hide-level
+  "<<+" 'hs-show-all
+  "<<-" 'hs-hide-all
   "/" 'comment-dwim
-  ;; b is the prefix key for buffer operations. I'm not completely happy with
-  ;; putting dired in with the buffer ops, but not sure where a better place
-  ;; for it is
+
+  ;; b is the prefix key for buffer operations
   "ba" 'find-file ;I type ,bs for :e enough I want an escape hatch
   "bc" 'clone-indirect-buffer-other-window
   "bd" 'diff-buffer-with-file
@@ -120,9 +153,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "br" 'revert-buffer
   "bs" 'switch-to-buffer
   "bw" 'widen
-  ;; "de" 'debug-on-error
-  ;; "dE" 'debug-on-entry
 
+  ;; Searching (via ag/hound mostly) and describing
   ;; ag.el exports:
   ;;       ag           ag-project
   ;;       ag-files     ag-project-files
@@ -131,6 +163,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   ;; for configuration of hound.
   "da" 'ag
   "dc" 'describe-char ; Mostly a novelty, but good to know. Again, from @brandon-rhodes.
+  ;; "de" 'debug-on-error
+  ;; "dE" 'debug-on-entry
   "df" 'describe-function
   "dg" 'ag-files
   "dh" 'help
@@ -144,12 +178,18 @@ This doesn't actually work yet because of how blame-mode is implemented."
   ;;"dw" 'apropos ; Doesn't autofill object at point sadly
   ;;"dW" 'apropos-command
   ;;"dz" 'info-apropos
-  "ee" 'find-file-at-point
+
+  ;; "ee" 'find-file-at-point
+
+  ;; Flycheck and frame
   "fb" 'flycheck-buffer ; http://www.flycheck.org/
   "ff" 'flycheck-buffer
   "fl" 'flycheck-list-errors
   "fn" 'flycheck-next-error
   "fN" 'flycheck-previous-error
+  "ft" 'transpose-frame
+
+  ;; Git and conflict resolution
   "gb" 'magit-blame-start-or-quit
   "gf" 'find-file-at-point
   "gg" 'magit-status
@@ -163,35 +203,47 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "gt" 'smerge-keep-other ; "keep the one where my cursor isn't"
   "gn" 'smerge-next ; This should probably variously do smerge-next, magit-blame-next, etc
   "gp" 'smerge-prev
+
+  "hl" 'hs-hide-level
+  ;; "hL" 'hs-hide-level-recursive  ; Recursive version doesn't work like I think
   "ii" 'insert-char
+
   ;; (l)aunch application modes like dired, proced, ansi-term, et al
   "ld" 'dired
   "lp" 'proced
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
+
+  ;; Packages and pianobar (not that I've been using pianobar much)
   "pi" 'package-install
-  "pl" 'paradox-list-packages
-  ;; "pl" 'package-list-packages
+  "pl" 'paradox-list-packages  ;; paradox shadows 'package-list-packages
   "po" 'pianobar
   "pn" 'pianobar-next-song
   "pp" 'pianobar-play-or-pause
-  "sb" 'eval-buffer
+
+  ;; Region-like bindings
   "rc" 'comment-region
   "rt" 'indent-region
   "ru" 'uncomment-region
+
+  ;; Evaluation-like bindings
+  "sb" 'eval-buffer
   "sd" 'transpose-sexps
   "sf" 'browse-url-of-file
   "sl" 'eval-last-sexp
   "so" 'browse-url
   "ss" 'eval-defun ;because eval-defun is *totally* a synonym for 'eval-this-sexp... dammit emacs
-  "tf" 'transpose-frame
+  "tf" 'transpose-frame  ; Deprecated, moving frame manipulations to 'f<char>
   "tt" 'my-run-pytest-from-buffer-name
   "ta" 'pytest-all
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
+
+  ;; Window operations
   "wf" 'toggle-frame-fullscreen
   "wh" 'other-frame
   "wk" 'delete-window
   "wl" 'reverse-other-frame
+  "wm" 'maximize-this-window
   "wn" 'make-frame
   "[" 'keyboard-quit
   )
@@ -213,13 +265,6 @@ This doesn't actually work yet because of how blame-mode is implemented."
 (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
 (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
 
-;; This, with some tweaks, should get C-w hjkl working in Emacs mode
-;; (define-prefix-command 'evil-window-map)
-;; (define-key evil-window-map "b" 'evil-window-bottom-right)
-;; (define-key evil-window-map "c" 'evil-window-delete)
-;; ...
-;; (define-key evil-motion-state-map "\C-w" 'evil-window-map)
-
 ;; Initial mode setting.
 ;;(evil-set-initial-state 'ibuffer-mode 'normal)
 
@@ -235,20 +280,28 @@ This doesn't actually work yet because of how blame-mode is implemented."
  'ibuffer-mode
  'completion-list-mode
  )
+
 (add-hook 'git-commit-mode-hook 'evil-insert-state)
 
 ;; (set-evil-initial-mode
-;;  'emacs                   ; Start the following modes in 'emacs state.
+;;  'emacs ; Start the following modes in 'emacs state.
 ;;  '(ansi-term
-;;    package-menu-mode
+;;    docker-container-mode
+;;    docker-image-mode
+;;    docker-machine-mode
+;;    docker-network-mode
+;;    docker-volume-mode
 ;;    messages-buffer-mode
-;;    eshell
-;;    )
-;;  )
+;;    multi-term
+;;    package-menu-mode
+;;    eshell))
 
-;; Mode registration should be a mode config thing, not an evil config thing.
+
+;; Mode registration should be a mode config thing, not an evil config
+;; thing. Of course first, it needs to be a _working_ thing.
 (add-to-list 'evil-emacs-state-modes 'magit-blame-mode)
 (add-to-list 'evil-emacs-state-modes 'messages-buffer-mode)
+(add-to-list 'evil-emacs-state-modes 'eshell)
 ;;(add-to-list 'evil-emacs-state-modes 'docker-image-mode) ; moved to docker config
 ;;(set-evil-initial-mode 'ansi-term 'emacs)
 

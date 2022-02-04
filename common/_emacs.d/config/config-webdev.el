@@ -17,6 +17,7 @@
  'json-mode
  'json-reformat
  'tagedit ;Edit HTML tags like the sexps they are.
+ 'nginx-mode
  ;;https://github.com/skeeto/skewer-mode
  ;; there's also swank-js + slime
  ;;'skewer-less
@@ -108,6 +109,7 @@
      (require 'tagedit)
      (tagedit-add-paredit-like-keybindings)
      (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
+(add-to-list 'auto-mode-alist '("\\.http$" . restclient-mode))
 
 ;; JSON
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
@@ -122,6 +124,9 @@
      "jq --indent 2 \".\""
      (buffer-name)
      t)))
+
+;; Nginx
+(add-to-list 'auto-mode-alist '("\\.server$" . nginx-mode))
 
 (provide 'config-webdev)
 ;;; config-webdev.el ends here

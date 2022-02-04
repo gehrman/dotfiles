@@ -7,7 +7,6 @@
 
 mkdir -p ~/.zsh/{conf,completions}
 mkdir -p ~/.gnupg
-mkdir -p ~/.xonsh/{conf,completions}
 
 pushd `dirname $0` > /dev/null
 cd common
@@ -43,3 +42,5 @@ else
     echo not wayfair
 fi
 popd > /dev/null
+
+bash install_emacs_config.sh

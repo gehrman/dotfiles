@@ -1,0 +1,16 @@
+#! zsh
+
+autoload -U add-zsh-hook
+load-local-conf() {
+    # find-env-file is a small python script in ~/.local/bin that looks through
+    # `pwd` and parents, searching for a .env file
+    ENV_FILE_LOCATION=`find-env-file`/.env
+
+    # check file exists, is regular file and is readable:
+    if [[ ! -z $ENV_FILE_LOCATION && -r $ENV_FILE_LOCATION ]]; then
+      echo env file found at $ENV_FILE_LOCATION, sourcing
+      source $ENV_FILE_LOCATION
+    fi
+    echo
+}
+add-zsh-hook chpwd load-local-conf

@@ -25,7 +25,11 @@
 ;; Bind C-k to set-mark-command. In magit, I can't seem to reliably stage blocks
 ;; by going into visual mode, C-SPC is launchers, and C-@ is crazy awkward. So,
 ;; I need another binding. C-k is a pneumonic for marK.
-(global-set-key (kbd "C-k") 'set-mark-command)
+;; TODO: Defer this
+(define-key 'magit-mode-hook (kbd "C-k") 'set-mark-command)
+;; (add-hook 'magit-mode-hook
+;; (lambda ()
+;;  (local-set-key (kbd "C-k") 'set-mark-command)))
 
 (add-hook
  'magit-mode-hook
@@ -43,6 +47,9 @@
     (if magit-blame-active
         (magit-blame-quit)
       (magit-blame))))
+
+;; Speed things up for monorepos / large tags repo
+(remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
 
 (provide 'config-magit)
 ;;; config-magit.el ends here
