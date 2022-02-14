@@ -221,6 +221,8 @@
 (add-hook
  'python-mode-hook
  (lambda ()
+   ;(push '("async def" . '(?# (α . λ) ? ())) prettify-symbols-alist)  ;; This can be done, but need to learn the syntax/install the prettify-utils pkg
+   (push '("async" . ?α) prettify-symbols-alist)
    (push '("def" . ?λ) prettify-symbols-alist)
    (push '("class" . ?Λ) prettify-symbols-alist)
    (push '("sum" . ?Σ) prettify-symbols-alist)
