@@ -124,12 +124,20 @@
   (kill-buffer)
 
   ;; Set up pdbpp installer
-  ;(cd (concat default-directory "vtrack"))
   (cd "vtrack")
-  (find-file "install-pdbpp")
-  (insert "#! /bin/sh\ncd appserver && pipenv run pip install pdbpp && cd ..\n")
-  (write-file "install-pdbpp")
+  (find-file "gimme-setup")
+  (insert "#! /bin/sh\nbash docker/common_test_setup.sh\ncd appserver && pipenv run pip install pdbpp && cd ..\n")
+  (write-file "gimme-setup")
   (kill-buffer)
+  (chmod "gimme-setup" #o755)
+
+  ;; Set up test script
+  (find-file "run-tests")
+  (insert "#! /bin/sh\n\nbash docker/run_test_step_vtrackserver.sh\n")
+  (write-file "run-tests")
+  (kill-buffer)
+  (chmod "run-tests" #o755)
+
   (cd "..")
   (revert-buffer))
 
