@@ -12,6 +12,7 @@
 (ensure-package-installed
  'elfeed
  'emms
+ 'groovy-mode
  ;;'emms-mark-ext
  ;;'emms-player-simple-mpv
  ;;'emms-soundcloud
@@ -20,6 +21,8 @@
  'pollen-mode
  'company-pollen
  )
+
+(add-to-list 'auto-mode-alist '("Jenkinsfile$" . nginx-mode))
 
 (require 'pianobar)
 (setq pianobar-username "gehrman@gmail.com")
@@ -50,6 +53,10 @@
   (let ((tags-directory (directory-file-name (projectile-project-root))))
     (shell-command
      (format "ctags -f %s -e -R %s" tags-file-name tags-directory))))
+
+(defun gcn () "Go to the code directory."
+  (interactive)
+  (find-file "~/Devel"))
 
 ;; (use-package ctags-update
 ;;   :ensure t
