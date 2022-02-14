@@ -257,6 +257,25 @@ This doesn't actually work yet because of how blame-mode is implemented."
 ;; loaded before evil mode as it's needed when bootstrapping.
 (add-to-list 'evil-emacs-state-modes 'package-menu-mode)
 
+(defun gbe/set-initial-state-for-modes (start-state &rest mode-list)
+  "Make each mode in the MODE-LIST start in the given START-STATE."
+  (mapcar
+   (lambda (mode) (evil-set-initial-state mode start-state))
+   mode-list))
+
+(define-key evil-emacs-state-map (kbd "C-;") 'evil-execute-in-normal-state)
+
+(gbe/set-initial-state-for-modes
+ 'motion
+ 'lsp-ui-imenu-mode
+ 'xref--xref-buffer-mode)
+
+(gbe/set-initial-state-for-modes
+ 'emacs
+ 'eshell-mode
+ 'ibuffer-mode
+ 'messages-buffer-mode
+ 'term-mode)
 
 (provide 'config-evil)
 ;;; config-evil.el ends here
