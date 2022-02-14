@@ -40,6 +40,10 @@
 ;; Next up, make it pretty.
 (require 'config-ui)
 
+;; Start up lsp stuff before any config that requires it. Eventually this should be
+;; less of an issue since use-package should be able to handle the deferring
+(require 'config-lsp)
+
 ;; Now we can load the other configs.
 ;; TODO: pull these from the directory and load them programmatically
 (mapc
