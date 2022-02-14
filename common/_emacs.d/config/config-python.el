@@ -40,6 +40,8 @@
       (when (equal major-mode 'python-mode)
         (blacken-buffer))))
 
+;; This should come from the project
+(setq blacken-line-length 88)
 ;; We're about to do something _really_ gross to get around the problem of
 ;; 'save-buffer widening before it runs 'before-save-hook. Specifically, we're
 ;; going to capture the content of the 'save-buffer function into another
