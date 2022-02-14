@@ -163,11 +163,11 @@ This doesn't actually work yet because of how blame-mode is implemented."
   ;; "ee" 'find-file-at-point
 
   ;; Flycheck and frame
-  "fb" 'flycheck-buffer ; http://www.flycheck.org/
-  "ff" 'flycheck-buffer
-  "fl" 'flycheck-list-errors
-  "fn" 'flycheck-next-error
-  "fN" 'flycheck-previous-error
+  ; "fb" 'flycheck-buffer ; http://www.flycheck.org/
+  ; "ff" 'flycheck-buffer
+  ; "fl" 'flycheck-list-errors
+  ; "fn" 'flycheck-next-error
+  ; "fN" 'flycheck-previous-error
   "gb" 'magit-blame-start-or-quit
   "gf" 'find-file-at-point
   "gg" 'magit-status
