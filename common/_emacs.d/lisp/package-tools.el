@@ -7,6 +7,7 @@
 
 ;;; Code:
 (require 'package)
+
 (defun ensure-package-installed (&rest packages)
   "Ensure every package in PACKAGES is installed.
 

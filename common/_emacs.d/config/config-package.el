@@ -8,21 +8,12 @@
 (require 'package)
 (require 'package-tools)
 
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-;; Extra package repos that Clojure for the Brave and True configs default to
-;; using.
-(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
-;;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-
 ;; Make sure we have package data.
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 
 ;; Activate installed packages.
 (setq package-enable-at-startup nil)
-(package-initialize)
 
 ;; Productivity packages: autocomplete, snippets, and such
 (ensure-package-installed
