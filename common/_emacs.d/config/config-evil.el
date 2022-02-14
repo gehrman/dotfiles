@@ -15,7 +15,7 @@
 (ensure-package-installed
  'evil ; A/K/A make emacs usable.
  'evil-leader
- 'evil-indent-plus ; Indentation text objects.
+ 'evil-indent-plus ; Indentation text objects: ii/ai, iI/aI, iJ/aJ
  'evil-goggles  ; Highlight yanking and other niceties
  ;;'evil-anzu
  ;;'evil-magit ;some time I should try getting this to work again
