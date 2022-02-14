@@ -20,8 +20,9 @@
          (begin (concat "\\begin{" env "}"))
          (end (concat "\\end{" env "}")))
     (save-excursion (insert (concat begin "\n" end)))))
-;; (define-key 'latex-mode-map (kbd "s-j") 'insert-environment)
-;; (define-key 'tex-mode-map (kbd "s-j") 'insert-environment)
+;; These need to happen after tex/latex env load
+;; (define-key latex-mode-map (kbd "s-j") 'insert-environment)
+;; (define-key tex-mode-map (kbd "s-j") 'insert-environment)
 
 ;; https://www.emacswiki.org/emacs/PrettySymbol
 ;;(require 'latex-pretty-symbols)
