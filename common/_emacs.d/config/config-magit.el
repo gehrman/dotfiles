@@ -26,7 +26,7 @@
 ;; by going into visual mode, C-SPC is launchers, and C-@ is crazy awkward. So,
 ;; I need another binding. C-k is a pneumonic for marK.
 ;; TODO: Defer this
-(define-key 'magit-mode-hook (kbd "C-k") 'set-mark-command)
+(define-key magit-mode-map (kbd "C-k") 'set-mark-command)
 ;; (add-hook 'magit-mode-hook
 ;; (lambda ()
 ;;  (local-set-key (kbd "C-k") 'set-mark-command)))
