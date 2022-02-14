@@ -122,6 +122,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
   ;; putting dired in with the buffer ops, but not sure where a better place
   ;; for it is
   "ba" 'find-file ;I type ,bs for :e enough I want an escape hatch
+  "bb" 'blacken-buffer  ; keybind, since vtrack means black-on-save is not viable
   "bc" 'clone-indirect-buffer-other-window
   "bd" 'diff-buffer-with-file
   ;"bfj" 'diff-buffer-with-file
@@ -187,6 +188,10 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "lp" 'proced
   "nm" 'linum-mode
   "nn" 'linum-relative-toggle
+
+  "o" 'occur
+
+  ;; Packages and pianobar (not that I've been using pianobar much)
   "pi" 'package-install
   "pl" 'paradox-list-packages
   ;; "pl" 'package-list-packages
@@ -206,6 +211,10 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "tt" 'my-run-pytest-from-buffer-name
   "ta" 'pytest-all
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
+
+  "v" 'find-name-dired
+
+  ;; Window operations
   "wf" 'toggle-frame-fullscreen
   "wh" 'other-frame
   "wk" 'delete-window
