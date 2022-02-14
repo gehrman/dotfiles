@@ -26,12 +26,21 @@
 ;; Setup the path for custom config files.
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(setq tramp-remote-path '("/usr/local/bin" "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/sbin" "/csnzoo/gehrman/.bin"))
+
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+;; Extra package repos that Clojure for the Brave and True configs default to using.
+(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
+
 (require 'package-tools)
 
 ;; We need to exec 'config-package first because it deals with setting up the
 ;; paths for all the installed packages, e.g. evil.
 (require 'config-package)
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 
 ;; Evil makes things usable, so it goes first to defend against errors in other
 ;; configs knocking out the keybindings.
