@@ -8,6 +8,10 @@
 ;;(load-library "org")
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
+(ensure-package-installed
+ ;'org-sticky-header
+ ;'org-superstar
+ )
 ;; Set languages available for execution in code blocks.
 (require 'cl-lib)
 (require 'evil)
