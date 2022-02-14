@@ -113,6 +113,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
 ;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "," 'ibuffer
+
   "+" 'hs-show-block
   "-" 'hs-hide-block
   "<+" 'hs-show-all
@@ -170,6 +171,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
   ; "fn" 'flycheck-next-error
   ; "fN" 'flycheck-previous-error
   "gb" 'magit-blame-start-or-quit
+  ;;"gc" 'gcn
   "gf" 'find-file-at-point
   "gg" 'magit-status
   "gi" 'magit-init
@@ -212,6 +214,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "ta" 'pytest-all
   ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
 
+  "u" 'universal-argument
   "v" 'find-name-dired
 
   ;; Window operations
