@@ -9,6 +9,15 @@
 ;;;   * https://github.com/emacs-helm/helm/wiki#configure
 
 ;;; Code:
+(use-package helm
+  :straight t
+  :config
+  (helm-mode 1)
+  (setq helm-fuzzy-match t))
+
+;; This isn't really a helm thing, it's how we run ag searches...
+(use-package helm-ag
+  :straight t)
 
 (provide 'gbe-helm)
 ;;; gbe-helm.el ends here

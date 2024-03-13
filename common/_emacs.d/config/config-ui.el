@@ -25,8 +25,6 @@
  'fill-column-indicator
  'find-file-in-project
  'fold-this
- 'helm ;Configure me!
- 'helm-ag ;Configure me! (See https://github.com/syohex/emacs-helm-ag)
  ;;'ido-ubiquitous
  'linum-relative
  'multi-term
@@ -42,7 +40,6 @@
 
 (require 'fold-this)
 (require 'linum-relative)
-(require 'helm)
 (require 'smex)
 (require 'projectile)
 (require 'bison-mode)
@@ -82,10 +79,6 @@
 
 ;; Find File stuff
 (require 'find-file-in-project)
-(helm-mode 1)
-;; This may be necessary, but first need to see how often it comes up, now
-;; that I know you don't need to tab-to-narrow helm results, you just type.
-;;(setq helm-fuzzy-match t)
 (setq ffip-use-rust-fd t)
 
 ;; Global prettification. Because lambda is λ dammit.
