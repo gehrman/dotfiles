@@ -10,22 +10,27 @@
 (require 'package-tools)
 
 (ensure-package-installed
- 'cython-mode
  'blacken
+ 'company-jedi
+ 'cython-mode
  'ein
  ;;'elpy
- 'company-jedi
- 'virtualenvwrapper
- ;;'python-docstring
- 'python-switch-quotes
+ 'poetry
  'pytest ;;--- This doesn't seem to play well with tramp, so need to look at alternatives
- ;; syntax checking - flycheck(make?)
  'pyenv-mode
  'pyenv-mode-auto
+ 'python-docstring
+ 'python-switch-quotes
+ ;; Not strictly python, but given work, might as well go here
+ 'string-inflection
+ 'virtualenvwrapper
  )
 
+
 (require 'ein)
+(require 'poetry)
 (require 'pytest)
+(require 'string-inflection)
 
 ;; Black-on-save, with style. And some insanity.
 (defun maybe-blacken-buffer ()
@@ -83,6 +88,8 @@
 ;; Virtualenv tools
 (require 'virtualenvwrapper)
 (venv-initialize-interactive-shells)
+(venv-initialize-eshell)
+(setq venv-location "~/.pyenv/")
 ;; (venv-workon)
 ;; (venv-deactivate)
 ;; (venv-mkvirtualenv)
@@ -128,7 +135,8 @@
   ;; Set up pdbpp installer
   (cd "vtrack")
   (find-file "gimme-setup")
-  (insert "#! /bin/sh\nbash docker/common_test_setup.sh\ncd appserver && pipenv run pip install pdbpp && cd ..\n")
+  ;;(insert "#! /bin/sh\nbash docker/common_test_setup.sh\ncd appserver && pipenv run pip install pdbpp && cd ..\n")
+  (insert "#! /bin/sh\nbash docker/common_test_setup.sh\nfor dir in ${@:-\"appserver mm tagtrip\"}; do cd $dir && pipenv run pip install pdbpp && cd -; done\n")
   (write-file "gimme-setup")
   (kill-buffer)
   (chmod "gimme-setup" #o755)
@@ -140,11 +148,30 @@
   (kill-buffer)
   (chmod "run-tests" #o755)
 
+  ;; Set up test script
+  (find-file "id-container")
+  (insert "#! /bin/sh\n\n")
+  (insert "echo " (pwd))
+  (write-file "id-container")
+  (kill-buffer)
+  (chmod "id-container" #o755)
+
   (cd "..")
   (revert-buffer))
 
+(defun top-level-test-directory-scheme
+    (filename)
+  "Name the test file for FILENAME using the top-level test directory scheme."
+  (format "../test/test_%s" filename))
+(defun open-corresponding-test-file ()
+  "Open the test file corresponding to the current file."
+  (interactive)
+  (find-file (top-level-test-directory-scheme (buffer-name))))
+(evil-leader/set-key-for-mode 'python-mode "T" 'open-corresponding-test-file)
+
 (add-hook 'dired-mode-hook (lambda ())
-          (evil-leader/set-key "e" 'new-env-file))
+          (evil-leader/set-key-for-mode 'dired-mode "en" 'new-env-file)
+          )
 
 ;; TODO: Make this non-global
 (defun insert-pdb-breakpoint ()
@@ -153,15 +180,21 @@
    (save-excursion
      (insert "breakpoint()")))
 
-(defun insert-ipdb-breakpoint ()
-   "Insert a pdb set_trace. Only necessary for pre-Python 3.7 code."
+(defun insert-try-catch-breakpoint ()
+   "Insert a pdb break."
    (interactive)
    (save-excursion
-     (insert "import pdb; pdb.set_trace()")))
+     (evil-next-line-1-first-non-blank)
+     (insert "    ")
+     (evil-delete-line (line-number-at-pos) (line-number-at-pos))
+     (insert "try:\n")
+     (evil-paste-after)
+     (insert "except:\n")
+     (insert "    breakpoint()")))
 
 (add-hook 'python-mode-hook
           (lambda ()
-            (local-set-key (kbd "M-i") 'insert-pdb-breakpoint)
+            (local-set-key (kbd "s-i") 'insert-pdb-breakpoint)
             (local-set-key (kbd "M-i") 'insert-pdb-breakpoint)))
 
 ;; From Patrick's config... python3 something
@@ -231,11 +264,12 @@
 (add-hook
  'python-mode-hook
  (lambda ()
-   ;(push '("async def" . '(?# (α . λ) ? ())) prettify-symbols-alist)  ;; This can be done, but need to learn the syntax/install the prettify-utils pkg
+                                        ;(push '("async def" . '(?# (α . λ) ? ())) prettify-symbols-alist)  ;; This can be done, but need to learn the syntax/install the prettify-utils pkg
    (push '("async" . ?α) prettify-symbols-alist)
    (push '("def" . ?λ) prettify-symbols-alist)
    (push '("class" . ?Λ) prettify-symbols-alist)
    (push '("sum" . ?Σ) prettify-symbols-alist)
+   (push '("with" . ?ω) prettify-symbols-alist)
    ;; Greek Lowercase
    (push '("alpha" . ?α) prettify-symbols-alist)
    (push '("beta" . ?β) prettify-symbols-alist)

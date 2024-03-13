@@ -161,5 +161,14 @@
 ;;     (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
 ;;     (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
 
+;; In IElm, since we have paredit running, <return> won't evaluate code as it is
+;; instead running paredit-ret. That's not the worst - it sorta works out like
+;; ipython, where we can write multiline literals. That said, we need to bind
+;; ielm evaluation. Since there's not really a need to pop into eshell from ielm
+;; we'll use C-ret
+;; This needs to be a mode-hook so that it fire after ielm-map exists
+;(define-key ielm-map (kbd "C-<return>") 'ielm-send-input)
+
+
 (provide 'config-lisp)
 ;;; config-lisp.el ends here

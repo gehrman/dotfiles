@@ -13,5 +13,5 @@
   "Load the secret stored at PATH."
   ())
 
-(provide 'config-rust)
-;;; load-secrets ends here
+(provide 'load-secrets)
+;;; load-secrets.el ends here

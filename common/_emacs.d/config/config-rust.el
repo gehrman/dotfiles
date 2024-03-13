@@ -20,7 +20,7 @@
   "c" 'rust-compile)
 
 ;; Auto-format on save
-(add-hook 'before-save-hook 'rust-format-buffer)
+;; (add-hook 'before-save-hook 'rust-format-buffer)
 
 ;; Racer setup
 (add-hook 'rust-mode-hook #'racer-mode)

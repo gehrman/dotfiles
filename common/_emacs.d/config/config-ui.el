@@ -18,7 +18,13 @@
 
 ;; Non-theme UI
 (ensure-package-installed
+ ; 'all-the-icons
+ ; 'all-the-icons-dired
+ ; 'all-the-icons-ibuffer
+ 'bison-mode
  'fill-column-indicator
+ 'find-file-in-project
+ 'fold-this
  'helm ;Configure me!
  'helm-ag ;Configure me! (See https://github.com/syohex/emacs-helm-ag)
  ;;'ido-ubiquitous
@@ -34,10 +40,12 @@
  'which-key
  )
 
+(require 'fold-this)
 (require 'linum-relative)
 (require 'helm)
 (require 'smex)
 (require 'projectile)
+(require 'bison-mode)
 
 ;;;; Themes
 (load-theme 'ample t)
@@ -71,6 +79,14 @@
 ;; Scrollbars are ugly son. Supposedly this errors out on terminal mode, whence
 ;; the 'when as a guard.
 (when (display-graphic-p) (set-scroll-bar-mode nil))
+
+;; Find File stuff
+(require 'find-file-in-project)
+(helm-mode 1)
+;; This may be necessary, but first need to see how often it comes up, now
+;; that I know you don't need to tab-to-narrow helm results, you just type.
+;;(setq helm-fuzzy-match t)
+(setq ffip-use-rust-fd t)
 
 ;; Global prettification. Because lambda is λ dammit.
 (push '("forall" . ?∀) prettify-symbols-alist)
@@ -121,6 +137,8 @@
 ;;   dired-bibtex-unclean-extensions
 ;;   dired-texinfo-unclean-extensions
 ;;   ))
+(setq dired-listing-switches "-alFh")
+(setq dired-ls-F-marks-symlinks 't)
 (add-hook 'dired-mode-hook
           (lambda ()
             (dired-omit-mode t)))
@@ -250,6 +268,7 @@
 (define-key gbe/window-management-map "o" 'delete-other-windows)
 (define-key gbe/window-management-map "|" 'evil-window-set-width)
 (define-key gbe/window-management-map "=" 'balance-windows)
+(define-key gbe/window-management-map "," 'ibuffer)
 
 ;; B&T Keybinds for searching
 ;; Interactive search key bindings. By default, C-s runs
@@ -316,9 +335,34 @@
             (local-set-key "n" 'evil-next-line)
             (local-set-key "k" 'evil-previous-line)
             (local-set-key "p" 'evil-previous-line)))
+(defun gbe/occur-at-point ()
+  "Run an occur-search populated with the word at point."
+  (interactive)
+  (let ((search-term (thing-at-point 'word t)))
+    (occur search-term)))
+(evil-leader/set-key
+  "O" 'gbe/occur-at-point)
 
 ;; Which-key mode lists all key-binds, I think?
 (which-key-setup-side-window-right)
+
+;; This should be put in with the other utility functions I've written into a
+;; .emacs/lisp/utils.el or somesuch, but that's going to have to happen as part
+;; of the eternally forthcoming refactoring and cleanup
+(defun gbe/change-directory-leaf ()
+  "Change to an identical leaf in a separate branch of the directory hierachy.
+As an example, if a/b/c/d/e is the current path, given b, B as inputs, change
+the current directory to a/B/c/d/e."
+  (interactive)
+  (let ((cur-dir (cadr (split-string (pwd))))
+        (cur-buffer (car (reverse (split-string (buffer-file-name) "/")))))
+    (let ((cur-node (helm-comp-read "Current dir: " (split-string cur-dir "/"))))
+      (let ((new-node (helm-comp-read
+                           "New directory: "
+                           ;;
+                           (directory-files (replace-regexp-in-string (concat cur-node ".*") "" cur-dir)))))
+        (find-file (concat (s-replace cur-node new-node cur-dir) cur-buffer))
+        ))))
 
 (provide 'config-ui)
 ;;; config-ui.el ends here

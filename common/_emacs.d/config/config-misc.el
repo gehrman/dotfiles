@@ -22,6 +22,9 @@
  'company-pollen
  )
 
+(setq desktop-save-mode 1)
+(setq desktop-save t)
+
 (add-to-list 'auto-mode-alist '("Jenkinsfile$" . nginx-mode))
 
 (require 'pianobar)
@@ -56,7 +59,17 @@
 
 (defun gcn () "Go to the code directory."
   (interactive)
-  (find-file "~/Devel"))
+  (helm-find-files-1 "~/Devel/vtrack/"))
+(evil-leader/set-key "eg" 'gcn)
+;; How to undefine a key given a key-map:
+;; (define-key evil-normal-state-local-map ",e" nil)
+;; TODO - defun this as 'gbe-unset-key
+
+;; Open worktree
+;; (defun open-code-dir ()
+;;   "Open a directory in code dir"
+;;   (interactive)
+;;   ())
 
 ;; (use-package ctags-update
 ;;   :ensure t

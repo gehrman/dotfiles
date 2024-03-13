@@ -10,14 +10,19 @@
  'restclient
  'restclient-helm
  'restclient-test
+ 'restclient-jq
+ 'jq-mode  ; Necessary to use jq-set-var expressions in Restclient files
  'ob-http
  'ob-restclient
  'know-your-http-well
  'company-restclient
+ ;; jq-format
  'json-mode
  'json-reformat
  'tagedit ;Edit HTML tags like the sexps they are.
  'nginx-mode
+ 'coffee-mode
+ 'php-mode
  ;;https://github.com/skeeto/skewer-mode
  ;; there's also swank-js + slime
  ;;'skewer-less
@@ -28,9 +33,14 @@
 (require 'evil)
 (require 'evil-leader)
 (require 'tagedit)
+(require 'coffee-mode)
+(require 'php-mode)
 
 ;; HTTP Interaction:
+(require 'jq-mode)
 (require 'restclient)
+(require 'restclient-jq)
+
 
 ;; HTTP completions
 (require 'know-your-http-well)
@@ -41,6 +51,12 @@
   "Send current request and keep focus in request window."
   (interactive)
   (restclient-http-send-current t t))
+
+;; Utility function for loading a variable from a files
+(defun gbe/load-variable-from-file (path)
+  "Load var from PATH."
+  (interactive)
+  )
 
 ;; Allow ob-http and ob-restclient to work.
 (org-babel-do-load-languages

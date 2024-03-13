@@ -17,16 +17,24 @@
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; Make magit start full-frame, but otherwise behave the same.
-(setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
+;;(setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
+
+;; Allow multiple panes. Probably need to have a way to toggle these
+;(setq magit-display-buffer-function 'magit-display-buffer-traditional)
+(setq magit-display-buffer-function 'magit-display-buffer-fullcolumn-most-v1)
+;(setq magit-display-buffer-function 'magit-display-buffer)
 
 ;; Warn
-(setq git-commit-summary-max-length 50)
+(setq git-commit-summary-max-length 78)
 
 ;; Bind C-k to set-mark-command. In magit, I can't seem to reliably stage blocks
 ;; by going into visual mode, C-SPC is launchers, and C-@ is crazy awkward. So,
 ;; I need another binding. C-k is a pneumonic for marK.
 ;; TODO: Defer this
 (define-key magit-mode-map (kbd "C-k") 'set-mark-command)
+(define-key magit-mode-map (kbd "C-w") nil)
+;; Enable leader key in magit
+(define-key magit-mode-map (kbd ",") evil-leader--default-map)
 ;; (add-hook 'magit-mode-hook
 ;; (lambda ()
 ;;  (local-set-key (kbd "C-k") 'set-mark-command)))
@@ -49,6 +57,22 @@
 
 ;; Speed things up for monorepos / large tags repo
 (remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
+
+;; Open file in different worktree
+;(find-file (concat "~/" "t"))
+;(find-file (file))
+
+;(buffer-name)
+;(defun mfbfn () "Sentance." (interactive) (message (buffer-file-name)))
+; (let ((worktree-prefix "vtrack/.*/vtrack"))
+;  (message prefix))
+
+
+;; (let ((file-name "/str/vtrack/name/vtrack/path/to/file")
+;;       (worktree-prefix "vtrack/.*/vtrack"))
+;;   (replace-regexp)
+;;   (replace-string)
+;;   (message prefix))
 
 (provide 'config-magit)
 ;;; config-magit.el ends here

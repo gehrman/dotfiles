@@ -9,13 +9,12 @@
 (ensure-package-installed
  'docker
  'dockerfile-mode
- 'docker-compose-mode
- 'docker-tramp)
+ 'docker-compose-mode)
 
 (require 'docker)
 (require 'dockerfile-mode)
 (require 'docker-compose-mode)
-(require 'docker-tramp)
+;;(require 'docker-tramp)  ;; tramp-container now included by default
 (require 'evil)
 (require 'evil-leader)
 
