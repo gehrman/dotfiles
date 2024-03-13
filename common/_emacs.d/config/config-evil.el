@@ -116,6 +116,9 @@ This doesn't actually work yet because of how blame-mode is implemented."
 
   "+" 'hs-show-block
   "-" 'hs-hide-block
+  "[" 'fold-this
+  "]" 'fold-this-unfold-at-point
+  "aa" 'fold-this
   "<+" 'hs-show-all
   "<-" 'hs-hide-all
   "/" 'comment-dwim
@@ -126,6 +129,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "bb" 'blacken-buffer  ; keybind, since vtrack means black-on-save is not viable
   "bc" 'clone-indirect-buffer-other-window
   "bd" 'diff-buffer-with-file
+  "bf" 'json-pretty-print-buffer
+  "bF" 'json-pretty-print-buffer-ordered
   ;"bfj" 'diff-buffer-with-file
   "bg" 'magit-blame-mode
   "bh" 'fci-mode ;(from buffer-highlight)
@@ -135,7 +140,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "bo" 'delete-other-windows
   "bp" 'narrow-to-page
   "br" 'revert-buffer
-  "bs" 'switch-to-buffer
+  ;"bs" 'switch-to-buffer
+  "bs" 'helm-buffers-list  ; Let's see if I hate this
   "bw" 'widen
 
   ;; Searching (via ag/hound mostly) and describing
@@ -223,9 +229,20 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "wk" 'delete-window
   "wl" 'reverse-other-frame
   "wn" 'make-frame
-  "[" 'keyboard-quit
   )
   ;; "D" 'dired)
+
+;; Add a binding to insert a newline without leaving normal state.
+;; First we need an insert-newline function, that will dance us in and out of
+;; the right modes.
+(defun insert-newline ()
+   "Insert a newline and return to appropriate evil state."
+   (interactive)
+   (let ((current-state evil-state))
+     (evil-open-below 0)
+     (unless (eq current-state 'insert)
+       (evil-change-state current-state))))
+(evil-global-set-key 'normal (kbd "g o") 'insert-newline)
 
 (setq evil-leader/in-all-states t)
 
@@ -275,7 +292,14 @@ This doesn't actually work yet because of how blame-mode is implemented."
    (lambda (mode) (evil-set-initial-state mode start-state))
    mode-list))
 
+;; Keybinds for emacs state
 (define-key evil-emacs-state-map (kbd "C-;") 'evil-execute-in-normal-state)
+
+;; Keybinds for emacs state
+;(define-key evil-motion-state-map (kbd "n") 'compilation-next-error)
+;(define-key evil-motion-state-map (kbd "p") 'compilation-previous-error)
+(define-key evil-motion-state-map (kbd "n") 'evil-search-next)
+(define-key evil-motion-state-map (kbd "p") 'evil-search-previous)
 
 (gbe/set-initial-state-for-modes
  'motion
