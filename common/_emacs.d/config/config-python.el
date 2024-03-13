@@ -41,7 +41,7 @@
    this all needs to be upstreamed to blacken."
   (interactive)
   (if (buffer-narrowed-p)
-      (send-notification-from-emacs "Buffer is narrowed, we are NOT running black.")
+      (gbe/send-notification-from-emacs "Buffer is narrowed, we are NOT running black.")
       (when (equal major-mode 'python-mode)
         (blacken-buffer))))
 

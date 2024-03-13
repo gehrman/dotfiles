@@ -6,8 +6,12 @@
 ;; is probably here to stay too.
 
 ;;; Code:
-;; Setup the path for custom config files.
+
+;; First, run bootstrapping to set up the paths for everything else
 (require 'bootstrap (locate-user-emacs-file "bootstrap.el"))
+
+;; Next, bring in all the custom lisp code, so that configs can freely use it
+(gbe/require-dir "lisp")
 
 ;; Added by package.el, and required to be init.el.
 ;(package-initialize)
@@ -28,48 +32,15 @@
 
 ;; Next, bring in all of the config that has been ported to package-config,
 ;; since these are all use-package and hence cheap to load.
-(mapc #'load-library (directory-files (locate-user-emacs-file "package-config") nil "gbe-*"))
-;; This works: (use-package "gbe-ai")
-;; but we can't map it b/c use-package is a macro
-(require 'interactive-utilities)
-
-;; Next up, make it pretty.
-(require 'config-ui)
+(gbe/require-dir "package-config")
 
 ;; Start up lsp stuff before any config that requires it. Eventually this should be
 ;; less of an issue since use-package should be able to handle the deferring
 (require 'config-lsp)
 
-;; No longer needs to go first, and will no longer be needed at all after the
-;; switch to package-config
-(require 'config-package)
-
 ;; Now we can load the other configs.
 ;; TODO: pull these from the directory and load them programmatically
-(mapc
- #'require
- '(config-addons
-   config-ansi-term
-   config-company
-   config-docker
-   config-eshell
-   config-flycheck
-   config-fonthandling
-   config-latex
-   config-lisp
-   config-local
-   config-magit
-   config-markup
-   config-misc
-   config-ml
-   config-modeline
-   config-outlook
-   config-orgmode
-   config-python
-   config-remote
-   config-rust
-   config-webdev
- ))
+(gbe/require-dir "config")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -194,7 +165,7 @@
 
 (put 'narrow-to-region 'disabled nil)
 
-(send-notification-from-emacs "Done starting up.")
+(gbe/send-notification-from-emacs "Done starting up.")
 
 (provide 'init)
 ;; Local Variables:

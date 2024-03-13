@@ -39,6 +39,13 @@
 (unless (package-installed-p 'use-package)
   (straight-use-package 'use-package))
 
+(defun gbe/require-dir (dir)
+  "Utility function to require all files in DIR."
+  (dolist
+    (filename (directory-files (locate-user-emacs-file dir) nil "[a-z0-9-]*.el"))
+    (let ((file-symbol (intern (replace-regexp-in-string "\\.el" "" filename))))
+      (require file-symbol))))
+
 ;; Original installer function, moved here to streamline structure. This should
 ;; eventually be removable, once the all configs are migrated to package-config
 (defun ensure-package-installed (&rest packages)
