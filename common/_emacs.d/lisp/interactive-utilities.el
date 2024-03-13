@@ -25,22 +25,18 @@
 ;; symbol at point, if the symbol is a package. This goes too far - it just describes the symbol
 ;; there regardless, but it's a starting point.
 ;; This never did work quite right... some day it would be nice to revisit this and get working
-(defun describe-package-at-point ()
+(defun gbe/describe-package-at-point ()
   "Describe the package at point."
   (interactive)
-  ;(describe-package (intern (thing-at-point 'symbol)))
-  (let ((package-name (thing-at-point 'word t)))
-    (describe-package package-name)))
+  (let ((package-name (thing-at-point 'symbol t)))
+    (describe-package (intern package-name))))
 
 ;(describe-package 'evil)
 ;(describe-package (intern "evil"))
 
 (defun gbe/link-startup-files ()
-  "Link stuff. Replacement for the emacs dotfile installer."
-    (message "test")
-    )
-
-
+  "Link stuff. Replacement for the Emacs dotfile installer."
+    (message "test"))
 
 (provide 'interactive-utilities)
 ;;; interactive-utilities.el ends here

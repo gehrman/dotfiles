@@ -154,6 +154,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "da" 'ag
   "db" 'describe-bindings
   "dc" 'describe-char ; Mostly a novelty, but good to know. Again, from @brandon-rhodes.
+  "de" 'gbe/describe-package-at-point
   "df" 'describe-function
   "dg" 'ag-files
   "dh" 'help
