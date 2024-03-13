@@ -1,4 +1,4 @@
-;; init --- Top level configuration.
+;; init --- Top level configuration
 
 ;;; Commentary:
 ;; There's still some package config stuff that should be pushed down into
@@ -7,44 +7,31 @@
 
 ;;; Code:
 ;; Setup the path for custom config files.
+(require 'bootstrap (locate-user-emacs-file "bootstrap.el"))
+
+;; Added by package.el, and required to be init.el.
+;(package-initialize)
+;(package-refresh-contents)
 
 ;; Let's try some performance tuning. This is blatantly stolen from Fanael's
 ;; init.el, where he claims that Emacs GC defaults are too conservative for
 ;; modern machines.
 ;; Note: look into whether this threshold needs to be adjusted when running on
 ;; the rpi.
-(setq gc-cons-threshold (* 4 1024 1024))
+(setq gc-cons-threshold (* 512 1024 1024))  ; The threshold is in bytes, 128 MB is probably good
 (setq gc-cons-percentage 0.3)
 
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
-;; Setup the path for custom config files.
-(add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-;; Extra package repos that Clojure for the Brave and True configs default to using.
-(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
-
-(require 'package-tools)
-
-;; We need to exec 'config-package first because it deals with setting up the
-;; paths for all the installed packages, e.g. evil.
-(require 'config-package)
-
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
 
 ;; Evil makes things usable, so it goes first to defend against errors in other
 ;; configs knocking out the keybindings.
 (require 'config-evil)
+
+;; Next, bring in all of the config that has been ported to package-config,
+;; since these are all use-package and hence cheap to load.
+(mapc #'load-library (directory-files (locate-user-emacs-file "package-config") nil "gbe-*"))
+;; This works: (use-package "gbe-ai")
+;; but we can't map it b/c use-package is a macro
+(require 'interactive-utilities)
 
 ;; Next up, make it pretty.
 (require 'config-ui)
@@ -52,6 +39,10 @@
 ;; Start up lsp stuff before any config that requires it. Eventually this should be
 ;; less of an issue since use-package should be able to handle the deferring
 (require 'config-lsp)
+
+;; No longer needs to go first, and will no longer be needed at all after the
+;; switch to package-config
+(require 'config-package)
 
 ;; Now we can load the other configs.
 ;; TODO: pull these from the directory and load them programmatically
