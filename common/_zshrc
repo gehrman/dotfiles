@@ -173,6 +173,7 @@ alias tgi="terragrunt init"
 alias tgp="terragrunt plan"
 alias tga="terragrunt apply"
 
+alias cleanup-docker-volumes="docker volume rm $(docker volume ls -qf dangling=true)"
 # Setup autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
