@@ -110,10 +110,10 @@ This doesn't actually work yet because of how blame-mode is implemented."
       (message "t")
     (message "nil")))
 
-;; But why not use all three? TODO: Write evil-multileader
 (evil-leader/set-key
   "," 'ibuffer
 
+  ;; Code folding. Also, comment-dwim has never once done what I mean
   "+" 'hs-show-block
   "-" 'hs-hide-block
   "[" 'fold-this
@@ -122,9 +122,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "<+" 'hs-show-all
   "<-" 'hs-hide-all
   "/" 'comment-dwim
-  ;; b is the prefix key for buffer operations. I'm not completely happy with
-  ;; putting dired in with the buffer ops, but not sure where a better place
-  ;; for it is
+
+  ;; b is the prefix key for buffer operations
   "ba" 'find-file ;I type ,bs for :e enough I want an escape hatch
   "bb" 'blacken-buffer  ; keybind, since vtrack means black-on-save is not viable
   "bc" 'clone-indirect-buffer-other-window
@@ -141,7 +140,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "bp" 'narrow-to-page
   "br" 'revert-buffer
   ;"bs" 'switch-to-buffer
-  "bs" 'helm-buffers-list  ; Let's see if I hate this
+  "bs" 'helm-buffers-list
+  "bS" 'gbe/change-directory-leaf
   "bw" 'widen
 
   ;; Searching (via ag/hound mostly) and describing
@@ -161,7 +161,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "dk" 'describe-key
   "dn" 'hound
   "dp" 'ag-project
-  "dP" 'describe-package-at-point ; Finish getthing this perfect
+  "dP" 'gbe/describe-package-at-point
   "dr" 'ag-regexp
   "du" 'describe-face
   "dv" 'describe-variable
@@ -172,11 +172,13 @@ This doesn't actually work yet because of how blame-mode is implemented."
   ;; "ee" 'find-file-at-point
 
   ;; Flycheck and frame
-  ; "fb" 'flycheck-buffer ; http://www.flycheck.org/
-  ; "ff" 'flycheck-buffer
-  ; "fl" 'flycheck-list-errors
-  ; "fn" 'flycheck-next-error
-  ; "fN" 'flycheck-previous-error
+  ;; "fb" 'flycheck-buffer ; http://www.flycheck.org/
+  ;; "ff" 'flycheck-buffer
+  ;; "fl" 'flycheck-list-errors
+  ;; "fn" 'flycheck-next-error
+  ;; "fN" 'flycheck-previous-error
+  "fn" 'display-line-numbers-mode ; This mode can also do relative by setting display-line-numbers to 'relative
+  "ft" 'transpose-frame
   "gb" 'magit-blame-start-or-quit
   ;;"gc" 'gcn
   "gf" 'find-file-at-point
@@ -195,8 +197,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   ;; (l)aunch application modes like dired, proced, ansi-term, et al
   "ld" 'dired
   "lp" 'proced
-  "nm" 'linum-mode
-  "nn" 'linum-relative-toggle
+  ;; "nm" 'linum-mode
+  ;; "nn" 'linum-relative-toggle
 
   "o" 'occur
 
@@ -219,7 +221,6 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "tf" 'transpose-frame
   "tt" 'my-run-pytest-from-buffer-name
   "ta" 'pytest-all
-  ; Not sure this next one is a good idea - \z works to enter emacs mode, but not to leave it.
 
   "u" 'universal-argument
   "v" 'find-name-dired
