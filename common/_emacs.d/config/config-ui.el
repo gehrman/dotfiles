@@ -349,13 +349,11 @@ the current directory to a/B/c/d/e."
   (interactive)
   (let ((cur-dir (cadr (split-string (pwd))))
         (cur-buffer (car (reverse (split-string (buffer-file-name) "/")))))
-    (let ((cur-node (helm-comp-read "Current dir: " (split-string cur-dir "/"))))
+    (let ((cur-node (helm-comp-read "Current dir: " (reverse (split-string cur-dir "/")))))
       (let ((new-node (helm-comp-read
                            "New directory: "
-                           ;;
                            (directory-files (replace-regexp-in-string (concat cur-node ".*") "" cur-dir)))))
-        (find-file (concat (s-replace cur-node new-node cur-dir) cur-buffer))
-        ))))
+        (find-file (concat (s-replace cur-node new-node cur-dir) cur-buffer))))))
 
 (provide 'config-ui)
 ;;; config-ui.el ends here

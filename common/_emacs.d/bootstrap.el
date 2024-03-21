@@ -12,10 +12,10 @@
 ;; Extra Repos
 ;; Tromey includes extra package repos that Clojure for the Brave and True
 ;; configs default to using.
-;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-;; (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-;; (add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
 
 ;; Set up straight.el and use-package.el. We want to get these installed first
 ;; as we'll be using them to set everything else up. (Eventually.) Note that
