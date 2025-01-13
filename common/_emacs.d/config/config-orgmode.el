@@ -83,10 +83,12 @@
 
 ;; Agenda Config
 
-(setq org-directory "~/Documents/Org")
+;;(setq org-directory "~/Documents/Org")
+(setq org-directory "~/Devel/workproduct/org/")
 (setq org-agenda-files (list (expand-file-name "inbox.org" org-directory)
                              (expand-file-name "project.org" org-directory)
-                             (expand-file-name "task.org" org-directory)))
+                             (expand-file-name "task.org" org-directory)
+                             (expand-file-name "todo.org" org-directory)))
 
 ;; Use org-agenda-refile to refile. Note that this _doesn't_ commit the changes. Use the
 ;; S key in agenda mode to save all agenda buffers, which runs the command
@@ -117,7 +119,9 @@
 (setq org-capture-templates
       '(("i" "inbox" entry (file+headline "~/Documents/Org/inbox.org" "inbox") "* TODO %?")
         ("j" "inbox (jump to captured)" entry
-         (file+headline "~/Dropbox/org-todo/inbox.org" "inbox" :jump-to-captured) "* TODO %?")))
+         (file+headline "~/Dropbox/org-todo/inbox.org" "inbox" :jump-to-captured) "* TODO %?")
+        ("t" "todo" entry (file+headline "~/Devel/workproduct/org/todo.org" "Todo")
+         "* TODO %?")))
 
 (provide 'config-orgmode)
 ;;; config-orgmode.el ends here

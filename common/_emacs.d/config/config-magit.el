@@ -58,6 +58,23 @@
 ;; Speed things up for monorepos / large tags repo
 (remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
 
+;; Functions to bring up PR creation in a browser
+(defun gbe/create-vtrack-pr-to-main ()
+  "Open a browser window to the correct PR creation page."
+  (interactive)
+  (let ((branch-name (magit-get-current-branch)))
+    (browse-url (concat "https://github.com/<repo-main-path>..." branch-name "?expand=1&template=<main>"))))
+(defun gbe/create-vtrack-pr-to-dw-beta ()
+  "Open a browser window to the correct PR creation page."
+  (interactive)
+  (let ((branch-name (magit-get-current-branch)))
+    (browse-url (concat "https://github.com/<repo-beta-path>..." branch-name "?expand=1&template=<beta>"))))
+(transient-append-suffix 'magit-push (list 0 -1)  ;; Add in the Arguments section
+  '("M" "Open PR to main" gbe/create-vtrack-pr-to-main))
+(transient-append-suffix 'magit-push (list 0 -1)
+  '("D" "Open PR to dw-beta" gbe/create-vtrack-pr-to-dw-beta))
+
+
 ;; Open file in different worktree
 ;(find-file (concat "~/" "t"))
 ;(find-file (file))

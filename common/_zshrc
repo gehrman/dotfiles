@@ -115,7 +115,6 @@ alias tmat="tmux attach -d -t"
 
 # Current-shell command aliases.
 alias rezsh='source ~/.zshrc'
-alias ls=exa
 
 if [[ $TERM != "dumb" ]]; then
     source ~/.zsh/conf/functions
@@ -173,13 +172,13 @@ alias tgi="terragrunt init"
 alias tgp="terragrunt plan"
 alias tga="terragrunt apply"
 
-alias cleanup-docker-volumes="docker volume rm $(docker volume ls -qf dangling=true)"
+# alias cleanup-docker-volumes="docker volume rm $(docker volume ls -qf dangling=true)"
 # Setup autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# exa is better ls
-alias ls=exa
-alias l="exa -lh"
+# eza is better ls
+alias ls=eza
+alias l="eza -lh"
 
 # Rather than doing a complicated introspection thing, just make a .zshrc.site
 # file that is machine-specific, always gets sourced here, and contains config

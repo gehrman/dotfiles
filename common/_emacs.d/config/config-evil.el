@@ -162,6 +162,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "dn" 'hound
   "dp" 'ag-project
   "dP" 'gbe/describe-package-at-point
+  "do" 'occur
   "dr" 'ag-regexp
   "du" 'describe-face
   "dv" 'describe-variable
@@ -200,7 +201,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   ;; "nm" 'linum-mode
   ;; "nn" 'linum-relative-toggle
 
-  "o" 'occur
+  "oo" 'occur ;; This is actually a d-command
+  "ov" 'vterm-other-window
 
   ;; Packages and pianobar (not that I've been using pianobar much)
   "pi" 'package-install
@@ -311,6 +313,7 @@ This doesn't actually work yet because of how blame-mode is implemented."
 (gbe/set-initial-state-for-modes
  'emacs
  'eshell-mode
+ 'vterm-mode
  'ibuffer-mode
  'messages-buffer-mode
  'term-mode)

@@ -8,7 +8,6 @@
  'php-mode
  'php-refactor-mode
  'php-scratch
- 'phpcbf
  'phpunit
  )
 
