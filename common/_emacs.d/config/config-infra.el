@@ -8,6 +8,7 @@
 
 (ensure-package-installed
  'company-terraform
+ 'systemd
  'terraform-doc
  'terraform-mode)
 
