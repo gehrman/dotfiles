@@ -162,10 +162,11 @@
 ;; down to match the text you've typed.
 ;; See, e.g., https://www.masteringemacs.org/article/introduction-to-ido-mode
 ;; for customization options.
-(ido-mode t)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(setq ido-default-buffer-method "selected-window")
+;; Disabled in favor of helm
+;; (ido-mode t)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-everywhere t)
+;; (setq ido-default-buffer-method "selected-window")
 ;; (with-no-warnings
 ;;   (require 'ido-ubiquitous))
 
