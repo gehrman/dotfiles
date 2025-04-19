@@ -69,7 +69,8 @@ fi
 # autoload -U colors
 #colors
 
-export PATH=/usr/local/bin:~/.bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:~/.cargo/bin
+export PATH=/Users/gbe/.cargo/bin:/opt/homebrew/bin:/usr/local/bin:~/.bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:~/.cargo/bin
+source "$HOME/.cargo/env"
 
 # Use a snake prompt. Hiss.
 export PYTHONSTARTUP=~/.pythonrc
