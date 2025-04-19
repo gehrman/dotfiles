@@ -63,6 +63,12 @@
 ;; get rid of that awful tool bar... the menu bar can be similarly disabled but isn't nearly so bad
 (tool-bar-mode -1)
 
+;; Set a reasonable startup size. I don't know why, but this needs to come
+;; *after* setting tool-bar-mode off. Presumably doing so overrides window
+;; settings somehow.
+(set-frame-width (selected-frame) 80)
+(set-frame-height (selected-frame) 24)
+
 ;; Uniquification
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward)
