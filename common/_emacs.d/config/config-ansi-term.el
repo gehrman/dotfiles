@@ -10,7 +10,7 @@
   "Launch zsh in an ansi term."
   (interactive)
   (ansi-term "/bin/zsh"))
-(define-key global-map (kbd "s-<return>") 'gbe/launch-zsh-term)
+;; (define-key global-map (kbd "s-<return>") 'gbe/launch-zsh-term)
 
 ;; These and the lower need to load as a hook so that term-raw-map is defined
 (add-hook
