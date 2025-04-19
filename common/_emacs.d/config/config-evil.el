@@ -225,7 +225,8 @@ This doesn't actually work yet because of how blame-mode is implemented."
   "ta" 'pytest-all
 
   "u" 'universal-argument
-  "v" 'find-name-dired
+  "vv" 'find-name-dired
+  "vn" 'gbe/launch-named-vterm
 
   ;; Window operations
   "wf" 'toggle-frame-fullscreen
@@ -306,17 +307,25 @@ This doesn't actually work yet because of how blame-mode is implemented."
 (define-key evil-motion-state-map (kbd "p") 'evil-search-previous)
 
 (gbe/set-initial-state-for-modes
+ 'normal
+ 'image-mode)
+
+(gbe/set-initial-state-for-modes
  'motion
  'lsp-ui-imenu-mode
+ 'shortdoc-mode
  'xref--xref-buffer-mode)
 
 (gbe/set-initial-state-for-modes
  'emacs
+ 'elfeed-search-mode
+ 'elfeed-show-mode
  'eshell-mode
  'vterm-mode
  'ibuffer-mode
  'messages-buffer-mode
- 'term-mode)
+ 'term-mode
+ 'vterm-mode)
 
 (provide 'config-evil)
 ;;; config-evil.el ends here
