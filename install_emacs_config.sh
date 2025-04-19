@@ -26,3 +26,14 @@ for dir in "config" "lisp" "package-config"; do
     fi
   done
 done
+
+echo
+echo Cleaning up old files
+for dir in "" "config" "lisp" "package-config"; do
+  for f in `ls ~/.emacs.d/$dir/*.el`; do
+    if [ ! -e $f ]; then
+      rm $f
+      echo Removed $f
+    fi
+  done
+done
