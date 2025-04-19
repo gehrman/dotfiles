@@ -10,7 +10,6 @@
  'clojure-mode-extra-font-locking
  'elein
  ;;'flycheck-clojure
- 'hy-mode
  'paredit
  'persistent-scratch
  'rainbow-delimiters
@@ -70,7 +69,6 @@
    set-paredit-keys-for-mode
    eval-expression-minibuffer-setup-hook
    clojure-mode-hook
-   hy-mode-hook
    ielm-mode-hook
    lisp-mode-hook
    lisp-interaction-mode-hook
@@ -80,7 +78,6 @@
  (lambda (mode) (add-hook mode 'turn-on-eldoc-mode))
  '(emacs-lisp-mode-hook
    ielm-mode-hook
-   hy-mode-hook
    lisp-interaction-mode-hook))
 
 ;;;
