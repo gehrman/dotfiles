@@ -8,5 +8,5 @@
   ;:config
   )
 
-(provide 'gbe-helm)
-;;; gbe-helm.el ends here
+(provide 'gbe-d2)
+;;; gbe-d2.el ends here
