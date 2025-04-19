@@ -5,23 +5,14 @@
 ;;; Code:
 
 ;; Initial setup
-;;(load-library "org")
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-(ensure-package-installed
- ;'org-sticky-header
- ;'org-superstar
- )
 ;; Set languages available for execution in code blocks.
-(require 'cl-lib)
-(require 'evil)
-(require 'evil-leader)
 
-(org-babel-do-load-languages
-  'org-babel-load-languages
-  (cl-remove-duplicates (append org-babel-load-languages
-                             '((emacs-lisp . t)(python . t)))
-                     :test 'equal))
+;; (org-babel-do-load-languages
+;;   'org-babel-load-languages
+;;   (cl-remove-duplicates (append org-babel-load-languages
+;;                              '((emacs-lisp . t)(python . t)))
+;;                      :test 'equal))
 
 ;; Org-mode config from Patrick... I really do need to learn org-mode at some point.
 
@@ -41,13 +32,6 @@
 ;; The exact way to grab the keybind map and add temporary org-src-mode
 ;; key binds isn't clear yet. For more details, and a partially relevant
 ;; example, see http://emacs.stackexchange.com/a/20397.
-(add-hook
- 'org-mode-hook
- (lambda ()
-   (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
-   (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
-   (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
-   (auto-fill-mode)))
 
 ;; (global-set-key (kbd "C-c l") 'org-store-link)
 ;; (global-set-key (kbd "C-c a") 'org-agenda)
@@ -65,6 +49,7 @@
 ;; Should these get wrapped in an eval-after-load?
 (evil-leader/set-key-for-mode 'org-mode
   "\\" 'org-insert-heading
+  "." 'org-open-at-point
   "a" 'org-agenda
   "cc" 'org-ctrl-c-ctrl-c
   "c'" 'org-edit-special
@@ -79,7 +64,7 @@
   )
 
 ;; Let's try to set up some capturing.
-(require 'org-protocol)
+;(require 'org-protocol)
 
 ;; Agenda Config
 
@@ -93,8 +78,9 @@
 ;; Use org-agenda-refile to refile. Note that this _doesn't_ commit the changes. Use the
 ;; S key in agenda mode to save all agenda buffers, which runs the command
 ;; (org-save-all-org-buffers).
-(setq org-refile-targets `((,(expand-file-name "project.org" org-directory) :maxlevel . 1)
-                           (,(expand-file-name "task.org" org-directory) :maxlevel . 1)))
+
+; (setq org-refile-targets `((,(expand-file-name "project.org" org-directory) :maxlevel . 1)
+;                           (,(expand-file-name "task.org" org-directory) :maxlevel . 1)))
 
 ;; Patrick's refiling:
 ;; (setq org-refile-targets (quote ((nil :maxlevel . 9)
@@ -116,12 +102,10 @@
 ;;   :empty-lines 1)))
 
 ;; Peter's capture templates
-(setq org-capture-templates
-      '(("i" "inbox" entry (file+headline "~/Documents/Org/inbox.org" "inbox") "* TODO %?")
-        ("j" "inbox (jump to captured)" entry
-         (file+headline "~/Dropbox/org-todo/inbox.org" "inbox" :jump-to-captured) "* TODO %?")
-        ("t" "todo" entry (file+headline "~/Devel/workproduct/org/todo.org" "Todo")
-         "* TODO %?")))
+;; (setq org-capture-templates
+;;       '(("i" "inbox" entry (file+headline "~/Documents/Org/inbox.org" "inbox") "* TODO %?")
+;;         ("j" "inbox (jump to captured)" entry
+;;          (file+headline "~/Dropbox/org-todo/inbox.org" "inbox" :jump-to-captured) "* TODO %?")))
 
 (provide 'config-orgmode)
 ;;; config-orgmode.el ends here
