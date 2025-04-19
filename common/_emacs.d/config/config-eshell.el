@@ -19,7 +19,10 @@
 
 (add-hook
  'eshell-mode-hook
- (lambda () (define-key eshell-mode-map (kbd "C-u") 'delete-backwards-to-readonly)))
+ (lambda ()
+   (define-key eshell-mode-map (kbd "C-u") 'delete-backwards-to-readonly)
+   (define-key eshell-mode-map (kbd "C-,") evil-leader--default-map)
+   (define-key eshell-mode-map (kbd "C-w ,") evil-leader--default-map)))
 
 (defun start-or-kill-eshell ()
   "Fire up eshell, unless we're already in eshell, in which case kill it."
