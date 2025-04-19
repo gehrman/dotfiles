@@ -3,10 +3,8 @@
 ;;
 
 ;;; Code:
-(defun open-remote-devel-dir ()
-  "Do a gcn."
-  (interactive)
-  (find-file "/ssh:dopres:/wayfair/home/gehrman/dev"))
+(setq tramp-remote-path '("/usr/local/bin" "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/sbin"))
+(add-to-list 'tramp-remote-path "/run/current-system/sw/bin")
 
 (provide 'config-remote)
 ;;; config-remote ends here
