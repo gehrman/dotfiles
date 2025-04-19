@@ -42,7 +42,6 @@
 ;; TODO: pull these from the directory and load them programmatically
 (gbe/require-dir "config")
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Answer: Tramp, Magit, Org-Mode.               ;;
 ;; Question: Why muck through the crap of Emacs. ;;
@@ -68,7 +67,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (anzu-mode +1)
 (global-anzu-mode +1)
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Minimap mode: Because it turns out sublimity sucks. ;
