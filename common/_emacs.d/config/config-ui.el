@@ -7,15 +7,6 @@
 ;;; Code:
 (require 'package-tools)
 
-;; Themes
-(ensure-package-installed
- 'ample-theme
- 'zenburn-theme
- 'monokai-theme
- 'darcula-theme
- 'reykjavik-theme
- )
-
 ;; Non-theme UI
 (ensure-package-installed
  ; 'all-the-icons
@@ -44,10 +35,6 @@
 (require 'projectile)
 (require 'bison-mode)
 
-;;;; Themes
-(load-theme 'ample t)
-;; (load-theme 'ample-flat t)
-
 ;;;; Font stuff
 ;; Test banner:
 ;; ilIega10oO == -> --> ############ # && && || || <> << >> =<< >>= <<= /= =/= != ~=!=
@@ -66,8 +53,12 @@
 ;; Set a reasonable startup size. I don't know why, but this needs to come
 ;; *after* setting tool-bar-mode off. Presumably doing so overrides window
 ;; settings somehow.
-(set-frame-width (selected-frame) 80)
-(set-frame-height (selected-frame) 24)
+;; These are the two commands that break running in terminal, so they need to be
+;; wrapped in a guard to only run when running in the gui.
+(if window-system
+    (progn
+      (set-frame-width (selected-frame) 80)
+      (set-frame-height (selected-frame) 24)))
 
 ;; Uniquification
 (require 'uniquify)
