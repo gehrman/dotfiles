@@ -21,7 +21,7 @@
 ;; however, this can be disabled and straight.el can be used as the only package
 ;; manager.
 
-;; Code:
+;;; Code:
 ;; (setq package-enable-at-startup nil)
 
 (provide 'early-init)
