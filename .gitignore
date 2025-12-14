@@ -3,3 +3,5 @@
 .\#*
 *~
 *.private
+sync-emacs-config/target
+sync-emacs-config/test
