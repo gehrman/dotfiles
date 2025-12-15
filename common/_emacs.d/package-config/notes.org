@@ -1,0 +1,15 @@
+Config update to use-package and straight.el
+https://github.com/jwiegley/use-package?tab=readme-ov-file#hooks
+
+Annotated config to reference
+https://github.com/MatthewZMD/.emacs.d?tab=readme-ov-file
+
+Making things pretty:
+https://xenodium.com/my-emacs-eye-candy/
+ - Is the EmacsPlus pkg worth looking at?
+ - Should probably also use
+   https://xenodium.com/emacs-plus-with-native-comp/
+
+Persistent Scratch/Other Startup Options:
+https://github.com/Fanael/persistent-scratch
+https://xenodium.com/emacs-a-welcoming-experiment/
