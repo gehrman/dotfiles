@@ -30,8 +30,20 @@
 ;(describe-package (intern "evil"))
 
 (defun gbe/link-startup-files ()
-  "Link stuff. Replacement for the Emacs dotfile installer."
-    (message "test"))
+  "Link Emacs dotfiles into .emacs.d for actual use.
+
+  This works by calling the `sync-emacs-config` binary via \"call-process\" and
+  output is written to the *config-synchronization* buffer."
+  (interactive)
+
+  ;; We need to make this work on multiple calls and display this somehow if
+  ;; there were new contents written
+  (let ((output-buffer-name "*config-synchronization*"))
+    (get-buffer-create output-buffer-name)
+    (set-buffer output-buffer-name)
+    ;; Manually set buffer mode to help
+    ;; (setq major-mode help-mode)
+    (call-process "sync-emacs-config" nil t)))
 
 (provide 'interactive-utilities)
 ;;; interactive-utilities.el ends here
