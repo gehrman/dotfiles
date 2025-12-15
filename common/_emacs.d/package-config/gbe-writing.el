@@ -6,7 +6,6 @@
 ;;; Code:
 (use-package pollen-mode
   :straight t
-
   :config
   (add-to-list 'auto-mode-alist '("\\.pp$" . pollen-mode)))
 
